@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <dl>data</dl>
+  <dl-packages>
+    <data>DLObject</data>
+    <xml namespace="DL" class="DLXML">DLXml</xml>
+    <oracle namespace="DL_O" class="DLDbOracle">DLOracle</oracle>
+  </dl-packages>
+</config>
