@@ -43,15 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlFactory.cs" />
-    <Compile Include="BusLineBO.cs" />
-    <Compile Include="BusLineStationBO.cs" />
-    <Compile Include="Driving.cs" />
-    <Compile Include="Enum.cs" />
-    <Compile Include="Exception.cs" />
+    <Compile Include="BLIMP.cs" />
+    <Compile Include="BO\BusLineBO.cs" />
+    <Compile Include="BO\BusLineStationBO.cs" />
+    <Compile Include="DeepCopyUtilities.cs" />
+    <Compile Include="BO\Driving.cs" />
+    <Compile Include="BO\Enum.cs" />
+    <Compile Include="BO\Exception.cs" />
+    <Compile Include="IBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StationBO.cs" />
-    <Compile Include="Tools.cs" />
-    <Compile Include="UserBO.cs" />
+    <Compile Include="BO\StationBO.cs" />
+    <Compile Include="BO\Tools.cs" />
+    <Compile Include="BO\UserBO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\APIDL\APIDL.csproj">
