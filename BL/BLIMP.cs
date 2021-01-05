@@ -30,9 +30,8 @@ namespace BL
             busLineDo.CopyPropertiesTo(busLineBO);
 
             busLineBO.busLineStations = from b in dl.GetAllBusLineStationBy(b => (b.BusLineKey == BusLineKeyOfDO & b.IsActive))
-                                        let busStationKey2 = dl.GetBusLineStation(BusLineKeyOfDO, b.StationNumberInLine - 1)
-                                        where busStationKey2 != null
-                                        let ConsecutiveStations = dl.GetConsecutiveStations(busStationKey2.BusStationKey, b.BusStationKey)
+                                        let busStationKey2 = dl.GetBusLineStationKey(BusLineKeyOfDO, b.StationNumberInLine - 1)
+                                        let ConsecutiveStations = dl.GetConsecutiveStations(busStationKey2, b.BusStationKey)
                                         select ConsecutiveStations.CopyToBusLineStationBO(b);
 
             return busLineBO;
@@ -124,11 +123,8 @@ namespace BL
         BO.BusLineStationBO BusLineStationDOBOAdapter(DO.BusLineStation busLineStationDo)
         {
             BO.BusLineStationBO busLineStationBO = new BO.BusLineStationBO();
-            var busStationKey2 = dl.GetBusLineStation(busLineStationDo.BusLineKey, busLineStationDo.StationNumberInLine - 1);
-            if (busStationKey2 != null)
-            {
-                busLineStationBO = dl.GetConsecutiveStations(busStationKey2.BusStationKey, busLineStationDo.BusStationKey).CopyToBusLineStationBO(busLineStationDo);
-            }
+            var busStationKey2 = dl.GetBusLineStationKey(busLineStationDo.BusLineKey, busLineStationDo.StationNumberInLine - 1);
+            busLineStationBO = dl.GetConsecutiveStations(busStationKey2, busLineStationDo.BusStationKey).CopyToBusLineStationBO(busLineStationDo);
             return busLineStationBO;
         }
         DO.BusLineStation BusLineStationBODOAdapter(BO.BusLineStationBO busLineStationBo)
@@ -165,9 +161,8 @@ namespace BL
                 var BLstation = new BusLineStation { BusLineKey = busLine.BusLineKey, BusStationKey = stationKey, StationNumberInLine = busLine.busLineStations.Count(), IsActive = true };
                 dl.AddBusLineStation(BLstation);
                 busLine.busLineStations = from b in dl.GetAllBusLineStationBy(b => (b.BusLineKey == busLine.BusLineKey & b.IsActive))
-                                          let busStationKey2 = dl.GetBusLineStation(busLine.BusLineKey, b.StationNumberInLine - 1)
-                                          where busStationKey2 != null
-                                          let ConsecutiveStations = dl.GetConsecutiveStations(b.BusStationKey, busStationKey2.BusStationKey)
+                                          let busStationKey2 = dl.GetBusLineStationKey(busLine.BusLineKey, b.StationNumberInLine - 1)
+                                          let ConsecutiveStations = dl.GetConsecutiveStations(busStationKey2, b.BusStationKey)
                                           select ConsecutiveStations.CopyToBusLineStationBO(b);
                 StationBO stationBO = GetBusStation(stationKey);
                 stationBO.busLines = from b in GetAllBusLines()
@@ -187,7 +182,9 @@ namespace BL
         {
             try
             {
-                busLine.busLineStations.FirstOrDefault(b => (b.BusLineStationKey == stationKey & b.IsActive)).IsActive = false;
+                BusLineStationBO BLStation = busLine.busLineStations.FirstOrDefault(b => (b.BusLineStationKey == stationKey & b.IsActive));
+                BLStation.IsActive = false;
+
             }
             catch (DO.BadBusLineStationsException ex)
             {
@@ -250,6 +247,10 @@ namespace BL
             try
             {
                 dl.DeleteBusStation(busStationKey);
+                foreach (var busLine in GetBusStation(busStationKey).busLines)
+                {
+                    DeleatStation(busLine, busStationKey);
+                }
             }
             catch (DO.BadBusStationKeyException busExaption)
             {
