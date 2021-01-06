@@ -15,12 +15,6 @@ namespace PlConsole
         static void Main(string[] args)
         {
             bl = BlFactory.GetBl("1");
-            List<BusLineBO> userlist = new List<BusLineBO>();
-            userlist = bl.GetAllBusLines().ToList();
-            for (int i = 0; i < userlist.Count; i++)
-            {
-                Console.WriteLine(userlist[i]);
-            }
             List<BusLineBO> busLineBOs = bl.GetAllBusLines().ToList();
             for (int i = 0; i < busLineBOs.Count; i++)
             {

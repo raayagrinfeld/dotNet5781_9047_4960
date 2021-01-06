@@ -24,6 +24,7 @@ namespace DS
             BusStationList = new List<BusStation>();
             ConsecutiveStationsList = new List<ConsecutiveStations>();
             UserList = new List<User>();
+            BusLineList = new List<BusLine>();
             InitAllLists();
         }
         static void InitAllLists()
