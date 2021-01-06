@@ -160,6 +160,18 @@ namespace BL
                 dl.GetBusStation(stationKey);
                 var BLstation = new BusLineStation { BusLineKey = busLine.BusLineKey, BusStationKey = stationKey, StationNumberInLine = busLine.busLineStations.Count(), IsActive = true };
                 dl.AddBusLineStation(BLstation);
+                var ConsecutiveStation = new ConsecutiveStations { Station1Key = dl.GetBusLineStationKey(busLine.BusLineKey, busLine.busLineStations.Count() - 1), Station2Key = stationKey, IsActive = true };
+                if (ConsecutiveStation.Station1Key == -1)
+                {
+                    ConsecutiveStation.Distance = 0;
+                    ConsecutiveStation.DriveDistanceTime = TimeSpan.Zero;
+                }
+                else
+                {
+                    ConsecutiveStation.Distance = GetBusStation(stationKey).Coordinates.GetDistanceTo(GetBusStation(ConsecutiveStation.Station2Key).Coordinates));
+                    ConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(ConsecutiveStation.Distance*0.01);
+                }
+                dl.AddConsecutiveStations(ConsecutiveStation);
                 busLine.busLineStations = from b in dl.GetAllBusLineStationBy(b => (b.BusLineKey == busLine.BusLineKey & b.IsActive))
                                           let busStationKey2 = dl.GetBusLineStationKey(busLine.BusLineKey, b.StationNumberInLine - 1)
                                           let ConsecutiveStations = dl.GetConsecutiveStations(busStationKey2, b.BusStationKey)

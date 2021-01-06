@@ -262,7 +262,6 @@ namespace DL
             return from user in DataSource.UserList
                    where (predicate(user)) & (user.IsActive)
                    select user.Clone();
-            Console.WriteLine(DataSource.UserList[0].UserName);
         }
 
         public void AddUser(User user)
@@ -307,10 +306,6 @@ namespace DL
         #region ConsecutiveStations
         public ConsecutiveStations GetConsecutiveStations(int key1, int key2)
         {
-            if (key1 == -1)
-            {
-                return new ConsecutiveStations { Distance = 0, DriveDistanceTime = TimeSpan.Zero, IsActive = true, Station1Key = -1, Station2Key = key2 };
-            }
             ConsecutiveStations consecutiveStations = DataSource.ConsecutiveStationsList.Find(b => (b.Station1Key == key1 & b.Station2Key == key2 & b.IsActive));
             if (consecutiveStations != null)
             {
