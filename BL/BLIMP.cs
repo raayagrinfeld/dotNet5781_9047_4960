@@ -197,9 +197,15 @@ namespace BL
             {
                 BusLineStationBO BLStation = busLine.busLineStations.FirstOrDefault(b => (b.BusStationKey == stationKey & b.IsActive));
                 BLStation.IsActive = false;
+                if (busLine.LastStation == stationKey)
+                {
+                    busLine.LastStation = busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == BLStation.StationNumberInLine - 1 & b.IsActive)).BusStationKey;
+                }
+                else
+                {
                     busLine.busLineStations.Where(b =>
                     {
-                        if (b.BusLineStationKey > stationKey)
+                        if (b.BusStationKey > stationKey)
                         {
                             b.StationNumberInLine--;
                             return true;
@@ -207,6 +213,7 @@ namespace BL
                         else return false;
                     });
                 }
+            }
             catch (DO.BadBusLineStationsException ex)
             {
                 throw new BO.BadBusStationKeyException("this station in not exsist or unactive", ex);
