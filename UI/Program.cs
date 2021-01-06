@@ -15,10 +15,12 @@ namespace PlConsole
         static void Main(string[] args)
         {
             bl = BlFactory.GetBl("1");
-            List<BusLineBO> busLineBOs = bl.GetAllBusLines().ToList();
-            for (int i = 0; i < busLineBOs.Count; i++)
+            BusLineBO busLineBOs = bl.GetBusLine(20000);
+            bl.AddStation(busLineBOs, 30080);
+            IEnumerable<BusLineStationBO> b = busLineBOs.busLineStations;
+            for(int i=0;i< b.Count();i++)
             {
-                Console.WriteLine(busLineBOs[i]);
+                Console.WriteLine(b.ElementAt(i));
             }
             bl.deleteBusStationInBusLine(busLineBOs[0], busLineBOs[0].FirstStation);
             Console.WriteLine("delete first station:");

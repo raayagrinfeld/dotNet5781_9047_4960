@@ -169,7 +169,7 @@ namespace BL
                 else
                 {
                     ConsecutiveStation.Distance = GetBusStation(stationKey).Coordinates.GetDistanceTo(GetBusStation(ConsecutiveStation.Station2Key).Coordinates);
-                    ConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(ConsecutiveStation.Distance*0.01);
+                    ConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(ConsecutiveStation.Distance * 0.01);
                 }
                 dl.AddConsecutiveStations(ConsecutiveStation);
                 busLine.busLineStations = from b in dl.GetAllBusLineStationBy(b => (b.BusLineKey == busLine.BusLineKey & b.IsActive))
@@ -217,6 +217,10 @@ namespace BL
             catch (DO.BadBusLineStationsException ex)
             {
                 throw new BO.BadBusStationKeyException("this station in not exsist or unactive", ex);
+            }
+            catch (DO.BadBusLineKeyException ex)
+            {
+                throw new BO.BadBusStationKeyException("this line in not exsist or unactive", ex);
             }
         }
         public IEnumerable<BO.BusLineStationBO> GetAllBusLineStationOfBusLine(BusLineBO busLine)

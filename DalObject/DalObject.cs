@@ -313,7 +313,7 @@ namespace DL
             }
             else
             {
-                throw new BadConsecutiveStationsException(key1, key2, $"bad Consecutive Stations keys: {key1}{key2}");
+                throw new BadConsecutiveStationsException(key1, key2, $"bad Consecutive Stations keys: {key1} {key2}");
             }
         }
 
