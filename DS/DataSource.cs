@@ -73,6 +73,14 @@ namespace DS
                     }
                     ConsecutiveStationsList.Add(ConsecutiveStation);
                     prevBusLineStation = busStationKey;
+                    if(j==0)
+                    {
+                        BusLineList.FirstOrDefault(b => (b.LineNumber == busLineKey)).FirstStation = BusLineStationList.ElementAt(i * j).BusStationKey;
+                    }
+                    if (j == 5)
+                    {
+                        BusLineList.FirstOrDefault(b => (b.LineNumber == busLineKey)).LastStation = BusLineStationList.ElementAt(i * j).BusStationKey;
+                    }
                 }
             }
             UserList.Add(new User { UserName = "raaya", Password = "123", IsActive = true, ManagementPermission=true });

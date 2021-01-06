@@ -15,9 +15,8 @@ namespace PlConsole
         static void Main(string[] args)
         {
             bl = BlFactory.GetBl("1");
-            List<User> userlist = new List<User>();
-            bl.AddUser (new User { UserName = "yyy", Password = "1777", IsActive = true, ManagementPermission = true });
-            userlist = bl.GetAllUsers().ToList();
+            List<BusLineBO> userlist = new List<BusLineBO>();
+            userlist = bl.GetAllBusLines().ToList();
             for (int i = 0; i < userlist.Count; i++)
             {
                 Console.WriteLine(userlist[i]);

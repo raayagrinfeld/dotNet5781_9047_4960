@@ -168,7 +168,7 @@ namespace BL
                 }
                 else
                 {
-                    ConsecutiveStation.Distance = GetBusStation(stationKey).Coordinates.GetDistanceTo(GetBusStation(ConsecutiveStation.Station2Key).Coordinates));
+                    ConsecutiveStation.Distance = GetBusStation(stationKey).Coordinates.GetDistanceTo(GetBusStation(ConsecutiveStation.Station2Key).Coordinates);
                     ConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(ConsecutiveStation.Distance*0.01);
                 }
                 dl.AddConsecutiveStations(ConsecutiveStation);
