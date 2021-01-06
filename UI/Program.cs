@@ -24,6 +24,15 @@ namespace PlConsole
             {
                 Console.WriteLine(ex.Message);
             }
+            try
+            {
+                bl.AddStation(busLineBOs, 30003);
+            }
+            catch (BO.BadBusLineStationsException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
             IEnumerable<BusLineStationBO> b = busLineBOs.busLineStations;
             for(int i=0;i< b.Count();i++)
             {
