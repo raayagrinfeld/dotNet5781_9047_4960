@@ -180,6 +180,7 @@ namespace BL
                 stationBO.busLines = from b in GetAllBusLines()
                                      where HasBusStation(b, stationKey)
                                      select b;
+                busLine.LastStation = stationKey;
             }
             catch (DO.BadBusStationKeyException ex)
             {
@@ -196,8 +197,16 @@ namespace BL
             {
                 BusLineStationBO BLStation = busLine.busLineStations.FirstOrDefault(b => (b.BusLineStationKey == stationKey & b.IsActive));
                 BLStation.IsActive = false;
-
-            }
+                    busLine.busLineStations.Where(b =>
+                    {
+                        if (b.BusLineStationKey > stationKey)
+                        {
+                            b.StationNumberInLine--;
+                            return true;
+                        }
+                        else return false;
+                    });
+                }
             catch (DO.BadBusLineStationsException ex)
             {
                 throw new BO.BadBusStationKeyException("this station in not exsist or unactive", ex);
