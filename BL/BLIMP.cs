@@ -169,7 +169,7 @@ namespace BL
                 else
                 {
                     ConsecutiveStation.Distance = GetBusStation(stationKey).Coordinates.GetDistanceTo(GetBusStation(ConsecutiveStation.Station2Key).Coordinates);
-                    ConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(ConsecutiveStation.Distance*0.01);
+                    ConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(ConsecutiveStation.Distance * 0.01);
                 }
                 dl.AddConsecutiveStations(ConsecutiveStation);
                 busLine.busLineStations = from b in dl.GetAllBusLineStationBy(b => (b.BusLineKey == busLine.BusLineKey & b.IsActive))
@@ -185,10 +185,6 @@ namespace BL
             catch (DO.BadBusStationKeyException ex)
             {
                 throw new BadBusLineStationException("the station not exsist", ex);
-            }
-            catch (DO.BadBusLineKeyException ex)
-            {
-                throw new BadBusLineStationException("the line not exsist", ex);
             }
         }
         public void DeleatStation(BusLineBO busLine, int stationKey)
