@@ -22,7 +22,7 @@ namespace APIDL
         /// </summary>
         static DalConfig()
         {
-            XElement dalConfig = XElement.Load(@"C:\Users\Keren\source\repos\AlboOdelia\dotNet5781_9047_4960\bin\config.xml");
+            XElement dalConfig = XElement.Load(@"config.xml");
             DalName = dalConfig.Element("DL").Value;
             DalPackages = (from pkg in dalConfig.Element("dal-packages").Elements()
                            select pkg).ToDictionary(p => "" + p.Name, p => p.Value);
