@@ -11,7 +11,7 @@ namespace BO
     /// </summary>
     public class BusLineStationBO
     {
-        public int BusLineStationKey { get; set; }
+        public int BusStationKey { get; set; }
         public int StationNumberInLine { get; set; }
         public double DistanceFromLastStation { get; set; }
         public TimeSpan DriveDistanceTimeFromLastStation { get; set; }

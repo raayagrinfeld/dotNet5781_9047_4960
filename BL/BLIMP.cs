@@ -44,7 +44,7 @@ namespace BL
         }
         public bool HasBusStation(BusLineBO busLine, int stationKey)
         {
-            if (busLine.busLineStations.FirstOrDefault(b => (b.BusLineStationKey == stationKey & b.IsActive)) != null)
+            if (busLine.busLineStations.FirstOrDefault(b => (b.BusStationKey == stationKey & b.IsActive)) != null)
             {
                 return true;
             }
@@ -195,7 +195,7 @@ namespace BL
         {
             try
             {
-                BusLineStationBO BLStation = busLine.busLineStations.FirstOrDefault(b => (b.BusLineStationKey == stationKey & b.IsActive));
+                BusLineStationBO BLStation = busLine.busLineStations.FirstOrDefault(b => (b.BusStationKey == stationKey & b.IsActive));
                 BLStation.IsActive = false;
                     busLine.busLineStations.Where(b =>
                     {
@@ -226,7 +226,7 @@ namespace BL
             busStationDo.CopyPropertiesTo(busStationBO);
             busStationBO.busLines = from b in GetAllBusLines()
                                     where (b.busLineStations.FirstOrDefault
-                                    (s => (s.BusLineStationKey == busStationDo.BusStationKey & s.IsActive)) != null)
+                                    (s => (s.BusStationKey == busStationDo.BusStationKey & s.IsActive)) != null)
                                     select b;
             return busStationBO;
         }
@@ -320,8 +320,8 @@ namespace BL
             {
                 if (HasBusStation(b, driving.Source.BusStationKey) & (HasBusStation(b, driving.Destination.BusStationKey)))
                 {
-                    if (b.busLineStations.FirstOrDefault(s => (s.BusLineStationKey == driving.Source.BusStationKey)).StationNumberInLine
-                    < b.busLineStations.FirstOrDefault(s => (s.BusLineStationKey == driving.Destination.BusStationKey)).StationNumberInLine)
+                    if (b.busLineStations.FirstOrDefault(s => (s.BusStationKey == driving.Source.BusStationKey)).StationNumberInLine
+                    < b.busLineStations.FirstOrDefault(s => (s.BusStationKey == driving.Destination.BusStationKey)).StationNumberInLine)
                     {
                         return true;
                     }
