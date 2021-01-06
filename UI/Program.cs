@@ -20,7 +20,6 @@ namespace PlConsole
             for (int i = 0; i < userlist.Count; i++)
             {
                 Console.WriteLine(userlist[i]);
-                userlist.RemoveAt(i);
             }
 
         }
