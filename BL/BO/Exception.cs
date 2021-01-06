@@ -48,12 +48,12 @@ namespace BO
     //}
     //#endregion
     #region BusLineStationExceptions
-    public class BadBusLineStationException : Exception
+    public class BadBusLineStationsException : Exception
     {
-        public int BUSLINEKEY;
-        public BadBusLineStationException(string message, Exception innerException) :
-            base(message, innerException) => BUSLINEKEY = ((DO.BadBusLineKeyException)innerException).BUSLINEKEY;
-        public override string ToString() => base.ToString() + $", bad station key: {BUSLINEKEY}";
+        public int KEY1, KEY2;
+        public BadBusLineStationsException(string message, Exception innerException) :
+            base(message, innerException)
+        { KEY1 = ((DO.BadBusLineStationsException)innerException).KEY1; KEY2 = ((DO.BadBusLineStationsException)innerException).KEY2; }
     }
     #endregion
 }

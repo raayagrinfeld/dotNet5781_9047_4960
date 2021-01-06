@@ -184,11 +184,11 @@ namespace BL
             }
             catch (DO.BadBusStationKeyException ex)
             {
-                throw new BadBusLineStationException("the station not exsist", ex);
+                throw new BO.BadBusStationKeyException("the station not exsist", ex);
             }
             catch (DO.BadBusLineKeyException ex)
             {
-                throw new BadBusLineStationException("the line not exsist", ex);
+                throw new BO.BadBusLineKeyException("the line not exsist", ex);
             }
         }
         public void deleteBusStationInBusLine(BusLineBO busLine, int stationKey)
