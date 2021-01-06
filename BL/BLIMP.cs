@@ -187,7 +187,7 @@ namespace BL
                 throw new BadBusLineStationException("the station not exsist", ex);
             }
         }
-        public void DeleatStation(BusLineBO busLine, int stationKey)
+        public void deleteBusStationInBusLine(BusLineBO busLine, int stationKey)
         {
             try
             {
@@ -277,7 +277,7 @@ namespace BL
                 dl.DeleteBusStation(busStationKey);
                 foreach (var busLine in GetBusStation(busStationKey).busLines)
                 {
-                    DeleatStation(busLine, busStationKey);
+                    deleteBusStationInBusLine(busLine, busStationKey);
                 }
             }
             catch (DO.BadBusStationKeyException busExaption)

@@ -22,6 +22,9 @@ namespace PlConsole
             {
                 Console.WriteLine(b.ElementAt(i));
             }
+            bl.deleteBusStationInBusLine(busLineBOs[0], busLineBOs[0].FirstStation);
+            Console.WriteLine("delete first station:");
+            Console.WriteLine(busLineBOs[0]);
         }
     }
 }
