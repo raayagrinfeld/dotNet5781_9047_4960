@@ -22,6 +22,7 @@ namespace DS
             BusLineStationList = new List<BusLineStation>();
             BusStationList = new List<BusStation>();
             UserList = new List<User>();
+            InitAllLists();
         }
         static void InitAllLists()
         {
@@ -45,6 +46,8 @@ namespace DS
                     IsActive = true
                 });
             }
+            UserList.Add(new User { UserName = "raaya", Password = "123", IsActive = true, ManagementPermission=true });
+            UserList.Add(new User { UserName = "odelia", Password = "1666", IsActive = true, ManagementPermission = true });
         }
     }
 }

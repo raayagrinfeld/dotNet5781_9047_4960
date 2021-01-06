@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using BlApi;
 using BO;
@@ -15,7 +16,7 @@ namespace PlConsole
         {
             bl = BlFactory.GetBl("1");
             List<User> userlist = new List<User>();
-            userlist = (List<User>)bl.GetAllUsers();
+            userlist = bl.GetAllUsers().ToList();
             for (int i = 0; i < userlist.Count; i++)
             {
                 Console.WriteLine(userlist[i]);

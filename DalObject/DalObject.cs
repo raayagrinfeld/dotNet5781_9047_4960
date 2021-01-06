@@ -262,6 +262,7 @@ namespace DL
             return from user in DataSource.UserList
                    where (predicate(user)) & (user.IsActive)
                    select user.Clone();
+            Console.WriteLine(DataSource.UserList[0].UserName);
         }
 
         public void AddUser(User user)
