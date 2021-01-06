@@ -3,6 +3,7 @@ using BlApi;
 using APIDL;
 //using DL;
 using BO;
+using System.Device.Location;
 using DO;
 using System.Collections.Generic;
 using System.Linq;
@@ -157,10 +158,14 @@ namespace BL
         {
             try
             {
-                dl.GetBusStation(stationKey);
-                var BLstation = new BusLineStation { BusLineKey = busLine.BusLineKey, BusStationKey = stationKey, StationNumberInLine = busLine.busLineStations.Count()+1, IsActive = true };
-                dl.AddBusLineStation(BLstation);
+                if(busLine.busLineStations.Count()==0)
+                {
+                    busLine.FirstStation = stationKey;
+                }
+                var thisBusStation=dl.GetBusStation(stationKey);
+                var BLstation = new BusLineStation { BusLineKey = busLine.BusLineKey, BusStationKey = stationKey, StationNumberInLine = busLine.busLineStations.Count()+1, IsActive = true};
                 ConsecutiveStations ConsecutiveStation = new ConsecutiveStations { Station1Key = dl.GetBusLineStationKey(busLine.BusLineKey, busLine.busLineStations.Count()), Station2Key = stationKey, IsActive = true };
+                dl.AddBusLineStation(BLstation);
                 if (ConsecutiveStation.Station1Key == -1)
                 {
                     ConsecutiveStation.Distance = 0;
@@ -168,9 +173,10 @@ namespace BL
                 }
                 else
                 {
-                    ConsecutiveStation.Distance = GetBusStation(stationKey).Coordinates.GetDistanceTo(GetBusStation(ConsecutiveStation.Station2Key).Coordinates);
+                    ConsecutiveStation.Distance = thisBusStation.Coordinates.GetDistanceTo(GetBusStation(ConsecutiveStation.Station1Key).Coordinates);
                     ConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(ConsecutiveStation.Distance * 0.01);
                 }
+                int j = 3;
                 try
                 {
                     dl.AddConsecutiveStations(ConsecutiveStation);
@@ -181,10 +187,9 @@ namespace BL
                                           let busStationKey2 = dl.GetBusLineStationKey(busLine.BusLineKey, b.StationNumberInLine - 1)
                                           let ConsecutiveStations = dl.GetConsecutiveStations(busStationKey2, b.BusStationKey)
                                           select ConsecutiveStations.CopyToBusLineStationBO(b);
-                StationBO stationBO = GetBusStation(stationKey);
-                stationBO.busLines = from b in GetAllBusLines()
-                                     where HasBusStation(b, stationKey)
-                                     select b;
+                //stationBO.busLines = from b in GetAllBusLines()
+                //                     where HasBusStation(b, stationKey)
+                //                     select b;
                 busLine.LastStation = stationKey;
             }
             catch (DO.BadBusStationKeyException ex)
@@ -244,6 +249,7 @@ namespace BL
         {
             BO.StationBO busStationBO = new BO.StationBO();
             busStationDo.CopyPropertiesTo(busStationBO);
+            busStationBO.Coordinates = busStationDo.Coordinates;
             busStationBO.busLines = from b in GetAllBusLines()
                                     where (b.busLineStations.FirstOrDefault
                                     (s => (s.BusStationKey == busStationDo.BusStationKey & s.IsActive)) != null)
@@ -254,6 +260,7 @@ namespace BL
         {
             DO.BusStation busStationDO = new BusStation();
             busStationBO.CopyPropertiesTo(busStationDO);
+            busStationDO.Coordinates = busStationBO.Coordinates;
             return busStationDO;
         }
         public StationBO GetBusStation(int busStationKey)

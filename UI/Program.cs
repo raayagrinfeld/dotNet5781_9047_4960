@@ -15,6 +15,12 @@ namespace PlConsole
         static void Main(string[] args)
         {
             bl = BlFactory.GetBl("1");
+            BusLineBO busLineBO = new BusLineBO { BusLineKey = 20202, IsActive=true};
+            busLineBO.busLineStations = new List<BusLineStationBO>();
+            bl.AddBusLine(busLineBO);
+            bl.AddStation(busLineBO, 30001);
+            bl.AddStation(busLineBO, 30002);
+            Console.WriteLine(busLineBO);
             BusLineBO busLineBOs = bl.GetBusLine(20000);
             try
             {
