@@ -123,19 +123,27 @@ namespace DL
 
         public void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey)
         {
-            BusLineStation busLine = DataSource.BusLineStationList.Find(b =>
+            BusLineStation busLineStation = DataSource.BusLineStationList.Find(b =>
             {
                 if (b.BusStationKey == BusStationKey & b.BusLineKey == BusLineKey & b.IsActive)
                 {
                     b.IsActive = false;
                     return true;
                 }
-                else return false;
+                return false;
             });
-            if (busLine == null)
+            if (busLineStation == null)
             {
                 throw new BadBusLineStationsException(BusStationKey, BusLineKey, "station is not in the bus Line path");
             }
+            DataSource.BusLineStationList.Find(b =>
+            {
+                if (b.StationNumberInLine> busLineStation.StationNumberInLine & b.BusLineKey == BusLineKey & b.IsActive)
+                {
+                    b.StationNumberInLine--;
+                }
+                return false;           //so it goes trough all the stations
+            });
         }
 
         public void DeleteBusLineStationAllBusLine(int BusStationKey)

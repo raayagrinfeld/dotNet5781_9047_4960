@@ -33,17 +33,20 @@ namespace PlConsole
             try
             {
                 bl.AddStation(busLineBOs, 30003);
+                bl.AddStation(busLineBOs, 30004);
+                bl.AddStation(busLineBOs, 30005);
             }
             catch (BO.BadBusLineStationsException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            
-            IEnumerable<BusLineStationBO> b = busLineBOs.busLineStations;
-            for(int i=0;i< b.Count();i++)
-            {
-                Console.WriteLine(b.ElementAt(i));
-            }
+            Console.WriteLine(busLineBOs);
+            bl.deleteBusStationInBusLine(busLineBOs, 30003);
+            Console.WriteLine(busLineBOs);
+            bl.deleteBusStationInBusLine(busLineBOs, 30005);
+            Console.WriteLine(busLineBOs);
+            bl.deleteBusStationInBusLine(busLineBOs, busLineBOs.FirstStation);
+            Console.WriteLine(busLineBOs);
             //bl.deleteBusStationInBusLine(busLineBOs[0], busLineBOs[0].FirstStation);
             //Console.WriteLine("delete first station:");
             //Console.WriteLine(busLineBOs[0]);
