@@ -21,6 +21,11 @@ namespace PlConsole
             {
                 Console.WriteLine(userlist[i]);
             }
+            List<BusLineBO> busLineBOs = bl.GetAllBusLines().ToList();
+            for (int i = 0; i < busLineBOs.Count; i++)
+            {
+                Console.WriteLine(busLineBOs[i]);
+            }
         }
     }
 }
