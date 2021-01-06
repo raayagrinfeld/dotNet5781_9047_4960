@@ -15,7 +15,9 @@ namespace BO
             foreach (PropertyInfo prop in t.GetType().GetProperties())
             {
                 var value = prop.GetValue(t, null);
-                if (value is IEnumerable)
+                if(value is string)
+                    str += "\n" + suffix + prop.Name + ": " + value;
+                else if (value is IEnumerable)
                     foreach (var item in (IEnumerable)value)
                         str += item.ToStringProperty();
                 else

@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +14,7 @@ namespace BO
         public int FirstStation { get; set; }
         public int LastStation { get; set; }
         public bool IsActive { get; set; }
-        public IEnumerable<BO.BusLineStationBO> busLineStations;
+        public IEnumerable<BO.BusLineStationBO> busLineStations { get; set; }
         public override string ToString()
         {
             return this.ToStringProperty();

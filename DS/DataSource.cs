@@ -48,14 +48,26 @@ namespace DS
             }
             for(int i=0;i<12;i++)
             {
-                int busLineKey = r.Next(20000, RunNumbers.BusLineRunNumber);
                 int prevBusLineStation = -1;
-                for (int j=0;j<5;j++)
+                for (int j=1;j<6;j++)
                 {
-                    int busStationKey = r.Next(30000, RunNumbers.BusStationRunNumber);
+                    int busStationKey;
+                    do
+                    {
+                        busStationKey = r.Next(30000, RunNumbers.BusStationRunNumber);
+                    }
+                    while (BusLineStationList.FirstOrDefault(b => (b.BusLineKey == (20000 + i) & b.BusStationKey == busStationKey)) != null);
+                    if(j==1)
+                    {
+                        BusLineList.Find(b => b.BusLineKey == 20000 + i).FirstStation = busStationKey;
+                    }
+                    if(j==5)
+                    {
+                        BusLineList.Find(b => b.BusLineKey == 20000 + i).LastStation = busStationKey;
+                    }
                     BusLineStationList.Add(new BusLineStation
                     {
-                        BusLineKey = busLineKey,
+                        BusLineKey = 20000+i,
                         BusStationKey = busStationKey,
                         IsActive = true,
                         StationNumberInLine = j
