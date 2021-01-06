@@ -19,9 +19,9 @@ namespace DS
         public static Random r = new Random();
         static DataSource()
         {
+            BusLineList = new List<BusLine>();
             BusLineStationList = new List<BusLineStation>();
             BusStationList = new List<BusStation>();
-            BusLineStationList = new List<BusLineStation>();
             ConsecutiveStationsList = new List<ConsecutiveStations>();
             UserList = new List<User>();
             InitAllLists();
@@ -33,8 +33,9 @@ namespace DS
                 BusStationList.Add(new BusStation
                 {
                     BusStationKey = RunNumbers.BusStationRunNumber++,
-                    Coordinates = new GeoCoordinate(r.NextDouble() * (33.3 - 31) + 31, r.NextDouble() * (35.5 - 34.3) + 34.3)
-                });
+                    Coordinates = new GeoCoordinate(r.NextDouble() * (33.3 - 31) + 31, r.NextDouble() * (35.5 - 34.3) + 34.3),
+                    IsActive = true
+                }) ;
             }
             for (int i = 0; i < 12; i++)
             {
@@ -59,11 +60,11 @@ namespace DS
                     while (BusLineStationList.FirstOrDefault(b => (b.BusLineKey == (20000 + i) & b.BusStationKey == busStationKey)) != null);
                     if(j==1)
                     {
-                        BusLineList.Find(b => b.BusLineKey == 20000 + i).FirstStation = busStationKey;
+                        BusLineList.Find(b => b.BusLineKey == (20000 + i)).FirstStation = busStationKey;
                     }
                     if(j==5)
                     {
-                        BusLineList.Find(b => b.BusLineKey == 20000 + i).LastStation = busStationKey;
+                        BusLineList.Find(b => b.BusLineKey == (20000 + i)).LastStation = busStationKey;
                     }
                     BusLineStationList.Add(new BusLineStation
                     {
@@ -85,14 +86,6 @@ namespace DS
                     }
                     ConsecutiveStationsList.Add(ConsecutiveStation);
                     prevBusLineStation = busStationKey;
-                    if(j==0)
-                    {
-                        BusLineList.FirstOrDefault(b => (b.LineNumber == busLineKey)).FirstStation = BusLineStationList.ElementAt(i * j).BusStationKey;
-                    }
-                    if (j == 5)
-                    {
-                        BusLineList.FirstOrDefault(b => (b.LineNumber == busLineKey)).LastStation = BusLineStationList.ElementAt(i * j).BusStationKey;
-                    }
                 }
             }
             UserList.Add(new User { UserName = "raaya", Password = "123", IsActive = true, ManagementPermission=true });
