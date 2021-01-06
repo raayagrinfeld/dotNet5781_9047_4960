@@ -214,6 +214,10 @@ namespace BL
             {
                 throw new BO.BadBusStationKeyException("this station in not exsist or unactive", ex);
             }
+            catch (DO.BadBusLineKeyException ex)
+            {
+                throw new BO.BadBusStationKeyException("this line in not exsist or unactive", ex);
+            }
         }
         public IEnumerable<BO.BusLineStationBO> GetAllBusLineStationOfBusLine(BusLineBO busLine)
         {
