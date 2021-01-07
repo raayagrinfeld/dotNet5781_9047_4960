@@ -28,7 +28,7 @@
             <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:"/>
             <TextBox x:Name="userNameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding UserName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
         </Grid>
-        <Button x:Name="signup" Content="sign up" HorizontalAlignment="Left" Height="53" Margin="562,368,0,0" VerticalAlignment="Top" Width="168"/>
-        <Button x:Name="login" Content="log in" HorizontalAlignment="Left" Height="53" Margin="78,368,0,0" VerticalAlignment="Top" Width="180"/>
+        <Button x:Name="signup" Content="sign up" HorizontalAlignment="Left" Height="53" Margin="562,368,0,0" VerticalAlignment="Top" Width="168" Click="signup_Click"/>
+        <Button x:Name="login" Content="log in" HorizontalAlignment="Left" Height="53" Margin="78,368,0,0" VerticalAlignment="Top" Width="180" Click="login_Click"/>
     </Grid>
 </Page>
