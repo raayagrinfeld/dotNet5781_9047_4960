@@ -67,6 +67,7 @@ namespace PlConsole
             //bl.deleteBusStationInBusLine(busLineBOs[0], busLineBOs[0].FirstStation);
             //Console.WriteLine("delete first station:");
             //Console.WriteLine(busLineBOs[0]);
+            */
         }
 
     }

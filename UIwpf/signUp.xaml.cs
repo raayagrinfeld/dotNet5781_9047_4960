@@ -24,12 +24,6 @@ namespace UIwpf
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-            System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // userViewSource.Source = [generic data source]
-        }
+       
     }
 }
