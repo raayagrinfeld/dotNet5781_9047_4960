@@ -3,6 +3,7 @@ using BlApi;
 using APIDL;
 //using DL;
 using BO;
+using System.Device.Location;
 using DO;
 using System.Collections.Generic;
 using System.Linq;
@@ -157,10 +158,14 @@ namespace BL
         {
             try
             {
-                dl.GetBusStation(stationKey);
-                var BLstation = new BusLineStation { BusLineKey = busLine.BusLineKey, BusStationKey = stationKey, StationNumberInLine = busLine.busLineStations.Count(), IsActive = true };
+                if(busLine.busLineStations.Count()==0)
+                {
+                    busLine.FirstStation = stationKey;
+                }
+                var thisBusStation=dl.GetBusStation(stationKey);
+                var BLstation = new BusLineStation { BusLineKey = busLine.BusLineKey, BusStationKey = stationKey, StationNumberInLine = busLine.busLineStations.Count()+1, IsActive = true};
+                ConsecutiveStations ConsecutiveStation = new ConsecutiveStations { Station1Key = dl.GetBusLineStationKey(busLine.BusLineKey, busLine.busLineStations.Count()), Station2Key = stationKey, IsActive = true };
                 dl.AddBusLineStation(BLstation);
-                var ConsecutiveStation = new ConsecutiveStations { Station1Key = dl.GetBusLineStationKey(busLine.BusLineKey, busLine.busLineStations.Count() - 1), Station2Key = stationKey, IsActive = true };
                 if (ConsecutiveStation.Station1Key == -1)
                 {
                     ConsecutiveStation.Distance = 0;
@@ -168,46 +173,72 @@ namespace BL
                 }
                 else
                 {
-                    ConsecutiveStation.Distance = GetBusStation(stationKey).Coordinates.GetDistanceTo(GetBusStation(ConsecutiveStation.Station2Key).Coordinates);
+                    ConsecutiveStation.Distance = thisBusStation.Coordinates.GetDistanceTo(GetBusStation(ConsecutiveStation.Station1Key).Coordinates);
                     ConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(ConsecutiveStation.Distance * 0.01);
                 }
-                dl.AddConsecutiveStations(ConsecutiveStation);
+                try
+                {
+                    dl.AddConsecutiveStations(ConsecutiveStation);
+                }
+                catch(DO.BadConsecutiveStationsException)
+                    { }
                 busLine.busLineStations = from b in dl.GetAllBusLineStationBy(b => (b.BusLineKey == busLine.BusLineKey & b.IsActive))
                                           let busStationKey2 = dl.GetBusLineStationKey(busLine.BusLineKey, b.StationNumberInLine - 1)
                                           let ConsecutiveStations = dl.GetConsecutiveStations(busStationKey2, b.BusStationKey)
                                           select ConsecutiveStations.CopyToBusLineStationBO(b);
-                StationBO stationBO = GetBusStation(stationKey);
-                stationBO.busLines = from b in GetAllBusLines()
-                                     where HasBusStation(b, stationKey)
-                                     select b;
+                //stationBO.busLines = from b in GetAllBusLines()
+                //                     where HasBusStation(b, stationKey)
+                //                     select b;
                 busLine.LastStation = stationKey;
             }
             catch (DO.BadBusStationKeyException ex)
             {
-                throw new BadBusLineStationException("the station not exsist", ex);
+                throw new BO.BadBusStationKeyException("the station not exsist", ex);
+            }
+            catch (DO.BadBusLineKeyException ex)
+            {
+                throw new BO.BadBusLineKeyException("the line not exsist", ex);
+            }
+            catch(DO.BadBusLineStationsException ex)
+            {
+                throw new BO.BadBusLineStationsException(ex.Message, ex);
             }
         }
         public void deleteBusStationInBusLine(BusLineBO busLine, int stationKey)
         {
             try
             {
-                BusLineStationBO BLStation = busLine.busLineStations.FirstOrDefault(b => (b.BusStationKey == stationKey & b.IsActive));
-                BLStation.IsActive = false;
+                BusLineStation busLinsStation = dl.GetAllBusLineStationBy(b => (b.IsActive & b.BusStationKey == stationKey & b.BusLineKey == busLine.BusLineKey)).First();
+                dl.DeleteBusLineStationInOneBusLine(stationKey, busLine.BusLineKey);
                 if (busLine.LastStation == stationKey)
                 {
-                    busLine.LastStation = busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == BLStation.StationNumberInLine - 1 & b.IsActive)).BusStationKey;
+                    busLine.LastStation = busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == busLinsStation.StationNumberInLine - 1 & b.IsActive)).BusStationKey;
                 }
                 else
                 {
-                    busLine.busLineStations.Where(b =>
+                    if (busLine.FirstStation == stationKey)
                     {
-                        if (b.BusStationKey > stationKey)
-                        {
-                            b.StationNumberInLine--;
-                            return true;
-                        }
-                        else return false;
-                    });
+                        busLine.LastStation = dl.GetBusLineStationKey(busLine.BusLineKey, 1);
+                    }
+                    int keyPrev = dl.GetBusLineStationKey(busLine.BusLineKey, busLinsStation.StationNumberInLine - 1);
+                    int keyNext = dl.GetBusLineStationKey(busLine.BusLineKey, busLinsStation.StationNumberInLine);
+                    var newConsecutiveStation = new ConsecutiveStations { Station1Key = keyPrev, Station2Key = keyNext, IsActive = true };
+                    if(keyPrev==-1)
+                    {
+                        newConsecutiveStation.Distance = 0;
+                        newConsecutiveStation.DriveDistanceTime = TimeSpan.Zero;
+                    }
+                    else
+                    {
+                        newConsecutiveStation.Distance = GetBusStation(keyPrev).Coordinates.GetDistanceTo(GetBusStation(keyNext).Coordinates);
+                        newConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(newConsecutiveStation.Distance * 0.01);
+                    }
+                    try
+                    {
+                        dl.AddConsecutiveStations(newConsecutiveStation);
+                    }
+                    catch(DO.BadConsecutiveStationsException)
+                    { }
                 }
             }
             catch (DO.BadBusLineStationsException ex)
@@ -231,6 +262,7 @@ namespace BL
         {
             BO.StationBO busStationBO = new BO.StationBO();
             busStationDo.CopyPropertiesTo(busStationBO);
+            busStationBO.Coordinates = busStationDo.Coordinates;
             busStationBO.busLines = from b in GetAllBusLines()
                                     where (b.busLineStations.FirstOrDefault
                                     (s => (s.BusStationKey == busStationDo.BusStationKey & s.IsActive)) != null)
@@ -241,6 +273,7 @@ namespace BL
         {
             DO.BusStation busStationDO = new BusStation();
             busStationBO.CopyPropertiesTo(busStationDO);
+            busStationDO.Coordinates = busStationBO.Coordinates;
             return busStationDO;
         }
         public StationBO GetBusStation(int busStationKey)
