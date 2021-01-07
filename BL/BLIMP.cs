@@ -363,9 +363,9 @@ namespace BL
         }
         public IEnumerable<BO.BusLineBO> fingALinesBeatweenStation(Driving driving)
         {
-            IEnumerable<BO.BusLineBO> busLines = GetAllBusLinesBy(b =>
+            IEnumerable<BO.BusLineBO> busLines = driving.Source.busLines.Where(b =>
             {
-                if (HasBusStation(b, driving.Source.BusStationKey) & (HasBusStation(b, driving.Destination.BusStationKey)))
+                if ((HasBusStation(b, driving.Destination.BusStationKey)))
                 {
                     if (b.busLineStations.FirstOrDefault(s => (s.BusStationKey == driving.Source.BusStationKey)).StationNumberInLine
                     < b.busLineStations.FirstOrDefault(s => (s.BusStationKey == driving.Destination.BusStationKey)).StationNumberInLine)
