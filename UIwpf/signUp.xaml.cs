@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BO;
+using BlApi;
 
 namespace UIwpf
 {
@@ -19,11 +21,27 @@ namespace UIwpf
     /// </summary>
     public partial class signUp : Window
     {
+        static IBL bl;
         public signUp()
         {
+            bl = BlFactory.GetBl("1");
             InitializeComponent();
+            //signUpGrid.DataContext = bl.GetAllUsers(); 
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                bl.AddUser(new User { IsActive = true, ManagementPermission = false, Password = passwordTextBox.Text, UserName = userNameTextBox.Text });
+            }
+            catch(BO.BadUserNameException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Close();
         }
 
-       
+
+
     }
 }
