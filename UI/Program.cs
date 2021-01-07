@@ -15,14 +15,15 @@ namespace PlConsole
         static void Main(string[] args)
         {
             bl = BlFactory.GetBl("1");
-            BusLineBO busLineBO = new BusLineBO { BusLineKey = 20202, IsActive=true};
-            busLineBO.busLineStations = new List<BusLineStationBO>();
-            bl.AddBusLine(busLineBO);
-            bl.AddStation(busLineBO, 30001);
-            bl.AddStation(busLineBO, 30002);
-            Console.WriteLine(busLineBO);
-            BusLineBO busLineBOs = bl.GetBusLine(20000);
-            try
+            BO.Driving d = new Driving {Source= bl.GetBusStation(30001), Destination= bl.GetBusStation(30005)};
+            /* bl.AddSourceStation(30007, d);
+             bl.AddDeatinationStation(30042, d);*/
+            bl.AddStation(bl.GetBusLine(20000), 30001);
+            bl.AddStation(bl.GetBusLine(20000), 30005);
+            bl.AddStation(bl.GetBusLine(20001), 30001);
+            bl.AddStation(bl.GetBusLine(20001), 30005);
+            /*IEnumerable<BusLineBO> bh = bl.GetAllBusLines();
+            for (int i = 0; i < bh.Count(); i++)
             {
                 bl.AddStation(busLineBOs, 30080);
             }
@@ -52,7 +53,7 @@ namespace PlConsole
             }
             catch (BO.BadBusLineStationsException ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(b.ElementAt(i));
             }
             Driving driving = new Driving();
             bl.AddDeatinationStation(30002, driving);
@@ -67,5 +68,6 @@ namespace PlConsole
             //Console.WriteLine("delete first station:");
             //Console.WriteLine(busLineBOs[0]);
         }
+
     }
 }
