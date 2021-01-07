@@ -22,7 +22,7 @@ namespace DL
         #region BusLine
         public BusLine GetBusLine(int busLineKey)
         {
-            BusLine busLine = DataSource.BusLineList.Find(b => (b.BusLineKey == busLineKey & b.IsActive));
+            BusLine busLine = DataSource.BusLineList.FirstOrDefault(b => (b.BusLineKey == busLineKey & b.IsActive));
             if (busLine != null)
                 return busLine.Clone();
             else

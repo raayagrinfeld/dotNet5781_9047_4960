@@ -109,7 +109,7 @@ namespace BL
             }
             catch (DO.BadBusLineKeyException busExaption)
             {
-                throw new BO.BadBusLineKeyException("this bus already exsist", busExaption);
+                throw new BO.BadBusLineKeyException("this bus not exsist", busExaption);
             }
         }
         public IEnumerable<IGrouping<BO.Areas, int>> GetBusLineGrouptByArea()
@@ -278,7 +278,14 @@ namespace BL
         }
         public StationBO GetBusStation(int busStationKey)
         {
-            return BusStationDOBOAdapter(dl.GetBusStation(busStationKey));
+            try
+            {
+                return BusStationDOBOAdapter(dl.GetBusStation(busStationKey));
+            }
+            catch (DO.BadBusStationKeyException ex)
+            {
+                throw new BO.BadBusStationKeyException("this station does not exsist", ex);
+            }
         }
         public IEnumerable<StationBO> GetAllBusStations()
         {
@@ -307,11 +314,11 @@ namespace BL
         {
             try
             {
-                dl.DeleteBusStation(busStationKey);
                 foreach (var busLine in GetBusStation(busStationKey).busLines)
                 {
                     deleteBusStationInBusLine(busLine, busStationKey);
                 }
+                dl.DeleteBusStation(busStationKey);
             }
             catch (DO.BadBusStationKeyException busExaption)
             {
