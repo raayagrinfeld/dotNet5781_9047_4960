@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using BlApi;
+using BO;
 
 namespace UIwpf
 {
@@ -13,5 +15,11 @@ namespace UIwpf
     /// </summary>
     public partial class App : Application
     {
+        static IBL bl = BlFactory.GetBl("1");
+        public static int numOfActivatedMainWindow = 0;
+        static App()
+        {
+
+        }
     }
 }
