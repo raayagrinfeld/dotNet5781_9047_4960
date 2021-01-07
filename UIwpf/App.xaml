@@ -97,14 +97,19 @@
                 <Ellipse>
                     <Ellipse.Fill>
                         <LinearGradientBrush>
-                            <GradientStop Offset="0" Color="#FF26FF05"/>
-                            <GradientStop Offset="1" Color="White"/>
+                            <GradientStop Color="#FF17B419"/>
                         </LinearGradientBrush>
                     </Ellipse.Fill>
                 </Ellipse>
                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
         </ControlTemplate>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize"
+              Value="12" />
+            <Setter Property="FontFamily"
+              Value="Segoe UI" />
+        </Style>
         <Style TargetType="TabItem">
             <Setter Property="Template">
                 <Setter.Value>

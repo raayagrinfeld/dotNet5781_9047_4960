@@ -8,24 +8,24 @@
         Title="MainWindowMangaerxaml" MinHeight="720" MinWidth="1020" Height="700" Width="1000"  WindowStyle="None" Closed="When_Window_CLosed" 
         AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown" WindowState="Maximized" Icon="Icons/BusUsIcon.jpeg">
 
-    <Border BorderThickness="5" BorderBrush="LightBlue" Background="AliceBlue" CornerRadius="22">
+    <Border BorderThickness="1" BorderBrush="#FF17B419" Background="AliceBlue" >
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="18*"/>
             </Grid.RowDefinitions>
-            <Border  CornerRadius="20" Height="60">
+            <Border Height="60">
                 <Border.Background>
                     <LinearGradientBrush>
-                        <GradientStop Offset="0" Color="#FF17B419"/>
-                        <GradientStop Offset="0.3" Color="LightGreen"/>
-                        <GradientStop Offset="0.6" Color="#FF0D1F0D"/>
+                        <!--<GradientStop Offset="0" Color="#FF17B419"/>
+                        <GradientStop Offset="0.3" Color="LightGreen"/>-->
+                        <GradientStop Offset="0" Color="Black"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <TextBlock Text="BusUs managment interface" Margin="40 10 0 0" FontSize="16"/>
+                <TextBlock Text="BusUs managment interface" Margin="40 10 0 0" FontSize="16" Foreground="#FF17B419"/>
             </Border>
-            <StackPanel x:Name="ManageButtonStackPanel" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 50 0">
+            <StackPanel x:Name="ManageButtonStackPanel" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 20 0">
                 <Button Click="Button_Click_MinimizeWindow" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
                     <Button.Content>
                         <Image Source="Icons/substract.png" Margin="5"/>
@@ -42,6 +42,15 @@
                     </Button.Content>
                 </Button>
             </StackPanel>
+            <DockPanel Grid.Row="1">
+                <Menu DockPanel.Dock="Top" VerticalAlignment="Center"  Width="65">
+                    <MenuItem Header="אפשרויות">
+                        <MenuItem Header="פתח חלון נוסף" Click="MenuItem_Click_OpenAnotherWindow"/>
+                        <MenuItem Header="הורד רשימת כתובות מעודכנת" Click="MenuItem_Click_UpdateAddresses"/>
+                        <MenuItem Header="התנתק" Click="MenuItem_Click_LogOut"/>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
             <TabControl Grid.Row="2" HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="774">
                 <TabItem Header="BusLine">
                     <Grid Background="#FFE5E5E5"/>
