@@ -38,6 +38,7 @@ namespace UIwpf
             {
                 MessageBox.Show(ex.Message);
             }
+            Close();
         }
 
 
