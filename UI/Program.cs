@@ -33,20 +33,36 @@ namespace PlConsole
             try
             {
                 bl.AddStation(busLineBOs, 30003);
+            }
+            catch (BO.BadBusLineStationsException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
                 bl.AddStation(busLineBOs, 30004);
+            }
+            catch (BO.BadBusLineStationsException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
                 bl.AddStation(busLineBOs, 30005);
             }
             catch (BO.BadBusLineStationsException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            Console.WriteLine(busLineBOs);
-            bl.deleteBusStationInBusLine(busLineBOs, 30003);
-            Console.WriteLine(busLineBOs);
-            bl.deleteBusStationInBusLine(busLineBOs, 30005);
-            Console.WriteLine(busLineBOs);
-            bl.deleteBusStationInBusLine(busLineBOs, busLineBOs.FirstStation);
-            Console.WriteLine(busLineBOs);
+            Driving driving = new Driving();
+            bl.AddDeatinationStation(30002, driving);
+            bl.AddSourceStation(30001, driving);
+            bl.fingALinesBeatweenStation(driving);
+            Console.WriteLine(driving);
+            foreach(BusLineBO busLine in driving.BusLines)
+            {
+                Console.WriteLine("bus Line Key:"+busLine.BusLineKey +" time:" +bl.TimeBetweanStations(busLine,30003,30005)); 
+            }
             //bl.deleteBusStationInBusLine(busLineBOs[0], busLineBOs[0].FirstStation);
             //Console.WriteLine("delete first station:");
             //Console.WriteLine(busLineBOs[0]);

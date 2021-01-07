@@ -9,8 +9,14 @@ namespace BO
 {
     public class Driving
     {
+        
         public StationBO Source { get; set; }
         public StationBO Destination { get; set; }
+        public IEnumerable<BO.BusLineBO> BusLines { get; set; }
+        public override string ToString()
+        {
+            return Source.ToString() + Destination.ToString();
+        }
     }
 }
 /* public class DrivingLine
@@ -21,9 +27,6 @@ namespace BO
         // public int LineKey { get; set; } it in // because i dont anderstend why you need it
         public DateTime Start { get; set; }
 
-        public override string ToString()
-        {
-            return this.ToStringProperty();
-        }
+        
         //need more things in the next stages
     }*/

@@ -356,7 +356,7 @@ namespace BL
         }
         public IEnumerable<BO.BusLineBO> fingALinesBeatweenStation(Driving driving)
         {
-            IEnumerable<BO.BusLineBO> busLines = GetAllBusLinesBy(b =>
+            driving.BusLines = GetAllBusLinesBy(b =>
             {
                 if (HasBusStation(b, driving.Source.BusStationKey) & (HasBusStation(b, driving.Destination.BusStationKey)))
                 {
@@ -370,8 +370,7 @@ namespace BL
                 }
                 else return false;
             });
-
-            return busLines.OrderBy(b => (TimeBetweanStations(b, driving.Source.BusStationKey, driving.Destination.BusStationKey)));
+            return driving.BusLines.OrderBy(b => (TimeBetweanStations(b, driving.Source.BusStationKey, driving.Destination.BusStationKey)));
         }
         #endregion
 
