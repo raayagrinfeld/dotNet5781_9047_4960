@@ -375,7 +375,8 @@ namespace BL
                     else
                         return false;
                 }
-                else return false;
+                else 
+                    return false;
             });
 
             return busLines.OrderBy(b => (TimeBetweanStations(b, driving.Source.BusStationKey, driving.Destination.BusStationKey)));
