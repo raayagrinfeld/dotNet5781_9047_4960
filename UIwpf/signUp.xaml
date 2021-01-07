@@ -10,7 +10,7 @@
     
     <Grid>
 
-        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="283,205,0,0" HorizontalAlignment="Left" Height="75" Width="211">
+        <Grid x:Name="signUpGrid" VerticalAlignment="Top" Margin="283,205,0,0" HorizontalAlignment="Left" Height="75" Width="211">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
