@@ -40,52 +40,76 @@
                     </MenuItem>
                 </Menu>
             </DockPanel>
-            <TabControl Grid.Row="2" x:Name="TabControl_Manager"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF17B419" >
+            <TabControl Grid.Row="1" x:Name="TabControl_Manager"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF17B419" >
                 <TabItem Header="BusLine" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
                         <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
-                            <DataGrid x:Name="busLineBODataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="48,27,60.8,86.8" RowDetailsVisibilityMode="VisibleWhenSelected">
-                                <DataGrid.Columns>
-                                    <DataGridTemplateColumn x:Name="lineNumberColumn" Header="Line Number" Width="SizeToHeader">
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Text="{Binding LineNumber}"/>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn x:Name="busLineKeyColumn" Header="Bus Line Key" Width="SizeToHeader">
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Text="{Binding BusLineKey}"/>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="label" Grid.Column="0" FontSize="16" Content="search by line number" />
+                                    <TextBox Name="lineNumber" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
+                                    <Label x:Name="label2" Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by area" VerticalContentAlignment="Center"/>
+                                    <TextBox Name="Area" Padding="4" Grid.Column="3" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
+                                </Grid>
+                                <DataGrid x:Name="busLineBODataGrid" Grid.Row="1" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="48,27,60.8,86.8" RowDetailsVisibilityMode="VisibleWhenSelected">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn x:Name="lineNumberColumn" Header="Line Number" Width="SizeToHeader">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding LineNumber}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn x:Name="busLineKeyColumn" Header="Bus Line Key" Width="SizeToHeader">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding BusLineKey}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
 
-                                    <DataGridTemplateColumn x:Name="areaColumn" Header="Area" Width="SizeToHeader">
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Text="{Binding Area}"/>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn x:Name="areaColumn" Header="Area" Width="SizeToHeader">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Area}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
 
-                                    <DataGridTemplateColumn x:Name="firstStationColumn" Header="First Station" Width="SizeToHeader">
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Text="{Binding FirstStation}"/>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn x:Name="lastStationColumn" Header="Last Station" Width="SizeToHeader">
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Text="{Binding LastStation}"/>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
-
-                                </DataGrid.Columns>
-                            </DataGrid>
+                                        <DataGridTemplateColumn x:Name="firstStationColumn" Header="First Station" Width="SizeToHeader">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding FirstStation}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn x:Name="lastStationColumn" Header="Last Station" Width="SizeToHeader">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding LastStation}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn x:Name="delete"  Width="SizeToHeader">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button x:Name="delete buttun" Content="delete" Click="Button_Click_DeleteBusLine"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
                         </Border>
                     </Grid>
                 </TabItem>
