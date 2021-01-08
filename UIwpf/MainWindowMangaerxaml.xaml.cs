@@ -67,5 +67,20 @@ namespace UIwpf
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
+
+        private void MenuItem_Click_OpenUserSettingsWindow(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_ShowUserInterface(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_LogOut(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -5,21 +5,9 @@
              StartupUri="MainWindowMangaerxaml.xaml">
     <Application.Resources>
         <!-- Backgrounds -->
-        <LinearGradientBrush x:Key="SelectedTabBackGround">
-            <GradientStop Offset="0" Color="LightBlue"/>
-            <GradientStop Offset="0.5" Color="LightGreen"/>
-            <GradientStop Offset="1" Color="LightBlue"/>
-        </LinearGradientBrush>
-        <LinearGradientBrush x:Key="ButtonsColor">
-            <GradientStop Offset="0" Color="LightBlue"/>
-            <GradientStop Offset="0.5" Color="LightSkyBlue"/>
-            <GradientStop Offset="1" Color="LightBlue"/>
-        </LinearGradientBrush>
-        <LinearGradientBrush x:Key="ButtonsColorWhenMouseOver">
-            <GradientStop Offset="0" Color="LightGreen"/>
-            <GradientStop Offset="0.5" Color="LightBlue"/>
-            <GradientStop Offset="1" Color="LightGreen"/>
-        </LinearGradientBrush>
+        <SolidColorBrush x:Key="SelectedTabBackGround" Color="LightSlateGray"/>
+        <SolidColorBrush x:Key="ButtonsColor" Color="Gray"/>
+        <SolidColorBrush x:Key="ButtonsColorWhenMouseOver" Color="LightGreen"/>
 
         <!--Control colors.-->
         <Color x:Key="WindowColor">#FFE8EDF9</Color>
@@ -94,11 +82,9 @@
 
         <ControlTemplate x:Key="TitleBarButtons" TargetType="Button">
             <Grid>
-                <Ellipse>
+                <Ellipse Stroke="Black" StrokeThickness="0.5">
                     <Ellipse.Fill>
-                        <LinearGradientBrush>
-                            <GradientStop Color="#FF17B419"/>
-                        </LinearGradientBrush>
+                        <SolidColorBrush Color="#FF17B419"/>
                     </Ellipse.Fill>
                 </Ellipse>
                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
