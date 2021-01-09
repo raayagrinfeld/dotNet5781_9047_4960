@@ -20,10 +20,10 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Password:"/>
-            <TextBox x:Name="passwordTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Password, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
-            <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:"/>
-            <TextBox x:Name="userNameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding UserName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Password:"/>
+            <TextBox x:Name="passwordTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Password, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:"/>
+            <TextBox x:Name="userNameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding UserName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
             <Label x:Name="Label_Gender" Content="Gender:" Grid.Row="2" Grid.Column="0"/>
             <ComboBox x:Name="CombBx_Gender" Margin="2" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" SelectedValue="{Binding Path=Gender, Mode=TwoWay}"/>
         </Grid>
