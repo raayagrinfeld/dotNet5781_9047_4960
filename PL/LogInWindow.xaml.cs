@@ -59,6 +59,7 @@ namespace PL
         }
         private void signup_Click(object sender, RoutedEventArgs e)
         {
+            g.Visibility
         }
     }
 }
