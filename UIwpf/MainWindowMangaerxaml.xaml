@@ -63,14 +63,14 @@
                                 </Grid>
                                 <DataGrid x:Name="busLineBODataGrid" Grid.Row="1" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="48,27,60.8,86.8" RowDetailsVisibilityMode="VisibleWhenSelected">
                                     <DataGrid.Columns>
-                                        <DataGridTemplateColumn x:Name="lineNumberColumn" Header="Line Number" Width="SizeToHeader">
+                                        <DataGridTemplateColumn x:Name="lineNumberColumn" Header="Line Number" Width="150">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
                                                     <TextBlock Text="{Binding LineNumber}"/>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn x:Name="busLineKeyColumn" Header="Bus Line Key" Width="SizeToHeader">
+                                        <DataGridTemplateColumn x:Name="busLineKeyColumn" Header="Bus Line Key" Width="120">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
                                                     <TextBlock Text="{Binding BusLineKey}"/>
@@ -78,7 +78,7 @@
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
 
-                                        <DataGridTemplateColumn x:Name="areaColumn" Header="Area" Width="SizeToHeader">
+                                        <DataGridTemplateColumn x:Name="areaColumn" Header="Area" Width="120">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
                                                     <TextBlock Text="{Binding Area}"/>
@@ -86,21 +86,21 @@
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
 
-                                        <DataGridTemplateColumn x:Name="firstStationColumn" Header="First Station" Width="SizeToHeader">
+                                        <DataGridTemplateColumn x:Name="firstStationColumn" Header="First Station" Width="120">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
                                                     <TextBlock Text="{Binding FirstStation}"/>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn x:Name="lastStationColumn" Header="Last Station" Width="SizeToHeader">
+                                        <DataGridTemplateColumn x:Name="lastStationColumn" Header="Last Station" Width="120">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
                                                     <TextBlock Text="{Binding LastStation}"/>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn x:Name="delete"  Width="SizeToHeader">
+                                        <DataGridTemplateColumn x:Name="delete"  Width="120">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
                                                     <Button x:Name="delete_buttun" Content="delete" Click="Button_Click_DeleteBusLine"/>
