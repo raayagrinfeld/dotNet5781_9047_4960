@@ -31,11 +31,15 @@ namespace UIwpf
         private ObservableCollection<BusLineBO> busLineBOObservableCollection;
         private ObservableCollection<StationBO> StationBOObservableCollection;
         private ObservableCollection<User> UserBOObservableCollection;
-        private ObservableCollection<BusLineBO> busLineBOFilter;
 
         public MainWindowMangaerxaml()
         {
+            busLineBOObservableCollection = new ObservableCollection<BusLineBO>( bl.GetAllBusLines());
+            StationBOObservableCollection = new ObservableCollection<StationBO>( bl.GetAllBusStations());
+            UserBOObservableCollection = new ObservableCollection<User>( bl.GetAllUsers());
+            
             InitializeComponent();
+
         }
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
@@ -72,7 +76,6 @@ namespace UIwpf
 
         private void When_Window_CLosed(object sender, EventArgs e)
         {
-            if (--App.numOfActivatedMainWindow == 0)
                 Environment.Exit(Environment.ExitCode);
         }
 
@@ -102,52 +105,35 @@ namespace UIwpf
 
         }
 
-        //private void SearchFilterChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    if (busLineBOFilter != null)
-        //    {
-        //        ObservableCollection<BusLineBO> it = new ObservableCollection<BusLineBO>((from item in busLineBOFilter
-        //                                                                                  where CheckIfStringsAreEqual(FirstName.Text, item.FirstName)
-        //                                                                            select item
-        //                                                                        into g
-        //                                                                            where CheckIfStringsAreEqual(LestName.Text, g.LastName)
-        //                                                                            select g
-        //                                                                        into j
-        //                                                                            where CheckIfStringsAreEqual(ID.Text, j.Id)
-        //                                                                            select j).ToList());
-        //        TestersList.ItemsSource = it;
-        //        numOfTesters.Text = it.Count.ToString();
-        //    }
-        //}
-        //private bool CheckIfStringsAreEqual(string a, string b)
-        //{
-        //    if (a.Length > b.Length)
-        //        return false;
-        //    int c = Math.Min(a.Length, b.Length);
-        //    a = a.ToLower();
-        //    b = b.ToLower();
-        //    for (int i = 0; i < c; i++)
-        //    {
-        //        if (a[i] != b[i])
-        //            return false;
-        //    }
-        //    return true;
-        //}
-        //private void SearchFilterChanged(object sender, TextChangedEventArgs e)//search a bus
-        //{
-        //    sender
-        //    foreach (var item in busLineBOObservableCollection)
-        //    {
-        //        ListBoxItem bus = (ListBoxItem)busesBox.ItemContainerGenerator.ContainerFromItem(item);
-        //        string searchS = SearchBox.Text;
-        //        int num = searchS.Length;
-        //        if ((num <= item.LicenseNumber.Length) && (searchS == (item as Bus).LicenseNumber.Substring(0, num)))
-        //        {
-        //            bus.Visibility = Visibility.Visible;
-        //        }
-        //        else
-        //            bus.Visibility = Visibility.Collapsed;
-        //    }
-        //}
+        private void SearchFilterChanged(object sender, TextChangedEventArgs e)
+        {
+            
+            //ObservableCollection<BusLineBO> it = new ObservableCollection<BusLineBO>((from item in busLineBOObservableCollection
+            //                                                                            where CheckIfStringsAreEqual(lineNumber.text, item.LineNumber)
+            //                                                                            select item
+            //                                                                            into g
+            //                                                                            where CheckIfStringsAreEqual(LestName.Text, g.LastName)
+            //                                                                            select g
+
+
+
+            //busLineBODataGrid.ItemsSource = it;
+            //numOfTesters.Text = it.Count.ToString();
+            
+        }
+        private bool CheckIfStringsAreEqual(string a, string b)
+        {
+            if (a.Length > b.Length)
+                return false;
+            int c = Math.Min(a.Length, b.Length);
+            a = a.ToLower();
+            b = b.ToLower();
+            for (int i = 0; i < c; i++)
+            {
+                if (a[i] != b[i])
+                    return false;
+            }
+            return true;
+        }
     }
 }

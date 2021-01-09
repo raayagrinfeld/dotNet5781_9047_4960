@@ -103,7 +103,7 @@
                                         <DataGridTemplateColumn x:Name="delete"  Width="SizeToHeader">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
-                                                    <Button x:Name="delete buttun" Content="delete" Click="Button_Click_DeleteBusLine"/>
+                                                    <Button x:Name="delete_buttun" Content="delete" Click="Button_Click_DeleteBusLine"/>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>

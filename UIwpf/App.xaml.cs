@@ -16,7 +16,6 @@ namespace UIwpf
     public partial class App : Application
     {
         static IBL bl = BlFactory.GetBl("1");
-        public static int numOfActivatedMainWindow = 0;
         static App()
         {
 
