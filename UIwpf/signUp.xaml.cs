@@ -28,24 +28,5 @@ namespace UIwpf
             InitializeComponent();
             bl = BlFactory.GetBl("1");
         }
-        private void PassBox_passAdmin_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Return)
-            {
-                if (passwordTextBox.Password == passwordConfirmTextBox.Password)
-                {
-                    try
-                    {
-                        bl.AddUser(new User { IsActive = true, ManagementPermission = false, Password = passwordTextBox.Password, UserName = userNameTextBox.Text });
-
-                    }
-                    catch (BO.BadUserNameException ex)
-                    {
-                        userNameTextBox.Background= new SolidColorBrush(Color.FromRgb(0, 255, 0));
-                        userNameTextBox.Clear();
-                    }
-                }
-            }
-        }
     }
 }
