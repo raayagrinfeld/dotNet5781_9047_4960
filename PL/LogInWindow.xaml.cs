@@ -64,6 +64,7 @@ namespace PL
         private void signup_Click(object sender, RoutedEventArgs e)
         {
             g.Visibility = Visibility.Visible;
+            main.Visibility = Visibility.Collapsed;
             this.Close();
             User user = bl.GetUser(userNameTextBox.Text);
             if (user.Password == passwordTextBox.Password)
