@@ -6,10 +6,21 @@
         xmlns:local="clr-namespace:UIwpf"
         mc:Ignorable="d"
         Title="signUp" Height="300" Width="400">
-    <Grid>
+    <Grid x:Name="grid1" VerticalAlignment="Top" Margin="92,63,0,0" HorizontalAlignment="Left" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
         <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Password:"/>
-        <PasswordBox x:Name="passwordTextBox" Width="120" VerticalAlignment="Center"  KeyDown="PassBox_passAdmin_KeyDown" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+        <PasswordBox x:Name="passwordTextBox" Width="120" VerticalAlignment="Center"  Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
         <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:"/>
         <TextBox x:Name="userNameTextBox" Width="120" VerticalAlignment="Center" Text="" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+        <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Confirm password:"/>
+        <PasswordBox x:Name="passwordConfirmTextBox" Width="120" VerticalAlignment="Center"  KeyDown="PassBox_passAdmin_KeyDown" Grid.Row="2" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
     </Grid>
 </Window>
