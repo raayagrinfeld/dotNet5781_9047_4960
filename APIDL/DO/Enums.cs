@@ -8,4 +8,5 @@ namespace DO
 {
     public enum Areas { General, North, South, Center, Jerusalem };// the opsional areas
     public enum state { ReadyToGo, midRide, refueling, handling };
+    public enum gender { male, female};
 }
