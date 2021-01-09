@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace UIwpf
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainUserPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainUserPage : Page
     {
-        
-        public MainWindow()
+        public MainUserPage()
         {
             InitializeComponent();
         }
-        private void login_Click(object sender, RoutedEventArgs e)
-        {
-            LogIn logIn = new LogIn();
-            
-        }
-
     }
 }

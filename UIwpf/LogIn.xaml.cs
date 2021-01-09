@@ -38,7 +38,8 @@ namespace UIwpf
             {
                 MessageBox.Show(ex.Message);
             }
-            //להוסיף כאן שצריך ללכת לחלון של היוזר דטה
+            MainUserPage userPage = new MainUserPage();
+            this.NavigationService.Navigate(userPage);
         }
         private void login_Click(object sender, RoutedEventArgs e)
         {
@@ -47,7 +48,16 @@ namespace UIwpf
                 User user = bl.GetUser(userNameTextBox.Text);
                 if(user.Password== passwordTextBox.Text)
                 {
-                    // להוסיף גם כאן גישה לחלון של היוזר דטה
+                    if(user.ManagementPermission==false)
+                    {
+                        MainUserPage userPage = new MainUserPage();
+                        this.NavigationService.Navigate(userPage);
+                    }
+                    else
+                    {
+                        MainWindowMangaerxaml mangaerxaml = new MainWindowMangaerxaml();
+                        this.NavigationService.Navigate(mangaerxaml);
+                    }
                 }
                 else
                 {
@@ -58,7 +68,6 @@ namespace UIwpf
             {
                 MessageBox.Show(ex.Message);
             }
-            //להוסיף כאן שצריך ללכת לחלון של היוזר דטה
         }
 
     }
