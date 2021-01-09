@@ -18,8 +18,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		bin\config.xml = bin\config.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIwpf", "UIwpf\UIwpf.csproj", "{798BA44B-6D5A-46FB-B536-CC2126134562}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL", "PL\PL.csproj", "{26DABD6D-45EB-4638-B35C-E8C1DECCBAB5}"
 EndProject
 Global
@@ -48,10 +46,6 @@ Global
 		{F9339ADA-C3D6-4384-9EAF-DBD8A4F3F504}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9339ADA-C3D6-4384-9EAF-DBD8A4F3F504}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9339ADA-C3D6-4384-9EAF-DBD8A4F3F504}.Release|Any CPU.Build.0 = Release|Any CPU
-		{798BA44B-6D5A-46FB-B536-CC2126134562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{798BA44B-6D5A-46FB-B536-CC2126134562}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{798BA44B-6D5A-46FB-B536-CC2126134562}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{798BA44B-6D5A-46FB-B536-CC2126134562}.Release|Any CPU.Build.0 = Release|Any CPU
 		{26DABD6D-45EB-4638-B35C-E8C1DECCBAB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{26DABD6D-45EB-4638-B35C-E8C1DECCBAB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26DABD6D-45EB-4638-B35C-E8C1DECCBAB5}.Release|Any CPU.ActiveCfg = Release|Any CPU

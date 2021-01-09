@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using BlApi;
 
 namespace PL
 {
@@ -13,5 +14,10 @@ namespace PL
     /// </summary>
     public partial class App : Application
     {
+        static IBL bl = BlFactory.GetBl("1");
+        static App()
+        {
+
+        }
     }
 }

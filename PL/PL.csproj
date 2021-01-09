@@ -55,6 +55,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SignUpWindow.xaml.cs">
+      <DependentUpon>SignUpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserSettingsWindow.xaml.cs">
+      <DependentUpon>UserSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LogInWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainManagerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,10 +81,27 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LogInWindow.xaml.cs">
+      <DependentUpon>LogInWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainManagerWindow.xaml.cs">
+      <DependentUpon>MainManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainUserWindow.xaml.cs">
+      <DependentUpon>MainUserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SignUpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -86,6 +121,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\BO.BusLineBO.datasource" />
+    <None Include="Properties\DataSources\BO.BusLineStationBO.datasource" />
+    <None Include="Properties\DataSources\BO.Driving.datasource" />
+    <None Include="Properties\DataSources\BO.StationBO.datasource" />
+    <None Include="Properties\DataSources\BO.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +133,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\BusUslogo.jpeg" />
+    <Resource Include="Icons\cancel.png" />
+    <Resource Include="Icons\settings.png" />
+    <Resource Include="Icons\squares.png" />
+    <Resource Include="Icons\substract.png" />
+    <Resource Include="Icons\user.png" />
+    <Resource Include="Icons\woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\BusUslcon.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{d30ac9a1-3761-48b6-9ee9-7beb356fca5a}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
