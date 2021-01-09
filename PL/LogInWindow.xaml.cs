@@ -60,8 +60,7 @@ namespace PL
         }
         private void signup_Click(object sender, RoutedEventArgs e)
         {
-            //signUp windowUser = new signUp();
-            //windowUser.Show();
+            g.Visibility = Visibility.Visible;
             this.Close();
             User user = bl.GetUser(userNameTextBox.Text);
             if (user.Password == passwordTextBox.Password)
