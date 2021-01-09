@@ -58,10 +58,17 @@
     <Compile Include="LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainUserPage.xaml.cs">
+      <DependentUpon>MainUserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindowMangaerxaml.xaml.cs">
       <DependentUpon>MainWindowMangaerxaml.xaml</DependentUpon>
     </Compile>
     <Page Include="LogIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
