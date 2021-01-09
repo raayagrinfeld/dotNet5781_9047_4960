@@ -41,7 +41,7 @@ namespace UIwpf
                     }
                     catch (BO.BadUserNameException ex)
                     {
-
+                        
                     }
                 }
             }
