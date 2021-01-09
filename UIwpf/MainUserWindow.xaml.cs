@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace UIwpf
 {
     /// <summary>
-    /// Interaction logic for MainUserPage.xaml
+    /// Interaction logic for MainUserWindow.xaml
     /// </summary>
-    public partial class MainUserPage : Page
+    public partial class MainUserWindow : Window
     {
-        public MainUserPage()
+        public MainUserWindow()
         {
             InitializeComponent();
         }
