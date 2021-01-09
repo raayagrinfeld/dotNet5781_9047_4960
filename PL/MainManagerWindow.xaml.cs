@@ -13,7 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BlApi;
 using BO;
-
+using BL;
+using System.Collections.ObjectModel;
 
 namespace PL
 {
@@ -84,7 +85,7 @@ namespace PL
 
         private void MenuItem_Click_OpenUserSettingsWindow(object sender, RoutedEventArgs e)
         {
-            UserSettings userSettings = new UserSettings(user);
+            UserSettingsWindow userSettings = new UserSettingsWindow(user);
             userSettings.Show();
         }
 
@@ -136,4 +137,4 @@ namespace PL
         }
     }
 }
-}
+

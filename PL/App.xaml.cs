@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using BlApi;
+using BO;
+using BL;
 
 namespace PL
 {

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
         Title="MainWindowMangaerxaml" MinHeight="720" MinWidth="1020" Height="700" Width="1000"  WindowStyle="None" Closed="When_Window_CLosed" 
-        AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown" WindowState="Maximized" Icon="Icons/BusUsIcon.jpeg">
+        AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown" WindowState="Maximized" Icon="Icons\BusUslcon.jpeg">
 
 
     <Border BorderThickness="1" BorderBrush="#FF17B419" Background="AliceBlue" >

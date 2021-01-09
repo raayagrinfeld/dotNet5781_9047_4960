@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BlApi;
+using BO;
+using BL;
 
 namespace PL
 {
@@ -32,11 +35,12 @@ namespace PL
         {
             if (e.Key == Key.Return)
             {
-                if (bl.GetUser(userNameTextBox.Text).Password == passwordTextBox.Password)
+                User user = bl.GetUser(userNameTextBox.Text);
+                if (user.Password == passwordTextBox.Password)
                 {
-                    if (bl.GetUser(userNameTextBox.Text).ManagementPermission)
+                    if (user.ManagementPermission)
                     {
-                        MainWindowMangaerxaml windowMangaer = new MainWindowMangaerxaml();
+                        MainManagerWindow windowMangaer = new MainManagerWindow(user);
                         windowMangaer.Show();
                         this.Close();
                     }
@@ -51,18 +55,15 @@ namespace PL
         }
         private void signup_Click(object sender, RoutedEventArgs e)
         {
-            signUp windowUser = new signUp();
-            windowUser.Show();
+            //signUp windowUser = new signUp();
+            //windowUser.Show();
             this.Close();
-            if (e.Key == Key.Return)
+            User user = bl.GetUser(userNameTextBox.Text);
+            if (user.Password == passwordTextBox.Password)
             {
-                User user = bl.GetUser(userNameTextBox.Text);
-                if (user.Password == passwordTextBox.Password)
-                {
-                    MainWindowMangaerxaml windowMangaer = new MainWindowMangaerxaml(user);
-                    windowMangaer.Show();
-                    this.Close();
-                }
+                MainManagerWindow windowMangaer = new MainManagerWindow(user);
+                windowMangaer.Show();
+                this.Close();
             }
         }
     }
