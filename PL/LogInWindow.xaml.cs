@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BlApi;
 using BO;
+using BL;
 
 namespace PL
 {
@@ -34,10 +35,10 @@ namespace PL
         {
             if (e.Key == Key.Return)
             {
-                User user = (bl.GetUser(userNameTextBox.Text));
+                User user = bl.GetUser(userNameTextBox.Text);
                 if (user.Password == passwordTextBox.Password)
                 {
-                    if (bl.GetUser(userNameTextBox.Text).ManagementPermission)
+                    if (user.ManagementPermission)
                     {
                         MainManagerWindow windowMangaer = new MainManagerWindow(user);
                         windowMangaer.Show();
@@ -59,7 +60,16 @@ namespace PL
         }
         private void signup_Click(object sender, RoutedEventArgs e)
         {
-            g.Visibility
+            //signUp windowUser = new signUp();
+            //windowUser.Show();
+            this.Close();
+            User user = bl.GetUser(userNameTextBox.Text);
+            if (user.Password == passwordTextBox.Password)
+            {
+                MainManagerWindow windowMangaer = new MainManagerWindow(user);
+                windowMangaer.Show();
+                this.Close();
+            }
         }
     }
 }
