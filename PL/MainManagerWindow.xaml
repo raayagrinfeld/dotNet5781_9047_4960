@@ -1,12 +1,16 @@
-﻿<Window x:Class="PL.MainManagerWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
+        xmlns:BO="clr-namespace:BO;assembly=BL" x:Class="PL.MainManagerWindow"
         mc:Ignorable="d"
         Title="MainWindowMangaerxaml" MinHeight="720" MinWidth="1020" Height="700" Width="1000"  WindowStyle="None" Closed="When_Window_CLosed" 
-        AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown" WindowState="Maximized" Icon="Icons\BusUslcon.jpeg">
+        AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown" WindowState="Maximized" Icon="Icons\BusUslcon.jpeg" >
+
+
+
 
 
     <Border BorderThickness="1" BorderBrush="#FF17B419" Background="AliceBlue" >
@@ -45,10 +49,11 @@
                         <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
                             <Grid>
                                 <Grid.RowDefinitions>
+                                    <RowDefinition Height="15"/>
                                     <RowDefinition Height="40"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="0">
+                                <Grid Grid.Row="1">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
@@ -56,11 +61,11 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Label x:Name="label" Grid.Column="0" FontSize="16" Content="search by line number" />
-                                    <TextBox Name="lineNumber" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="lineNumber" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
                                     <Label x:Name="label2" Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by area" VerticalContentAlignment="Center"/>
-                                    <TextBox Name="Area" Padding="4" Grid.Column="3" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="Area" Padding="4" Grid.Column="3" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
                                 </Grid>
-                                <DataGrid x:Name="busLineBODataGrid" Grid.Row="1" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="48,27,60.8,86.8" RowDetailsVisibilityMode="VisibleWhenSelected">
+                                <DataGrid x:Name="busLineBODataGrid" Grid.Row="2" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="48,27,60.8,86.8" RowDetailsVisibilityMode="VisibleWhenSelected" MouseDoubleClick="MouseDoubleClick_DataGridBusLine">
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn x:Name="lineNumberColumn" Header="Line Number" Width="150">
                                             <DataGridTemplateColumn.CellTemplate>
@@ -108,6 +113,40 @@
                                         </DataGridTemplateColumn>
                                     </DataGrid.Columns>
                                 </DataGrid>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed">
+                            <Grid>
+
+                                <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin="295,96,0,0" HorizontalAlignment="Left" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0"/>
+                                        <ColumnDefinition Width="139.2"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,3.2,0,3.2" HorizontalAlignment="Left" Grid.Column="0" Content="Area:" Grid.ColumnSpan="2"/>
+                                    <TextBox x:Name="areaTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Area, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="2.8,7.2,0,7.2" Height="24" HorizontalAlignment="Left" Grid.Column="2"/>
+                                    <Label VerticalAlignment="Center" Grid.Row="0" Margin="3,3,0,3.4" HorizontalAlignment="Left" Grid.Column="0" Content="Bus Line Key:" Grid.ColumnSpan="2"/>
+                                    <TextBox x:Name="busLineKeyTextBox" Width="120" VerticalAlignment="Center" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="2.8,8,0,7.4" Height="23" HorizontalAlignment="Left" Grid.Column="2"/>
+                                    <Label VerticalAlignment="Center" Grid.Row="4" Margin="3,36.8,0,37.6" HorizontalAlignment="Left" Grid.Column="0" Content="bus Line Stations:" Grid.ColumnSpan="2"/>
+                                    <ListBox x:Name="busLineStationsListBox" Width="300" VerticalAlignment="Center" Grid.Row="4" Margin="2.8,2.8,0,-272.4" ItemsSource="{Binding}" Height="376" HorizontalAlignment="Left" DisplayMemberPath="busLineStations" Grid.Column="2" Grid.ColumnSpan="3"/>
+                                    <Label VerticalAlignment="Center" Grid.Row="1" Margin="3,3.6,0,2.8" HorizontalAlignment="Left" Grid.Column="0" Content="First Station:" Grid.ColumnSpan="2"/>
+                                    <TextBox x:Name="firstStationTextBox" Width="120" VerticalAlignment="Center" Text="{Binding FirstStation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="2.8,7.6,0,7.8" Height="23" HorizontalAlignment="Left" Grid.Column="2"/>
+                                    <Label VerticalAlignment="Center" Grid.Row="1" Margin="3.4,3.6,0,2.8" HorizontalAlignment="Left" Grid.Column="3" Content="Last Station:"/>
+                                    <TextBox x:Name="lastStationTextBox" Width="120" VerticalAlignment="Center" Text="{Binding LastStation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="2.4,7.6,0,7.8" Height="23" HorizontalAlignment="Left" Grid.Column="4"/>
+                                    <Label VerticalAlignment="Center" Grid.Row="0" Margin="3.4,3,0,3.4" HorizontalAlignment="Left" Grid.Column="3" Content="Line Number:"/>
+                                    <TextBox x:Name="lineNumberTextBox" Width="120" VerticalAlignment="Center" Text="{Binding LineNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3.4,8,0,7.4" Height="23" HorizontalAlignment="Left" Grid.Column="4"/>
+                                </Grid>
+
                             </Grid>
                         </Border>
                     </Grid>

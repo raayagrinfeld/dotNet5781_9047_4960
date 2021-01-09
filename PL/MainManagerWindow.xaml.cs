@@ -25,6 +25,7 @@ namespace PL
     {
         public static IBL bl = BlFactory.GetBl("1");
         User user;
+        BusLineBO selectedBusLine;
         //private ObservableCollection<BusLineBO> busLineBOObservableCollection;
         //private ObservableCollection<StationBO> StationBOObservableCollection;
         //private ObservableCollection<User> UserBOObservableCollection;
@@ -134,6 +135,24 @@ namespace PL
                     return false;
             }
             return true;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            System.Windows.Data.CollectionViewSource busLineBOViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("busLineBOViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // busLineBOViewSource.Source = [generic data source]
+        }
+
+
+
+        private void MouseDoubleClick_DataGridBusLine(object sender, MouseButtonEventArgs e)
+        {
+            selectedBusLine = (busLineBODataGrid.SelectedItem as BusLineBO);
+            busLineListBorder.Visibility = Visibility.Collapsed;
+            BusLineDetialedBorder.DataContext = selectedBusLine;
+            busLineDetialedGrid.Visibility = Visibility.Visible;
         }
     }
 }

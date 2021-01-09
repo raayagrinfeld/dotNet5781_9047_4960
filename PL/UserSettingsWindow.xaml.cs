@@ -24,13 +24,14 @@ namespace PL
     public partial class UserSettingsWindow : Window
     {
         OpenFileDialog op; //for getting image input from user
-        bool isImageChanged = false;
-
+        User userWindow;
         public UserSettingsWindow(User user)
         {
+            userWindow = user;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
             grid1.DataContext = user;
+            CombBx_Gender.ItemsSource = Enum.GetValues(typeof(gender));
             if (user.imagePath != null)
             {
                 BitmapImage bitmap = new BitmapImage();
@@ -51,7 +52,7 @@ namespace PL
               "Portable Network Graphic (*.png)|*.png";
             if (op.ShowDialog() == true)
             {
-                isImageChanged = true;
+                userWindow.imagePath = op.FileName;
                 UserImage.Source = new BitmapImage(new Uri(op.FileName));
             }
         }

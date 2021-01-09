@@ -27,9 +27,10 @@
             <Label x:Name="Label_Gender" Content="Gender:" Grid.Row="2" Grid.Column="0"/>
             <ComboBox x:Name="CombBx_Gender" Margin="2" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" SelectedValue="{Binding Path=Gender, Mode=TwoWay}"/>
         </Grid>
-        <Border x:Name="ImageBorder" Width="97" Height="90" BorderThickness="2" BorderBrush="Black" Margin="284,13,9.6,67.4">
-            <Image x:Name="UserImage" Source="Icons/user.png" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="97"/>
+        <Border x:Name="ImageBorder" Width="100" Height="90" BorderThickness="2" BorderBrush="Black" Margin="284,13,9.6,67.4">
+            <Image x:Name="UserImage" Source="Icons/user.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="97" />
         </Border>
         <Button x:Name="Button_UploadImage" Content="uplode image" Click="Button_Click_UploadImage" Margin="286,120,13.6,10.4" />
+        <Label Content="is manager" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="{Binding ManagementPermission}" Margin="41,13,0,0" Width="147"/>
     </Grid>
 </Window>
