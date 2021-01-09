@@ -8,9 +8,9 @@
         Title="LogInWindow" Height="300" Width="400">
     <Border x:Name="main" Visibility="Visible">
         <Grid>
-            <Border x:Name="g" Visibility="Collapsed">
+            <Border x:Name="g" Visibility="Collapsed" BorderThickness="8">
+                
             </Border>
-
             <Grid x:Name="grid1" VerticalAlignment="Top" Margin="92,63,0,0" HorizontalAlignment="Left" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
