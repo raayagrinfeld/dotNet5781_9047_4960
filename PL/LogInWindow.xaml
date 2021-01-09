@@ -8,10 +8,27 @@
         Title="LogInWindow" Height="300" Width="400">
     <Border x:Name="main" Visibility="Visible">
         <Grid>
-            <Border x:Name="g" Visibility="Collapsed" BorderThickness="8">
-                
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="169*"/>
+                <ColumnDefinition Width="224*"/>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="g" Visibility="Collapsed" BorderThickness="8" Margin="40 10 0 0">
+                <Grid x:Name="grid4" VerticalAlignment="Top" Margin="92,63,0,0" HorizontalAlignment="Left" Grid.ColumnSpan="2" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Password:"/>
+                    <PasswordBox x:Name="passwordTextBox" Width="120" VerticalAlignment="Center"  KeyDown="PassBox_passAdmin_KeyDown" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+                    <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:"/>
+                    <TextBox x:Name="userNameTextBox" Width="120" VerticalAlignment="Center" Text="" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+                </Grid>
             </Border>
-            <Grid x:Name="grid1" VerticalAlignment="Top" Margin="92,63,0,0" HorizontalAlignment="Left" >
+            <Grid x:Name="grid1" VerticalAlignment="Top" Margin="92,63,0,0" HorizontalAlignment="Left" Grid.ColumnSpan="2" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -21,11 +38,11 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Password:"/>
-                <PasswordBox x:Name="passwordTextBox" Width="120" VerticalAlignment="Center"  KeyDown="PassBox_passAdmin_KeyDown" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+                <PasswordBox x:Name="passwordTextBox2" Width="120" VerticalAlignment="Center"  KeyDown="PassBox_passAdmin_KeyDown" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:"/>
-                <TextBox x:Name="userNameTextBox" Width="120" VerticalAlignment="Center" Text="" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+                <TextBox x:Name="userNameTextBox2" Width="120" VerticalAlignment="Center" Text="" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
             </Grid>
-            <Button x:Name="signup" Content="Still don't have an account? click here" HorizontalAlignment="Left" Height="27" Margin="71,152,0,0" VerticalAlignment="Top" Width="237" Click="signup_Click"/>
+            <Button x:Name="signup" Content="Still don't have an account? click here" HorizontalAlignment="Left" Height="27" Margin="71,152,0,0" VerticalAlignment="Top" Width="237" Click="signup_Click" Grid.ColumnSpan="2"/>
         </Grid>
     </Border>
 </Window>
