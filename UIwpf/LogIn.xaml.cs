@@ -55,7 +55,7 @@ namespace UIwpf
                     }
                     else
                     {
-                        MainWindowMangaerxaml mangaerxaml = new MainWindowMangaerxaml();
+                        MainWindowMangaerxaml mangaerxaml = new MainWindowMangaerxaml(user);
                         this.NavigationService.Navigate(mangaerxaml);
                     }
                 }

@@ -89,8 +89,8 @@ namespace DS
                     prevBusLineStation = busStationKey;
                 }
             }
-            UserList.Add(new User { UserName = "raaya", Password = "123", IsActive = true, ManagementPermission=true });
-            UserList.Add(new User { UserName = "odelia", Password = "1666", IsActive = true, ManagementPermission = true });
+            UserList.Add(new User { UserName = "raaya", Password = "123", IsActive = true, ManagementPermission=true , gender=(gender)1, imagePath=null});
+            UserList.Add(new User { UserName = "odelia", Password = "1666", IsActive = true, ManagementPermission = true, gender = (gender)1 ,imagePath="Icons/wonan.png"});
         }
     }
 }

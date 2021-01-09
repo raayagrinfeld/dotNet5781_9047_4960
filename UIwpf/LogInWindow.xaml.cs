@@ -26,6 +26,7 @@ namespace UIwpf
 
         public LogInWindow()
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
 
@@ -33,9 +34,10 @@ namespace UIwpf
         {
             if(e.Key==Key.Return)
             {
-                if(bl.GetUser(userNameTextBox.Text).Password==passwordTextBox.Password)
+                User user = bl.GetUser(userNameTextBox.Text);
+                if (user.Password==passwordTextBox.Password)
                 {
-                    MainWindowMangaerxaml windowMangaer = new MainWindowMangaerxaml();
+                    MainWindowMangaerxaml windowMangaer = new MainWindowMangaerxaml(user);
                     windowMangaer.Show();
                     this.Close();
                 }

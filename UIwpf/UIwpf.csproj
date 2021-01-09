@@ -67,6 +67,9 @@
     <Compile Include="MainWindowMangaerxaml.xaml.cs">
       <DependentUpon>MainWindowMangaerxaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserSettings.xaml.cs">
+      <DependentUpon>UserSettings.xaml</DependentUpon>
+    </Compile>
     <Page Include="LogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +95,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MainWindowMangaerxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,6 +158,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\user.png" />
+    <Resource Include="Icons\woman.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

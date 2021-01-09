@@ -27,17 +27,17 @@ namespace UIwpf
     public partial class MainWindowMangaerxaml : Window
     {
         public static IBL bl = BlFactory.GetBl("1");
-
+        User user;
         //private ObservableCollection<BusLineBO> busLineBOObservableCollection;
         //private ObservableCollection<StationBO> StationBOObservableCollection;
         //private ObservableCollection<User> UserBOObservableCollection;
 
-        public MainWindowMangaerxaml()
+        public MainWindowMangaerxaml(User logedInUser)
         {
             //busLineBOObservableCollection = new ObservableCollection<BusLineBO>( bl.GetAllBusLines());
             //StationBOObservableCollection = new ObservableCollection<StationBO>( bl.GetAllBusStations());
             //UserBOObservableCollection = new ObservableCollection<User>( bl.GetAllUsers());
-
+            user = logedInUser;
             InitializeComponent();
 
             busLineBODataGrid.ItemsSource = bl.GetAllBusLines();
@@ -88,7 +88,8 @@ namespace UIwpf
 
         private void MenuItem_Click_OpenUserSettingsWindow(object sender, RoutedEventArgs e)
         {
-
+            UserSettings userSettings = new UserSettings(user);
+            userSettings.Show();
         }
 
         private void MenuItem_Click_ShowUserInterface(object sender, RoutedEventArgs e)
@@ -98,6 +99,9 @@ namespace UIwpf
 
         private void MenuItem_Click_LogOut(object sender, RoutedEventArgs e)
         {
+            LogInWindow logInWindow = new LogInWindow();
+            logInWindow.Show();
+            this.Close();
         }
 
         private void Button_Click_DeleteBusLine(object sender, RoutedEventArgs e)

@@ -12,6 +12,8 @@ namespace BO
         public string Password { get; set; }
         public bool ManagementPermission { get; set; }
         public bool IsActive { get; set; }
+        public gender Gender { get; set; }
+        public string imagePath { get; set; }
         public override string ToString()
         {
             return this.ToStringProperty();
