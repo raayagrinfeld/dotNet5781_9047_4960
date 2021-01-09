@@ -38,13 +38,14 @@ namespace UIwpf
     //                {
     //                    bl.AddUser(new User { IsActive = true, ManagementPermission = false, Password = passwordTextBox.Password, UserName = userNameTextBox.Text });
 
-    //                }
-    //                catch (BO.BadUserNameException ex)
-    //                {
-                        
-    //                }
-    //            }
-    //        }
-    //    }
-    //}
+                    }
+                    catch (BO.BadUserNameException ex)
+                    {
+                        userNameTextBox.Background= new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                        userNameTextBox.Clear();
+                    }
+                }
+            }
+        }
+    }
 }
