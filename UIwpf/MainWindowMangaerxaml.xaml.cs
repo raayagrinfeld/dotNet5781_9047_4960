@@ -28,18 +28,19 @@ namespace UIwpf
     {
         public static IBL bl = BlFactory.GetBl("1");
 
-        private ObservableCollection<BusLineBO> busLineBOObservableCollection;
-        private ObservableCollection<StationBO> StationBOObservableCollection;
-        private ObservableCollection<User> UserBOObservableCollection;
+        //private ObservableCollection<BusLineBO> busLineBOObservableCollection;
+        //private ObservableCollection<StationBO> StationBOObservableCollection;
+        //private ObservableCollection<User> UserBOObservableCollection;
 
         public MainWindowMangaerxaml()
         {
-            busLineBOObservableCollection = new ObservableCollection<BusLineBO>( bl.GetAllBusLines());
-            StationBOObservableCollection = new ObservableCollection<StationBO>( bl.GetAllBusStations());
-            UserBOObservableCollection = new ObservableCollection<User>( bl.GetAllUsers());
-            
+            //busLineBOObservableCollection = new ObservableCollection<BusLineBO>( bl.GetAllBusLines());
+            //StationBOObservableCollection = new ObservableCollection<StationBO>( bl.GetAllBusStations());
+            //UserBOObservableCollection = new ObservableCollection<User>( bl.GetAllUsers());
+
             InitializeComponent();
 
+            busLineBODataGrid.ItemsSource = bl.GetAllBusLines();
         }
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
@@ -97,29 +98,27 @@ namespace UIwpf
 
         private void MenuItem_Click_LogOut(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void Button_Click_DeleteBusLine(object sender, RoutedEventArgs e)
         {
-
+            bl.DeleteBusLine(((sender as Button).DataContext as BusLineBO).BusLineKey);
+            busLineBODataGrid.ItemsSource = bl.GetAllBusLines();
         }
 
         private void SearchFilterChanged(object sender, TextChangedEventArgs e)
         {
-            
-            //ObservableCollection<BusLineBO> it = new ObservableCollection<BusLineBO>((from item in busLineBOObservableCollection
-            //                                                                            where CheckIfStringsAreEqual(lineNumber.text, item.LineNumber)
-            //                                                                            select item
-            //                                                                            into g
-            //                                                                            where CheckIfStringsAreEqual(LestName.Text, g.LastName)
-            //                                                                            select g
+
+            ObservableCollection<BusLineBO> it = new ObservableCollection<BusLineBO>((from item in bl.GetAllBusLines()
+                                                                                      where CheckIfStringsAreEqual(lineNumber.Text, item.LineNumber.ToString())
+                                                                                      select item
+                                                                                        into g
+                                                                                      where CheckIfStringsAreEqual(Area.Text, g.Area.ToString())
+                                                                                      select g));
 
 
 
-            //busLineBODataGrid.ItemsSource = it;
-            //numOfTesters.Text = it.Count.ToString();
-            
+            busLineBODataGrid.ItemsSource = it;
         }
         private bool CheckIfStringsAreEqual(string a, string b)
         {

@@ -2,12 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:UIwpf"
-             StartupUri="LogIn.xaml">
+             StartupUri="LogInWindow.xaml">
     <Application.Resources>
         <!-- Backgrounds -->
         <SolidColorBrush x:Key="SelectedTabBackGround" Color="LightSlateGray"/>
         <SolidColorBrush x:Key="ButtonsColor" Color="Gray"/>
-        <SolidColorBrush x:Key="ButtonsColorWhenMouseOver" Color="LightGreen"/>
+        <SolidColorBrush x:Key="ButtonsColorWhenMouseOver" Color="#FF17B419"/>
 
         <!--Control colors.-->
         <Color x:Key="WindowColor">#FFE8EDF9</Color>
