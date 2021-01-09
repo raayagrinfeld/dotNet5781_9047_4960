@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace UIwpf
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for signUp.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class signUp : Window
     {
-        Page openingPage;
-
-        public MainWindow()
+        public signUp()
         {
             InitializeComponent();
         }
-        private void login_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
     }
 }

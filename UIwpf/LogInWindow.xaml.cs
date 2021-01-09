@@ -22,24 +22,40 @@ namespace UIwpf
     /// </summary>
     public partial class LogInWindow : Window
     {
-        IBL bl = BlFactory.GetBl("1");
+        IBL bl;
 
         public LogInWindow()
         {
+            bl = BlFactory.GetBl("1");
             InitializeComponent();
         }
 
         private void PassBox_passAdmin_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key==Key.Return)
+            if (e.Key == Key.Return)
             {
-                if(bl.GetUser(userNameTextBox.Text).Password==passwordTextBox.Password)
+                if (bl.GetUser(userNameTextBox.Text).Password == passwordTextBox.Password)
                 {
-                    MainWindowMangaerxaml windowMangaer = new MainWindowMangaerxaml();
-                    windowMangaer.Show();
-                    this.Close();
+                    if (bl.GetUser(userNameTextBox.Text).ManagementPermission)
+                    {
+                        MainWindowMangaerxaml windowMangaer = new MainWindowMangaerxaml();
+                        windowMangaer.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MainUserWindow windowUser = new MainUserWindow();
+                        windowUser.Show();
+                        this.Close();
+                    }
                 }
             }
+        }
+        private void signup_Click(object sender, RoutedEventArgs e)
+        {
+            signUp windowUser = new signUp();
+            windowUser.Show();
+            this.Close();
         }
     }
 }

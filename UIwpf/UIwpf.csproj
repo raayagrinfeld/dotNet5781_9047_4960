@@ -55,27 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="LogIn.xaml.cs">
-      <DependentUpon>LogIn.xaml</DependentUpon>
-    </Compile>
     <Compile Include="LogInWindow.xaml.cs">
       <DependentUpon>LogInWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainUserPage.xaml.cs">
-      <DependentUpon>MainUserPage.xaml</DependentUpon>
+    <Compile Include="MainUserWindow.xaml.cs">
+      <DependentUpon>MainUserWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindowMangaerxaml.xaml.cs">
       <DependentUpon>MainWindowMangaerxaml.xaml</DependentUpon>
     </Compile>
-    <Page Include="LogIn.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="signUp.xaml.cs">
+      <DependentUpon>signUp.xaml</DependentUpon>
+    </Compile>
     <Page Include="LogInWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainUserPage.xaml">
+    <Page Include="MainUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -92,6 +88,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MainWindowMangaerxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="signUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
