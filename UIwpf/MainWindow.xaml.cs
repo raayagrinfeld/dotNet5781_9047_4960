@@ -20,15 +20,15 @@ namespace UIwpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        Page openingPage;
+
         public MainWindow()
         {
             InitializeComponent();
         }
         private void login_Click(object sender, RoutedEventArgs e)
         {
-            LogIn logIn = new LogIn();
-            
+            openingPage.Content= new LogIn();
         }
 
     }

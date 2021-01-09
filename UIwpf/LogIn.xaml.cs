@@ -22,11 +22,10 @@ namespace UIwpf
     /// </summary>
     public partial class LogIn : Page
     {
-        static IBL bl;
+        static IBL bl  = BlFactory.GetBl("1");
         public LogIn()
         {
             InitializeComponent();
-            bl = BlFactory.GetBl("1");
         }
         private void signup_Click(object sender, RoutedEventArgs e)
         {
