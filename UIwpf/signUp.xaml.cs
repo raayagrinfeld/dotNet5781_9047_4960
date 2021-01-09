@@ -20,31 +20,31 @@ namespace UIwpf
     /// <summary>
     /// Interaction logic for signUp.xaml
     /// </summary>
-    public partial class signUp : Window
-    {
-        IBL bl;
-        public signUp()
-        {
-            InitializeComponent();
-            bl = BlFactory.GetBl("1");
-        }
-        private void PassBox_passAdmin_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Return)
-            {
-                if (passwordTextBox.Password == passwordConfirmTextBox.Password)
-                {
-                    try
-                    {
-                        bl.AddUser(new User { IsActive = true, ManagementPermission = false, Password = passwordTextBox.Password, UserName = userNameTextBox.Text });
+    //public partial class signUp : Window
+    //{
+    //    IBL bl;
+    //    public signUp()
+    //    {
+    //        InitializeComponent();
+    //        bl = BlFactory.GetBl("1");
+    //    }
+    //    private void PassBox_passAdmin_KeyDown(object sender, KeyEventArgs e)
+    //    {
+    //        if (e.Key == Key.Return)
+    //        {
+    //            if (passwordTextBox.Password == passwordConfirmTextBox.Password)
+    //            {
+    //                try
+    //                {
+    //                    bl.AddUser(new User { IsActive = true, ManagementPermission = false, Password = passwordTextBox.Password, UserName = userNameTextBox.Text });
 
-                    }
-                    catch (BO.BadUserNameException ex)
-                    {
+    //                }
+    //                catch (BO.BadUserNameException ex)
+    //                {
                         
-                    }
-                }
-            }
-        }
-    }
+    //                }
+    //            }
+    //        }
+    //    }
+    //}
 }
