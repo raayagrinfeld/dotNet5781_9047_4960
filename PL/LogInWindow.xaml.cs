@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ namespace PL
 
         private void PassBox_passAdmin_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Return)
+            if (e.Key == Key.Enter)
             {
                 User user = bl.GetUser(userNameTextBox.Text);
                 if (user.Password == passwordTextBox.Password)
@@ -51,11 +52,13 @@ namespace PL
                         this.Close();
                     }
                 }
-            }
-            else
-            {
-                passwordTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(233, 26, 26));
-                passwordTextBox.Clear();
+                else
+                {
+                    SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
+                    simpleSound.Play();
+                    passwordTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                    passwordTextBox.Clear();
+                }
             }
         }
         private void signup_Click(object sender, RoutedEventArgs e)
