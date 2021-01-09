@@ -57,16 +57,6 @@ namespace UIwpf
             signUp windowUser = new signUp();
             windowUser.Show();
             this.Close();
-            if(e.Key==Key.Return)
-            {
-                User user = bl.GetUser(userNameTextBox.Text);
-                if (user.Password==passwordTextBox.Password)
-                {
-                    MainWindowMangaerxaml windowMangaer = new MainWindowMangaerxaml(user);
-                    windowMangaer.Show();
-                    this.Close();
-                }
-            }
         }
     }
 }

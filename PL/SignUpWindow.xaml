@@ -6,7 +6,5 @@
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
         Title="SignUpWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Grid Background="#FFE91A1A"/>
 </Window>

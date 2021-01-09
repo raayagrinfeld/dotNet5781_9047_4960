@@ -52,6 +52,11 @@ namespace PL
                     }
                 }
             }
+            else
+            {
+                passwordTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(233, 26, 26));
+                passwordTextBox.Clear();
+            }
         }
         private void signup_Click(object sender, RoutedEventArgs e)
         {
