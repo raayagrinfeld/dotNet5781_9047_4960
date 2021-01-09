@@ -9,6 +9,13 @@
       Title="MainUserPage">
 
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Find a line between stations ">
+                <Label Content="Content goes here..." />
+            </TabItem>
+            <TabItem Header="Acoount infoemation" >
+                
+            </TabItem>
+        </TabControl>
     </Grid>
 </Page>
