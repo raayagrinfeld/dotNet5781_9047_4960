@@ -24,5 +24,10 @@ namespace UIwpf
         {
             InitializeComponent();
         }
+        private void login_Click(object sender, RoutedEventArgs e)
+        {
+            LogIn b = new LogIn();
+            //b.ShowsNavigationUI();
+        }
     }
 }

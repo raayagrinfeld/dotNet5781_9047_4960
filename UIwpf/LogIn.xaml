@@ -7,7 +7,8 @@
       xmlns:BO="clr-namespace:BO;assembly=BL" x:Class="UIwpf.LogIn"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="LogIn">
+       Background="Transparent"
+       Title="LogIn" >
 
     <Page.Resources>
         <CollectionViewSource x:Key="userViewSource" d:DesignSource="{d:DesignInstance {x:Type BO:User}, CreateList=True}"/>
