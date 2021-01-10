@@ -36,43 +36,73 @@ namespace PL
         {
             if (e.Key == Key.Enter)
             {
-                User user = bl.GetUser(userNameTextBox.Text);
-                if (user.Password == passwordTextBox.Password)
+                try
                 {
-                    if (user.ManagementPermission)
+                    User user = bl.GetUser(userNameTextBox.Text);
+                    if (user.Password == passwordTextBox.Password)
                     {
-                        MainManagerWindow windowMangaer = new MainManagerWindow(user);
-                        windowMangaer.Show();
-                        this.Close();
+                        if (user.ManagementPermission)
+                        {
+                            MainManagerWindow windowMangaer = new MainManagerWindow(user);
+                            windowMangaer.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MainUserWindow windowUser = new MainUserWindow(user);
+                            windowUser.Show();
+                            this.Close();
+                        }
                     }
                     else
                     {
-                        MainUserWindow windowUser = new MainUserWindow();
-                        windowUser.Show();
-                        this.Close();
+                        SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
+                        simpleSound.Play();
+                        passwordTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                        passwordTextBox.Clear();
                     }
                 }
-                else
+                catch (BO.BadUserNameException ex)
                 {
                     SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
                     simpleSound.Play();
                     passwordTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
                     passwordTextBox.Clear();
+                    userNameTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                    userNameTextBox.Clear();
                 }
             }
         }
         private void signup_Click(object sender, RoutedEventArgs e)
         {
-            g.Visibility = Visibility.Visible;
-            main.Visibility = Visibility.Collapsed;
-            this.Close();
-            User user = bl.GetUser(userNameTextBox.Text);
-            if (user.Password == passwordTextBox.Password)
+            login.Visibility = Visibility.Collapsed;
+            signUp.Visibility = Visibility.Visible;
+        }
+        private void signUpP_passAdmin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
             {
-                MainManagerWindow windowMangaer = new MainManagerWindow(user);
-                windowMangaer.Show();
-                this.Close();
+                try
+                {
+                    bl.AddUser(new User { UserName = SignUpUser.Text, Password = signUpPaswword.Password, IsActive = true, ManagementPermission = false });
+                    User user = bl.GetUser(SignUpUser.Text);
+
+                    MainUserWindow windowUser = new MainUserWindow(user);
+                    windowUser.Show();
+                    this.Close();
+
+                }
+                catch (BO.BadUserNameException ex)
+                {
+                    SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
+                    simpleSound.Play();
+                    signUpPaswword.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                    signUpPaswword.Clear();
+                    SignUpUser.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                    SignUpUser.Clear();
+                }
             }
+
         }
     }
 }
