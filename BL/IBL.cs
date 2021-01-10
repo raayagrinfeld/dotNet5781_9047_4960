@@ -9,6 +9,9 @@ namespace BlApi
 {
     public interface IBL
     {
+        #region runNumber
+        int getNextBusLineRunNumber();
+        #endregion
         #region BusLineBO
         BusLineBO GetBusLine(int busLineKey);
         IEnumerable<BusLineBO> GetAllBusLines();

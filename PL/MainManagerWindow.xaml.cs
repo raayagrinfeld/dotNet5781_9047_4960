@@ -155,6 +155,32 @@ namespace PL
             busLineDetialedGrid.Visibility = Visibility.Visible;
         }
 
+        private void Button_Click_AddBusLine(object sender, RoutedEventArgs e)
+        {
+            busLineListBorder.Visibility = Visibility.Collapsed;
+            BusLineBO AddbusLine = new BusLineBO();
+            AddbusLine.BusLineKey = bl.getNextBusLineRunNumber();
+            firstStationNameComboBox.DataContext = bl.GetAllBusStations();
+            lastStationNameComboBox.DataContext = bl.GetAllBusStations();
+            areaComboBox.DataContext = typeof(Areas);
+            AddBusLineBorder.Visibility = Visibility.Visible;
+        }
+
+
+        private void Button_Click_AddBusFinalClick(object sender, RoutedEventArgs e)
+        {
+            AddBusLineBorder.Visibility = Visibility.Collapsed;
+            busLineListBorder.Visibility = Visibility.Visible;
+        }
+
+
+
+        private void Button_Click_BackArrow(object sender, RoutedEventArgs e)
+        {
+            AddBusLineBorder.Visibility = Visibility.Collapsed;
+            BusLineDetialedBorder.Visibility = Visibility.Collapsed;
+            busLineListBorder.Visibility = Visibility.Visible;
+        }
     }
 }
 

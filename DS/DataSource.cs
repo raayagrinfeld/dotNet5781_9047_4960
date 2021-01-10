@@ -19,11 +19,7 @@ namespace DS
         public static List<User> UserList;
         public static List<ConsecutiveStations> ConsecutiveStationsList;
         public static Random r = new Random();
-        public static Excel.Application xlApp = new Excel.Application();
-        public static bool a = System.IO.File.Exists(@"C:\Users\Keren\Source\Repos\raayagrinfeld\dotNet5781_9047_4960\DS\excel_seet\station_Names.xlsx");
-        public static Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(@"C:\Users\Keren\Source\Repos\raayagrinfeld\dotNet5781_9047_4960\DS\excel_seet\station_Names.xlsx");
-        public static Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-        public static Excel.Range xlRange = xlWorksheet.UsedRange;
+
 
         static DataSource()
         {
@@ -42,9 +38,9 @@ namespace DS
                 BusStationList.Add(new BusStation
                 {
                     BusStationKey = RunNumbers.BusStationRunNumber++,
-                    Coordinates = new GeoCoordinate(xlRange.Cells[i, 5].Value2,xlRange.Cells[i, 6].Value2),
-                    StationAddress= xlRange.Cells[i, 4].Value2,
-                    StationName= xlRange.Cells[i, 3].Value2,
+                    Coordinates = new GeoCoordinate( r.NextDouble() * (33.3 - 31) + 31,r.NextDouble() * (35.5 - 34.3) + 34.3),
+                StationAddress = "",
+                    StationName= "",
                     IsActive = true
                 }) ;
             }
@@ -103,27 +99,9 @@ namespace DS
                     prevBusLineStation = busStationKey;
                 }
             }
-            UserList.Add(new User { UserName = "raaya", Password = "123", IsActive = true, ManagementPermission=true , gender=(gender)1, imagePath=null});
-            UserList.Add(new User { UserName = "odelia", Password = "1666", IsActive = true, ManagementPermission = true, gender = (gender)1 ,imagePath="Icons/wonan.png"});
-            //cleanup
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-
-            //rule of thumb for releasing com objects:
-            //  never use two dots, all COM objects must be referenced and released individually
-            //  ex: [somthing].[something].[something] is bad
-
-            //release com objects to fully kill excel process from running in the background
-            Marshal.ReleaseComObject(xlRange);
-            Marshal.ReleaseComObject(xlWorksheet);
-
-            //close and release
-            xlWorkbook.Close();
-            Marshal.ReleaseComObject(xlWorkbook);
-
-            //quit and release
-            xlApp.Quit();
-            Marshal.ReleaseComObject(xlApp);
+            UserList.Add(new User { UserName = "raaya", Password = "123", IsActive = true, ManagementPermission=true , gender=(gender)0, imagePath=null});
+            UserList.Add(new User { UserName = "odelia", Password = "1666", IsActive = true, ManagementPermission = true, gender = (gender)0 ,imagePath="Icons/wonan.png"});
+            
         }
     }
 }

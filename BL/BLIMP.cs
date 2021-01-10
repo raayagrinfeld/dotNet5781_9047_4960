@@ -14,6 +14,13 @@ namespace BL
     public class BlImp1 : IBL
     {
         IDAL dl = DalFactory.GetDal();
+        #region runNumber
+        public int getNextBusLineRunNumber()
+        {
+            return ++DO.RunNumbers.BusLineRunNumber;
+        }
+
+        #endregion
 
         #region BusLineBO
         BO.BusLineBO BusLineDOBOAdapter(DO.BusLine busLineDo)
@@ -191,6 +198,7 @@ namespace BL
                 //                     select b;
                 busLine.LastStation = stationKey;
                 busLine.LastStationName = thisBusStation.StationName;
+                UpdateBusLine(busLine);
             }
             catch (DO.BadBusStationKeyException ex)
             {
@@ -260,6 +268,7 @@ namespace BL
                     }
                     catch(DO.BadConsecutiveStationsException)
                     { }
+                    UpdateBusLine(busLine);
                 }
             }
             catch (DO.BadBusLineStationsException ex)

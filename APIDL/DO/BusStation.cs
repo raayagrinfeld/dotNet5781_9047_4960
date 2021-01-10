@@ -19,7 +19,7 @@ namespace DO
         public bool IsActive { get; set; }
         public override string ToString()
         {
-            return this.ToStringProperty();
+            return BusStationKey + StationName;
         }
     }
 }

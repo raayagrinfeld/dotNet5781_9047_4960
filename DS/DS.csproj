@@ -81,8 +81,5 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <None Include="excel_seet\station_Names.xlsx" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -210,7 +210,8 @@
                 </Setter>
             </Style>
 
-            <Style TargetType="TextBox">
+        
+        <Style TargetType="TextBox">
                 <Setter Property="SpellCheck.IsEnabled" Value="True" xml:lang="he"/>
                 <Setter Property="TextWrapping" Value="Wrap"/>
             </Style>
