@@ -163,7 +163,7 @@ namespace BL
                     busLine.FirstStation = stationKey;
                 }
                 var thisBusStation=dl.GetBusStation(stationKey);
-                var BLstation = new BusLineStation { BusLineKey = busLine.BusLineKey, BusStationKey = stationKey, StationNumberInLine = busLine.busLineStations.Count()+1, IsActive = true};
+                var BLstation = new BusLineStation { BusLineKey = busLine.BusLineKey, BusStationKey = stationKey, StationNumberInLine = busLine.busLineStations.Count()+1, IsActive = true, StationName=thisBusStation.StationName};
                 ConsecutiveStations ConsecutiveStation = new ConsecutiveStations { Station1Key = dl.GetBusLineStationKey(busLine.BusLineKey, busLine.busLineStations.Count()), Station2Key = stationKey, IsActive = true };
                 dl.AddBusLineStation(BLstation);
                 if (ConsecutiveStation.Station1Key == -1)
@@ -190,6 +190,7 @@ namespace BL
                 //                     where HasBusStation(b, stationKey)
                 //                     select b;
                 busLine.LastStation = stationKey;
+                busLine.LastStationName = thisBusStation.StationName;
             }
             catch (DO.BadBusStationKeyException ex)
             {
@@ -212,13 +213,33 @@ namespace BL
                 dl.DeleteBusLineStationInOneBusLine(stationKey, busLine.BusLineKey);
                 if (busLine.LastStation == stationKey)
                 {
-                    busLine.LastStation = busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == busLinsStation.StationNumberInLine - 1 & b.IsActive)).BusStationKey;
+                    BusLineStationBO stationNext =busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == busLinsStation.StationNumberInLine - 1 & b.IsActive));
+                    if(stationNext!=null)
+                    {
+                        busLine.LastStation = stationNext.BusStationKey;
+                        busLine.LastStationName = stationNext.StationName;
+                    }
+                    else
+                    {
+                        busLine.LastStation = 0;
+                        busLine.LastStationName = "";
+                    }
                 }
                 else
                 {
                     if (busLine.FirstStation == stationKey)
                     {
-                        busLine.LastStation = dl.GetBusLineStationKey(busLine.BusLineKey, 1);
+                        BusLineStationBO stationNext =busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == 1 & b.IsActive));
+                        if(stationNext!=null)
+                        {
+                            busLine.FirstStation = stationNext.BusStationKey;
+                            busLine.FirstStationName = stationNext.StationName;
+                        }
+                        else
+                        {
+                            busLine.FirstStation = 0;
+                            busLine.FirstStationName = "";
+                        }
                     }
                     int keyPrev = dl.GetBusLineStationKey(busLine.BusLineKey, busLinsStation.StationNumberInLine - 1);
                     int keyNext = dl.GetBusLineStationKey(busLine.BusLineKey, busLinsStation.StationNumberInLine);

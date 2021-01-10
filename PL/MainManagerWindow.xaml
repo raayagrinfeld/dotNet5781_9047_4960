@@ -65,9 +65,9 @@
                                     <Label x:Name="label2" Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by area" VerticalContentAlignment="Center"/>
                                     <TextBox x:Name="Area" Padding="4" Grid.Column="3" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
                                 </Grid>
-                                <DataGrid x:Name="busLineBODataGrid" Grid.Row="2" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="48,27,60.8,86.8" RowDetailsVisibilityMode="VisibleWhenSelected" MouseDoubleClick="MouseDoubleClick_DataGridBusLine">
+                                <DataGrid x:Name="busLineBODataGrid" Grid.Row="2" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="48,27,60.8,86.8" RowDetailsVisibilityMode="VisibleWhenSelected" MouseDoubleClick="MouseDoubleClick_DataGridBusLine" >
                                     <DataGrid.Columns>
-                                        <DataGridTemplateColumn x:Name="lineNumberColumn" Header="Line Number" Width="150">
+                                        <DataGridTemplateColumn x:Name="lineNumberColumn" Header="Line Number" Width="110">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
                                                     <TextBlock Text="{Binding LineNumber}"/>
@@ -82,7 +82,7 @@
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
 
-                                        <DataGridTemplateColumn x:Name="areaColumn" Header="Area" Width="120">
+                                        <DataGridTemplateColumn x:Name="areaColumn" Header="Area" Width="80">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
                                                     <TextBlock Text="{Binding Area}"/>
@@ -90,17 +90,31 @@
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
 
-                                        <DataGridTemplateColumn x:Name="firstStationColumn" Header="First Station" Width="120">
+                                        <DataGridTemplateColumn x:Name="firstStationColumn" Header="First Station" Width="100">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
                                                     <TextBlock Text="{Binding FirstStation}"/>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn x:Name="lastStationColumn" Header="Last Station" Width="120">
+                                        <DataGridTemplateColumn x:Name="firstStationNameColumn" Header="First Station Name" Width="140">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding FirstStationName}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn x:Name="lastStationColumn" Header="Last Station" Width="100">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
                                                     <TextBlock Text="{Binding LastStation}"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn x:Name="lastStationNameColumn" Header="Last Station Name" Width="140">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding LastStationName}"/>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>

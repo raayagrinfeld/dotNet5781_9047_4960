@@ -62,10 +62,12 @@ namespace DS
                     if(j==1)
                     {
                         BusLineList.Find(b => b.BusLineKey == (20000 + i)).FirstStation = busStationKey;
+                        BusLineList.Find(b => b.BusLineKey == (20000 + i)).FirstStationName = "first station name";
                     }
                     if(j==5)
                     {
                         BusLineList.Find(b => b.BusLineKey == (20000 + i)).LastStation = busStationKey;
+                        BusLineList.Find(b => b.BusLineKey == (20000 + i)).LastStationName = "last station name";
                     }
                     BusLineStationList.Add(new BusLineStation
                     {

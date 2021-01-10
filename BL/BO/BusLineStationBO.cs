@@ -12,6 +12,7 @@ namespace BO
     public class BusLineStationBO
     {
         public int BusStationKey { get; set; }
+        public string StationName { get; set; }
         public int StationNumberInLine { get; set; }
         public double DistanceFromLastStation { get; set; }
         public TimeSpan DriveDistanceTimeFromLastStation { get; set; }

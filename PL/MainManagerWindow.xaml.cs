@@ -154,6 +154,7 @@ namespace PL
             BusLineDetialedBorder.DataContext = selectedBusLine;
             busLineDetialedGrid.Visibility = Visibility.Visible;
         }
+
     }
 }
 
