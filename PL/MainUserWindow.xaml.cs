@@ -22,9 +22,71 @@ namespace PL
     /// </summary>
     public partial class MainUserWindow : Window
     {
+        public static IBL bl = BlFactory.GetBl("1");
+        User user;
+        public MainUserWindow(User logedInUser)
+        {
+            InitializeComponent();
+            user = logedInUser;
+        }
         public MainUserWindow()
         {
             InitializeComponent();
+        }
+        private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
+        {
+            SystemCommands.MinimizeWindow(this);
+        }
+
+        private void Button_Click_MaximizeWindow(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+                SystemCommands.RestoreWindow(this);
+            else
+                SystemCommands.MaximizeWindow(this);
+        }
+
+        private void Button_Click_CloseWindow(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+            ((Button)sender).Width *= 1.1;
+            ((Button)sender).Height *= 1.1;
+
+        }
+
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ((Button)sender).Width /= 1.1;
+            ((Button)sender).Height /= 1.1;
+        }
+
+        private void When_Window_CLosed(object sender, EventArgs e)
+        {
+            Environment.Exit(Environment.ExitCode);
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
+        private void MenuItem_Click_OpenUserSettingsWindow(object sender, RoutedEventArgs e)
+        {
+            UserSettingsWindow userSettings = new UserSettingsWindow(user);
+            userSettings.Show();
+        }
+
+        private void MenuItem_Click_LogOut(object sender, RoutedEventArgs e)
+        {
+            LogInWindow logInWindow = new LogInWindow();
+            logInWindow.Show();
+            this.Close();
         }
     }
 }
