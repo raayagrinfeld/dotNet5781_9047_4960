@@ -480,7 +480,7 @@ namespace DS
                     {
                         busStationKey = r.Next(38880, RunNumbers.BusStationRunNumber);
                     }
-                    while (BusLineStationList.FirstOrDefault(b => (b.BusLineKey == (20000 + i) & b.BusStationKey == busStationKey)) != null);
+                    while ((BusLineStationList.FirstOrDefault(b => (b.BusLineKey == (20000 + i) & b.BusStationKey == busStationKey)) != null)||(BusStationList.FirstOrDefault(b=>(b.BusStationKey== busStationKey))==null));
                     BusStation bus = BusStationList.FirstOrDefault(b => b.BusStationKey == busStationKey);
                     if (j==1)
                     {
