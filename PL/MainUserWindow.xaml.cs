@@ -24,10 +24,12 @@ namespace PL
     {
         public static IBL bl = BlFactory.GetBl("1");
         User user;
+        Driving drive;
         public MainUserWindow(User logedInUser)
         {
             InitializeComponent();
             user = logedInUser;
+            
         }
         public MainUserWindow()
         {
@@ -87,6 +89,14 @@ namespace PL
             LogInWindow logInWindow = new LogInWindow();
             logInWindow.Show();
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            System.Windows.Data.CollectionViewSource drivingViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("drivingViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // drivingViewSource.Source = [generic data source]
         }
     }
 }
