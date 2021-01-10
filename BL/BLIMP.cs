@@ -426,7 +426,14 @@ namespace BL
         }
         public BO.User GetUser(string userName)
         {
-            return UserDOBOAdapter(dl.GetUser(userName));
+            try
+            {
+                return UserDOBOAdapter(dl.GetUser(userName));
+            }
+            catch (DO.BadUserNameException busExaption)
+            {
+                throw new BO.BadUserNameException("this username exsist", busExaption);
+            }
         }
         public IEnumerable<BO.User> GetAllUsers()
         {

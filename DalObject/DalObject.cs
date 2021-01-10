@@ -248,15 +248,15 @@ namespace DL
         #region User
         public User GetUser(string userName)
         {
-            User user = DataSource.UserList.Find(b => (b.UserName == userName & b.IsActive));
-            if (user != null)
-            {
-                return user.Clone();
-            }
-            else
-            {
-                throw new BadUserNameException(userName, $"bad bus user name: {userName}");
-            }
+                User user = DataSource.UserList.Find(b => (b.UserName == userName & b.IsActive));
+                if (user != null)
+                {
+                    return user.Clone();
+                }
+                else
+                {
+                    throw new BadUserNameException(userName, $"bad bus user name: {userName}");
+                }
         }
         public IEnumerable<User> GetAllUsers()
         {
