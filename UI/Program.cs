@@ -18,23 +18,27 @@ namespace PlConsole
             BO.Driving d = new Driving {Source= bl.GetBusStation(30001), Destination= bl.GetBusStation(30005)};
             /* bl.AddSourceStation(30007, d);
              bl.AddDeatinationStation(30042, d);*/
-
+            for (int i = 0; i < 180; i++)
+            {
+                Console.WriteLine((bl.GetAllBusStations()).ToList()[i]);
+            }
+            Console.WriteLine();
             try
             {
-                bl.AddStation(bl.GetBusLine(20000), 30001);
-                bl.AddStation(bl.GetBusLine(20000), 30002); 
-                bl.AddStation(bl.GetBusLine(20000), 30003);
-                bl.AddStation(bl.GetBusLine(20000), 30004);
-                bl.AddStation(bl.GetBusLine(20000), 30005);
-                bl.AddStation(bl.GetBusLine(20000), 30006);
-                bl.AddStation(bl.GetBusLine(20000), 30007);
-                bl.AddStation(bl.GetBusLine(20000), 30008);
-                Console.WriteLine(bl.GetBusLine(20000));
-                bl.deleteBusStationInBusLine(bl.GetBusLine(20000), 30005);
-                Console.WriteLine(bl.GetBusLine(20000));
-                bl.deleteBusStationInBusLine(bl.GetBusLine(20000), 30001);
-                Console.WriteLine(bl.GetBusLine(20000));
-                bl.deleteBusStationInBusLine(bl.GetBusLine(20000), 30008);
+                //bl.AddStation(bl.GetBusLine(20000), 30001);
+                //bl.AddStation(bl.GetBusLine(20000), 30002); 
+                //bl.AddStation(bl.GetBusLine(20000), 30003);
+                //bl.AddStation(bl.GetBusLine(20000), 30004);
+                //bl.AddStation(bl.GetBusLine(20000), 30005);
+                //bl.AddStation(bl.GetBusLine(20000), 30006);
+                //bl.AddStation(bl.GetBusLine(20000), 30007);
+                //bl.AddStation(bl.GetBusLine(20000), 30008);
+                //Console.WriteLine(bl.GetBusLine(20000));
+                //bl.deleteBusStationInBusLine(bl.GetBusLine(20000), 30005);
+                //Console.WriteLine(bl.GetBusLine(20000));
+                //bl.deleteBusStationInBusLine(bl.GetBusLine(20000), 30001);
+                //Console.WriteLine(bl.GetBusLine(20000));
+                //bl.deleteBusStationInBusLine(bl.GetBusLine(20000), 30008);
                 Console.WriteLine(bl.GetBusLine(20000));
 
             }
