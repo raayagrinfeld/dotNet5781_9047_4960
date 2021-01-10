@@ -24,7 +24,7 @@ namespace PL
     {
         public static IBL bl = BlFactory.GetBl("1");
         User user;
-        Driving drive;
+        Driving drive =new Driving();
         public MainUserWindow(User logedInUser)
         {
             InitializeComponent();
@@ -106,9 +106,9 @@ namespace PL
         }
         private void SearchBus_Click(object sender, RoutedEventArgs e)
         {
-            drive.Source = (StationBO)StationsBox.SelectedItem;
+            drive.Source = (StationBO)StationsBox.SelectedValue;
             drive.Destination = (StationBO)StationsBox2.SelectedItem;
-            listBuses.ItemsSource = bl.fingALinesBeatweenStation(drive);
+            listBuses.ItemsSource = bl.fingALinesBeatweenStation(drive).ToList();
             listBuses.Visibility = Visibility.Visible;
         }
     }
