@@ -6,68 +6,31 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="StationBO" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <Children>
-      <GenericObjectDataSource DisplayName="Coordinates" Version="1.0">
-         <TypeInfo>System.Device.Location.GeoCoordinate, System.Device, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</TypeInfo>
-         <TypeUISetting>
-            <PropertyUISettings>
-               <PropertyUISetting Name="VerticalAccuracy">
-                  <ControlSettings>
-                     <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
-                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
-                     </ControlSetting>
-                  </ControlSettings>
-               </PropertyUISetting>
-               <PropertyUISetting Name="Speed">
-                  <ControlSettings>
-                     <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
-                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
-                     </ControlSetting>
-                  </ControlSettings>
-               </PropertyUISetting>
-               <PropertyUISetting Name="IsUnknown">
-                  <ControlSettings>
-                     <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
-                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
-                     </ControlSetting>
-                  </ControlSettings>
-               </PropertyUISetting>
-               <PropertyUISetting Name="HorizontalAccuracy">
-                  <ControlSettings>
-                     <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
-                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
-                     </ControlSetting>
-                  </ControlSettings>
-               </PropertyUISetting>
-               <PropertyUISetting Name="Course">
-                  <ControlSettings>
-                     <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
-                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
-                     </ControlSetting>
-                  </ControlSettings>
-               </PropertyUISetting>
-               <PropertyUISetting Name="Altitude">
-                  <ControlSettings>
-                     <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
-                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
-                     </ControlSetting>
-                  </ControlSettings>
-               </PropertyUISetting>
-               <PropertyUISetting Name="StationBO.Coordinates">
-                  <ControlSettings>
-                     <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
-                        <BindableControlInfo Name="Details" Type="Microsoft.VSDesigner.Data.DataForm.Windows.DetailView" />
-                     </ControlSetting>
-                  </ControlSettings>
-               </PropertyUISetting>
-            </PropertyUISettings>
-         </TypeUISetting>
-      </GenericObjectDataSource>
-   </Children>
    <TypeInfo>BO.StationBO, BL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
    <TypeUISetting>
       <PropertyUISettings>
          <PropertyUISetting Name="IsActive">
+            <ControlSettings>
+               <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
+                  <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+               </ControlSetting>
+            </ControlSettings>
+         </PropertyUISetting>
+         <PropertyUISetting Name="BusStationKey">
+            <ControlSettings>
+               <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
+                  <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+               </ControlSetting>
+            </ControlSettings>
+         </PropertyUISetting>
+         <PropertyUISetting Name="HasARoof">
+            <ControlSettings>
+               <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
+                  <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+               </ControlSetting>
+            </ControlSettings>
+         </PropertyUISetting>
+         <PropertyUISetting Name="StationAddress">
             <ControlSettings>
                <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
                   <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />

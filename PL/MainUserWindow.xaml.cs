@@ -29,11 +29,14 @@ namespace PL
         {
             InitializeComponent();
             user = logedInUser;
-            
+            StationsBox.ItemsSource = bl.GetAllBusStations();
+            StationsBox2.ItemsSource = bl.GetAllBusStations();
         }
         public MainUserWindow()
         {
             InitializeComponent();
+            StationsBox.ItemsSource = bl.GetAllBusStations();
+            StationsBox2.ItemsSource = bl.GetAllBusStations();
         }
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
         {
@@ -97,6 +100,16 @@ namespace PL
             System.Windows.Data.CollectionViewSource drivingViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("drivingViewSource")));
             // Load data by setting the CollectionViewSource.Source property:
             // drivingViewSource.Source = [generic data source]
+            //System.Windows.Data.CollectionViewSource stationBOViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("stationBOViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // stationBOViewSource.Source = [generic data source]
+        }
+        private void SearchBus_Click(object sender, RoutedEventArgs e)
+        {
+            drive.Source = (StationBO)StationsBox.SelectedItem;
+            drive.Destination = (StationBO)StationsBox2.SelectedItem;
+            listBuses.ItemsSource = bl.fingALinesBeatweenStation(drive);
+            listBuses.Visibility = Visibility.Visible;
         }
     }
 }
