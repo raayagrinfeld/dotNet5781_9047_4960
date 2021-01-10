@@ -10,7 +10,7 @@ namespace DO
     {
         static public int BusRunNumber = 10000;
         static public int BusLineRunNumber = 20000;
-        static public int BusStationRunNumber = 30000;
+        static public int BusStationRunNumber = 39050;
         static public int UserDrivingRunNumber = 50000;
     }
 }
