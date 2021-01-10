@@ -478,10 +478,10 @@ namespace DS
                     int busStationKey;
                     do
                     {
-                        busStationKey = r.Next(30000, RunNumbers.BusStationRunNumber);
+                        busStationKey = r.Next(38880, RunNumbers.BusStationRunNumber);
                     }
                     while (BusLineStationList.FirstOrDefault(b => (b.BusLineKey == (20000 + i) & b.BusStationKey == busStationKey)) != null);
-                    var bus = BusStationList.FirstOrDefault(b => b.BusStationKey == busStationKey);
+                    BusStation bus = BusStationList.FirstOrDefault(b => b.BusStationKey == busStationKey);
                     if (j==1)
                     {
                         BusLineList.Find(b => b.BusLineKey == (20000 + i)).FirstStation = busStationKey;

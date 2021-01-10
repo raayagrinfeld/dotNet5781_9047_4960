@@ -248,7 +248,7 @@ namespace DL
         #region User
         public User GetUser(string userName)
         {
-            User user = DataSource.UserList.Find(b => (b.UserName == userName & b.IsActive));
+            User user = DataSource.UserList.FirstOrDefault(b => (b.UserName == userName & b.IsActive));
             if (user != null)
             {
                 return user.Clone();
