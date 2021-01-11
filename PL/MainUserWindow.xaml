@@ -43,8 +43,8 @@
             <TabControl Grid.Row="1" x:Name="TabControl_Manager"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF17B419" >
                 <TabItem Header="Search a Bus" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
-                        <Border x:Name="SearchBus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Margin="0,0,-0.333,-0.333">
-                            <Grid>
+                        <Border x:Name="SearchBus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Margin="10,10,524.667,338.667">
+                            <Grid Margin="0,10,44,0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="200"/>
                                     <RowDefinition Height="200"/>
@@ -54,13 +54,15 @@
                                     <ColumnDefinition Width="169*"/>
                                     <ColumnDefinition Width="224*"/>
                                 </Grid.ColumnDefinitions>
-                                <ComboBox x:Name="StationsBox" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Height="58" Margin="0.333,143,0,0" VerticalAlignment="Top" Width="400" Text="{Binding StationName}" Grid.RowSpan="2"/>
-                                <Label Content="Choose a source station" Grid.Column="0" Margin="185,143,4.667,200.333" Grid.RowSpan="2"/>
-                                <ComboBox x:Name="StationsBox2" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="48" Margin="0.333,10.333,0,0" VerticalAlignment="Top" Width="400" Text="{Binding StationName}"/>
-                                <Label Content="Choose a destanation station" Grid.Column="0"  Grid.Row="1" Margin="180,0.333,9.667,142.333"/>
-                                <Button x:Name="search" Content="Search Bus" HorizontalAlignment="Left" Height="71" Margin="175,119.333,0,0" Grid.Row="1" VerticalAlignment="Top" Width="250" Click="SearchBus_Click"/>
-                                <ListBox x:Name="listBuses" HorizontalAlignment="Left" Height="181" VerticalAlignment="Top" Width="352" Grid.Column="1" Margin="119.333,9.667,0,0" Grid.Row="2" Visibility="Hidden" />
+                                <ComboBox x:Name="StationsBox" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Height="58" Margin="0.333,143,0,0" VerticalAlignment="Top" Width="261" Text="{Binding StationName}" Grid.RowSpan="2"/>
+                                <Label Content="Choose a source station" Grid.Column="0" Margin="10,144,9.667,199" Grid.RowSpan="2"/>
+                                <ComboBox x:Name="StationsBox2" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="48" Margin="0.333,10.333,0,0" VerticalAlignment="Top" Width="261" Text="{Binding StationName}"/>
+                                <Label Content="Choose a destanation station" Grid.Column="0"  Grid.Row="1" Margin="0,0,9.667,143"/>
+                                <Button x:Name="search" Content="Search Bus" HorizontalAlignment="Left" Height="71" Margin="21.333,10,0,0" VerticalAlignment="Top" Width="250" Click="SearchBus_Click" Grid.Column="1"/>
                             </Grid>
+                        </Border>
+                        <Border x:Name="Finding" Visibility="Collapsed">
+                            <ListBox x:Name="listBuses" HorizontalAlignment="Left" Height="181" VerticalAlignment="Top" Width="352" Grid.Column="1" Margin="119.333,9.667,0,0" Grid.Row="2"/>
                         </Border>
                     </Grid>
                 </TabItem>
