@@ -50,7 +50,9 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="15"/>
                                     <RowDefinition Height="40"/>
+                                    <RowDefinition Height="15"/>
                                     <RowDefinition Height="*"/>
+                                    <RowDefinition Height="40"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="1">
                                     <Grid.ColumnDefinitions>
@@ -58,13 +60,44 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="0.1*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label x:Name="label" Grid.Column="0" FontSize="16" Content="search by line number" />
-                                    <TextBox x:Name="lineNumber" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
-                                    <Label x:Name="label2" Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by area" VerticalContentAlignment="Center"/>
-                                    <TextBox x:Name="Area" Padding="4" Grid.Column="3" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
+                                    <Label x:Name="label" Grid.Column="0" FontSize="16" Content="search by line number" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox x:Name="lineNumber" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
+                                    <Label x:Name="label2" Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by area" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox x:Name="Area" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
                                 </Grid>
-                                <DataGrid x:Name="busLineBODataGrid" Grid.Row="2" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="48,27,60.8,86.8" RowDetailsVisibilityMode="VisibleWhenSelected" MouseDoubleClick="MouseDoubleClick_DataGridBusLine" >
+                                <ListView Grid.Row="3" x:Name="busLineBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" MouseDoubleClick="MouseDoubleClick_ListviewBusLine" SelectionChanged="busLineBOListView_SelectionChanged">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Line Number" DisplayMemberBinding="{Binding LineNumber}" Width="100"/>
+                                            <GridViewColumn Header="Bus Line Key" DisplayMemberBinding="{Binding BusLineKey}" Width="100"/>
+                                            <GridViewColumn Header="Area" DisplayMemberBinding="{Binding Area}" Width="100"/>
+                                            <GridViewColumn Header="First Station" DisplayMemberBinding="{Binding FirstStation, StringFormat=d}" Width="100"/>
+                                            <GridViewColumn Header="First Station Name" DisplayMemberBinding="{Binding FirstStationName}" Width="220"/>
+                                            <GridViewColumn Header="Last Station" DisplayMemberBinding="{Binding LastStation}" Width="120"/>
+                                            <GridViewColumn Header="Last Station Name" DisplayMemberBinding="{Binding LastStationName}" Width="220"/>
+                                            <GridViewColumn Header="delete"  Width="50">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button Click="Button_Click_DeleteBusLine" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                                                            <Image Source="Icons/garbage.png" Margin="5"/>
+                                                        </Button>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                    <ListView.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="update bus information" Click="Button_Click_UpdateBusInformation" />
+                                            <MenuItem Header="deleteBus" Click="Button_Click_DeleteBusLine" />
+                                        </ContextMenu>
+                                    </ListView.ContextMenu>
+                                </ListView>
+                                <!--GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"-->
+                                <!--
+                                <DataGrid x:Name="busLineBODataGrid" CanUserSortColumns="True" Grid.Row="2" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="48,27,60.8,86.8" RowDetailsVisibilityMode="VisibleWhenSelected" MouseDoubleClick="MouseDoubleClick_DataGridBusLine" >
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn x:Name="lineNumberColumn" Header="Line Number" Width="110">
                                             <DataGridTemplateColumn.CellTemplate>
@@ -125,8 +158,8 @@
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
                                     </DataGrid.Columns>
-                                </DataGrid>
-                                <Button Content="add new bus" HorizontalAlignment="Left" Margin="797,526.8,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="2.352,8.96" Grid.Row="2" Click="Button_Click_AddBusLine"/>
+                                </DataGrid>-->
+                                <Button Content="add new bus"  Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Grid.Row="4" Click="Button_Click_AddBusLine" Margin="0,0.2,30.8,9.8"/>
                             </Grid>
                         </Border>
                         <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed">
@@ -163,6 +196,7 @@
                                 <Button Click="Button_Click_BackArrow" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <Image Source="Icons/left-arrow.png"/>
                                 </Button>
+
                             </Grid>
                         </Border>
                         <Border x:Name="AddBusLineBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed">

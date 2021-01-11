@@ -15,6 +15,7 @@ using BlApi;
 using BO;
 using BL;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace PL
 {
@@ -25,20 +26,20 @@ namespace PL
     {
         public static IBL bl = BlFactory.GetBl("1");
         User user;
-        BusLineBO selectedBusLine;
-        //private ObservableCollection<BusLineBO> busLineBOObservableCollection;
-        //private ObservableCollection<StationBO> StationBOObservableCollection;
-        //private ObservableCollection<User> UserBOObservableCollection;
+        BusLineBO selectedBusLine=null;
+        private ObservableCollection<BusLineBO> busLineBOObservableCollection;
+        private ObservableCollection<StationBO> StationBOObservableCollection;
+        private ObservableCollection<User> UserBOObservableCollection;
 
         public MainManagerWindow(User logedInUser)
         {
-            //busLineBOObservableCollection = new ObservableCollection<BusLineBO>( bl.GetAllBusLines());
-            //StationBOObservableCollection = new ObservableCollection<StationBO>( bl.GetAllBusStations());
-            //UserBOObservableCollection = new ObservableCollection<User>( bl.GetAllUsers());
+            busLineBOObservableCollection = new ObservableCollection<BusLineBO>(bl.GetAllBusLines());
+            StationBOObservableCollection = new ObservableCollection<StationBO>(bl.GetAllBusStations());
+            UserBOObservableCollection = new ObservableCollection<User>(bl.GetAllUsers());
             user = logedInUser;
             InitializeComponent();
-
-            busLineBODataGrid.ItemsSource = bl.GetAllBusLines();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            busLineBOListView.ItemsSource = busLineBOObservableCollection;
         }
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
@@ -92,7 +93,9 @@ namespace PL
 
         private void MenuItem_Click_ShowUserInterface(object sender, RoutedEventArgs e)
         {
-
+            MainUserWindow userWindow = new MainUserWindow(user);
+            userWindow.Show();
+            this.Close();
         }
 
         private void MenuItem_Click_LogOut(object sender, RoutedEventArgs e)
@@ -105,9 +108,9 @@ namespace PL
         private void Button_Click_DeleteBusLine(object sender, RoutedEventArgs e)
         {
             bl.DeleteBusLine(((sender as Button).DataContext as BusLineBO).BusLineKey);
-            busLineBODataGrid.ItemsSource = bl.GetAllBusLines();
+            busLineBOListView.ItemsSource = bl.GetAllBusLines();
         }
-
+        //--------filter BusLine, station and user-------------------
         private void SearchFilterChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -120,7 +123,8 @@ namespace PL
 
 
 
-            busLineBODataGrid.ItemsSource = it;
+            busLineBOListView.ItemsSource = it;
+            busLineBOObservableCollection = it;
         }
         private bool CheckIfStringsAreEqual(string a, string b)
         {
@@ -137,24 +141,10 @@ namespace PL
             return true;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-            System.Windows.Data.CollectionViewSource busLineBOViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("busLineBOViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // busLineBOViewSource.Source = [generic data source]
-        }
 
 
 
-        private void MouseDoubleClick_DataGridBusLine(object sender, MouseButtonEventArgs e)
-        {
-            selectedBusLine = (busLineBODataGrid.SelectedItem as BusLineBO);
-            busLineListBorder.Visibility = Visibility.Collapsed;
-            BusLineDetialedBorder.DataContext = selectedBusLine;
-            busLineDetialedGrid.Visibility = Visibility.Visible;
-        }
-
+        //----------------bus line butten clicks
         private void Button_Click_AddBusLine(object sender, RoutedEventArgs e)
         {
             busLineListBorder.Visibility = Visibility.Collapsed;
@@ -171,9 +161,30 @@ namespace PL
         {
             AddBusLineBorder.Visibility = Visibility.Collapsed;
             busLineListBorder.Visibility = Visibility.Visible;
+            bl.AddBusLine(AddBusDataGrid.DataContext as BusLineBO);
+            busLineListBorder.DataContext = bl.GetAllBusLines();
         }
 
+        private void Button_Click_UpdateBusInformation(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void MouseDoubleClick_ListviewBusLine(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+        private void busLineBOListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectedBusLine = (busLineBOListView.SelectedItem as BusLineBO);
+            if (selectedBusLine != null)
+            {
+                busLineListBorder.Visibility = Visibility.Collapsed;
+                BusLineDetialedBorder.Visibility = Visibility.Visible;
+                busLineDetialedGrid.DataContext = selectedBusLine;
+                busLineStationsListBox.ItemsSource = selectedBusLine.busLineStations;
+            }
+        }
 
         private void Button_Click_BackArrow(object sender, RoutedEventArgs e)
         {
@@ -181,6 +192,75 @@ namespace PL
             BusLineDetialedBorder.Visibility = Visibility.Collapsed;
             busLineListBorder.Visibility = Visibility.Visible;
         }
+
+
+        //---------------- sort by header click
+        GridViewColumnHeader _lastHeaderClicked = null;
+        ListSortDirection _lastDirection = ListSortDirection.Ascending;
+        void GridViewColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
+        {
+            var headerClicked = e.OriginalSource as GridViewColumnHeader;
+            ListSortDirection direction;
+
+            if (headerClicked != null)
+            {
+                if (headerClicked.Role != GridViewColumnHeaderRole.Padding)
+                {
+                    if (headerClicked != _lastHeaderClicked)
+                    {
+                        direction = ListSortDirection.Ascending;
+                    }
+                    else
+                    {
+                        if (_lastDirection == ListSortDirection.Ascending)
+                        {
+                            direction = ListSortDirection.Descending;
+                        }
+                        else
+                        {
+                            direction = ListSortDirection.Ascending;
+                        }
+                    }
+
+                    var columnBinding = headerClicked.Column.DisplayMemberBinding as Binding;
+                    var sortBy = columnBinding?.Path.Path ?? headerClicked.Column.Header as string;
+
+                    Sort(sortBy, direction, sender as ListView);
+
+                    if (direction == ListSortDirection.Ascending)
+                    {
+                        headerClicked.Column.HeaderTemplate =
+                          Resources["HeaderTemplateArrowUp"] as DataTemplate;
+                    }
+                    else
+                    {
+                        headerClicked.Column.HeaderTemplate =
+                          Resources["HeaderTemplateArrowDown"] as DataTemplate;
+                    }
+
+                    // Remove arrow from previously sorted header
+                    if (_lastHeaderClicked != null && _lastHeaderClicked != headerClicked)
+                    {
+                        _lastHeaderClicked.Column.HeaderTemplate = null;
+                    }
+
+                    _lastHeaderClicked = headerClicked;
+                    _lastDirection = direction;
+                }
+            }
+        }
+        private void Sort(string sortBy, ListSortDirection direction,ListView listView)
+        {
+            ICollectionView dataView =
+              CollectionViewSource.GetDefaultView(listView.ItemsSource);
+
+            dataView.SortDescriptions.Clear();
+            SortDescription sd = new SortDescription(sortBy, direction);
+            dataView.SortDescriptions.Add(sd);
+            dataView.Refresh();
+        }
+
+       
     }
 }
 
