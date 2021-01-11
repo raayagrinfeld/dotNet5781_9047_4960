@@ -23,12 +23,11 @@ namespace PL
     /// </summary>
     public partial class LogInWindow : Window
     {
-        IBL bl;
+        IBL bl=  BlFactory.GetBl("1");
 
 
         public LogInWindow()
         {
-            bl = BlFactory.GetBl("1");
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
             CombBx_Gender.ItemsSource = Enum.GetValues(typeof(gender));
