@@ -86,17 +86,29 @@ namespace PL
             {
                 bl.AddUser(new User { UserName = SignUpUser.Text, Password = signUpPaswword.Password, IsActive = true, ManagementPermission = false });
                 User user = bl.GetUser(SignUpUser.Text);
-                if (CombBx_Gender.SelectedIndex != -1)
+                if (user.UserName == "" || user.Password == "")
                 {
-                    user.Gender = (gender)CombBx_Gender.SelectedItem;
+                    SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
+                    simpleSound.Play();
+                    signUpPaswword.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                    signUpPaswword.Clear();
+                    SignUpUser.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                    SignUpUser.Clear();
                 }
                 else
                 {
-                    user.Gender = gender.male;
+                    if (CombBx_Gender.SelectedIndex != -1)
+                    {
+                        user.Gender = (gender)CombBx_Gender.SelectedItem;
+                    }
+                    else
+                    {
+                        user.Gender = gender.male;
+                    }
+                    MainUserWindow windowUser = new MainUserWindow(user);
+                    windowUser.Show();
+                    this.Close();
                 }
-                MainUserWindow windowUser = new MainUserWindow(user);
-                windowUser.Show();
-                this.Close();
 
             }
             catch (BO.BadUserNameException ex)

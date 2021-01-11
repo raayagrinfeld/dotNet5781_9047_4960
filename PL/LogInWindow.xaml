@@ -11,7 +11,7 @@
             <ColumnDefinition Width="169*"/>
             <ColumnDefinition Width="224*"/>
         </Grid.ColumnDefinitions>
-        <Border Name="login" Visibility="Hidden" Margin="0,0,10.333,-0.333" Grid.ColumnSpan="2">
+        <Border Name="login" Visibility="Visible" Margin="0,0,10.333,-0.333" Grid.ColumnSpan="2">
             <Grid x:Name="grid1" VerticalAlignment="Top" Margin="92,63,0,0" HorizontalAlignment="Left" Grid.ColumnSpan="2" Height="72" Width="213" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -30,7 +30,7 @@
                 <Button x:Name="signup" Content="Still don't have an account? click here" HorizontalAlignment="Left" Click="signup_Click" Grid.ColumnSpan="3" Margin="-12,24,-9.333,-54" Grid.Row="2"/>
             </Grid>
         </Border>
-        <Border Name="signUp" Visibility="Visible" Margin="0,0,10.333,-0.333" Grid.ColumnSpan="2">
+        <Border Name="signUp" Visibility="Collapsed" Margin="0,0,10.333,-0.333" Grid.ColumnSpan="2">
             <Grid Name="grig2" Margin="58,95,10.333,9.667">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
