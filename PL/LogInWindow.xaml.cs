@@ -23,13 +23,14 @@ namespace PL
     /// </summary>
     public partial class LogInWindow : Window
     {
-        IBL bl;
+        IBL bl=  BlFactory.GetBl("1");
+
 
         public LogInWindow()
         {
-            bl = BlFactory.GetBl("1");
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
+            CombBx_Gender.ItemsSource = Enum.GetValues(typeof(gender));
         }
 
         private void PassBox_passAdmin_KeyDown(object sender, KeyEventArgs e)
@@ -78,21 +79,13 @@ namespace PL
             login.Visibility = Visibility.Collapsed;
             signUp.Visibility = Visibility.Visible;
         }
-        private void signUpP_passAdmin_KeyDown(object sender, KeyEventArgs e)
+        private void signup_InWindow_Click(object sender, RoutedEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            try
             {
-                try
-                {
-                    bl.AddUser(new User { UserName = SignUpUser.Text, Password = signUpPaswword.Password, IsActive = true, ManagementPermission = false });
-                    User user = bl.GetUser(SignUpUser.Text);
-
-                    MainUserWindow windowUser = new MainUserWindow(user);
-                    windowUser.Show();
-                    this.Close();
-
-                }
-                catch (BO.BadUserNameException ex)
+                bl.AddUser(new User { UserName = SignUpUser.Text, Password = signUpPaswword.Password, IsActive = true, ManagementPermission = false });
+                User user = bl.GetUser(SignUpUser.Text);
+                if (user.UserName == "" || user.Password == "")
                 {
                     SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
                     simpleSound.Play();
@@ -101,8 +94,31 @@ namespace PL
                     SignUpUser.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
                     SignUpUser.Clear();
                 }
-            }
+                else
+                {
+                    if (CombBx_Gender.SelectedIndex != -1)
+                    {
+                        user.Gender = (gender)CombBx_Gender.SelectedItem;
+                    }
+                    else
+                    {
+                        user.Gender = gender.male;
+                    }
+                    MainUserWindow windowUser = new MainUserWindow(user);
+                    windowUser.Show();
+                    this.Close();
+                }
 
+            }
+            catch (BO.BadUserNameException ex)
+            {
+                SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
+                simpleSound.Play();
+                signUpPaswword.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                signUpPaswword.Clear();
+                SignUpUser.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                SignUpUser.Clear();
+            }
         }
     }
 }

@@ -43,37 +43,34 @@
             <TabControl Grid.Row="1" x:Name="TabControl_Manager"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF17B419" >
                 <TabItem Header="Search a Bus" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
-                        <Border x:Name="SearchBus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
-                            <Grid x:Name="grid1" DataContext="{StaticResource drivingViewSource}" HorizontalAlignment="Left" Margin="144,164,0,0" VerticalAlignment="Top">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
+                        <Border x:Name="SearchBus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Margin="10,10,9.667,9.667">
+
+                            <Grid x:Name="searchB" >
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="100"/>
                                 </Grid.RowDefinitions>
-                                <Label Content="Station Address:" Grid.Column="0" HorizontalAlignment="Left" Margin="2,3,0,3.333" Grid.Row="0" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
-                                    <Label.RenderTransform>
-                                        <TransformGroup>
-                                            <ScaleTransform/>
-                                            <SkewTransform/>
-                                            <RotateTransform Angle="1.17"/>
-                                            <TranslateTransform/>
-                                        </TransformGroup>
-                                    </Label.RenderTransform>
-                                </Label>
-                                <TextBox x:Name="stationAddressTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Destination.StationAddress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-                                <Label Content="Station Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
-                                <TextBox x:Name="stationNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Destination.StationName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-                                <Label Content="Station Address:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
-                                <TextBox x:Name="stationAddressTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Source.StationAddress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-                                <Label Content="Station Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
-                                <TextBox x:Name="stationNameTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding Source.StationName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200*"/>
+                                    <ColumnDefinition Width="200*"/>
+                                    <ColumnDefinition Width="200*"/>
+                                    <ColumnDefinition Width="200*"/>
+                                    <ColumnDefinition Width="200*"/>
+                                    <ColumnDefinition Width="200*"/>
+                                </Grid.ColumnDefinitions>
+                                <ComboBox x:Name="StationsBox" Grid.Column="2" Grid.Row="0" Text="{Binding StationName}" Margin="0.333,0,0,55.667" />
+                                <Label Content="Choose a source station" Grid.Row="0" Grid.Column="1"/>
+                                <ComboBox x:Name="StationsBox2" Grid.Column="3" Grid.Row="0" Text="{Binding StationName}" Grid.ColumnSpan="2" Margin="165,0,0,55.667"/>
+                                <Label Content="Choose a destanation station" Grid.Column="3"  Grid.Row="0" />
+                                <Button x:Name="search" Content="Search Bus" HorizontalAlignment="Left" Height="42" Margin="10,3,0,0" VerticalAlignment="Top" Width="145" Click="SearchBus_Click" Grid.Column="5"/>
+                                <ListBox x:Name="listBuses" HorizontalAlignment="Left" Height="503" VerticalAlignment="Top" Width="991" Visibility="Collapsed" Margin="0,5.333,-0.333,-5" Grid.Row="1" Background="Aqua" Grid.ColumnSpan="6" Grid.RowSpan="5"/>
                             </Grid>
                         </Border>
+
                     </Grid>
                 </TabItem>
                 <TabItem Header="בהמשך" Width="180" Height="30" FontSize="16">
