@@ -257,7 +257,7 @@
                                 <DataGrid.Columns>
                                     <DataGridTextColumn x:Name="busStationKeyColumn" Binding="{Binding BusStationKey}" Header="Bus Station Key" Width="SizeToHeader"/>
                                     <DataGridTextColumn x:Name="goordinatesColumn" Binding="{Binding Coordinates}" Header="Goordinates" Width="SizeToHeader"/>
-                                    <DataGridCheckBoxColumn x:Name="hasARoofColumn" Binding="{Binding HasARoof}" Header="Has ARoof" Width="SizeToHeader"/>
+                                    <DataGridCheckBoxColumn x:Name="hasARoofColumn" Binding="{Binding HasARoof}" Header="Has A Roof" Width="SizeToHeader"/>
                                     <DataGridTextColumn x:Name="stationAddressColumn" Binding="{Binding StationAddress}" Header="Station Address" Width="SizeToHeader"/>
                                     <DataGridTextColumn x:Name="stationNameColumn" Binding="{Binding StationName}" Header="Station Name" Width="SizeToHeader"/>
                                 </DataGrid.Columns>
