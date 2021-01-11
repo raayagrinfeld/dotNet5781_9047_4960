@@ -74,6 +74,7 @@ namespace PL
         {
             LogInWindow logIn = new LogInWindow();
             logIn.Show();
+          //  this.Close();
             
         }
     }

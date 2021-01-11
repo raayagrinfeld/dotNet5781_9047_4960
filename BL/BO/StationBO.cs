@@ -19,7 +19,7 @@ namespace BO
         public IEnumerable<BO.BusLineBO> busLines;
         public override string ToString()
         {
-            return this.ToStringProperty();
+            return StationName+ "-"+BusStationKey.ToString() ;
         }
     }
 }

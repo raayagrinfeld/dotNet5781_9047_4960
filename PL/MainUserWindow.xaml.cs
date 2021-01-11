@@ -31,7 +31,7 @@ namespace PL
             user = logedInUser;
             StationsBox.ItemsSource = bl.GetAllBusStations();
             StationsBox2.ItemsSource = bl.GetAllBusStations();
-            searchB.DataContext= bl.GetAllBusStations();
+            StationsBox.Text = bl.GetAllBusStations().ToString();
         }
         public MainUserWindow()
         {
