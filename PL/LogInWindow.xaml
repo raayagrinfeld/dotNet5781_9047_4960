@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="Log In" Height="300" Width="400"  Icon="Icons\BusUslcon.jpeg">
+        Title="Log In" Height="420.12" Width="703.333"  Icon="Icons\BusUslcon.jpeg">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="169*"/>
             <ColumnDefinition Width="224*"/>
         </Grid.ColumnDefinitions>
-        <Border Name="login" Visibility="Visible" Margin="0,0,10.333,-0.333" Grid.ColumnSpan="2">
-            <Grid x:Name="grid1" VerticalAlignment="Top" Margin="92,63,0,0" HorizontalAlignment="Left" Grid.ColumnSpan="2" Height="72" Width="213" >
+        <Border Name="login" Visibility="Visible" Margin="1,0,10,4.333" Grid.ColumnSpan="2">
+            <Border.Background>
+                <ImageBrush ImageSource="BusUslogo.jpeg"/>
+            </Border.Background>
+            <Grid x:Name="grid1" VerticalAlignment="Top" Margin="221,98,0,0" HorizontalAlignment="Left" Grid.ColumnSpan="2" Height="65" Width="213" Background="Black" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -23,15 +26,18 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Password:"/>
+                <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Password:" Background="{x:Null}" Foreground="LightGreen"/>
                 <PasswordBox x:Name="passwordTextBox" Width="120" VerticalAlignment="Center"  KeyDown="PassBox_passAdmin_KeyDown" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:"/>
+                <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:" Foreground="LightGreen"/>
                 <TextBox x:Name="userNameTextBox" Width="120" VerticalAlignment="Center" Text="" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
                 <Button x:Name="signup" Content="Still don't have an account? click here" HorizontalAlignment="Left" Click="signup_Click" Grid.ColumnSpan="3" Margin="-12,24,-9.333,-54" Grid.Row="2"/>
             </Grid>
         </Border>
         <Border Name="signUp" Visibility="Collapsed" Margin="0,0,10.333,-0.333" Grid.ColumnSpan="2">
-            <Grid Name="grig2" Margin="58,95,10.333,9.667">
+            <Border.Background>
+                <ImageBrush ImageSource="BusUslogo.jpeg"/>
+            </Border.Background>
+            <Grid Name="grig2" Margin="204,23,161.667,196.667">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
