@@ -95,13 +95,16 @@ namespace PL
             this.Close();
         }
 
-       private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
             System.Windows.Data.CollectionViewSource drivingViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("drivingViewSource")));
             // Load data by setting the CollectionViewSource.Source property:
             // drivingViewSource.Source = [generic data source]
             //System.Windows.Data.CollectionViewSource stationBOViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("stationBOViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // stationBOViewSource.Source = [generic data source]
+            System.Windows.Data.CollectionViewSource stationBOViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("stationBOViewSource")));
             // Load data by setting the CollectionViewSource.Source property:
             // stationBOViewSource.Source = [generic data source]
         }

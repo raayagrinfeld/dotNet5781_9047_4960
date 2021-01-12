@@ -10,6 +10,8 @@
         AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown" WindowState="Maximized" Icon="Icons\BusUslcon.jpeg" Loaded="Window_Loaded" >
     <Window.Resources>
         <CollectionViewSource x:Key="drivingViewSource" d:DesignSource="{d:DesignInstance {x:Type BO:Driving}, CreateList=True}"/>
+        <local:ConvertStationToStationName x:Key="StationConvert" />
+        <CollectionViewSource x:Key="stationBOViewSource" d:DesignSource="{d:DesignInstance {x:Type BO:StationBO}, CreateList=True}"/>
     </Window.Resources>
     <Border BorderThickness="1" BorderBrush="#FF17B419" Background="AliceBlue" >
         <Grid>
@@ -45,7 +47,7 @@
                     <Grid Background="#FFE5E5E5">
                         <Border x:Name="SearchBus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Margin="10,10,9.667,9.667">
 
-                            <Grid x:Name="searchB" >
+                            <Grid x:Name="searchB" DataContext="{StaticResource stationBOViewSource}" >
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="100"/>
                                     <RowDefinition Height="100"/>
@@ -64,7 +66,7 @@
                                 </Grid.ColumnDefinitions>
                                 <ComboBox x:Name="StationsBox" Grid.Column="2" Grid.Row="0"  Margin="0.333,0,0,55.667" />
                                 <Label Content="Choose a source station" Grid.Row="0" Grid.Column="1"/>
-                                <ComboBox x:Name="StationsBox2" Grid.Column="3" Grid.Row="0" Text="{Binding StationName}" Grid.ColumnSpan="2" Margin="165,0,0,55.667"/>
+                                <ComboBox x:Name="StationsBox2" Grid.Column="3" Grid.Row="0" Text="{Binding stationBOViewSource , Converter={StaticResource StationConvert }}" Grid.ColumnSpan="2" Margin="165,0,0,55.667"/>
                                 <Label Content="Choose a destanation station" Grid.Column="3"  Grid.Row="0" />
                                 <Button x:Name="search" Content="Search Bus" HorizontalAlignment="Left" Height="42" Margin="10,3,0,0" VerticalAlignment="Top" Width="145" Click="SearchBus_Click" Grid.Column="5"/>
                                 <ListBox x:Name="listBuses" HorizontalAlignment="Left" Height="503" VerticalAlignment="Top" Width="991" Visibility="Collapsed" Margin="0,5.333,-0.333,-5" Grid.Row="1" Background="Aqua" Grid.ColumnSpan="6" Grid.RowSpan="5"/>
