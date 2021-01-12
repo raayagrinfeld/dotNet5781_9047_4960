@@ -33,12 +33,12 @@ namespace PL
             StationsBox2.ItemsSource = bl.GetAllBusStations();
             StationsBox.Text = bl.GetAllBusStations().ToString();
         }
-        public MainUserWindow()
+     /*   public MainUserWindow()
         {
             InitializeComponent();
             StationsBox.ItemsSource = bl.GetAllBusStations();
             StationsBox2.ItemsSource = bl.GetAllBusStations();
-        }
+        }*/
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
         {
             SystemCommands.MinimizeWindow(this);
@@ -95,7 +95,7 @@ namespace PL
             this.Close();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+       private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
             System.Windows.Data.CollectionViewSource drivingViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("drivingViewSource")));
