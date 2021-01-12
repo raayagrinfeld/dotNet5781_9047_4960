@@ -107,10 +107,17 @@ namespace PL
         }
         private void SearchBus_Click(object sender, RoutedEventArgs e)
         {
-            drive.Source = (StationBO)StationsBox.SelectedValue;
-            drive.Destination = (StationBO)StationsBox2.SelectedItem;
-            listBuses.ItemsSource = bl.fingALinesBeatweenStation(drive).ToList();
-            listBuses.Visibility = Visibility.Visible;
+            if (StationsBox.SelectedIndex != -1 & StationsBox2.SelectedIndex != -1)
+            {
+                drive.Source = (StationBO)StationsBox.SelectedValue;
+                drive.Destination = (StationBO)StationsBox2.SelectedItem;
+                listBuses.ItemsSource = bl.fingALinesBeatweenStation(drive).ToList();
+                listBuses.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MessageBox.Show("You mast choose a source and destination", "Search message", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
