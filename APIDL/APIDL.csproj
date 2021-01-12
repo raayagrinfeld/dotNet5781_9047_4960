@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="DalConfig.cs" />
     <Compile Include="DalFactory.cs" />
+    <Compile Include="DO\BusesSchedule.cs" />
     <Compile Include="DO\BusLine.cs" />
     <Compile Include="DO\BusLineStation.cs" />
     <Compile Include="DO\BusStation.cs" />

@@ -62,7 +62,7 @@
                                     <ColumnDefinition Width="200*"/>
                                     <ColumnDefinition Width="200*"/>
                                 </Grid.ColumnDefinitions>
-                                <ComboBox x:Name="StationsBox" Grid.Column="2" Grid.Row="0" Text="{Binding StationName}" Margin="0.333,0,0,55.667" />
+                                <ComboBox x:Name="StationsBox" Grid.Column="2" Grid.Row="0"  Margin="0.333,0,0,55.667" />
                                 <Label Content="Choose a source station" Grid.Row="0" Grid.Column="1"/>
                                 <ComboBox x:Name="StationsBox2" Grid.Column="3" Grid.Row="0" Text="{Binding StationName}" Grid.ColumnSpan="2" Margin="165,0,0,55.667"/>
                                 <Label Content="Choose a destanation station" Grid.Column="3"  Grid.Row="0" />

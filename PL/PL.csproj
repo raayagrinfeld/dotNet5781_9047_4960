@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ConvertStationToStationName.cs" />
     <Compile Include="UserSettingsWindow.xaml.cs">
       <DependentUpon>UserSettingsWindow.xaml</DependentUpon>
     </Compile>
