@@ -57,6 +57,17 @@ namespace APIDL
         void DeletConsecutiveStations(int key1, int key2);
         #endregion
 
+        #region BusesSchedule
+        /*
+        BusesSchedule GetBusesSchedule(int scheduleKey);
+        IEnumerable<BusesSchedule> GetAllBusSchedules();
+        IEnumerable<BusesSchedule> GetAllBusSchedulesBy(Predicate< BusesSchedule> predicate);
+        void AddBusSchedule(BusesSchedule schedule);
+        void UpdateBusSchedule(BusesSchedule schedule);
+        void DeleteBusSchedule(int scheduleKey);*/
+
+        #endregion
+
 
     }
 }
