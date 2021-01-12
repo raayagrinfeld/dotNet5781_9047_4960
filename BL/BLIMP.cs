@@ -14,6 +14,13 @@ namespace BL
     public class BlImp1 : IBL
     {
         IDAL dl = DalFactory.GetDal();
+        #region singelton
+        static readonly BlImp1 instance = new BlImp1();
+        static BlImp1() { }// static ctor to ensure instance init is done just before first usage
+        BlImp1() { } // default => private
+        public static BlImp1 Instance { get => instance; }// The public Instance property to use
+        #endregion
+
         #region runNumber
         public int getNextBusLineRunNumber()
         {
