@@ -10,7 +10,7 @@
     <Border BorderThickness="1" BorderBrush="#FF17B419" Background="AliceBlue" >
         <Grid>
             <Grid.Background>
-                <ImageBrush ImageSource="BusUslogo.jpeg"/>
+                <ImageBrush ImageSource="Icons/BusUsLogo.jpeg"/>
             </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
