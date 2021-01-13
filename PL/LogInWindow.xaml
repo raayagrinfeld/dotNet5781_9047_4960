@@ -30,7 +30,6 @@
                 <PasswordBox x:Name="passwordTextBox" Width="120" VerticalAlignment="Center"  KeyDown="PassBox_passAdmin_KeyDown" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:" />
                 <TextBox x:Name="userNameTextBox" Width="120" VerticalAlignment="Center" Text="" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
-                <!--<Button x:Name="signup" Content="Still don't have an account? click here" HorizontalAlignment="Left" Click="signup_Click" Grid.ColumnSpan="3" Margin="-12,24,-9.333,-54" Grid.Row="2"/>-->
                 <TextBlock x:Name="signup" Margin="-12,24,-9.333,-54" Grid.Row="2" Grid.ColumnSpan="3" >
                     <Hyperlink Click="signup_Click">
                                     Still don't have an account? click here
