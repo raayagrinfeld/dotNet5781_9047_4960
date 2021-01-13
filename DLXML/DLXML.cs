@@ -33,7 +33,17 @@ namespace DL
 
         public void AddBusLine(BusLine bus)
         {
-            throw new NotImplementedException();
+            List<BusLine> ListBuses = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
+
+            if (ListBuses.FirstOrDefault(b => b.BusLineKey == bus.BusLineKey &b.IsActive) != null)
+                throw new DO.BadBusLineKeyException(bus.BusLineKey, "This bus line already exist");
+
+            if (GetBusLine(bus.BusLineKey) == null)
+                throw new DO.BadBusLineKeyException(bus.BusLineKey, "Missing bus line");
+
+            ListBuses.Add(bus); //no need to Clone()
+
+            XMLTools.SaveListToXMLSerializer(ListBuses, BusLinePath);
         }
 
         #region BusLineStation
