@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DO;
 using APIDL;
+using System.Xml.Linq;
 
-namespace DLXML
+namespace DL
 {
     class DLXML : IDAL
     {
@@ -45,6 +46,7 @@ namespace DLXML
             XMLTools.SaveListToXMLSerializer(ListStudents, studentsPath);
         }
 
+        #region BusLineStation
         public void AddBusLineStation(BusLineStation station)
         {
             throw new NotImplementedException();
@@ -60,10 +62,31 @@ namespace DLXML
             throw new NotImplementedException();
         }
 
+        #region UserXML
         public void AddUser(User user)
         {
-            throw new NotImplementedException();
+            XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
+
+            XElement userSearch = (from p in UserRootElem.Elements()
+                             where (p.Element("UserName").Value) == user.UserName
+                             select p).FirstOrDefault();
+
+            if (userSearch != null)
+                throw new DO.BadUserNameException(user.UserName, "Duplicate user name");
+
+            XElement UserElem = new XElement("User",
+                                   new XElement("UserName", user.UserName),
+                                   new XElement("Password", user.Password),
+                                   new XElement("ManagementPermission", user.ManagementPermission),
+                                   new XElement("IsActive", user.IsActive),
+                                   new XElement("gender", user.gender.ToString()),
+                                   new XElement("imagePath", user.imagePath));
+
+            UserRootElem.Add(UserElem);
+
+            XMLTools.SaveListToXMLElement(UserRootElem, UserPath);
         }
+        #endregion
 
         public void DeletConsecutiveStations(int key1, int key2)
         {
