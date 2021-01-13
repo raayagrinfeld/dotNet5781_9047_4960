@@ -216,7 +216,7 @@
                                                         <ColumnDefinition Width="50" />
                                                         <ColumnDefinition Width="100" />
                                                         <ColumnDefinition Width="150" />
-                                                        <ColumnDefinition Width="100" />
+                                                        <ColumnDefinition Width="90" />
                                                     </Grid.ColumnDefinitions>
                                                     <TextBlock Text="station Key: " Grid.Column="0"/>
                                                     <TextBlock Text="{Binding BusStationKey}" Grid.Column="1"/>
