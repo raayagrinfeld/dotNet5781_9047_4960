@@ -14,7 +14,7 @@ namespace PlConsole
 
         static void Main(string[] args)
         {
-            bl = BlFactory.GetBl("1");
+            bl = BlFactory.GetBL();
             BO.Driving d = new Driving {Source= bl.GetBusStation(30001), Destination= bl.GetBusStation(30005)};
             /* bl.AddSourceStation(30007, d);
              bl.AddDeatinationStation(30042, d);*/

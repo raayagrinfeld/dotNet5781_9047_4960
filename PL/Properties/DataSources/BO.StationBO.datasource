@@ -6,6 +6,36 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="StationBO" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+   <Children>
+      <GenericObjectDataSource DisplayName="Coordinates" Version="1.0">
+         <TypeInfo>System.Device.Location.GeoCoordinate, System.Device, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</TypeInfo>
+         <TypeUISetting>
+            <PropertyUISettings>
+               <PropertyUISetting Name="StationBO.Coordinates">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
+                        <BindableControlInfo Name="TextBox" Type="System.Windows.Controls.TextBox" AssemblyName="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+            </PropertyUISettings>
+         </TypeUISetting>
+      </GenericObjectDataSource>
+      <GenericObjectDataSource DisplayName="busLines" Version="1.0">
+         <TypeInfo>System.Collections.Generic.IEnumerable`1[[BO.BusLineBO, BL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</TypeInfo>
+         <TypeUISetting>
+            <PropertyUISettings>
+               <PropertyUISetting Name="StationBO.busLines">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
+                        <BindableControlInfo Name="ListBox" Type="System.Windows.Controls.ListBox" AssemblyName="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+            </PropertyUISettings>
+         </TypeUISetting>
+      </GenericObjectDataSource>
+   </Children>
    <TypeInfo>BO.StationBO, BL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
    <TypeUISetting>
       <PropertyUISettings>
@@ -19,21 +49,21 @@
          <PropertyUISetting Name="BusStationKey">
             <ControlSettings>
                <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
-                  <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                  <BindableControlInfo Name="TextBlock" Type="System.Windows.Controls.TextBlock" AssemblyName="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
                </ControlSetting>
             </ControlSettings>
          </PropertyUISetting>
          <PropertyUISetting Name="HasARoof">
             <ControlSettings>
                <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
-                  <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                  <BindableControlInfo Name="CheckBox" Type="System.Windows.Controls.CheckBox" AssemblyName="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
                </ControlSetting>
             </ControlSettings>
          </PropertyUISetting>
          <PropertyUISetting Name="StationAddress">
             <ControlSettings>
                <ControlSetting ArtifactName="Microsoft:System.Windows:WPF">
-                  <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                  <BindableControlInfo Name="TextBox" Type="System.Windows.Controls.TextBox" AssemblyName="PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
                </ControlSetting>
             </ControlSettings>
          </PropertyUISetting>

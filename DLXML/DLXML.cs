@@ -62,6 +62,7 @@ namespace DL
         }
         #endregion
 
+        #region busStation
         public void AddBusStation(BusStation station)
         {
             List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
@@ -76,7 +77,7 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ListBusStations, BusLinePath);
         }
-
+        #endregion
         #region ConsecutiveStation
         public void AddConsecutiveStations(ConsecutiveStations consecutiveStations)
         {
@@ -91,7 +92,7 @@ namespace DL
             XMLTools.SaveListToXMLSerializer(ConsecutiveStationsList, ConsecutiveStationsPath);
         }
         #endregion
-        #region UserXML
+        #region User
         public void AddUser(User user)
         {
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);

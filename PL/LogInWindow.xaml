@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <Image Source="Icons\BusUsLogo.jpeg" Grid.Row="0" Margin="31,-97,42.6,91.2" Grid.RowSpan="2"/>
 
-        <Border Name="login" Grid.Row="1" Visibility="Collapsed" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+        <Border Name="login" Grid.Row="1" Visibility="Visible" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
             <Grid x:Name="grid1" Margin="30"  VerticalAlignment="Top"  HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="65" Width="213"  >
 
                 <Grid.RowDefinitions>
@@ -37,7 +37,7 @@
                 </TextBlock>
             </Grid>
         </Border>
-        <Border Name="signUp" Grid.Row="1" Visibility="Visible" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Border Name="signUp" Grid.Row="1" Visibility="Collapsed" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <Grid Name="grig2" Margin="30"  VerticalAlignment="Top"  HorizontalAlignment="Center" Grid.ColumnSpan="2" Width="250">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
