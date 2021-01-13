@@ -40,9 +40,18 @@ namespace PL
             user = logedInUser;
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            refreshcontent();
+           
+        }
+
+        private void refreshcontent()
+        {
             busLineBOListView.ItemsSource = bl.GetAllBusLines();
             stationBOListView.ItemsSource = bl.GetAllBusStations();
-           
+            lineNumber.Text = "";
+            Area.Text = "";
+            BusStationKey.Text = "";
+            StationName.Text = "";
         }
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
@@ -120,10 +129,6 @@ namespace PL
                                                                                       where CheckIfStringsAreEqual(Area.Text, g.Area.ToString())
                                                                                       select g));
 
-
-
-            //busLineBOListView.ItemsSource = it;
-            //busLineBOObservableCollection = it;
         }
         private void SearchFilterChangedBusStation(object sender, TextChangedEventArgs e)
         {
@@ -133,10 +138,6 @@ namespace PL
                                                                                         into g
                                                                                       where CheckIfStringsAreEqual(StationName.Text, g.StationName)
                                                                                       select g));
-
-
-
-            //stationBOListView.ItemsSource = it;
         }
         private bool CheckIfStringsAreEqual(string a, string b)
         {
@@ -173,7 +174,7 @@ namespace PL
             AddBusLineBorder.Visibility = Visibility.Collapsed;
             busLineListBorder.Visibility = Visibility.Visible;
             bl.AddBusLine(AddBusDataGrid.DataContext as BusLineBO);
-            busLineListBorder.DataContext = bl.GetAllBusLines();
+            refreshcontent();
         }
 
         //update button click
@@ -185,16 +186,24 @@ namespace PL
         {
 
         }
+        
+
+
         //delete button click
+        private void Button_Click_DeleteStationFromBusLine(object sender, RoutedEventArgs e)
+        {
+            bl.deleteBusStationInBusLine(selectedBusLine, ((sender as Button).DataContext as StationBO).BusStationKey);
+            refreshcontent();
+        }
         private void Button_Click_DeleteBusLine(object sender, RoutedEventArgs e)
         {
             bl.DeleteBusLine(((sender as Button).DataContext as BusLineBO).BusLineKey);
-            busLineBOListView.ItemsSource = bl.GetAllBusLines();
+            refreshcontent();
         }
         private void Button_Click_DeleteBusStaion(object sender, RoutedEventArgs e)
         {
             bl.DeleteBusStation(((sender as Button).DataContext as StationBO).BusStationKey);
-            stationBOListView.ItemsSource = bl.GetAllBusStations();
+            refreshcontent();
         }
         //selction chenged
         private void busLineBOListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -294,6 +303,8 @@ namespace PL
             dataView.SortDescriptions.Add(sd);
             dataView.Refresh();
         }
+
+       
 
         
     }

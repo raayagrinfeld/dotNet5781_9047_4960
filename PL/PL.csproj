@@ -147,5 +147,8 @@
   <ItemGroup>
     <Resource Include="BusUslogo.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\save-file-option.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
