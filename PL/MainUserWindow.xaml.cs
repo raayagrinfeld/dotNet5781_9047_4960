@@ -33,12 +33,12 @@ namespace PL
             StationsBox2.ItemsSource = bl.GetAllBusStations();
             StationsBox.Text = bl.GetAllBusStations().ToString();
         }
-        public MainUserWindow()
+     /*   public MainUserWindow()
         {
             InitializeComponent();
             StationsBox.ItemsSource = bl.GetAllBusStations();
             StationsBox2.ItemsSource = bl.GetAllBusStations();
-        }
+        }*/
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
         {
             SystemCommands.MinimizeWindow(this);
@@ -104,13 +104,23 @@ namespace PL
             //System.Windows.Data.CollectionViewSource stationBOViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("stationBOViewSource")));
             // Load data by setting the CollectionViewSource.Source property:
             // stationBOViewSource.Source = [generic data source]
+            System.Windows.Data.CollectionViewSource stationBOViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("stationBOViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // stationBOViewSource.Source = [generic data source]
         }
         private void SearchBus_Click(object sender, RoutedEventArgs e)
         {
-            drive.Source = (StationBO)StationsBox.SelectedValue;
-            drive.Destination = (StationBO)StationsBox2.SelectedItem;
-            listBuses.ItemsSource = bl.fingALinesBeatweenStation(drive).ToList();
-            listBuses.Visibility = Visibility.Visible;
+            if (StationsBox.SelectedIndex != -1 & StationsBox2.SelectedIndex != -1)
+            {
+                drive.Source = (StationBO)StationsBox.SelectedValue;
+                drive.Destination = (StationBO)StationsBox2.SelectedItem;
+                listBuses.ItemsSource = bl.fingALinesBeatweenStation(drive).ToList();
+                listBuses.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MessageBox.Show("You mast choose a source and destination", "Search message", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
