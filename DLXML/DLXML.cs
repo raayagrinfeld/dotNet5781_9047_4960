@@ -39,8 +39,16 @@ namespace DL
         #region BusLineStation
         public void AddBusLineStation(BusLineStation station)
         {
-            throw new NotImplementedException();
+            List<BusLineStation> BusLineStationList = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
+
+            if (BusLineStationList.FirstOrDefault(b => (b.BusStationKey == station.BusStationKey && b.BusLineKey == station.BusLineKey)) != null)
+                throw new DO.BadBusLineStationsException(station.BusStationKey, station.BusLineKey, "This Station Alrady exist in this bus path");
+
+            BusLineStationList.Add(station);
+
+            XMLTools.SaveListToXMLSerializer(BusLineStationList, BusLineStationPath);
         }
+        #endregion
 
         public void AddBusStation(BusStation station)
         {
