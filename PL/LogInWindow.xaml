@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <Image Source="Icons\BusUsLogo.jpeg" Grid.Row="0" Margin="31,-97,42.6,91.2" Grid.RowSpan="2"/>
 
-        <Border Name="login" Grid.Row="1" Visibility="Visible" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+        <Border Name="login" Grid.Row="1" Visibility="Collapsed" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
             <Grid x:Name="grid1" Margin="30"  VerticalAlignment="Top"  HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="65" Width="213"  >
 
                 <Grid.RowDefinitions>
@@ -38,9 +38,10 @@
                 </TextBlock>
             </Grid>
         </Border>
-        <Border Name="signUp" Grid.Row="1" Visibility="Collapsed" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Border Name="signUp" Grid.Row="1" Visibility="Visible" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <Grid Name="grig2" Margin="30"  VerticalAlignment="Top"  HorizontalAlignment="Center" Grid.ColumnSpan="2" Width="250">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -55,7 +56,8 @@
                 <PasswordBox x:Name="signUpPaswword"  VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Height="25" Margin="2.2,2.8,0.6,1.8"/>
                 <Label x:Name="Label_Gender" Content="Gender:" Grid.Row="2" Grid.Column="0" Margin="0,0.2,3.8,0.4"/>
                 <ComboBox x:Name="CombBx_Gender" Margin="2.2,1.2,0.6,2.4" Grid.Row="2" Grid.Column="1"/>
-                <Button x:Name="button" Content="Sign Up" HorizontalAlignment="Left" Height="28" Margin="66,69.2,0,-67.6" Grid.Row="2" VerticalAlignment="Top" Width="82" Click="signup_InWindow_Click" Grid.ColumnSpan="2"/>
+                <Button x:Name="button" Content="Sign Up" HorizontalAlignment="Left" Height="28" Margin="77,89.333,0,-88" Grid.Row="2" VerticalAlignment="Top" Width="82" Click="signup_InWindow_Click" Grid.ColumnSpan="2"/>
+                <Label x:Name="exsist" Content="             This username is exsist" Foreground="Red" Grid.Row="3" Grid.ColumnSpan="2" Visibility="Collapsed"></Label>
             </Grid>
         </Border>
     </Grid>

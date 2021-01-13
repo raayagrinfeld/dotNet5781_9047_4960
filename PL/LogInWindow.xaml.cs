@@ -82,6 +82,7 @@ namespace PL
         }
         private void signup_InWindow_Click(object sender, RoutedEventArgs e)
         {
+            exsist.Visibility = Visibility.Collapsed;
             try
             {
                 bl.AddUser(new User { UserName = SignUpUser.Text, Password = signUpPaswword.Password, IsActive = true, ManagementPermission = false });
@@ -119,6 +120,7 @@ namespace PL
                 signUpPaswword.Clear();
                 SignUpUser.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
                 SignUpUser.Clear();
+                exsist.Visibility = Visibility.Visible;
             }
         }
     }
