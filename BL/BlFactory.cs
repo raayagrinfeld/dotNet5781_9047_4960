@@ -12,9 +12,11 @@ namespace BlApi
     {
         public static IBL GetBL()
         {
+            /*
             Type type = typeof(BlImp1);
             IBL bl = type.GetProperty("Instance", BindingFlags.Public | BindingFlags.Static).GetValue(null) as IBL;
-            return bl;
+            return bl;*/
+            return BlImp1.Instance;
         }
     }
 }
