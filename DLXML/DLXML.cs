@@ -31,6 +31,7 @@ namespace DL
 
         #endregion
 
+        #region BusLine
         public void AddBusLine(BusLine bus)
         {
             List<BusLine> ListBuses = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
@@ -45,6 +46,7 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ListBuses, BusLinePath);
         }
+        #endregion
 
         #region BusLineStation
         public void AddBusLineStation(BusLineStation station)
@@ -62,7 +64,17 @@ namespace DL
 
         public void AddBusStation(BusStation station)
         {
-            throw new NotImplementedException();
+            List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
+
+            if (ListBusStations.FirstOrDefault(s => s.BusStationKey == station.BusStationKey & s.IsActive) != null)
+                throw new DO.BadBusLineKeyException(station.BusStationKey, "This bus station already exist");
+
+            if (GetBusStation(station.BusStationKey) == null)
+                throw new DO.BadBusLineKeyException(station.BusStationKey, "Missing bus station");
+
+            ListBusStations.Add(station); //no need to Clone()
+
+            XMLTools.SaveListToXMLSerializer(ListBusStations, BusLinePath);
         }
 
         public void AddConsecutiveStations(ConsecutiveStations consecutiveStations)
