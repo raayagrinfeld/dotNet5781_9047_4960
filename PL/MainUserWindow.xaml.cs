@@ -22,7 +22,7 @@ namespace PL
     /// </summary>
     public partial class MainUserWindow : Window
     {
-        public static IBL bl = BlFactory.GetBl("1");
+        public static IBL bl = BlFactory.GetBL();
         User user;
         Driving drive =new Driving();
         public MainUserWindow(User logedInUser)

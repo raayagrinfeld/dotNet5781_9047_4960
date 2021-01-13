@@ -23,7 +23,7 @@ namespace PL
     /// </summary>
     public partial class LogInWindow : Window
     {
-        IBL bl=  BlFactory.GetBl("1");
+        IBL bl=  BlFactory.GetBL();
 
 
         public LogInWindow()

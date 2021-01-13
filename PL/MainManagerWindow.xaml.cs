@@ -24,7 +24,7 @@ namespace PL
     /// </summary>
     public partial class MainManagerWindow : Window
     {
-        public static IBL bl = BlFactory.GetBl("1");
+        public static IBL bl = BlFactory.GetBL();
         User user;
         BusLineBO selectedBusLine=null;
         StationBO selectedStation=null;

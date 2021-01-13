@@ -27,7 +27,7 @@ namespace PL
         {
             if(value is string)
             {
-                IBL bl= BlFactory.GetBl("1");
+                IBL bl= BlFactory.GetBL();
                 IEnumerable<StationBO> station = bl.GetAllBusStationsBy(b => (b.StationName == value & b.IsActive));
                 if(station!=null& (station.Count()==1))
                 {

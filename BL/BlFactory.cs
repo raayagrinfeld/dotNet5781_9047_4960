@@ -3,24 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Reflection;
 using BL;
 
 namespace BlApi
 {
     public static class BlFactory
     {
-        public static IBL GetBl(string type)
+        public static IBL GetBL()
         {
-            switch (type)
-            {
-                case "1":
-                    return new BlImp1();
-                case "2":
-                //return new BLImp2();
-                default:
-                    return new BlImp1();
-            }
+            Type type = typeof(BlImp1);
+            IBL bl = type.GetProperty("Instance", BindingFlags.Public | BindingFlags.Static).GetValue(null) as IBL;
+            return bl;
         }
     }
 }

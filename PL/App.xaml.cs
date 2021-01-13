@@ -16,7 +16,7 @@ namespace PL
     /// </summary>
     public partial class App : Application
     {
-        static IBL bl = BlFactory.GetBl("1");
+        static IBL bl = BlFactory.GetBL();
         static App()
         {
 
