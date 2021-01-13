@@ -33,17 +33,17 @@ namespace DL
 
         public void AddBusLine(BusLine bus)
         {
-            List<BusLine> ListStudents = XMLTools.LoadListFromXMLSerializer<Student>(studentsPath);
+            List<BusLine> ListBuses = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
 
-            if (ListStudents.FirstOrDefault(s => s.ID == student.ID) != null)
-                throw new DO.BadPersonIdException(student.ID, "Duplicate student ID");
+            if (ListBuses.FirstOrDefault(b => b.BusLineKey == bus.BusLineKey &b.IsActive) != null)
+                throw new DO.BadBusLineKeyException(bus.BusLineKey, "This bus line already exist");
 
-            if (GetPerson(student.ID) == null)
-                throw new DO.BadPersonIdException(student.ID, "Missing person ID");
+            if (GetBusLine(bus.BusLineKey) == null)
+                throw new DO.BadBusLineKeyException(bus.BusLineKey, "Missing bus line");
 
-            ListStudents.Add(student); //no need to Clone()
+            ListBuses.Add(bus); //no need to Clone()
 
-            XMLTools.SaveListToXMLSerializer(ListStudents, studentsPath);
+            XMLTools.SaveListToXMLSerializer(ListBuses, BusLinePath);
         }
 
         #region BusLineStation
