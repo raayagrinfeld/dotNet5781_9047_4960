@@ -303,7 +303,12 @@ namespace PL
             dataView.SortDescriptions.Add(sd);
             dataView.Refresh();
         }
-
+        //----------------- stations click
+        private void addStation_Click(object sender, RoutedEventArgs e)
+        {
+            stationListBorder.Visibility = Visibility.Collapsed;
+            addStationBorder.Visibility = Visibility.Visible;
+        }
        
 
         
