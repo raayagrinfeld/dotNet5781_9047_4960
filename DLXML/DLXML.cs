@@ -155,7 +155,21 @@ namespace DL
 
         public void DeleteBusStation(int busStationKey)
         {
-            throw new NotImplementedException();
+            List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
+
+            DO.BusStation sic = ListBusStations.Find(b =>
+            {
+                if (b.BusStationKey == busStationKey & b.IsActive)
+                {
+                    b.IsActive = false;
+                    return true;
+                }
+                else return false;
+            });
+            if (sic == null)
+                throw new DO.BadBusStationKeyException(busStationKey, "this bus station is not exsist");
+
+            XMLTools.SaveListToXMLSerializer(ListBusStations, BusStationPath);
         }
 
         public void DeletUser(string userName)
