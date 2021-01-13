@@ -51,7 +51,7 @@ namespace DL
         {
             List<BusLineStation> BusLineStationList = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
 
-            if (BusLineStationList.FirstOrDefault(b => (b.BusStationKey == station.BusStationKey && b.BusLineKey == station.BusLineKey)) != null)
+            if (BusLineStationList.FirstOrDefault(b => (b.BusStationKey == station.BusStationKey && b.BusLineKey == station.BusLineKey&&b.IsActive)) != null)
                 throw new DO.BadBusLineStationsException(station.BusStationKey, station.BusLineKey, "This Station Alrady exist in this bus path");
 
             BusLineStationList.Add(station);
@@ -65,11 +65,20 @@ namespace DL
             throw new NotImplementedException();
         }
 
+        #region ConsecutiveStation
         public void AddConsecutiveStations(ConsecutiveStations consecutiveStations)
         {
-            throw new NotImplementedException();
-        }
+            List<ConsecutiveStations> ConsecutiveStationsList = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
 
+            if (ConsecutiveStationsList.FirstOrDefault(b => (b.Station1Key == consecutiveStations.Station1Key && b.Station2Key == consecutiveStations.Station2Key&&b.IsActive)) != null)
+                throw new DO.BadConsecutiveStationsException(consecutiveStations.Station1Key, consecutiveStations.Station2Key, "dupicated consecutive station");
+
+
+            ConsecutiveStationsList.Add(consecutiveStations);
+
+            XMLTools.SaveListToXMLSerializer(ConsecutiveStationsList, ConsecutiveStationsPath);
+        }
+        #endregion
         #region UserXML
         public void AddUser(User user)
         {
