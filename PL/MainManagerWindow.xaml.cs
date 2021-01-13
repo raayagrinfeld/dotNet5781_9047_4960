@@ -27,19 +27,22 @@ namespace PL
         public static IBL bl = BlFactory.GetBl("1");
         User user;
         BusLineBO selectedBusLine=null;
-        private ObservableCollection<BusLineBO> busLineBOObservableCollection;
-        private ObservableCollection<StationBO> StationBOObservableCollection;
-        private ObservableCollection<User> UserBOObservableCollection;
+        StationBO selectedStation=null;
+        //private ObservableCollection<BusLineBO> busLineBOObservableCollection;
+        //private ObservableCollection<StationBO> StationBOObservableCollection;
+        //private ObservableCollection<User> UserBOObservableCollection;
 
         public MainManagerWindow(User logedInUser)
         {
-            busLineBOObservableCollection = new ObservableCollection<BusLineBO>(bl.GetAllBusLines());
-            StationBOObservableCollection = new ObservableCollection<StationBO>(bl.GetAllBusStations());
-            UserBOObservableCollection = new ObservableCollection<User>(bl.GetAllUsers());
+            //busLineBOObservableCollection = new ObservableCollection<BusLineBO>(bl.GetAllBusLines());
+            //StationBOObservableCollection = new ObservableCollection<StationBO>(bl.GetAllBusStations());
+            //UserBOObservableCollection = new ObservableCollection<User>(bl.GetAllUsers());
             user = logedInUser;
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            busLineBOListView.ItemsSource = busLineBOObservableCollection;
+            busLineBOListView.ItemsSource = bl.GetAllBusLines();
+            stationBOListView.ItemsSource = bl.GetAllBusStations();
+           
         }
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
@@ -105,16 +108,12 @@ namespace PL
             this.Close();
         }
 
-        private void Button_Click_DeleteBusLine(object sender, RoutedEventArgs e)
-        {
-            bl.DeleteBusLine(((sender as Button).DataContext as BusLineBO).BusLineKey);
-            busLineBOListView.ItemsSource = bl.GetAllBusLines();
-        }
+        
         //--------filter BusLine, station and user-------------------
-        private void SearchFilterChanged(object sender, TextChangedEventArgs e)
+        private void SearchFilterChangedBusLine(object sender, TextChangedEventArgs e)
         {
 
-            ObservableCollection<BusLineBO> it = new ObservableCollection<BusLineBO>((from item in bl.GetAllBusLines()
+            busLineBOListView.ItemsSource = new ObservableCollection<BusLineBO>((from item in bl.GetAllBusLines()
                                                                                       where CheckIfStringsAreEqual(lineNumber.Text, item.LineNumber.ToString())
                                                                                       select item
                                                                                         into g
@@ -123,8 +122,21 @@ namespace PL
 
 
 
-            busLineBOListView.ItemsSource = it;
-            busLineBOObservableCollection = it;
+            //busLineBOListView.ItemsSource = it;
+            //busLineBOObservableCollection = it;
+        }
+        private void SearchFilterChangedBusStation(object sender, TextChangedEventArgs e)
+        {
+            stationBOListView.ItemsSource = new ObservableCollection<StationBO>((from item in bl.GetAllBusStations()
+                                                                                      where CheckIfStringsAreEqual(BusStationKey.Text, item.BusStationKey.ToString())
+                                                                                      select item
+                                                                                        into g
+                                                                                      where CheckIfStringsAreEqual(StationName.Text, g.StationName)
+                                                                                      select g));
+
+
+
+            //stationBOListView.ItemsSource = it;
         }
         private bool CheckIfStringsAreEqual(string a, string b)
         {
@@ -145,6 +157,7 @@ namespace PL
 
 
         //----------------bus line butten clicks
+        //add button click
         private void Button_Click_AddBusLine(object sender, RoutedEventArgs e)
         {
             busLineListBorder.Visibility = Visibility.Collapsed;
@@ -155,8 +168,6 @@ namespace PL
             areaComboBox.DataContext = typeof(Areas);
             AddBusLineBorder.Visibility = Visibility.Visible;
         }
-
-
         private void Button_Click_AddBusFinalClick(object sender, RoutedEventArgs e)
         {
             AddBusLineBorder.Visibility = Visibility.Collapsed;
@@ -165,15 +176,27 @@ namespace PL
             busLineListBorder.DataContext = bl.GetAllBusLines();
         }
 
+        //update button click
         private void Button_Click_UpdateBusInformation(object sender, RoutedEventArgs e)
         {
 
         }
-
-        private void MouseDoubleClick_ListviewBusLine(object sender, MouseButtonEventArgs e)
+        private void Button_Click_UpdateStationInformation(object sender, RoutedEventArgs e)
         {
 
         }
+        //delete button click
+        private void Button_Click_DeleteBusLine(object sender, RoutedEventArgs e)
+        {
+            bl.DeleteBusLine(((sender as Button).DataContext as BusLineBO).BusLineKey);
+            busLineBOListView.ItemsSource = bl.GetAllBusLines();
+        }
+        private void Button_Click_DeleteBusStaion(object sender, RoutedEventArgs e)
+        {
+            bl.DeleteBusStation(((sender as Button).DataContext as StationBO).BusStationKey);
+            stationBOListView.ItemsSource = bl.GetAllBusStations();
+        }
+        //selction chenged
         private void busLineBOListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedBusLine = (busLineBOListView.SelectedItem as BusLineBO);
@@ -185,8 +208,20 @@ namespace PL
                 busLineStationsListBox.ItemsSource = selectedBusLine.busLineStations;
             }
         }
+        private void stationBOListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectedStation = (stationBOListView.SelectedItem as StationBO);
+            if (selectedStation != null)
+            {
+                //busLineListBorder.Visibility = Visibility.Collapsed;
+                //BusLineDetialedBorder.Visibility = Visibility.Visible;
+                //busLineDetialedGrid.DataContext = selectedStation;
+                //busLineStationsListBox.ItemsSource = selectedBusLine.busLineStations;
+            }
+        }
 
-        private void Button_Click_BackArrow(object sender, RoutedEventArgs e)
+        //go back
+        private void Button_Click_BackArrowBusLine(object sender, RoutedEventArgs e)
         {
             AddBusLineBorder.Visibility = Visibility.Collapsed;
             BusLineDetialedBorder.Visibility = Visibility.Collapsed;
@@ -260,7 +295,7 @@ namespace PL
             dataView.Refresh();
         }
 
-       
+        
     }
 }
 

@@ -47,6 +47,10 @@
                     <Grid Background="#FFE5E5E5">
                         <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
                             <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="243*"/>
+                                    <ColumnDefinition Width="770*"/>
+                                </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="15"/>
                                     <RowDefinition Height="40"/>
@@ -54,7 +58,7 @@
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="40"/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="1">
+                                <Grid Grid.ColumnSpan="2" Margin="0,15,-0.2,0.2" Grid.RowSpan="2">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
@@ -63,20 +67,32 @@
                                         <ColumnDefinition Width="0.1*"/>
                                     </Grid.ColumnDefinitions>
                                     <Label x:Name="label" Grid.Column="0" FontSize="16" Content="search by line number" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <TextBox x:Name="lineNumber" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="lineNumber" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedBusLine" Margin="1" VerticalContentAlignment="Center"/>
                                     <Label x:Name="label2" Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by area" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <TextBox x:Name="Area" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChanged" Margin="1" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="Area" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChangedBusLine" Margin="1" VerticalContentAlignment="Center"/>
                                 </Grid>
-                                <ListView Grid.Row="3" x:Name="busLineBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" MouseDoubleClick="MouseDoubleClick_ListviewBusLine" SelectionChanged="busLineBOListView_SelectionChanged">
+                                <ListView Grid.Row="3" x:Name="busLineBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="busLineBOListView_SelectionChanged" Grid.ColumnSpan="2">
                                     <ListView.View>
                                         <GridView>
                                             <GridViewColumn Header="Line Number" DisplayMemberBinding="{Binding LineNumber}" Width="100"/>
                                             <GridViewColumn Header="Bus Line Key" DisplayMemberBinding="{Binding BusLineKey}" Width="100"/>
                                             <GridViewColumn Header="Area" DisplayMemberBinding="{Binding Area}" Width="100"/>
-                                            <GridViewColumn Header="First Station" DisplayMemberBinding="{Binding FirstStation, StringFormat=d}" Width="100"/>
-                                            <GridViewColumn Header="First Station Name" DisplayMemberBinding="{Binding FirstStationName}" Width="220"/>
+                                            <GridViewColumn Header="First Station" DisplayMemberBinding="{Binding FirstStation}" Width="100"/>
+                                            <GridViewColumn Header="First Station Name"  Width="220">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock  Text="{Binding FirstStationName}" FlowDirection="RightToLeft"/>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
                                             <GridViewColumn Header="Last Station" DisplayMemberBinding="{Binding LastStation}" Width="120"/>
-                                            <GridViewColumn Header="Last Station Name" DisplayMemberBinding="{Binding LastStationName}" Width="220"/>
+                                            <GridViewColumn Header="Last Station Name" Width="220">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock  Text="{Binding LastStationName}" FlowDirection="RightToLeft"/>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
                                             <GridViewColumn Header="delete"  Width="50">
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
@@ -159,7 +175,7 @@
                                         </DataGridTemplateColumn>
                                     </DataGrid.Columns>
                                 </DataGrid>-->
-                                <Button Content="add new bus"  Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Grid.Row="4" Click="Button_Click_AddBusLine" Margin="0,0.2,30.8,9.8"/>
+                                <Button Content="add new bus"  Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Grid.Row="4" Click="Button_Click_AddBusLine" Margin="0,0.2,30.8,9.8" Grid.Column="1"/>
                             </Grid>
                         </Border>
                         <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed">
@@ -193,7 +209,7 @@
                                     <Label VerticalAlignment="Center" Grid.Row="0" Margin="3.4,3,0,3.4" HorizontalAlignment="Left" Grid.Column="3" Content="Line Number:"/>
                                     <TextBox x:Name="lineNumberTextBox" Width="120" VerticalAlignment="Center" Text="{Binding LineNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3.4,8,0,7.4" Height="23" HorizontalAlignment="Left" Grid.Column="4"/>
                                 </Grid>
-                                <Button Click="Button_Click_BackArrow" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Button Click="Button_Click_BackArrowBusLine" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <Image Source="Icons/left-arrow.png"/>
                                 </Button>
 
@@ -243,7 +259,7 @@
                                     <TextBox x:Name="lineNumberTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding LineNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                                 </Grid>
                                 <Button Content="add Bus" HorizontalAlignment="Left" Margin="598,358,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_AddBusFinalClick"/>
-                                <Button Click="Button_Click_BackArrow" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Button Click="Button_Click_BackArrowBusLine" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <Image Source="Icons/left-arrow.png"/>
                                 </Button>
                             </Grid>
@@ -253,16 +269,76 @@
                 <TabItem Header="Station" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
                         <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
-                            <DataGrid x:Name="stationBODataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="175,110,176.8,122.8" RowDetailsVisibilityMode="VisibleWhenSelected">
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn x:Name="busStationKeyColumn" Binding="{Binding BusStationKey}" Header="Bus Station Key" Width="SizeToHeader"/>
-                                    <DataGridTextColumn x:Name="goordinatesColumn" Binding="{Binding Coordinates}" Header="Goordinates" Width="SizeToHeader"/>
-                                    <DataGridCheckBoxColumn x:Name="hasARoofColumn" Binding="{Binding HasARoof}" Header="Has A Roof" Width="SizeToHeader"/>
-                                    <DataGridTextColumn x:Name="stationAddressColumn" Binding="{Binding StationAddress}" Header="Station Address" Width="SizeToHeader"/>
-                                    <DataGridTextColumn x:Name="stationNameColumn" Binding="{Binding StationName}" Header="Station Name" Width="SizeToHeader"/>
-                                </DataGrid.Columns>
-                            </DataGrid>
-
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="243*"/>
+                                    <ColumnDefinition Width="770*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="15"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="15"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.ColumnSpan="2" Margin="0,15,-0.2,0.2" Grid.RowSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="0.1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" FontSize="16" Content="search by Bus Station Key" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox x:Name="BusStationKey" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
+                                    <Label Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by Station Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox x:Name="StationName" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
+                                </Grid>
+                                <ListView Grid.Row="3" x:Name="stationBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="stationBOListView_SelectionChanged" Grid.ColumnSpan="2">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Bus Station Key" DisplayMemberBinding="{Binding BusStationKey}" Width="100"/>
+                                            <GridViewColumn Header="Coordinates" DisplayMemberBinding="{Binding Coordinates}" Width="150"/>
+                                            <GridViewColumn Header="Has A Roof"  Width="100">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox IsChecked="{Binding HasARoof}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <GridViewColumn Header="Station Address" Width="200">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock  Text="{Binding StationAddress}" FlowDirection="RightToLeft"/>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <GridViewColumn Header="Station Name" Width="220" >
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                    <TextBlock  Text="{Binding StationName}" FlowDirection="RightToLeft"/>
+                                                </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <GridViewColumn Header="delete"  Width="50">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button Click="Button_Click_DeleteBusStaion" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                                                            <Image Source="Icons/garbage.png" Margin="5"/>
+                                                        </Button>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                    <ListView.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="update station information" Click="Button_Click_UpdateStationInformation" />
+                                            <MenuItem Header="deleteStation" Click="Button_Click_DeleteBusStaion" />
+                                        </ContextMenu>
+                                    </ListView.ContextMenu>
+                                </ListView>
+                            </Grid>
                         </Border>
                     </Grid>
                 </TabItem>

@@ -41,7 +41,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.866772 , 34.864555),
                     StationName = "התאנה/האלון",
                     StationAddress = "רחוב:התאנה  עיר: יציץ",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                 new BusStation
                 {
@@ -81,7 +82,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.802319 , 34.786735),
                     StationName = "בית ספר גוונים/ארז",
                     StationAddress = " רחוב:ארז 2 עיר: גדרה",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                 new BusStation
                 {
@@ -89,7 +91,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.804595 , 34.786623),
                     StationName = "דרך האילנות/אלון",
                     StationAddress = " רחוב:דרך האילנות 13 עיר: גדרה",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                  new BusStation
                 {
@@ -137,7 +140,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.882474 , 34.80506),
                     StationName = "הרב דוד ישראל/אריה דולצין",
                     StationAddress = " רחוב:הרב דוד ישראל 63 עיר: רחובות",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                  new BusStation
                 {
@@ -169,7 +173,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.948552 , 34.822422),
                     StationName = "נחמיה/בית העלמין",
                     StationAddress = " רחוב:נחמיה 71 עיר: ראשון לציון",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                  new BusStation
                 {
@@ -177,7 +182,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.967732 , 34.816339),
                     StationName = "יהודה הלוי/יוחנן הסנדלר",
                     StationAddress = " רחוב:יהודה הלוי 89 עיר: ראשון לציון",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                  new BusStation
                 {
@@ -193,7 +199,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.854169 , 34.824714),
                     StationName = "קרית עקרון/כביש 411",
                     StationAddress = " רחוב:411  עיר: גזר",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                  new BusStation
                 {
@@ -201,7 +208,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.811907 , 34.900793),
                     StationName = "צומת חולדה/כביש 411",
                     StationAddress = " רחוב:411  עיר: גזר",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                  new BusStation
                 {
@@ -225,7 +233,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.98497 , 34.78262),
                     StationName = "הדייגים/הנחשול",
                     StationAddress = " רחוב:הדייגים 45 עיר: ראשון לציון",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                  new BusStation
                 {
@@ -241,7 +250,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.968936 , 34.820043),
                     StationName = "יוסף בורג/כתריאל רפפורט",
                     StationAddress = " רחוב:דר יוסף בורג עיר: ראשון לציון",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                  new BusStation
                 {
@@ -249,7 +259,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.923041 , 34.798033),
                     StationName = "וייצמן/דרך יצחק רבין",
                     StationAddress = " רחוב:וייצמן  עיר: נס ציונה",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                  new BusStation
                 {
@@ -257,7 +268,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.98568 , 34.764014),
                     StationName = "שדרות משה דיין/יוסף לישנסקי",
                     StationAddress = " רחוב:שדרות משה דיין  עיר: ראשון לציון",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                  new BusStation
                 {
@@ -313,7 +325,8 @@ namespace DS
                     Coordinates = new GeoCoordinate(31.90281 , 34.818922),
                     StationName = "ברמן/מלצר",
                     StationAddress = " רחוב:הרב יעקב ברמן  עיר: רחובות",
-                    IsActive=true
+                    IsActive=true,
+                    HasARoof=true
                 },
                  new BusStation
                 {

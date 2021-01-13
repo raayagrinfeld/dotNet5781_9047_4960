@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="Log In" Height="420.12" Width="703.333"  Icon="Icons\BusUslcon.jpeg">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="169*"/>
-            <ColumnDefinition Width="224*"/>
-        </Grid.ColumnDefinitions>
-        <Border Name="login" Visibility="Visible" Margin="1,0,10,4.333" Grid.ColumnSpan="2">
-            <Border.Background>
-                <ImageBrush ImageSource="BusUslogo.jpeg"/>
-            </Border.Background>
-            <Grid x:Name="grid1" VerticalAlignment="Top" Margin="221,98,0,0" HorizontalAlignment="Left" Grid.ColumnSpan="2" Height="65" Width="213" Background="Black" >
+        Title="Log In" Height="570" Width="400"  Icon="Icons\BusUslcon.jpeg">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <Image Source="Icons\BusUsLogo.jpeg" Grid.Row="0" Margin="31,-97,42.6,91.2" Grid.RowSpan="2"/>
+
+        <Border Name="login" Grid.Row="1" Visibility="Visible" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+            <Grid x:Name="grid1" Margin="30"  VerticalAlignment="Top"  HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="65" Width="213"  >
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -26,34 +26,36 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Password:" Background="{x:Null}" Foreground="LightGreen"/>
+                <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Password:" Background="{x:Null}" />
                 <PasswordBox x:Name="passwordTextBox" Width="120" VerticalAlignment="Center"  KeyDown="PassBox_passAdmin_KeyDown" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
-                <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:" Foreground="LightGreen"/>
+                <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:" />
                 <TextBox x:Name="userNameTextBox" Width="120" VerticalAlignment="Center" Text="" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
-                <Button x:Name="signup" Content="Still don't have an account? click here" HorizontalAlignment="Left" Click="signup_Click" Grid.ColumnSpan="3" Margin="-12,24,-9.333,-54" Grid.Row="2"/>
+                <!--<Button x:Name="signup" Content="Still don't have an account? click here" HorizontalAlignment="Left" Click="signup_Click" Grid.ColumnSpan="3" Margin="-12,24,-9.333,-54" Grid.Row="2"/>-->
+                <TextBlock x:Name="signup" Margin="-12,24,-9.333,-54" Grid.Row="2" Grid.ColumnSpan="3" >
+                    <Hyperlink Click="signup_Click">
+                                    Still don't have an account? click here
+                            </Hyperlink>
+                </TextBlock>
             </Grid>
         </Border>
-        <Border Name="signUp" Visibility="Collapsed" Margin="0,0,10.333,-0.333" Grid.ColumnSpan="2">
-            <Border.Background>
-                <ImageBrush ImageSource="BusUslogo.jpeg"/>
-            </Border.Background>
-            <Grid Name="grig2" Margin="204,23,161.667,196.667">
+        <Border Name="signUp" Grid.Row="1" Visibility="Collapsed" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid Name="grig2" Margin="30"  VerticalAlignment="Top"  HorizontalAlignment="Center" Grid.ColumnSpan="2" Width="250">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100*"/>
-                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label VerticalAlignment="Bottom" Grid.Row="0" Content="User Name:" Grid.Column="0" Grid.ColumnSpan="2"/>
-                <TextBox VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Name="SignUpUser" Height="27" Margin="0,0,0.333,0.333" />
-                <Label VerticalAlignment="Center" Grid.Row="1"  Grid.Column="0" Content="Password:" Grid.ColumnSpan="2" />
-                <PasswordBox x:Name="signUpPaswword"  VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Height="25" Margin="0,2.667,0.333,2.333"/>
-                <Label x:Name="Label_Gender" Content="Gender:" Grid.Row="2" Grid.Column="0"/>
-                <ComboBox x:Name="CombBx_Gender" Margin="0,1.667,0.333,2" Grid.Row="2" Grid.Column="1"/>
-                <Button x:Name="button" Content="Sign Up" HorizontalAlignment="Left" Height="28" Margin="66,69.333,0,-68" Grid.Row="2" VerticalAlignment="Top" Width="82" Click="signup_InWindow_Click"/>
+                <Label VerticalAlignment="Bottom" Grid.Row="0" Content="User Name:" Grid.Column="0" Grid.ColumnSpan="2" Height="25" Margin="0,0,-0.4,0.2"/>
+                <TextBox VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Name="SignUpUser" Height="27" Margin="2.2,0,0.6,0.2" />
+                <Label VerticalAlignment="Center" Grid.Row="1"  Grid.Column="0" Content="Password:" Grid.ColumnSpan="2" Height="26" Margin="0,1.8,-0.4,1.8" />
+                <PasswordBox x:Name="signUpPaswword"  VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Height="25" Margin="2.2,2.8,0.6,1.8"/>
+                <Label x:Name="Label_Gender" Content="Gender:" Grid.Row="2" Grid.Column="0" Margin="0,0.2,3.8,0.4"/>
+                <ComboBox x:Name="CombBx_Gender" Margin="2.2,1.2,0.6,2.4" Grid.Row="2" Grid.Column="1"/>
+                <Button x:Name="button" Content="Sign Up" HorizontalAlignment="Left" Height="28" Margin="66,69.2,0,-67.6" Grid.Row="2" VerticalAlignment="Top" Width="82" Click="signup_InWindow_Click" Grid.ColumnSpan="2"/>
             </Grid>
         </Border>
     </Grid>

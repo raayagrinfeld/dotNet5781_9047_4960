@@ -30,6 +30,7 @@ namespace PL
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
+            
             CombBx_Gender.ItemsSource = Enum.GetValues(typeof(gender));
         }
 
