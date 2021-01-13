@@ -32,7 +32,17 @@ namespace DLXML
 
         public void AddBusLine(BusLine bus)
         {
-            throw new NotImplementedException();
+            List<BusLine> ListStudents = XMLTools.LoadListFromXMLSerializer<Student>(studentsPath);
+
+            if (ListStudents.FirstOrDefault(s => s.ID == student.ID) != null)
+                throw new DO.BadPersonIdException(student.ID, "Duplicate student ID");
+
+            if (GetPerson(student.ID) == null)
+                throw new DO.BadPersonIdException(student.ID, "Missing person ID");
+
+            ListStudents.Add(student); //no need to Clone()
+
+            XMLTools.SaveListToXMLSerializer(ListStudents, studentsPath);
         }
 
         public void AddBusLineStation(BusLineStation station)
