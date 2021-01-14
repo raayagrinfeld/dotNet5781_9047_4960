@@ -49,6 +49,7 @@ namespace PL
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             CombBx_Gender.ItemsSource = Enum.GetValues(typeof(gender));
+            GenderTextBox.ItemsSource= Enum.GetValues(typeof(gender));
             refreshcontent();
            
         }
@@ -111,6 +112,7 @@ namespace PL
         {
             UserSettingsWindow userSettings = new UserSettingsWindow(user);
             userSettings.Show();
+            refreshcontent();
         }
 
         private void MenuItem_Click_ShowUserInterface(object sender, RoutedEventArgs e)
@@ -431,6 +433,7 @@ namespace PL
         {
             userListBorder.Visibility = Visibility.Collapsed;
             addUserBorder.Visibility = Visibility.Visible;
+            userDitailegrid.Visibility = Visibility.Collapsed;
         }
         private void Button_Click_BackArrowUser(object sender, RoutedEventArgs e)
         {

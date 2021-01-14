@@ -525,34 +525,36 @@
                                 </Button>
                             </Grid>
                         </Border>
-                        <Border x:Name="UserDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="UserDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Margin="6,0,-6.333,-0.333">
                             <Grid>
 
-                                <Grid x:Name="UserDetialedGrid" VerticalAlignment="Top" Margin="173,91,0,0" HorizontalAlignment="Left" >
+                                <Grid x:Name="UserDetialedGrid" VerticalAlignment="Top" Margin="159,101,0,0" HorizontalAlignment="Left" Height="257" Width="541" >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="105"/>
+                                        <RowDefinition Height="9.667"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="0"/>
-                                        <ColumnDefinition Width="139.2"/>
-                                        <ColumnDefinition Width="45.6"/>
-                                        <ColumnDefinition Width="77.6"/>
-                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="195.333"/>
+                                        <ColumnDefinition Width="0"/>
+                                        <ColumnDefinition Width="112.667"/>
+                                        <ColumnDefinition Width="Auto" MinWidth="51.333"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,3.2,0,3.2" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:" Grid.ColumnSpan="2"/>
-                                    <TextBox x:Name="UserNameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding UserName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="2.8,7.2,0,7.2" Height="24" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2"/>
-                                    <Label VerticalAlignment="Center" Grid.Row="0" Margin="3,3,0,3.4" HorizontalAlignment="Left" Grid.Column="0" Content="Gender:" Grid.ColumnSpan="2"/>
-                                    <TextBlock x:Name="GenderTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Genger, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="2.8,8,0,7.4" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2"/>
-                                    <Label VerticalAlignment="Center" Grid.Row="4" Margin="3,36.8,0,37.6" HorizontalAlignment="Left" Grid.Column="0" Content="Management Permission:" Grid.ColumnSpan="2"/>
-                                    <CheckBox Name="PremissionCheckBox" IsChecked="{Binding ManagementPermission , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="586" VerticalAlignment="Center" Grid.Row="4" Margin="2.8,2.8,-233.6,-272.4"  Height="376" HorizontalAlignment="Left"  Grid.Column="2" Grid.ColumnSpan="4"/>
-                                    <Image x:Name="UserImage" Source="Icons/user.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="97" />
+                                    <Label VerticalAlignment="Center" Grid.Row="3" Margin="2.333,7.667,0,7.667" HorizontalAlignment="Left" Grid.Column="1" Content="User Name:" Height="32" Width="92"/>
+                                    <TextBox x:Name="UserNameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding UserName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="0.667,11.667,0,11.667" Height="24" HorizontalAlignment="Left" Grid.Column="3" Grid.ColumnSpan="2"/>
+                                    <Label VerticalAlignment="Center" Grid.Row="0" Margin="2.333,33,0,43.333" HorizontalAlignment="Left" Grid.Column="1" Content="Gender:" Height="31" Width="65"/>
+                                    <ComboBox x:Name="GenderTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Path=Gender, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="0.667,38,0,46.333" Height="23" HorizontalAlignment="Left" Grid.Column="3" Grid.ColumnSpan="2"/>
+                                    <Label VerticalAlignment="Center" Grid.Row="4" Margin="2.333,44.333,0,4.334" HorizontalAlignment="Left" Grid.Column="1" Content="Management Permission:" Height="66" Width="145" Grid.RowSpan="2"/>
+                                    <CheckBox Name="PremissionCheckBox" IsChecked="{Binding ManagementPermission , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Grid.Row="4" Margin="6.667,52.333,-38.333,-59.333"  Height="122"  Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+                                    <Image x:Name="UserImage" Source="Icons/user.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="97" Height="98" Margin="31.333,2,-127,7.333" Grid.Column="5" />
+                                    <Label x:Name="label1" Content="Image" Grid.Column="5" HorizontalAlignment="Left" Height="40" Margin="34.333,7.667,-139,0" Grid.Row="3" VerticalAlignment="Top" Width="108" Grid.RowSpan="2"/>
                                 </Grid>
-                                <Button Click="Button_Click_BackArrowBusLine" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Button Click="Button_Click_BackArrowUser" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <Image Source="Icons/left-arrow.png"/>
                                 </Button>
                             </Grid>
