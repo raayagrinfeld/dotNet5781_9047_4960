@@ -462,7 +462,7 @@
                                         <ColumnDefinition Width="0.1*"/>
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.Column="0" FontSize="16" Content="search by User Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <TextBox x:Name="UserNameSearch" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="UserNameSearch" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedUser" Margin="1" VerticalContentAlignment="Center"/>
                                     <Label Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by Premissiom" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox x:Name="Premissiom" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
                                     <Button x:Name="addUser" Content="Add user" Grid.Column="3" Margin="83.667,563,12,-565.867" Height="Auto" Click="Button_addUser_Click"/>

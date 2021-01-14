@@ -151,6 +151,23 @@ namespace PL
                                                                                       where CheckIfStringsAreEqual(StationName.Text, g.StationName)
                                                                                       select g));
         }
+        private void SearchFilterChangedUser(object sender, TextChangedEventArgs e)
+        {
+            stationBOListView.ItemsSource = new ObservableCollection<User>((from item in bl.GetAllUsers()
+                                                                                 where CheckIfStringsAreEqual(UserNameSearch.Text, item.UserName.ToString())
+                                                                                 select item
+                                                                                        into g
+                                                                                 where CheckIfStringsAreEqual(Premissiom.Text, ConvertPremmitionToString(g.ManagementPermission))
+                                                                                 select g));
+        }
+        private string ConvertPremmitionToString(bool mange)
+        {
+            if(mange)
+            {
+                return "Managment";
+            }
+            return "User";
+        }
         private bool CheckIfStringsAreEqual(string a, string b)
         {
             if (a.Length > b.Length)
