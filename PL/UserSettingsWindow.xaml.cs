@@ -30,8 +30,8 @@ namespace PL
             userWindow = user;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
-            grid1.DataContext = user;
             CombBx_Gender.ItemsSource = Enum.GetValues(typeof(gender));
+            grid1.DataContext = user;
             if (user.imagePath != null)
             {
                 BitmapImage bitmap = new BitmapImage();

@@ -17,6 +17,8 @@ using BL;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Device.Location;
+using System.Windows.Media.Imaging;
+using Microsoft.Win32;
 
 namespace PL
 {
@@ -29,6 +31,9 @@ namespace PL
         User user;
         BusLineBO selectedBusLine=null;
         StationBO selectedStation=null;
+        User selectedUser = null;
+       // OpenFileDialog op;
+       // User userWindow;
         //private ObservableCollection<BusLineBO> busLineBOObservableCollection;
         //private ObservableCollection<StationBO> StationBOObservableCollection;
         //private ObservableCollection<User> UserBOObservableCollection;
@@ -41,6 +46,7 @@ namespace PL
             user = logedInUser;
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            CombBx_Gender.ItemsSource = Enum.GetValues(typeof(gender));
             refreshcontent();
            
         }
@@ -404,11 +410,13 @@ namespace PL
             StationDetailedBorder.Visibility = Visibility.Collapsed;
         }
         #endregion
-        #region users click
+
+#region users click
         //go to add user window
         private void Button_addUser_Click(object sender, RoutedEventArgs e)
         {
-
+            userListBorder.Visibility = Visibility.Collapsed;
+            addUserBorder.Visibility = Visibility.Visible;
         }
         #endregion
     }
