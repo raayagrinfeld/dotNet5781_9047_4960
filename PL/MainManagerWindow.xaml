@@ -438,7 +438,68 @@
                     </Grid>
                 </TabItem>
                 <TabItem Header="Users" Width="180" Height="30" FontSize="16">
-                    <Grid Background="#FFE5E5E5"/>
+                    <Grid>
+                        <Grid Background="#FFE5E5E5"/>
+                    <Border x:Name="userListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="243*"/>
+                                    <ColumnDefinition Width="770*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="15"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="15"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.ColumnSpan="2" Margin="0,15,-0.2,0.2" Grid.RowSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="0.1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" FontSize="16" Content="search by User Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox x:Name="UserNameSearch" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
+                                    <Label Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by Premissiom" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBox x:Name="Premissiom" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
+                                    <Button x:Name="addUser" Content="Add user" Grid.Column="3" Margin="83.667,563,12,-565.867" Height="Auto" Click="addStation_Click"/>
+                                </Grid>
+                                <ListView Grid.Row="3" x:Name="userBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="stationBOListView_SelectionChanged" Grid.ColumnSpan="2">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="User Name" DisplayMemberBinding="{Binding UserName}" Width="100"/>
+                                            <GridViewColumn Header="Gender" DisplayMemberBinding="{Binding Gender}" Width="150"/>
+                                            <GridViewColumn Header="Is a Manager"  Width="100">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox IsChecked="{Binding ManagementPermission}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <GridViewColumn Header="delete"  Width="50">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button Click="Button_Click_DeleteBusStaion" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                                                            <Image Source="Icons/garbage.png" Margin="5"/>
+                                                        </Button>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                    <ListView.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="update station information" Click="Button_Click_UpdateStationInformation" />
+                                            <MenuItem Header="deleteStation" Click="Button_Click_DeleteBusStaion" />
+                                        </ContextMenu>
+                                    </ListView.ContextMenu>
+                                </ListView>
+                            </Grid>
+                        </Border>
+                        </Grid>
                 </TabItem>
             </TabControl>
 

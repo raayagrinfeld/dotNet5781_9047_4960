@@ -49,6 +49,7 @@ namespace PL
         {
             busLineBOListView.ItemsSource = bl.GetAllBusLines();
             stationBOListView.ItemsSource = bl.GetAllBusStations();
+            userBOListView.ItemsSource = bl.GetAllUsers();
             lineNumber.Text = "";
             Area.Text = "";
             BusStationKey.Text = "";
