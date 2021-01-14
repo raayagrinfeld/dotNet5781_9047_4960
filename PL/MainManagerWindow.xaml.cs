@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Media;
+using System.Media;
 using BlApi;
 using BO;
 using BL;
@@ -345,6 +347,7 @@ namespace PL
                                     try
                                     {
                                         bl.AddBusStation(b);
+                                        refreshcontent();
                                         stationListBorder.Visibility = Visibility.Visible;
                                         addStationBorder.Visibility = Visibility.Collapsed;
 
@@ -360,6 +363,7 @@ namespace PL
                                     try
                                     {
                                         bl.AddBusStation(b);
+                                        refreshcontent();
                                         stationListBorder.Visibility = Visibility.Visible;
                                         addStationBorder.Visibility = Visibility.Collapsed;
 
@@ -418,6 +422,56 @@ namespace PL
             userListBorder.Visibility = Visibility.Collapsed;
             addUserBorder.Visibility = Visibility.Visible;
         }
+        private void Button_Click_BackArrowUser(object sender, RoutedEventArgs e)
+        {
+            userListBorder.Visibility = Visibility.Visible;
+            addUserBorder.Visibility = Visibility.Collapsed;
+        }
+        private void addUser_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                bl.AddUser(new User { UserName = userNameTextBox.Text, Password = passwordTextBox.Text, IsActive = true, ManagementPermission = false });
+                User user = bl.GetUser(userNameTextBox.Text);
+                if (user.UserName == "" || user.Password == "")
+                {
+                    SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
+                    simpleSound.Play();
+                    passwordTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                    passwordTextBox.Clear();
+                    userNameTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                    userNameTextBox.Clear();
+                }
+                else
+                {
+                    if (CombBx_Gender.SelectedIndex != -1)
+                    {
+                        user.Gender = (gender)CombBx_Gender.SelectedItem;
+                    }
+                    else
+                    {
+                        user.Gender = gender.male;
+                    }
+                    refreshcontent();
+                    passwordTextBox.Clear();
+                    userNameTextBox.Clear();
+                    CombBx_Gender.SelectedIndex = -1;
+                    userListBorder.Visibility = Visibility.Visible;
+                    addUserBorder.Visibility = Visibility.Collapsed;
+                }
+
+            }
+            catch (BO.BadUserNameException ex)
+            {
+                SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
+                simpleSound.Play();
+                passwordTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                passwordTextBox.Clear();
+                userNameTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                userNameTextBox.Clear();
+            }
+        }
+
         #endregion
     }
 }
