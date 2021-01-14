@@ -238,6 +238,16 @@ namespace PL
                 //busLineStationsListBox.ItemsSource = selectedBusLine.busLineStations;
             }
         }
+        private void UserListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectedUser = (userBOListView.SelectedItem as User);
+            if (selectedUser != null)
+            {
+                userListBorder.Visibility = Visibility.Collapsed;
+                UserDetialedBorder.Visibility = Visibility.Visible;
+                UserDetialedGrid.DataContext = selectedUser;
+            }
+        }
 
         //go back
         private void Button_Click_BackArrowBusLine(object sender, RoutedEventArgs e)

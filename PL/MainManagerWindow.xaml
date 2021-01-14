@@ -467,7 +467,7 @@
                                     <TextBox x:Name="Premissiom" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
                                     <Button x:Name="addUser" Content="Add user" Grid.Column="3" Margin="83.667,563,12,-565.867" Height="Auto" Click="Button_addUser_Click"/>
                                 </Grid>
-                                <ListView Grid.Row="3" x:Name="userBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="stationBOListView_SelectionChanged" Grid.ColumnSpan="2">
+                                <ListView Grid.Row="3" x:Name="userBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="UserListView_SelectionChanged" Grid.ColumnSpan="2">
                                     <ListView.View>
                                         <GridView>
                                             <GridViewColumn Header="User Name" DisplayMemberBinding="{Binding UserName}" Width="100"/>
@@ -524,7 +524,39 @@
                                     <Image Source="Icons/left-arrow.png"/>
                                 </Button>
                             </Grid>
-                   </Border>
+                        </Border>
+                        <Border x:Name="UserDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
+                            <Grid>
+
+                                <Grid x:Name="UserDetialedGrid" VerticalAlignment="Top" Margin="173,91,0,0" HorizontalAlignment="Left" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0"/>
+                                        <ColumnDefinition Width="139.2"/>
+                                        <ColumnDefinition Width="45.6"/>
+                                        <ColumnDefinition Width="77.6"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,3.2,0,3.2" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:" Grid.ColumnSpan="2"/>
+                                    <TextBox x:Name="UserNameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding UserName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="2.8,7.2,0,7.2" Height="24" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2"/>
+                                    <Label VerticalAlignment="Center" Grid.Row="0" Margin="3,3,0,3.4" HorizontalAlignment="Left" Grid.Column="0" Content="Gender:" Grid.ColumnSpan="2"/>
+                                    <TextBlock x:Name="GenderTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Genger, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="2.8,8,0,7.4" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2"/>
+                                    <Label VerticalAlignment="Center" Grid.Row="4" Margin="3,36.8,0,37.6" HorizontalAlignment="Left" Grid.Column="0" Content="Management Permission:" Grid.ColumnSpan="2"/>
+                                    <CheckBox Name="PremissionCheckBox" IsChecked="{Binding ManagementPermission , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="586" VerticalAlignment="Center" Grid.Row="4" Margin="2.8,2.8,-233.6,-272.4"  Height="376" HorizontalAlignment="Left"  Grid.Column="2" Grid.ColumnSpan="4"/>
+                                    <Image x:Name="UserImage" Source="Icons/user.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="97" />
+                                </Grid>
+                                <Button Click="Button_Click_BackArrowBusLine" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <Image Source="Icons/left-arrow.png"/>
+                                </Button>
+                            </Grid>
+                        </Border>
                     </Grid>
                 </TabItem>
             </TabControl>
