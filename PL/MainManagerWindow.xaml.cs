@@ -341,6 +341,7 @@ namespace PL
                                     }
                                     catch (BO.BadBusStationKeyException ex)
                                     {
+                                        exsistStation.Visibility = Visibility.Visible;
                                     }
                                 }
                                 else
@@ -355,6 +356,7 @@ namespace PL
                                     }
                                     catch (BO.BadBusStationKeyException ex)
                                     {
+                                        exsistStation.Visibility = Visibility.Visible;
                                     }
                                 }
                             }

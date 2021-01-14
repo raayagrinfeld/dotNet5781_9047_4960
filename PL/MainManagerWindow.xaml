@@ -294,7 +294,7 @@
                 </TabItem>
                 <TabItem Header="Station" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
-                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed">
+                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -399,7 +399,7 @@
                                 <WebBrowser HorizontalAlignment="Left" Height="213" Margin="480,23,0,0" VerticalAlignment="Top" Width="314"/>
                             </Grid>
                         </Border>
-                        <Border x:Name="addStationBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Margin="-13,66,12.667,-65.333">
+                        <Border x:Name="addStationBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Margin="10,-1,-10.333,1.667">
                             <Grid>
                                 <Grid x:Name="grid6" Height="300" Width="400" Margin="80,36,532.8,404.8" >
                                     <Grid.ColumnDefinitions>
@@ -428,7 +428,11 @@
                                     <Label Content="Station Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="6" VerticalAlignment="Center"/>
                                     <TextBox x:Name="addStationNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="6" VerticalAlignment="Center" Width="120"/>
                                     <Button Content="add" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Margin="28,53,72.667,-42.333" Click="add_From_addStationWindow_Click"/>
+                                    <Label x:Name="exsistStation" Grid.ColumnSpan="2" Content="This station already exsist" HorizontalAlignment="Left" Height="56" Margin="23,64,0,-77.333" Grid.Row="6" VerticalAlignment="Top" Width="197" Foreground="Red" Visibility="Collapsed"/>
                                 </Grid>
+                                <Button Click="Button_Click_BackArrowBusLine" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <Image Source="Icons/left-arrow.png"/>
+                                </Button>
                             </Grid>
                         </Border>
                     </Grid>
