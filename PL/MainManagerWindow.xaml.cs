@@ -119,8 +119,8 @@ namespace PL
             this.Close();
         }
 
-        
-        //--------filter BusLine, station and user-------------------
+
+#region filter BusLine, station and user
         private void SearchFilterChangedBusLine(object sender, TextChangedEventArgs e)
         {
 
@@ -157,9 +157,9 @@ namespace PL
         }
 
 
+        #endregion
 
-
-        //----------------bus line butten clicks
+#region bus line butten clicks
         //add button click
         private void Button_Click_AddBusLine(object sender, RoutedEventArgs e)
         {
@@ -239,8 +239,9 @@ namespace PL
             busLineListBorder.Visibility = Visibility.Visible;
         }
 
+        #endregion
 
-        //---------------- sort by header click
+#region sort by header click
         GridViewColumnHeader _lastHeaderClicked = null;
         ListSortDirection _lastDirection = ListSortDirection.Ascending;
         void GridViewColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
@@ -305,7 +306,9 @@ namespace PL
             dataView.SortDescriptions.Add(sd);
             dataView.Refresh();
         }
-        //----------------- stations click
+        #endregion
+
+#region stations click
         private void addStation_Click(object sender, RoutedEventArgs e)
         {
             stationListBorder.Visibility = Visibility.Collapsed;
@@ -400,6 +403,14 @@ namespace PL
             addStationBorder.Visibility = Visibility.Collapsed;
             StationDetailedBorder.Visibility = Visibility.Collapsed;
         }
+        #endregion
+        #region users click
+        //go to add user window
+        private void Button_addUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
 
