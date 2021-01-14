@@ -482,7 +482,7 @@
                                             <GridViewColumn Header="delete"  Width="50">
                                                 <GridViewColumn.CellTemplate>
                                                     <DataTemplate>
-                                                        <Button Click="Button_Click_DeleteBusStaion" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                                                        <Button Click="Button_Click_DeleteUser" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
                                                             <Image Source="Icons/garbage.png" Margin="5"/>
                                                         </Button>
                                                     </DataTemplate>
@@ -493,7 +493,7 @@
                                     <ListView.ContextMenu>
                                         <ContextMenu>
                                             <MenuItem Header="update station information" Click="Button_Click_UpdateStationInformation" />
-                                            <MenuItem Header="deleteStation" Click="Button_Click_DeleteBusStaion" />
+                                            <MenuItem Header="deleteUser" Click="Button_Click_DeleteUser" />
                                         </ContextMenu>
                                     </ListView.ContextMenu>
                                 </ListView>

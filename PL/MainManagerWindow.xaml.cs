@@ -484,6 +484,11 @@ namespace PL
                 userNameTextBox.Clear();
             }
         }
+        private void Button_Click_DeleteUser(object sender, RoutedEventArgs e)
+        {
+            bl.DeletUser(((sender as Button).DataContext as User).UserName);
+            refreshcontent();
+        }
 
         #endregion
     }
