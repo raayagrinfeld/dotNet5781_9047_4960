@@ -32,6 +32,8 @@ namespace PL
             StationsBox.ItemsSource = bl.GetAllBusStations();
             StationsBox2.ItemsSource = bl.GetAllBusStations();
             StationsBox.Text = bl.GetAllBusStations().ToString();
+            NoBusLable.Visibility = Visibility.Collapsed;
+            listBuses.Visibility = Visibility.Collapsed;
         }
      /*   public MainUserWindow()
         {
@@ -115,7 +117,14 @@ namespace PL
                 drive.Source = (StationBO)StationsBox.SelectedValue;
                 drive.Destination = (StationBO)StationsBox2.SelectedItem;
                 listBuses.ItemsSource = bl.fingALinesBeatweenStation(drive).ToList();
-                listBuses.Visibility = Visibility.Visible;
+                if (bl.fingALinesBeatweenStation(drive).ToList().Count() == 0)
+                {
+                    NoBusLable.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    listBuses.Visibility = Visibility.Visible;
+                }
             }
             else
             {

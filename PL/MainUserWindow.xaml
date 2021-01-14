@@ -69,7 +69,8 @@
                                 <ComboBox x:Name="StationsBox2" Grid.Column="3" Grid.Row="0" Text="{Binding stationBOViewSource , Converter={StaticResource StationConvert }}" Grid.ColumnSpan="2" Margin="165,0,0,55.667"/>
                                 <Label Content="Choose a destanation station" Grid.Column="3"  Grid.Row="0" />
                                 <Button x:Name="search" Content="Search Bus" HorizontalAlignment="Left" Height="42" Margin="10,3,0,0" VerticalAlignment="Top" Width="145" Click="SearchBus_Click" Grid.Column="5"/>
-                                <ListBox x:Name="listBuses" HorizontalAlignment="Left" Height="503" VerticalAlignment="Top" Width="991" Visibility="Collapsed" Margin="0,5.333,-0.333,-5" Grid.Row="1" Background="Aqua" Grid.ColumnSpan="6" Grid.RowSpan="5"/>
+                                <ListBox x:Name="listBuses" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="991" Visibility="Collapsed" Margin="0,99.333,0,-5" Grid.Row="1" Background="Aqua" Grid.ColumnSpan="6" Grid.RowSpan="5"/>
+                                <Label x:Name="NoBusLable" Grid.ColumnSpan="6" Content="There is no bus between this satations" HorizontalAlignment="Center" Height="51" Margin="83,27.333,0,0" Grid.Row="1" VerticalAlignment="Top" Width="807" Visibility="Collapsed"/>
                             </Grid>
                         </Border>
 
