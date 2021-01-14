@@ -16,6 +16,7 @@ using BO;
 using BL;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Device.Location;
 
 namespace PL
 {
@@ -309,9 +310,87 @@ namespace PL
             stationListBorder.Visibility = Visibility.Collapsed;
             addStationBorder.Visibility = Visibility.Visible;
         }
-       
+        private void add_From_addStationWindow_Click(object sender, RoutedEventArgs e)
+        {
+            StationBO b = new StationBO();
+            if(addLatitudeTextBox.Text!=""&addLongitudeTextBox.Text!="")
+            {
+                if (31 < Double.Parse(addLatitudeTextBox.Text) & Double.Parse(addLatitudeTextBox.Text) < 35)
+                {
+                    if (31 < Double.Parse(addLongitudeTextBox.Text) & Double.Parse(addLongitudeTextBox.Text) < 35)
+                    {
+                        GeoCoordinate coordinate = new GeoCoordinate();
+                        coordinate.Latitude = Double.Parse(addLatitudeTextBox.Text);
+                        coordinate.Longitude = Double.Parse(addLongitudeTextBox.Text);
+                        b.Coordinates = coordinate;
+                        if (addStationAddressTextBox.Text != "")
+                        {
+                            b.StationAddress = addStationAddressTextBox.Text;
+                            if (addStationNameTextBox.Text != "")
+                            {
+                                b.StationName = addStationNameTextBox.Text;
+                                if (addRoof.IsChecked == true)
+                                {
+                                    b.HasARoof = true;
+                                    try
+                                    {
+                                        bl.AddBusStation(b);
+                                        stationListBorder.Visibility = Visibility.Visible;
+                                        addStationBorder.Visibility = Visibility.Collapsed;
 
-        
+                                    }
+                                    catch (BO.BadBusStationKeyException ex)
+                                    {
+                                    }
+                                }
+                                else
+                                {
+                                    b.HasARoof = false;
+                                    try
+                                    {
+                                        bl.AddBusStation(b);
+                                        stationListBorder.Visibility = Visibility.Visible;
+                                        addStationBorder.Visibility = Visibility.Collapsed;
+
+                                    }
+                                    catch (BO.BadBusStationKeyException ex)
+                                    {
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                addStationNameTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                                addStationNameTextBox.Clear();
+                            }
+                        }
+                        else
+                        {
+                            addStationAddressTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                            addStationAddressTextBox.Clear();
+                        }
+                    }
+                    else
+                    {
+                        addLongitudeTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                        addLongitudeTextBox.Clear();
+                    }
+                }
+                else
+                {
+                    addLatitudeTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                    addLatitudeTextBox.Clear();
+                }
+            }
+            else
+            {
+                addLongitudeTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                addLongitudeTextBox.Clear();
+
+                addLatitudeTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                addLatitudeTextBox.Clear();
+            }
+        }
     }
 }
 
