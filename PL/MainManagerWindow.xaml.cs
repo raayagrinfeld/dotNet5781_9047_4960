@@ -393,6 +393,12 @@ namespace PL
                 addLatitudeTextBox.Clear();
             }
         }
+        private void Button_Click_BackArrowBusStation(object sender, RoutedEventArgs e)
+        {
+            stationListBorder.Visibility = Visibility.Visible;
+            addStationBorder.Visibility = Visibility.Collapsed;
+            StationDetailedBorder.Visibility = Visibility.Collapsed;
+        }
     }
 }
 
