@@ -368,29 +368,20 @@ namespace PL
         }
         private void add_From_addStationWindow_Click(object sender, RoutedEventArgs e)
         {
-            StationBO b = new StationBO();
             if(addLatitudeTextBox.Text!=""&addLongitudeTextBox.Text!="")
             {
                 if (31 < Double.Parse(addLatitudeTextBox.Text) & Double.Parse(addLatitudeTextBox.Text) < 35)
                 {
                     if (31 < Double.Parse(addLongitudeTextBox.Text) & Double.Parse(addLongitudeTextBox.Text) < 35)
                     {
-                        GeoCoordinate coordinate = new GeoCoordinate();
-                        coordinate.Latitude = Double.Parse(addLatitudeTextBox.Text);
-                        coordinate.Longitude = Double.Parse(addLongitudeTextBox.Text);
-                        b.Coordinates = coordinate;
                         if (addStationAddressTextBox.Text != "")
-                        {
-                            b.StationAddress = addStationAddressTextBox.Text;
+                        {   
                             if (addStationNameTextBox.Text != "")
                             {
-                                b.StationName = addStationNameTextBox.Text;
-                                if (addRoof.IsChecked == true)
-                                {
-                                    b.HasARoof = true;
                                     try
                                     {
-                                        bl.AddBusStation(b);
+                                        Random r = new Random();
+                                        bl.AddBusStation(new StationBO { busLines = null, BusStationKey = 39100+r.Next(0,899),Coordinates=new GeoCoordinate(Double.Parse(addLatitudeTextBox.Text), Double.Parse(addLongitudeTextBox.Text)),StationAddress= addStationAddressTextBox.Text,IsActive=true, HasARoof= (bool)addRoof.IsChecked,StationName= addStationNameTextBox.Text });
                                         refreshcontent();
                                         stationListBorder.Visibility = Visibility.Visible;
                                         addStationBorder.Visibility = Visibility.Collapsed;
@@ -400,23 +391,6 @@ namespace PL
                                     {
                                         exsistStation.Visibility = Visibility.Visible;
                                     }
-                                }
-                                else
-                                {
-                                    b.HasARoof = false;
-                                    try
-                                    {
-                                        bl.AddBusStation(b);
-                                        refreshcontent();
-                                        stationListBorder.Visibility = Visibility.Visible;
-                                        addStationBorder.Visibility = Visibility.Collapsed;
-
-                                    }
-                                    catch (BO.BadBusStationKeyException ex)
-                                    {
-                                        exsistStation.Visibility = Visibility.Visible;
-                                    }
-                                }
                             }
                             else
                             {
@@ -465,12 +439,12 @@ namespace PL
         {
             userListBorder.Visibility = Visibility.Collapsed;
             addUserBorder.Visibility = Visibility.Visible;
-            userDitailegrid.Visibility = Visibility.Collapsed;
         }
         private void Button_Click_BackArrowUser(object sender, RoutedEventArgs e)
         {
             userListBorder.Visibility = Visibility.Visible;
             addUserBorder.Visibility = Visibility.Collapsed;
+            UserDetialedBorder.Visibility = Visibility.Collapsed;
         }
         private void addUser_Click(object sender, RoutedEventArgs e)
         {
@@ -491,7 +465,7 @@ namespace PL
                 {
                     if (CombBx_Gender.SelectedIndex != -1)
                     {
-                        user.Gender = (gender)CombBx_Gender.SelectedItem;
+                        user.Gender = (gender)CombBx_Gender.SelectedValue;
                     }
                     else
                     {
