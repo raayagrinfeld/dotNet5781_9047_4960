@@ -20,7 +20,7 @@ namespace BlApi
         void UpdateBusLine(BusLineBO busLine);
         void AddBusLine(BusLineBO bus);
         void DeleteBusLine(int busLineKey);
-        IEnumerable<IGrouping<Areas, int>> GetBusLineGrouptByArea();
+        IEnumerable<IGrouping<Areas, BusLineBO>> GetBusLineGrouptByArea();
 
         #endregion
 
@@ -50,6 +50,8 @@ namespace BlApi
 
         #region User
         BO.User GetUser(string userName);
+        IEnumerable<IGrouping<bool, User>> GetUserGrouptByManagment();
+
         IEnumerable<BO.User> GetAllUsers();
         IEnumerable<BO.User> GetAlUersBy(Predicate<BO.User> predicate);
         void AddUser(BO.User user);

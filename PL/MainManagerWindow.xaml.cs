@@ -22,6 +22,7 @@ using System.Device.Location;
 using System.Windows.Media.Imaging;
 using Microsoft.Win32;
 
+enum Managment { Managmaent, regularUser};
 namespace PL
 {
     /// <summary>
@@ -36,20 +37,19 @@ namespace PL
         User selectedUser = null;
        // OpenFileDialog op;
        // User userWindow;
-        //private ObservableCollection<BusLineBO> busLineBOObservableCollection;
+        private ObservableCollection<BusLineBO> busLineBOObservableCollectionFilter;
         //private ObservableCollection<StationBO> StationBOObservableCollection;
-        //private ObservableCollection<User> UserBOObservableCollection;
+        private ObservableCollection<User> UserBOObservableCollectionFilter;
 
         public MainManagerWindow(User logedInUser)
         {
-            //busLineBOObservableCollection = new ObservableCollection<BusLineBO>(bl.GetAllBusLines());
-            //StationBOObservableCollection = new ObservableCollection<StationBO>(bl.GetAllBusStations());
-            //UserBOObservableCollection = new ObservableCollection<User>(bl.GetAllUsers());
             user = logedInUser;
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             CombBx_Gender.ItemsSource = Enum.GetValues(typeof(gender));
             GenderTextBox.ItemsSource= Enum.GetValues(typeof(gender));
+            GropByArea.ItemsSource= Enum.GetValues(typeof(Areas));
+            Premissiom.ItemsSource = Enum.GetValues(typeof(Managment));
             refreshcontent();
            
         }
@@ -57,12 +57,16 @@ namespace PL
         private void refreshcontent()
         {
             busLineBOListView.ItemsSource = bl.GetAllBusLines();
+            busLineBOObservableCollectionFilter= new ObservableCollection<BusLineBO>(bl.GetAllBusLines());
             stationBOListView.ItemsSource = bl.GetAllBusStations();
             userBOListView.ItemsSource = bl.GetAllUsers();
+            UserBOObservableCollectionFilter = new ObservableCollection<User>(bl.GetAllUsers());
             lineNumber.Text = "";
-            Area.Text = "";
+            GropByArea.SelectedItem = null;
             BusStationKey.Text = "";
             StationName.Text = "";
+            UserNameSearch.Text = "";
+            Premissiom.SelectedItem = null;
             if(selectedBusLine!=null)
             {
                 busLineStationsListBox.DataContext = selectedBusLine.busLineStations;
@@ -138,13 +142,23 @@ namespace PL
         private void SearchFilterChangedBusLine(object sender, TextChangedEventArgs e)
         {
 
-            busLineBOListView.ItemsSource = new ObservableCollection<BusLineBO>((from item in bl.GetAllBusLines()
-                                                                                      where CheckIfStringsAreEqual(lineNumber.Text, item.LineNumber.ToString())
-                                                                                      select item
-                                                                                        into g
-                                                                                      where CheckIfStringsAreEqual(Area.Text, g.Area.ToString())
-                                                                                      select g));
-
+            busLineBOListView.ItemsSource = new ObservableCollection<BusLineBO>((from item in busLineBOObservableCollectionFilter
+                                                                                        where CheckIfStringsAreEqual(lineNumber.Text, item.LineNumber.ToString())
+                                                                                 select item));
+        }
+        private void GropByArea_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (var item in bl.GetBusLineGrouptByArea())
+                if (GropByArea.SelectedItem != null && item.Key == (Areas)GropByArea.SelectedItem)
+                {
+                    busLineBOObservableCollectionFilter = new ObservableCollection<BusLineBO>(item);
+                    busLineBOListView.ItemsSource = busLineBOObservableCollectionFilter;
+                }
+            lineNumber.Text ="";
+        }
+        private void ClearGrouping_click(object sender, RoutedEventArgs e)
+        {
+            refreshcontent();
         }
         private void SearchFilterChangedBusStation(object sender, TextChangedEventArgs e)
         {
@@ -157,21 +171,21 @@ namespace PL
         }
         private void SearchFilterChangedUser(object sender, TextChangedEventArgs e)
         {
-            stationBOListView.ItemsSource = new ObservableCollection<User>((from item in bl.GetAllUsers()
-                                                                                 where CheckIfStringsAreEqual(UserNameSearch.Text, item.UserName.ToString())
-                                                                                 select item
-                                                                                        into g
-                                                                                 where CheckIfStringsAreEqual(Premissiom.Text, ConvertPremmitionToString(g.ManagementPermission))
-                                                                                 select g));
+            userBOListView.ItemsSource = new ObservableCollection<User>((from item in bl.GetAllUsers()
+                                                                         where CheckIfStringsAreEqual(UserNameSearch.Text, item.UserName)
+                                                                         select item));                                            
         }
-        private string ConvertPremmitionToString(bool mange)
+        private void Premissiom_selectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(mange)
-            {
-                return "Managment";
-            }
-            return "User";
+            foreach (var item in bl.GetUserGrouptByManagment())
+                if (Premissiom.SelectedItem != null && (item.Key == ((int)Premissiom.SelectedItem==0)))
+                {
+                    UserBOObservableCollectionFilter = new ObservableCollection<User>(item);
+                    userBOListView.ItemsSource = UserBOObservableCollectionFilter;
+                }
+            UserNameSearch.Text = "";
         }
+
         private bool CheckIfStringsAreEqual(string a, string b)
         {
             if (a.Length > b.Length)

@@ -126,10 +126,10 @@ namespace BL
                 throw new BO.BadBusLineKeyException("this bus not exsist", busExaption);
             }
         }
-        public IEnumerable<IGrouping<BO.Areas, int>> GetBusLineGrouptByArea()
+        public IEnumerable<IGrouping<BO.Areas, BusLineBO>> GetBusLineGrouptByArea()
         {
             return from BusLine in GetAllBusLines()
-                   group BusLine.BusLineKey by BusLine.Area into g
+                   group BusLine by BusLine.Area into g
                    select g;
         }
         #endregion
@@ -425,6 +425,8 @@ namespace BL
             user.CopyPropertiesTo(userBO);
             return userBO;
         }
+
+
         DO.User UserBODOAdapter(BO.User user)
         {
             DO.User userDO = new DO.User();
@@ -441,6 +443,12 @@ namespace BL
             {
                 throw new BO.BadUserNameException("this username exsist", busExaption);
             }
+        }
+        public IEnumerable<IGrouping<bool, BO.User>> GetUserGrouptByManagment()
+        {
+            return from user in GetAllUsers()
+                   group user by user.ManagementPermission into g
+                   select g;
         }
         public IEnumerable<BO.User> GetAllUsers()
         {

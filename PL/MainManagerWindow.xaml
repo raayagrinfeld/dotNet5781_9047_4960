@@ -52,7 +52,7 @@
                             <ColumnDefinition Width="300*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Grid.Column="1" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Grid.Column="1" Margin="0,0,-0.2,-0.2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -70,13 +70,14 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="0.1*"/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                        <ColumnDefinition Width="0.5*"/>
                                     </Grid.ColumnDefinitions>
                                     <Label x:Name="label" Grid.Column="0" FontSize="16" Content="search by line number" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox x:Name="lineNumber" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedBusLine" Margin="1" VerticalContentAlignment="Center"/>
                                     <Label x:Name="label2" Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by area" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <TextBox x:Name="Area" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChangedBusLine" Margin="1" VerticalContentAlignment="Center"/>
+                                    <ComboBox x:Name="GropByArea" Padding="4" Height="30" Grid.Column="3" Text="" SelectionChanged="GropByArea_SelectionChanged" Margin="1" VerticalContentAlignment="Center"/>
+                                    <Button Content="clear filters" Grid.Column="5" Click="ClearGrouping_click"/>
                                 </Grid>
                                 <ListView Grid.Row="3" x:Name="busLineBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" MouseDoubleClick="busLineBOListView_MouseDoubleClick"  SelectionChanged="busLineBOListView_SelectionChanged" Grid.ColumnSpan="2">
                                     <ListView.View>
@@ -411,11 +412,16 @@
                 </TabItem>
                 <TabItem Header="Users" Width="180" Height="30" FontSize="16">
                     <Grid>
-                        <Grid Background="#FFE5E5E5"/>
-                        <Border x:Name="userListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="105*"/>
+                            <ColumnDefinition Width="908*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Background="#FFE5E5E5" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2"/>
+                        <Border x:Name="userListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="243*"/>
+                                    <ColumnDefinition Width="71*"/>
+                                    <ColumnDefinition Width="172*"/>
                                     <ColumnDefinition Width="770*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
@@ -425,21 +431,23 @@
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="40"/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.ColumnSpan="2" Margin="0,15,-0.2,0.2" Grid.RowSpan="2">
+                                <Grid Grid.ColumnSpan="3" Margin="0,15,-0.2,0.2" Grid.RowSpan="2">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="0.1*"/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                        <ColumnDefinition Width="0.5*"/>
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.Column="0" FontSize="16" Content="search by User Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox x:Name="UserNameSearch" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedUser" Margin="1" VerticalContentAlignment="Center"/>
                                     <Label Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by Premissiom" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <TextBox x:Name="Premissiom" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
+                                    <ComboBox x:Name="Premissiom" Padding="4" Height="30" Grid.Column="3" Text="" SelectionChanged="Premissiom_selectionChanged" Margin="1" VerticalContentAlignment="Center"/>
                                     <Button x:Name="addUser" Content="Add user" Grid.Column="3" Margin="83.667,563,12,-565.867" Height="Auto" Click="Button_addUser_Click"/>
+                                    <Button Content="clear filters" Grid.Column="5" Click="ClearGrouping_click"/>
+
                                 </Grid>
-                                <ListView Grid.Row="3" x:Name="userBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="UserListView_SelectionChanged" Grid.ColumnSpan="2">
+                                <ListView Grid.Row="3" x:Name="userBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="UserListView_SelectionChanged" Grid.ColumnSpan="3">
                                     <ListView.View>
                                         <GridView>
                                             <GridViewColumn Header="User Name" DisplayMemberBinding="{Binding UserName}" Width="100"/>
@@ -471,7 +479,7 @@
                                 </ListView>
                             </Grid>
                         </Border>
-                        <Border x:Name="addUserBorder" Visibility="Collapsed" Margin="26,20,-26.333,-20.333">
+                        <Border x:Name="addUserBorder" Visibility="Collapsed" Margin="26,20,-26.2,-20.2" Grid.ColumnSpan="2">
                             <Grid>
                                 <Grid x:Name="addusergrid" Visibility="Visible" VerticalAlignment="Top" Margin="41,39,0,0" HorizontalAlignment="Left" >
                                     <Grid.RowDefinitions>
@@ -497,7 +505,7 @@
                                 </Button>
                             </Grid>
                         </Border>
-                        <Border x:Name="UserDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Margin="6,0,-6.333,-0.333">
+                        <Border x:Name="UserDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Margin="6,0,-6.2,-0.2" Grid.ColumnSpan="2">
                             <Grid>
 
                                 <Grid x:Name="UserDetialedGrid" VerticalAlignment="Top" Margin="159,101,0,0" HorizontalAlignment="Left" Height="257" Width="541" >
