@@ -180,6 +180,14 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ListConsecutiveStations, ConsecutiveStationsPath);
         }
+        public IEnumerable<ConsecutiveStations> GetAlConsecutiveStationsBy(Predicate<ConsecutiveStations> predicate)
+        {
+            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+
+            return from consecutiveStation in ListConsecutiveStations
+                   where (predicate(consecutiveStation)) & consecutiveStation.IsActive
+                   select consecutiveStation;
+        }
         #endregion
 
         #region UserXML
@@ -210,13 +218,8 @@ namespace DL
 
         public void DeletUser(string userName)
         {
-            throw new NotImplementedException();
         }
 
-        public IEnumerable<ConsecutiveStations> GetAlConsecutiveStationsBy(Predicate<ConsecutiveStations> predicate)
-        {
-            throw new NotImplementedException();
-        }
 
         public IEnumerable<BusLine> GetAllBusLines()
         {
