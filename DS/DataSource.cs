@@ -528,7 +528,7 @@ namespace DS
                     prevBusLineStation = busStationKey;
                 }
             }
-            UserList.Add(new User { UserName = "raaya", Password = "123", IsActive = true, ManagementPermission = true, gender = (gender)0, imagePath = null });
+            UserList.Add(new User { UserName = "raaya", Password = "123", IsActive = true, ManagementPermission = true, gender = gender.female, imagePath = null });
             UserList.Add(new User { UserName = "odelia", Password = "1666", IsActive = true, ManagementPermission = true, gender = (gender)0, imagePath = "Icons/wonan.png" });
             UserList.Add(new User { UserName = "aviva", Password = "1111", IsActive = true, ManagementPermission = false, gender = (gender)0, imagePath = null });
             UserList.Add(new User { UserName = "myiah", Password = "6543", IsActive = true, ManagementPermission = false, gender = (gender)0, imagePath = "Icons/wonan.png" });

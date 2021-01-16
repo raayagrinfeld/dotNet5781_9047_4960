@@ -450,12 +450,12 @@ namespace PL
         {
             userListBorder.Visibility = Visibility.Collapsed;
             addUserBorder.Visibility = Visibility.Visible;
-            userDitailegrid.Visibility = Visibility.Collapsed;
         }
         private void Button_Click_BackArrowUser(object sender, RoutedEventArgs e)
         {
             userListBorder.Visibility = Visibility.Visible;
             addUserBorder.Visibility = Visibility.Collapsed;
+            UserDetialedBorder.Visibility = Visibility.Collapsed;
         }
         private void addUser_Click(object sender, RoutedEventArgs e)
         {
@@ -476,7 +476,7 @@ namespace PL
                 {
                     if (CombBx_Gender.SelectedIndex != -1)
                     {
-                        user.Gender = (gender)CombBx_Gender.SelectedItem;
+                        user.Gender = (gender)CombBx_Gender.SelectedValue;
                     }
                     else
                     {
