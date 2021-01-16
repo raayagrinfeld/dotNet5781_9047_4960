@@ -95,6 +95,23 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ListBusLineStations, BusLineStationPath);
         }
+        public void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey)
+        {
+            List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
+            BusLineStation sic = ListBusLineStations.Find(b =>
+            {
+                if (b.BusStationKey == BusStationKey & b.BusLineKey == BusLineKey & b.IsActive)
+                {
+                    b.IsActive = false;
+                    return true;
+                }
+                else return false;
+            });
+            if (sic == null)
+                throw new DO.BadBusLineStationsException(BusStationKey, BusLineKey, "this bus line ststion is not exsist");
+
+            XMLTools.SaveListToXMLSerializer(ListBusLineStations, BusLineStationPath);
+        }
         #endregion
 
         #region BusStation
@@ -191,11 +208,6 @@ namespace DL
         }
         #endregion
 
-
-        public void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey)
-        {
-            throw new NotImplementedException();
-        }
         public void DeletUser(string userName)
         {
             throw new NotImplementedException();
