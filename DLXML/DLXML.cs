@@ -78,6 +78,23 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(BusLineStationList, BusLineStationPath);
         }
+        public void DeleteBusLineStationAllBusLine(int BusStationKey)
+        {
+            List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
+            IEnumerable<BusLineStation> sic = ListBusLineStations.Where(b =>
+            {
+                if (b.BusStationKey == BusStationKey & b.IsActive)
+                {
+                    b.IsActive = false;
+                    return true;
+                }
+                else return false;
+            });
+            if (sic == null)
+                throw new DO.BadBusLineStationsException(BusStationKey, 0, "this bus line ststion is not exsist");
+
+            XMLTools.SaveListToXMLSerializer(ListBusLineStations, BusLineStationPath);
+        }
         #endregion
 
         #region BusStation
@@ -128,6 +145,24 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ConsecutiveStationsList, ConsecutiveStationsPath);
         }
+        public void DeletConsecutiveStations(int key1, int key2)
+        {
+            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+
+            DO.ConsecutiveStations sic = ListConsecutiveStations.Find(s =>
+            {
+                if (s.Station1Key == key1 & s.Station2Key == key2 & s.IsActive)
+                {
+                    s.IsActive = false;
+                    return true;
+                }
+                else return false;
+            });
+            if (sic == null)
+                throw new DO.BadConsecutiveStationsException(key1, key2, "this consecutive station is not exsist");
+
+            XMLTools.SaveListToXMLSerializer(ListConsecutiveStations, ConsecutiveStationsPath);
+        }
         #endregion
 
         #region UserXML
@@ -156,15 +191,6 @@ namespace DL
         }
         #endregion
 
-        public void DeletConsecutiveStations(int key1, int key2)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteBusLineStationAllBusLine(int BusStationKey)
-        {
-            throw new NotImplementedException();
-        }
 
         public void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey)
         {
