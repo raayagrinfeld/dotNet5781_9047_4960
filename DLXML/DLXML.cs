@@ -78,6 +78,40 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(BusLineStationList, BusLineStationPath);
         }
+        public void DeleteBusLineStationAllBusLine(int BusStationKey)
+        {
+            List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
+            IEnumerable<BusLineStation> sic = ListBusLineStations.Where(b =>
+            {
+                if (b.BusStationKey == BusStationKey & b.IsActive)
+                {
+                    b.IsActive = false;
+                    return true;
+                }
+                else return false;
+            });
+            if (sic == null)
+                throw new DO.BadBusLineStationsException(BusStationKey, 0, "this bus line ststion is not exsist");
+
+            XMLTools.SaveListToXMLSerializer(ListBusLineStations, BusLineStationPath);
+        }
+        public void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey)
+        {
+            List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
+            BusLineStation sic = ListBusLineStations.Find(b =>
+            {
+                if (b.BusStationKey == BusStationKey & b.BusLineKey == BusLineKey & b.IsActive)
+                {
+                    b.IsActive = false;
+                    return true;
+                }
+                else return false;
+            });
+            if (sic == null)
+                throw new DO.BadBusLineStationsException(BusStationKey, BusLineKey, "this bus line ststion is not exsist");
+
+            XMLTools.SaveListToXMLSerializer(ListBusLineStations, BusLineStationPath);
+        }
         #endregion
 
         #region BusStation
@@ -128,6 +162,32 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ConsecutiveStationsList, ConsecutiveStationsPath);
         }
+        public void DeletConsecutiveStations(int key1, int key2)
+        {
+            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+
+            DO.ConsecutiveStations sic = ListConsecutiveStations.Find(s =>
+            {
+                if (s.Station1Key == key1 & s.Station2Key == key2 & s.IsActive)
+                {
+                    s.IsActive = false;
+                    return true;
+                }
+                else return false;
+            });
+            if (sic == null)
+                throw new DO.BadConsecutiveStationsException(key1, key2, "this consecutive station is not exsist");
+
+            XMLTools.SaveListToXMLSerializer(ListConsecutiveStations, ConsecutiveStationsPath);
+        }
+        public IEnumerable<ConsecutiveStations> GetAlConsecutiveStationsBy(Predicate<ConsecutiveStations> predicate)
+        {
+            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+
+            return from consecutiveStation in ListConsecutiveStations
+                   where (predicate(consecutiveStation)) & consecutiveStation.IsActive
+                   select consecutiveStation;
+        }
         #endregion
 
         #region UserXML
@@ -156,29 +216,10 @@ namespace DL
         }
         #endregion
 
-        public void DeletConsecutiveStations(int key1, int key2)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteBusLineStationAllBusLine(int BusStationKey)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey)
-        {
-            throw new NotImplementedException();
-        }
         public void DeletUser(string userName)
         {
-            throw new NotImplementedException();
         }
 
-        public IEnumerable<ConsecutiveStations> GetAlConsecutiveStationsBy(Predicate<ConsecutiveStations> predicate)
-        {
-            throw new NotImplementedException();
-        }
 
         public IEnumerable<BusLine> GetAllBusLines()
         {
