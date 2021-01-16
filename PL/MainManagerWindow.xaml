@@ -9,10 +9,6 @@
         Title="MainWindowMangaerxaml" MinHeight="720" MinWidth="1020" Height="700" Width="1000"  WindowStyle="None" Closed="When_Window_CLosed" 
         AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown" WindowState="Maximized" Icon="Icons\BusUslcon.jpeg"   >
 
-
-
-
-
     <Border BorderThickness="1" BorderBrush="#FF17B419" Background="AliceBlue" >
         <Grid>
             <Grid.RowDefinitions>
@@ -46,11 +42,17 @@
             <TabControl Grid.Row="1" x:Name="TabControl_Manager"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF17B419" >
                 <TabItem Header="BusLine" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="300*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="263*"/>
-                            <ColumnDefinition Width="750*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="300*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Grid.Column="1" Margin="0,0,-0.2,-0.2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -76,7 +78,7 @@
                                     <Label x:Name="label2" Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by area" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox x:Name="Area" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChangedBusLine" Margin="1" VerticalContentAlignment="Center"/>
                                 </Grid>
-                                <ListView Grid.Row="3" x:Name="busLineBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="busLineBOListView_SelectionChanged" Grid.ColumnSpan="2">
+                                <ListView Grid.Row="3" x:Name="busLineBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" MouseDoubleClick="busLineBOListView_MouseDoubleClick"  SelectionChanged="busLineBOListView_SelectionChanged" Grid.ColumnSpan="2">
                                     <ListView.View>
                                         <GridView>
                                             <GridViewColumn Header="Line Number" DisplayMemberBinding="{Binding LineNumber}" Width="100"/>
@@ -116,74 +118,11 @@
                                         </ContextMenu>
                                     </ListView.ContextMenu>
                                 </ListView>
-                                <!--GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"-->
-                                <!--
-                                <DataGrid x:Name="busLineBODataGrid" CanUserSortColumns="True" Grid.Row="2" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="48,27,60.8,86.8" RowDetailsVisibilityMode="VisibleWhenSelected" MouseDoubleClick="MouseDoubleClick_DataGridBusLine" >
-                                    <DataGrid.Columns>
-                                        <DataGridTemplateColumn x:Name="lineNumberColumn" Header="Line Number" Width="110">
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <TextBlock Text="{Binding LineNumber}"/>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn x:Name="busLineKeyColumn" Header="Bus Line Key" Width="120">
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <TextBlock Text="{Binding BusLineKey}"/>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
 
-                                        <DataGridTemplateColumn x:Name="areaColumn" Header="Area" Width="80">
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <TextBlock Text="{Binding Area}"/>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
-
-                                        <DataGridTemplateColumn x:Name="firstStationColumn" Header="First Station" Width="100">
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <TextBlock Text="{Binding FirstStation}"/>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn x:Name="firstStationNameColumn" Header="First Station Name" Width="140">
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <TextBlock Text="{Binding FirstStationName}"/>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn x:Name="lastStationColumn" Header="Last Station" Width="100">
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <TextBlock Text="{Binding LastStation}"/>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn x:Name="lastStationNameColumn" Header="Last Station Name" Width="140">
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <TextBlock Text="{Binding LastStationName}"/>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
-                                        <DataGridTemplateColumn x:Name="delete"  Width="120">
-                                            <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <Button x:Name="delete_buttun" Content="delete" Click="Button_Click_DeleteBusLine"/>
-                                                </DataTemplate>
-                                            </DataGridTemplateColumn.CellTemplate>
-                                        </DataGridTemplateColumn>
-                                    </DataGrid.Columns>
-                                </DataGrid>-->
                                 <Button Content="add new bus"  Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Grid.Row="4" Click="Button_Click_AddBusLine" Margin="0,0.2,30.8,9.8" Grid.Column="1"/>
                             </Grid>
                         </Border>
-                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Grid.Column="1" Margin="0,0,-0.2,-0.2" >
                             <Grid>
 
                                 <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin="173,91,0,0" HorizontalAlignment="Left" >
@@ -202,12 +141,12 @@
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,3.2,0,3.2" HorizontalAlignment="Left" Grid.Column="0" Content="Area:" Grid.ColumnSpan="2"/>
-                                    <TextBox x:Name="areaTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Area, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="2.8,7.2,0,7.2" Height="24" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2"/>
+                                    <Label VerticalAlignment="Center" Grid.Row="2" Margin="3,3.2,0,3.2" HorizontalAlignment="Left" Grid.Column="0" Content="Area:" Grid.ColumnSpan="2"/>
+                                    <TextBox x:Name="areaTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Area, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="2.8,7.2,0,7.2" Height="24" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2"/>
                                     <Label VerticalAlignment="Center" Grid.Row="0" Margin="3,3,0,3.4" HorizontalAlignment="Left" Grid.Column="0" Content="Bus Line Key:" Grid.ColumnSpan="2"/>
                                     <TextBlock x:Name="busLineKeyTextBox" Width="120" VerticalAlignment="Center" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="2.8,8,0,7.4" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2"/>
-                                    <Label VerticalAlignment="Center" Grid.Row="4" Margin="3,36.8,0,37.6" HorizontalAlignment="Left" Grid.Column="0" Content="bus Line Stations:" Grid.ColumnSpan="2"/>
-                                    <ListBox Name="busLineStationsListBox"  Width="586" VerticalAlignment="Center" Grid.Row="4" Margin="2.8,2.8,-233.6,-272.4" ItemsSource="{Binding}" Height="376" HorizontalAlignment="Left"  Grid.Column="2" Grid.ColumnSpan="4">
+                                    <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,36.8,0,37.6" HorizontalAlignment="Left" Grid.Column="0" Content="bus Line Stations:" Grid.ColumnSpan="2"/>
+                                    <ListBox Name="busLineStationsListBox"  Width="586" VerticalAlignment="Center" Grid.Row="3" Margin="2.8,2.8,-233.6,-232.4" ItemsSource="{Binding}" Height="336" HorizontalAlignment="Left"  Grid.Column="2" Grid.ColumnSpan="4">
                                         <ListBox.ItemTemplate>
                                             <DataTemplate>
                                                 <Grid>
@@ -235,13 +174,42 @@
                                     <TextBlock x:Name="lastStationTextBox" Width="120" VerticalAlignment="Center" Text="{Binding LastStation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="2.8,7.6,0,7.8" Height="23" HorizontalAlignment="Left" Grid.Column="5"/>
                                     <Label VerticalAlignment="Center" Grid.Row="0" Margin="3.6,3,0,3.4" HorizontalAlignment="Left" Grid.Column="4" Content="Line Number:"/>
                                     <TextBox x:Name="lineNumberTextBox" Width="120" VerticalAlignment="Center" Text="{Binding LineNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3.8,8,-0.6,7.4" Height="23" HorizontalAlignment="Left" Grid.Column="5" />
+                                    <Button Click="Button_Click_AddStationToBus" Grid.ColumnSpan="2" Grid.Column="0" HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Top" Width="119" Height="84" Background="#FF17B419">
+                                        <Image Source="Icons/add (1).png"/>
+                                    </Button>
+
                                 </Grid>
+
                                 <Button Click="Button_Click_BackArrowBusLine" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <Image Source="Icons/left-arrow.png"/>
                                 </Button>
+
+                                <ComboBox Name="StationOptionsToAdd" ItemsSource="{Binding}" SelectionChanged="StationOptionsToAdd_SelectionChanged" Visibility="Collapsed" HorizontalAlignment="Left" Margin="320,551,0,0" VerticalAlignment="Top" Width="584" Height="28">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="50" />
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="150" />
+                                                    <ColumnDefinition Width="90" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="station Key: " Grid.Column="0"/>
+                                                <TextBlock Text="{Binding BusStationKey}" Grid.Column="1"/>
+                                                <TextBlock Text="  station name: " Grid.Column="2"/>
+                                                <TextBlock Text="{Binding StationName}" Grid.Column="3"/>
+                                                <Button Click="Button_Click_DeleteStationFromBusLine" Grid.Column="4" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                                                    <Image Source="Icons/garbage.png" Margin="5"/>
+                                                </Button>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+
                             </Grid>
                         </Border>
-                        <Border x:Name="AddBusLineBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="AddBusLineBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
                             <Grid>
                                 <Grid x:Name="AddBusDataGrid"  HorizontalAlignment="Left" Margin="147,84,0,0" VerticalAlignment="Top" Height="331" Width="612">
                                     <Grid.ColumnDefinitions>
@@ -369,7 +337,7 @@
                         </Border>
                         <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed">
                             <Grid>
-                                <Grid x:Name="grid1" Height="200" Width="300" Margin="80,36,532.8,404.8" >
+                                <Grid x:Name="grid1" Height="200" Margin="130,36,532.8,404.8" >
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="Auto"/>
@@ -384,19 +352,23 @@
                                     <Label Content="Bus Station Key:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
                                     <TextBlock x:Name="busStationKeyTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="0" Text="{Binding BusStationKey}" VerticalAlignment="Center"/>
                                     <Label Content="Coordinates:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
-                                    <TextBox x:Name="coordinatesTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Coordinates, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                                    <TextBox x:Name="latitudTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" TextChanged="cordinationChanged" VerticalAlignment="Center" Width="80"/>
+                                    <TextBox x:Name="longtitudTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="99.6,7.8,-11.6,8.4" Grid.Row="1" TextChanged="cordinationChanged" VerticalAlignment="Center" Width="80"/>
                                     <Label Content="Has ARoof:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
                                     <CheckBox x:Name="hasARoofCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding HasARoof, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
                                     <Label Content="Station Address:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
-                                    <TextBox x:Name="stationAddressTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding StationAddress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                                    <TextBox x:Name="stationAddressTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding StationAddress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="200"/>
                                     <Label Content="Station Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
-                                    <TextBox x:Name="stationNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding StationName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                                    <TextBox x:Name="stationNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding StationName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="200"/>
                                 </Grid>
                                 <Grid x:Name="listofBusAcurdingtoStation">
                                     <ListBox HorizontalAlignment="Left" Height="294" Margin="143,291,0,0" VerticalAlignment="Top" Width="654"/>
 
                                 </Grid>
-                                <WebBrowser HorizontalAlignment="Left" Height="213" Margin="480,23,0,0" VerticalAlignment="Top" Width="314"/>
+                                <WebBrowser x:Name="webBrowserLocation" HorizontalAlignment="Left" Height="213" Margin="480,23,0,0" VerticalAlignment="Top" Width="314"/>
+                                <Button Click="Button_Click_BackArrowBusStation" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <Image Source="Icons/left-arrow.png"/>
+                                </Button>
                             </Grid>
                         </Border>
                         <Border x:Name="addStationBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Margin="10,-1,-10.333,1.667">

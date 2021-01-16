@@ -63,6 +63,10 @@ namespace PL
             Area.Text = "";
             BusStationKey.Text = "";
             StationName.Text = "";
+            if(selectedBusLine!=null)
+            {
+                busLineStationsListBox.DataContext = selectedBusLine.busLineStations;
+            }
         }
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
@@ -221,7 +225,7 @@ namespace PL
         //delete button click
         private void Button_Click_DeleteStationFromBusLine(object sender, RoutedEventArgs e)
         {
-            bl.deleteBusStationInBusLine(selectedBusLine, ((sender as Button).DataContext as StationBO).BusStationKey);
+            bl.deleteBusStationInBusLine(selectedBusLine, ((sender as Button).DataContext as BusLineStationBO).BusStationKey);
             refreshcontent();
         }
         private void Button_Click_DeleteBusLine(object sender, RoutedEventArgs e)
@@ -246,13 +250,22 @@ namespace PL
                 busLineStationsListBox.ItemsSource = selectedBusLine.busLineStations;
             }
         }
+        private void busLineBOListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            busLineBOListView_SelectionChanged(sender, null);
+        }
         private void stationBOListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedStation = (stationBOListView.SelectedItem as StationBO);
             if (selectedStation != null)
             {
-                //busLineListBorder.Visibility = Visibility.Collapsed;
-                //BusLineDetialedBorder.Visibility = Visibility.Visible;
+                stationListBorder.Visibility = Visibility.Collapsed;
+                StationDetailedBorder.Visibility = Visibility.Visible;
+                grid1.DataContext = selectedStation;
+                listofBusAcurdingtoStation.DataContext = selectedStation.busLines;
+                longtitudTextBox.Text = selectedStation.Coordinates.Longitude.ToString();
+                latitudTextBox.Text = selectedStation.Coordinates.Latitude.ToString();
+                webBrowserLocation.Navigate("http://maps.google.com/maps?q=" + addLongitudeTextBox.Text+","+addLatitudeTextBox.Text);
                 //busLineDetialedGrid.DataContext = selectedStation;
                 //busLineStationsListBox.ItemsSource = selectedBusLine.busLineStations;
             }
@@ -274,6 +287,8 @@ namespace PL
             AddBusLineBorder.Visibility = Visibility.Collapsed;
             BusLineDetialedBorder.Visibility = Visibility.Collapsed;
             busLineListBorder.Visibility = Visibility.Visible;
+            StationOptionsToAdd.Visibility = Visibility.Collapsed;
+            selectedBusLine = null;
         }
 
         #endregion
@@ -508,6 +523,30 @@ namespace PL
         }
 
         #endregion
+
+        private void cordinationChanged(object sender, TextChangedEventArgs e)
+        {
+            selectedStation.Coordinates = new GeoCoordinate(double.Parse(latitudTextBox.Text), double.Parse(longtitudTextBox.Text));
+        }
+
+        private void Button_Click_AddStationToBus(object sender, RoutedEventArgs e)
+        {
+            StationOptionsToAdd.Visibility = Visibility.Visible;
+            StationOptionsToAdd.DataContext = bl.GetAllBusStations();
+        }
+
+        private void StationOptionsToAdd_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            StationBO selectedStationToAdd = (StationOptionsToAdd.SelectedItem as StationBO);
+            if (selectedStationToAdd != null& selectedBusLine!=null)
+            {
+                StationOptionsToAdd.Visibility = Visibility.Collapsed;
+                bl.AddStation(selectedBusLine, selectedStationToAdd.BusStationKey);
+                refreshcontent();
+            }
+        }
+
+        
     }
 }
 

@@ -151,5 +151,12 @@
   <ItemGroup>
     <Resource Include="Icons\save-file-option.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\add.png" />
+    <Resource Include="Icons\bus-stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\add %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
