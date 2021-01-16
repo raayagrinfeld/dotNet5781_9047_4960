@@ -499,9 +499,9 @@
                                 </ListView>
                             </Grid>
                         </Border>
-                        <Border x:Name="addUserBorder" Visibility="Collapsed">
+                        <Border x:Name="addUserBorder" Visibility="Collapsed" Margin="26,20,-26.333,-20.333">
                             <Grid>
-                                <Grid x:Name="userDitailegrid" VerticalAlignment="Top" Margin="41,39,0,0" HorizontalAlignment="Left" >
+                                <Grid x:Name="userDitailegrid" Visibility="Visible" VerticalAlignment="Top" Margin="41,39,0,0" HorizontalAlignment="Left" >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
