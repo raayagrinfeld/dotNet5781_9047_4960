@@ -46,6 +46,7 @@
     <Compile Include="BLIMP.cs" />
     <Compile Include="BO\BusLineBO.cs" />
     <Compile Include="BO\BusLineStationBO.cs" />
+    <Compile Include="BO\DrivingLine.cs" />
     <Compile Include="DeepCopyUtilities.cs" />
     <Compile Include="BO\Driving.cs" />
     <Compile Include="BO\Enum.cs" />
