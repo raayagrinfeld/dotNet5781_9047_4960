@@ -93,7 +93,7 @@ namespace DL
         public void UpdateBusLine(BusLine bus)
         {
             List<BusLine> ListBuses = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
-            BusLine busLine = ListBuses.Find(b => b.BusLineKey == bus.BusLineKey);
+            BusLine busLine = ListBuses.Find(b => b.BusLineKey == bus.BusLineKey&b.IsActive);
             if (busLine != null)
             {
                 DeleteBusLine(bus.BusLineKey);
@@ -103,6 +103,7 @@ namespace DL
             {
                 throw new BadBusLineKeyException(bus.BusLineKey, $"bad bus line key: {bus.BusLineKey}");
             }
+            XMLTools.SaveListToXMLSerializer(ListBuses, BusLinePath);
         }
         public void UpdateBusLine(int busLineKey, Action<BusLine> update)
         {
@@ -471,27 +472,68 @@ namespace DL
 
         public IEnumerable<BusesSchedule> GetAllBusSchedules()
         {
-            throw new NotImplementedException();
+            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+
+            return from sch in ListBusesSchedules
+                   where sch.IsActive
+                   select sch;
         }
 
         public IEnumerable<BusesSchedule> GetAllBusSchedulesBy(Predicate<BusesSchedule> predicate)
         {
-            throw new NotImplementedException();
+            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+            return from sch in ListBusesSchedules
+                   where sch.IsActive& predicate(sch)
+                   select sch;
         }
 
         public void AddBusSchedule(BusesSchedule schedule)
         {
-            throw new NotImplementedException();
+            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+
+            if (ListBusesSchedules.FirstOrDefault(b => b.ScheduleKey == schedule.ScheduleKey & b.IsActive) != null)
+                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, $"bad schedule key: {schedule.ScheduleKey}");
+
+            /*if (GetBusesSchedule(schedule.ScheduleKey) == null)
+                throw new DO.BadBusLineKeyException(schedule.ScheduleKey, "Missing bus line");*/
+
+            ListBusesSchedules.Add(schedule); //no need to Clone()
+
+            XMLTools.SaveListToXMLSerializer(ListBusesSchedules, BusSchedulePath);
         }
 
         public void UpdateBusSchedule(BusesSchedule schedule)
         {
-            throw new NotImplementedException();
+            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+            BusesSchedule sche= ListBusesSchedules.Find(b => b.ScheduleKey == schedule.ScheduleKey&b.IsActive);
+            if (sche != null)
+            {
+                DeleteBusSchedule(sche.ScheduleKey);
+                AddBusSchedule(sche);
+            }
+            else
+            {
+                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, $"bad schedule key: {schedule.ScheduleKey}");
+            }
+            XMLTools.SaveListToXMLSerializer(ListBusesSchedules, BusSchedulePath);
         }
 
         public void DeleteBusSchedule(int scheduleKey)
         {
-            throw new NotImplementedException();
+            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+            BusesSchedule sche = ListBusesSchedules.Find(b =>
+            {
+                if (b.ScheduleKey == scheduleKey & b.IsActive)
+                {
+                    b.IsActive = false;
+                    return true;
+                }
+                else return false;
+            });
+            if (sche == null)
+                throw new DO.BadBusesScheduleKeyException(scheduleKey, $"bad schedule key: {scheduleKey}");
+
+            XMLTools.SaveListToXMLSerializer(ListBusesSchedules, BusSchedulePath);
         }
         #endregion
 
