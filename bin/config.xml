@@ -3,7 +3,7 @@
   <dl>data</dl>
   <dl-packages>
     <data>DalObject</data>
-    <xml namespace="DL" class="DLXML">DLXml</xml>
+    <xml namespace="DL" class="DLXML">DLXML</xml>
     <oracle namespace="DL_O" class="DLDbOracle">DLOracle</oracle>
   </dl-packages>
 </config>

@@ -364,12 +364,21 @@ namespace DL
 
             XMLTools.SaveListToXMLElement(UserRootElem, UserPath);
         }
-        #endregion
-
         public void DeletUser(string userName)
         {
-            
+            XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
+
+            XElement userSearch = (from p in UserRootElem.Elements()
+                                   where (p.Element("UserName").Value) == userName
+                                   select p).FirstOrDefault();
+
+            if (userSearch == null)
+                throw new DO.BadUserNameException(userName, "Duplicate user name");
+            (userSearch.Element("IsActive").Value) = false.ToString();
+
+            XMLTools.SaveListToXMLElement(UserRootElem, UserPath);
         }
+        #endregion
 
         public IEnumerable<User> GetAllUsers()
         {
