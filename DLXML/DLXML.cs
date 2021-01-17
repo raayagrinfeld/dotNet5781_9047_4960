@@ -250,6 +250,20 @@ namespace DL
             else
                 throw new DO.BadBusStationKeyException(busStationKey, $"bad bus stationkey: {busStationKey}");
         }
+        public void UpdateBusStation(BusStation station)
+        {
+            List<BusStation> ListStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
+            BusStation busStation = ListStations.Find(b => b.BusStationKey == station.BusStationKey);
+            if (busStation != null)
+            {
+                DeleteBusStation(station.BusStationKey);
+                AddBusStation(station);
+            }
+            else
+            {
+                throw new BadBusStationKeyException(station.BusStationKey, $"bad bus line key: {station.BusStationKey}");
+            }
+        }
         #endregion
 
         #region ConsecutiveStation
@@ -309,6 +323,21 @@ namespace DL
             else
                 throw new DO.BadConsecutiveStationsException(key1, key2, $"bad consecutive stations: {key1}{key2}");
         }
+        public void UpdateConsecutiveStations(ConsecutiveStations consecutiveStations)
+        {
+            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+
+            DO.ConsecutiveStations sic = ListConsecutiveStations.Find(b => (b.Station1Key == consecutiveStations.Station1Key & b.Station2Key == consecutiveStations.Station2Key & b.IsActive));
+            if (sic != null)
+            {
+                DeletConsecutiveStations(consecutiveStations.Station1Key, consecutiveStations.Station2Key);
+                AddConsecutiveStations(consecutiveStations);
+            }
+            else
+            {
+                throw new BadConsecutiveStationsException(consecutiveStations.Station1Key, consecutiveStations.Station2Key, $"bad bus user name: {consecutiveStations.Station1Key}{consecutiveStations.Station2Key}");
+            }
+        }
         #endregion
 
         #region UserXML
@@ -355,17 +384,7 @@ namespace DL
         {
             throw new NotImplementedException();
         }
-
-        public void UpdateBusStation(BusStation station)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateConsecutiveStations(ConsecutiveStations consecutiveStations)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public void UpdateUser(User user)
         {
             throw new NotImplementedException();
