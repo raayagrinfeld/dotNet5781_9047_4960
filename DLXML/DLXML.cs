@@ -378,25 +378,86 @@ namespace DL
 
             XMLTools.SaveListToXMLElement(UserRootElem, UserPath);
         }
-        #endregion
-
         public IEnumerable<User> GetAllUsers()
         {
-            throw new NotImplementedException();
-        }
+            XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
+            return (from p in UserRootElem.Elements()
+                    select new User()
+                    {
+                        UserName = p.Element("UserName").Value,
+                        Password = p.Element("Password").Value,
+                        gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                        ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value)
+                        //add image
+
+                    }
+                   );
+        }
         public IEnumerable<User> GetAlUersBy(Predicate<User> predicate)
         {
-            throw new NotImplementedException();
+            XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
+
+            return (from p in UserRootElem.Elements()
+                    let u = new User()
+                    {
+                        UserName = p.Element("UserName").Value,
+                        Password = p.Element("Password").Value,
+                        gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                        ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value)
+                        //add image
+                    }
+                    where predicate(u)
+                    select u
+                   );
         }
         public User GetUser(string userName)
         {
-            throw new NotImplementedException();
+            XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
+
+            User u = (from p in UserRootElem.Elements()
+                      where (p.Element("UserName").Value) == userName
+                      select new User()
+                      {
+                          UserName = p.Element("UserName").Value,
+                          Password = p.Element("Password").Value,
+                          gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
+                          IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                          ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value)
+                          //add image
+                      }
+                        ).FirstOrDefault();
+
+            if (u == null)
+                throw new DO.BadUserNameException(userName, "Duplicate user name");
+
+            return u;
         }
-        
         public void UpdateUser(User user)
         {
-            throw new NotImplementedException();
+            XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
+
+            XElement userSearch = (from p in UserRootElem.Elements()
+                                   where (p.Element("UserName").Value) == user.UserName
+                                   select p).FirstOrDefault();
+
+            if (userSearch == null)
+                throw new DO.BadUserNameException(user.UserName, "Duplicate user name");
+            else
+            {
+                userSearch.Element("UserName").Value = user.UserName;
+                userSearch.Element("Password").Value = user.Password;
+                userSearch.Element("IsActive").Value = user.IsActive.ToString();
+                userSearch.Element("ManagementPermission").Value = user.ManagementPermission.ToString();
+                userSearch.Element("imagePath").Value = user.imagePath;
+            }
+            XMLTools.SaveListToXMLElement(UserRootElem, UserPath);
         }
+
+        #endregion
+
+
     }
 }
