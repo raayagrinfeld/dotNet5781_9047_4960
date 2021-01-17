@@ -389,8 +389,8 @@ namespace DL
                         Password = p.Element("Password").Value,
                         gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
                         IsActive = Boolean.Parse(p.Element("IsActive").Value),
-                        ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value)
-                        //add image
+                        ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
+                        imagePath= p.Element("imagePath").Value
 
                     }
                    );
@@ -406,8 +406,8 @@ namespace DL
                         Password = p.Element("Password").Value,
                         gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
                         IsActive = Boolean.Parse(p.Element("IsActive").Value),
-                        ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value)
-                        //add image
+                        ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
+                        imagePath = p.Element("imagePath").Value
                     }
                     where predicate(u)
                     select u
@@ -425,8 +425,8 @@ namespace DL
                           Password = p.Element("Password").Value,
                           gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
                           IsActive = Boolean.Parse(p.Element("IsActive").Value),
-                          ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value)
-                          //add image
+                          ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
+                          imagePath = p.Element("imagePath").Value
                       }
                         ).FirstOrDefault();
 
