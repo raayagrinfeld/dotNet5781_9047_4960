@@ -30,9 +30,9 @@ namespace BL
         #endregion
 
         #region BusLineBO
-        BO.BusLineBO BusLineDOBOAdapter(DO.BusLine busLineDo)
+        BusLineBO BusLineDOBOAdapter(DO.BusLine busLineDo)
         {
-            BO.BusLineBO busLineBO = new BO.BusLineBO();
+            BusLineBO busLineBO = new BusLineBO();
             int BusLineKeyOfDO = busLineDo.BusLineKey;
             try
             {
