@@ -86,5 +86,17 @@ namespace DO
         public override string ToString() => base.ToString() + $", fail to load or create xml file: {xmlFilePath}";
     }
     #endregion
+    #region BusesSchedule
+    public class BadBusesScheduleKeyException : Exception
+    {
+        public int BusesScheduleKEY;
+        public BadBusesScheduleKeyException(int ScheduleKey) : base() => BusesScheduleKEY = ScheduleKey;
+        public BadBusesScheduleKeyException(int ScheduleKey, string message) :
+            base(message) => BusesScheduleKEY = ScheduleKey;
+        public BadBusesScheduleKeyException(int ScheduleKey, string message, Exception innerException) :
+            base(message, innerException) => BusesScheduleKEY = ScheduleKey;
+        public override string ToString() => base.ToString() + $", bad schedule key: {BusesScheduleKEY}";
+    }
+    #endregion
 }
 

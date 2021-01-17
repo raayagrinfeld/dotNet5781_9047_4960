@@ -460,7 +460,13 @@ namespace DL
         #region BusSchedules
         public BusesSchedule GetBusesSchedule(int scheduleKey)
         {
-            throw new NotImplementedException();
+            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+
+            DO.BusesSchedule sche = ListBusesSchedules.Find(b => b.ScheduleKey == scheduleKey & b.IsActive);
+            if (sche != null)
+                return sche; //no need to Clone()
+            else
+                throw new DO.BadBusesScheduleKeyException(scheduleKey, $"bad schedule key: {scheduleKey}");
         }
 
         public IEnumerable<BusesSchedule> GetAllBusSchedules()

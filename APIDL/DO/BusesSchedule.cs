@@ -13,6 +13,7 @@ namespace DO
         public TimeSpan StartHour { get; set; }
         public TimeSpan EndtHour { get; set; }
         public int Frequency { get; set; }//who many times the line out in this time
+        public bool IsActive { get; set; }
 
 
     }
