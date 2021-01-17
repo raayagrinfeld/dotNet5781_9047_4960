@@ -52,7 +52,7 @@
                             <ColumnDefinition Width="300*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Grid.Column="1" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Grid.Column="1" Margin="0,0,-0.2,-0.2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -210,7 +210,7 @@
 
                             </Grid>
                         </Border>
-                        <Border x:Name="AddBusLineBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="AddBusLineBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Grid.Column="1" Margin="0,0,-0.2,-0.2">
                             <Grid>
                                 <Grid x:Name="AddBusDataGrid"  HorizontalAlignment="Left" Margin="147,84,0,0" VerticalAlignment="Top" Height="331" Width="612">
                                     <Grid.ColumnDefinitions>
@@ -235,20 +235,50 @@
                                     <Label Content="Bus Line Key:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
                                     <TextBlock x:Name="busLineKeyTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                                     <Label Content="First Station Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
-                                    <ComboBox x:Name="firstStationNameComboBox" Grid.Column="1" DisplayMemberPath="FirstStationName" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="2.8,5.6,-125.6,5.6" Grid.Row="2" VerticalAlignment="Center" Width="250">
-                                        <ComboBox.ItemsPanel>
-                                            <ItemsPanelTemplate>
-                                                <VirtualizingStackPanel/>
-                                            </ItemsPanelTemplate>
-                                        </ComboBox.ItemsPanel>
+                                    <ComboBox x:Name="firstStationNameComboBox" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="2.8,5.6,-125.6,5.6" Grid.Row="2" VerticalAlignment="Center" Width="250" ItemsSource="{Binding}"  >
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="100" />
+                                                        <ColumnDefinition Width="50" />
+                                                        <ColumnDefinition Width="100" />
+                                                        <ColumnDefinition Width="150" />
+                                                        <ColumnDefinition Width="90" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Text="station Key: " Grid.Column="0"/>
+                                                    <TextBlock Text="{Binding BusStationKey}" Grid.Column="1"/>
+                                                    <TextBlock Text="  station name: " Grid.Column="2"/>
+                                                    <TextBlock Text="{Binding StationName}" Grid.Column="3"/>
+                                                    <Button Click="Button_Click_DeleteStationFromBusLine" Grid.Column="4" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                                                        <Image Source="Icons/garbage.png" Margin="5"/>
+                                                    </Button>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
                                     </ComboBox>
                                     <Label Content="Last Station Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
-                                    <ComboBox x:Name="lastStationNameComboBox" Grid.Column="1" DisplayMemberPath="LastStationName" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="2.8,5.6,-125.6,5.6" Grid.Row="3" VerticalAlignment="Center" Width="250">
-                                        <ComboBox.ItemsPanel>
-                                            <ItemsPanelTemplate>
-                                                <VirtualizingStackPanel/>
-                                            </ItemsPanelTemplate>
-                                        </ComboBox.ItemsPanel>
+                                    <ComboBox x:Name="lastStationNameComboBox" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="2.8,5.6,-125.6,5.6" Grid.Row="3" VerticalAlignment="Center" Width="250" ItemsSource="{Binding}">
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="100" />
+                                                        <ColumnDefinition Width="50" />
+                                                        <ColumnDefinition Width="100" />
+                                                        <ColumnDefinition Width="150" />
+                                                        <ColumnDefinition Width="90" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Text="station Key: " Grid.Column="0"/>
+                                                    <TextBlock Text="{Binding BusStationKey}" Grid.Column="1"/>
+                                                    <TextBlock Text="  station name: " Grid.Column="2"/>
+                                                    <TextBlock Text="{Binding StationName}" Grid.Column="3"/>
+                                                    <Button Click="Button_Click_DeleteStationFromBusLine" Grid.Column="4" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                                                        <Image Source="Icons/garbage.png" Margin="5"/>
+                                                    </Button>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
                                     </ComboBox>
                                     <Label Content="Line Number:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
                                     <TextBox x:Name="lineNumberTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding LineNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>

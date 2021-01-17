@@ -213,15 +213,33 @@ namespace PL
             AddbusLine.BusLineKey = bl.getNextBusLineRunNumber();
             firstStationNameComboBox.DataContext = bl.GetAllBusStations();
             lastStationNameComboBox.DataContext = bl.GetAllBusStations();
-            areaComboBox.DataContext = typeof(Areas);
+            areaComboBox.DataContext = Enum.GetValues(typeof(Areas));
             AddBusLineBorder.Visibility = Visibility.Visible;
         }
         private void Button_Click_AddBusFinalClick(object sender, RoutedEventArgs e)
         {
-            AddBusLineBorder.Visibility = Visibility.Collapsed;
-            busLineListBorder.Visibility = Visibility.Visible;
-            bl.AddBusLine(AddBusDataGrid.DataContext as BusLineBO);
-            refreshcontent();
+            if(lineNumberTextBox1.Text==""|| firstStationNameComboBox.SelectedItem==null|| lastStationNameComboBox.SelectedItem == null|| areaComboBox.SelectedItem==null)
+            {
+                MessageBox.Show("There is not enough information to create the bus, Fill in the rest or cancel", "Problem in the process of adding busline", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                BusLineBO AddbusLine = AddBusDataGrid.DataContext as BusLineBO;
+                if(AddbusLine!=null)
+                {
+                    bl.AddBusLine(AddbusLine);
+                    bl.AddStation(AddbusLine, (firstStationNameComboBox.SelectedItem as StationBO).BusStationKey);
+                    bl.AddStation(AddbusLine, (lastStationNameComboBox.SelectedItem as StationBO).BusStationKey);
+                    AddbusLine.Area = (Areas)areaComboBox.SelectedItem;
+                    AddbusLine.LineNumber = Int32.Parse(lineNumberTextBox1.Text);
+                    bl.UpdateBusLine(AddbusLine);
+                    AddBusLineBorder.Visibility = Visibility.Collapsed;
+                    busLineListBorder.Visibility = Visibility.Visible;
+                    refreshcontent();
+                }
+                
+            }
+            
         }
 
         //update button click
@@ -534,7 +552,7 @@ namespace PL
             }
         }
 
-        
+       
     }
 }
 
