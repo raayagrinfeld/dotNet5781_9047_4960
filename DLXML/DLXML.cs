@@ -64,6 +64,22 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ListBusLines, BusLinePath);
         }
+        public IEnumerable<BusLine> GetAllBusLines()
+        {
+            List<BusLine> ListBusLines = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
+
+            return from bus in ListBusLines
+                   where bus.IsActive
+                   select bus;
+        }
+        public IEnumerable<BusLine> GetAllBusLinesBy(Predicate<BusLine> predicate)
+        {
+            List<BusLine> ListBusLines = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
+
+            return from bus in ListBusLines
+                   where bus.IsActive & predicate(bus)
+                   select bus;
+        }
         #endregion
 
         #region BusLineStation
@@ -112,6 +128,15 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ListBusLineStations, BusLineStationPath);
         }
+        public IEnumerable<BusLineStation> GetAllBusLineStationBy(Predicate<BusLineStation> predicate)
+        {
+            List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
+
+            return from station in ListBusLineStations
+                   where station.IsActive & predicate(station)
+                   select station;
+
+        }
         #endregion
 
         #region BusStation
@@ -146,6 +171,22 @@ namespace DL
                 throw new DO.BadBusStationKeyException(busStationKey, "this bus station is not exsist");
 
             XMLTools.SaveListToXMLSerializer(ListBusStations, BusStationPath);
+        }
+        public IEnumerable<BusStation> GetAllBusStations()
+        {
+            List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
+
+            return from station in ListBusStations
+                   where station.IsActive
+                   select station;
+        }
+        public IEnumerable<BusStation> GetAllBusStationsBy(Predicate<BusStation> predicate)
+        {
+            List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
+
+            return from station in ListBusStations
+                   where station.IsActive & predicate(station)
+                   select station;
         }
         #endregion
 
@@ -221,31 +262,6 @@ namespace DL
             
         }
 
-
-        public IEnumerable<BusLine> GetAllBusLines()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<BusLine> GetAllBusLinesBy(Predicate<BusLine> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<BusLineStation> GetAllBusLineStationBy(Predicate<BusLineStation> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<BusStation> GetAllBusStations()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<BusStation> GetAllBusStationsBy(Predicate<BusStation> predicate)
-        {
-            throw new NotImplementedException();
-        }
 
         public IEnumerable<ConsecutiveStations> GetAllConsecutiveStations()
         {
