@@ -455,7 +455,38 @@ namespace DL
             }
             XMLTools.SaveListToXMLElement(UserRootElem, UserPath);
         }
+        #endregion
 
+        #region BusSchedules
+        public BusesSchedule GetBusesSchedule(int scheduleKey)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<BusesSchedule> GetAllBusSchedules()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<BusesSchedule> GetAllBusSchedulesBy(Predicate<BusesSchedule> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddBusSchedule(BusesSchedule schedule)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateBusSchedule(BusesSchedule schedule)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteBusSchedule(int scheduleKey)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
 
