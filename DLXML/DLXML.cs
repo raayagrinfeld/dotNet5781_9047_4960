@@ -64,6 +64,16 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ListBusLines, BusLinePath);
         }
+        public BusLine GetBusLine(int busLineKey)
+        {
+            List<BusLine> ListBusLines = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
+
+            DO.BusLine bus = ListBusLines.Find(b => b.BusLineKey == busLineKey&b.IsActive);
+            if (bus != null)
+                return bus; //no need to Clone()
+            else
+                throw new DO.BadBusLineKeyException(busLineKey, $"bad bus line key: {busLineKey}");
+        }
         public IEnumerable<BusLine> GetAllBusLines()
         {
             List<BusLine> ListBusLines = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
@@ -79,6 +89,24 @@ namespace DL
             return from bus in ListBusLines
                    where bus.IsActive & predicate(bus)
                    select bus;
+        }
+        public void UpdateBusLine(BusLine bus)
+        {
+            List<BusLine> ListBuses = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
+            BusLine busLine = ListBuses.Find(b => b.BusLineKey == bus.BusLineKey);
+            if (busLine != null)
+            {
+                DeleteBusLine(bus.BusLineKey);
+                AddBusLine(bus);
+            }
+            else
+            {
+                throw new BadBusLineKeyException(bus.BusLineKey, $"bad bus line key: {bus.BusLineKey}");
+            }
+        }
+        public void UpdateBusLine(int busLineKey, Action<BusLine> update)
+        {
+            throw new NotImplementedException();
         }
         #endregion
 
@@ -137,6 +165,30 @@ namespace DL
                    select station;
 
         }
+        public int GetBusLineStationKey(int BusLineKey, int StationNumberInLine)
+        {
+            List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
+
+            DO.BusLineStation station = ListBusLineStations.Find(b => (b.BusLineKey == BusLineKey & b.StationNumberInLine == StationNumberInLine & b.IsActive));
+            if (station != null)
+                return station.BusStationKey; //no need to Clone()
+            else
+                throw new DO.BadBusLineStationsException(BusLineKey, StationNumberInLine, $"bad bus line key and Station number in line: {BusLineKey} {StationNumberInLine}");
+        }
+        public void UpdateBusLineStation(BusLineStation station)
+        {
+            List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
+            BusLineStation sta = ListBusLineStations.Find(b => (b.BusStationKey == station.BusStationKey & b.BusLineKey == station.BusLineKey & b.IsActive));
+            if (sta != null)
+            {
+                DeleteBusLineStationInOneBusLine(station.BusStationKey, station.BusLineKey);
+                AddBusLineStation(station);
+            }
+            else
+            {
+                throw new BadBusLineStationsException(station.BusStationKey, station.BusLineKey, "station is not in the bus Line path");
+            }
+        }
         #endregion
 
         #region BusStation
@@ -188,6 +240,16 @@ namespace DL
                    where station.IsActive & predicate(station)
                    select station;
         }
+        public BusStation GetBusStation(int busStationKey)
+        {
+            List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
+
+            DO.BusStation station = ListBusStations.Find(b => (b.BusStationKey == busStationKey & b.IsActive));
+            if (station != null)
+                return station; //no need to Clone()
+            else
+                throw new DO.BadBusStationKeyException(busStationKey, $"bad bus stationkey: {busStationKey}");
+        }
         #endregion
 
         #region ConsecutiveStation
@@ -229,6 +291,24 @@ namespace DL
                    where (predicate(consecutiveStation)) & consecutiveStation.IsActive
                    select consecutiveStation;
         }
+        public IEnumerable<ConsecutiveStations> GetAllConsecutiveStations()
+        {
+            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+
+            return from stations in ListConsecutiveStations
+                   where stations.IsActive
+                   select stations;
+        }
+        public ConsecutiveStations GetConsecutiveStations(int key1, int key2)
+        {
+            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+
+            DO.ConsecutiveStations stations = ListConsecutiveStations.Find(s => (s.Station1Key == key1 & s.Station2Key == key2 & s.IsActive));
+            if (stations != null)
+                return stations; //no need to Clone()
+            else
+                throw new DO.BadConsecutiveStationsException(key1, key2, $"bad consecutive stations: {key1}{key2}");
+        }
         #endregion
 
         #region UserXML
@@ -262,12 +342,6 @@ namespace DL
             
         }
 
-
-        public IEnumerable<ConsecutiveStations> GetAllConsecutiveStations()
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<User> GetAllUsers()
         {
             throw new NotImplementedException();
@@ -277,43 +351,7 @@ namespace DL
         {
             throw new NotImplementedException();
         }
-
-        public BusLine GetBusLine(int busLineKey)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetBusLineStationKey(int BusLineKey, int StationNumberInLine)
-        {
-            throw new NotImplementedException();
-        }
-
-        public BusStation GetBusStation(int busStationKey)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ConsecutiveStations GetConsecutiveStations(int key1, int key2)
-        {
-            throw new NotImplementedException();
-        }
-
         public User GetUser(string userName)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateBusLine(BusLine bus)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateBusLine(int busLineKey, Action<BusLine> update)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateBusLineStation(BusLineStation station)
         {
             throw new NotImplementedException();
         }
