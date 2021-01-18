@@ -504,15 +504,17 @@ namespace BL
             { 
                BO.BusLineBO busLine= GetBusLine(lineOnRide.BusLineKey);
                 DO.BusesSchedule schedule = dl.GetBusesSchedule(lineOnRide.BusLineKey, now);
-                List<TimeSpan> timeBus;
+                List<TimeSpan> timeBus= new List<TimeSpan>();
                 TimeSpan range = TimeBetweanStations(busLine,busLine.FirstStation, DestinationStationName.BusStationKey);
                 TimeSpan midtime = now - range;
-                while (midtime != now)
+                TimeSpan t = new TimeSpan(0, 0, 0);
+                while (midtime > t)
                 {
-                   
+                    timeBus.Add(range-t);
+                    t += schedule.Frequency;
                 }
 
-                // lineOnRide.ArrivalTime = 
+                lineOnRide.ArrivalTime = timeBus;
                 return lineOnRide;
             }
             catch(BO.BadBusLineKeyException ex)
