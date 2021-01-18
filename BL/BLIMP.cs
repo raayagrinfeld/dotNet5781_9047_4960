@@ -498,13 +498,21 @@ namespace BL
         #endregion
 
         #region DrivingLine
-        public DrivingLine TimeToTheStation(DrivingLine lineOnRide, StationBO DestinationStationName, TimeSpan time)
+        public DrivingLine TimeToTheStation(DrivingLine lineOnRide, StationBO DestinationStationName, TimeSpan now)
         {
             try
             { 
                BO.BusLineBO busLine= GetBusLine(lineOnRide.BusLineKey);
-                DO.BusesSchedule schedule = dl.GetBusesSchedule(lineOnRide.BusLineKey, time);
-               // lineOnRide.ArrivalTime = 
+                DO.BusesSchedule schedule = dl.GetBusesSchedule(lineOnRide.BusLineKey, now);
+                List<TimeSpan> timeBus;
+                TimeSpan range = TimeBetweanStations(busLine,busLine.FirstStation, DestinationStationName.BusStationKey);
+                TimeSpan midtime = now - range;
+                while (midtime != now)
+                {
+                   
+                }
+
+                // lineOnRide.ArrivalTime = 
                 return lineOnRide;
             }
             catch(BO.BadBusLineKeyException ex)
@@ -515,10 +523,6 @@ namespace BL
             Thread.Sleep(1500);
 
             return lineOnRide;
-        }
-        public IEnumerable<TimeSpan> TimesSinceBusLeftFirstStation(DO.BusesSchedule schedule, TimeSpan now)
-        {
-
         }
         #endregion
     }
