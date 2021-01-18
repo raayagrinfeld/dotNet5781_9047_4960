@@ -381,17 +381,17 @@ namespace DL
         #region BusSchedules
         public BusesSchedule GetBusesSchedule(int scheduleKey)
         {
-            throw new NotImplementedException();
+            return new BusesSchedule();
         }
 
         public IEnumerable<BusesSchedule> GetAllBusSchedules()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public IEnumerable<BusesSchedule> GetAllBusSchedulesBy(Predicate<BusesSchedule> predicate)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public void AddBusSchedule(BusesSchedule schedule)
@@ -401,17 +401,15 @@ namespace DL
 
         public void UpdateBusSchedule(BusesSchedule schedule)
         {
-            throw new NotImplementedException();
         }
 
         public void DeleteBusSchedule(int scheduleKey)
         {
-            throw new NotImplementedException();
         }
 
         public BusesSchedule GetBusesSchedule(int busLineKey, TimeSpan time)
         {
-            throw new NotImplementedException();
+            return null;
         }
         #endregion
     }

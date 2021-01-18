@@ -16,6 +16,13 @@ namespace BL
     {
         IDAL dl = DalFactory.GetDal();
 
+        #region singelton
+        static readonly BlImp1 instance = new BlImp1();
+        static BlImp1() { }// static ctor to ensure instance init is done just before first usage
+        BlImp1() { } // default => private
+        public static BlImp1 Instance { get => instance; }// The public Instance property to use
+        #endregion
+
         #region runNumber
         public int getNextBusLineRunNumber()
         {
@@ -504,25 +511,28 @@ namespace BL
             { 
                BO.BusLineBO busLine= GetBusLine(lineOnRide.BusLineKey);
                 DO.BusesSchedule schedule = dl.GetBusesSchedule(lineOnRide.BusLineKey, now);
-                List<TimeSpan> timeBus;
+                List<TimeSpan> timeBus= new List<TimeSpan>();
                 TimeSpan range = TimeBetweanStations(busLine,busLine.FirstStation, DestinationStationName.BusStationKey);
                 TimeSpan midtime = now - range;
-                while (midtime != now)
+                TimeSpan t = new TimeSpan(0, 0, 0);
+                while (midtime > t)
                 {
-                   
+                    timeBus.Add(range-t);
+                    t += schedule.Frequency;
                 }
 
-                // lineOnRide.ArrivalTime = 
+                lineOnRide.ArrivalTime = timeBus;
                 return lineOnRide;
             }
             catch(BO.BadBusLineKeyException ex)
             {
-
+                throw ex;
+            }
+            catch(DO.BadBusLineKeyException ex)
+            {
+                throw ex;
             }
 
-            Thread.Sleep(1500);
-
-            return lineOnRide;
         }
         #endregion
     }
