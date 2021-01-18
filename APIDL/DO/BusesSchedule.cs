@@ -12,7 +12,7 @@ namespace DO
         public int BusKey { get; set; }
         public TimeSpan StartHour { get; set; }
         public TimeSpan EndtHour { get; set; }
-        public int Frequency { get; set; }//who many times the line out in this time
+        public TimeSpan Frequency { get; set; }
         public bool IsActive { get; set; }
 
 

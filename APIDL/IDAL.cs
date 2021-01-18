@@ -60,6 +60,7 @@ namespace APIDL
         #region BusesSchedule
         
         BusesSchedule GetBusesSchedule(int scheduleKey);
+        BusesSchedule GetBusesSchedule(int busLineKey, TimeSpan time);
         IEnumerable<BusesSchedule> GetAllBusSchedules();
         IEnumerable<BusesSchedule> GetAllBusSchedulesBy(Predicate< BusesSchedule> predicate);
         void AddBusSchedule(BusesSchedule schedule);
