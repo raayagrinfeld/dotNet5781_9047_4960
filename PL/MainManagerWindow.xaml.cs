@@ -50,6 +50,7 @@ namespace PL
             GenderTextBox.ItemsSource= Enum.GetValues(typeof(gender));
             GropByArea.ItemsSource= Enum.GetValues(typeof(Areas));
             Premissiom.ItemsSource = Enum.GetValues(typeof(Managment));
+            webBrowserLocation.si
             refreshcontent();
            
         }
@@ -211,9 +212,10 @@ namespace PL
             busLineListBorder.Visibility = Visibility.Collapsed;
             BusLineBO AddbusLine = new BusLineBO();
             AddbusLine.BusLineKey = bl.getNextBusLineRunNumber();
+            AddBusDataGrid.DataContext = AddbusLine;
             firstStationNameComboBox.DataContext = bl.GetAllBusStations();
             lastStationNameComboBox.DataContext = bl.GetAllBusStations();
-            areaComboBox.DataContext = Enum.GetValues(typeof(Areas));
+            areaComboBox.ItemsSource = Enum.GetValues(typeof(Areas));
             AddBusLineBorder.Visibility = Visibility.Visible;
         }
         private void Button_Click_AddBusFinalClick(object sender, RoutedEventArgs e)
@@ -297,7 +299,7 @@ namespace PL
                 listofBusAcurdingtoStation.DataContext = selectedStation.busLines;
                 longtitudTextBox.Text = selectedStation.Coordinates.Longitude.ToString();
                 latitudTextBox.Text = selectedStation.Coordinates.Latitude.ToString();
-                webBrowserLocation.Navigate("http://maps.google.com/maps?q=" + addLongitudeTextBox.Text+","+addLatitudeTextBox.Text);
+                webBrowserLocation.Navigate("http://maps.google.com/maps?q=24.197611,120.780512");
                 //busLineDetialedGrid.DataContext = selectedStation;
                 //busLineStationsListBox.ItemsSource = selectedBusLine.busLineStations;
             }
@@ -532,7 +534,7 @@ namespace PL
 
         private void cordinationChanged(object sender, TextChangedEventArgs e)
         {
-            selectedStation.Coordinates = new GeoCoordinate(double.Parse(latitudTextBox.Text), double.Parse(longtitudTextBox.Text));
+          //  selectedStation.Coordinates = new GeoCoordinate(double.Parse(latitudTextBox.Text), double.Parse(longtitudTextBox.Text));
         }
 
         private void Button_Click_AddStationToBus(object sender, RoutedEventArgs e)

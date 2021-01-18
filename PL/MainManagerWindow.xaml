@@ -48,11 +48,12 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="300*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="266*"/>
+                            <ColumnDefinition Width="740*"/>
+                            <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
-                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Grid.Column="1" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -123,7 +124,7 @@
                                 <Button Content="add new bus"  Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Grid.Row="4" Click="Button_Click_AddBusLine" Margin="0,0.2,30.8,9.8" Grid.Column="1"/>
                             </Grid>
                         </Border>
-                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Grid.Column="1" Margin="0,0,-0.2,-0.2" >
+                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2" >
                             <Grid>
 
                                 <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin="173,91,0,0" HorizontalAlignment="Left" >
@@ -210,7 +211,7 @@
 
                             </Grid>
                         </Border>
-                        <Border x:Name="AddBusLineBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Grid.Column="1" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="AddBusLineBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2">
                             <Grid>
                                 <Grid x:Name="AddBusDataGrid"  HorizontalAlignment="Left" Margin="147,84,0,0" VerticalAlignment="Top" Height="331" Width="612">
                                     <Grid.ColumnDefinitions>
@@ -225,17 +226,11 @@
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <Label Content="Area:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
-                                    <ComboBox x:Name="areaComboBox" Grid.Column="1" DisplayMemberPath="Area" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="3" Grid.Row="4" VerticalAlignment="Center" Width="120">
-                                        <ComboBox.ItemsPanel>
-                                            <ItemsPanelTemplate>
-                                                <VirtualizingStackPanel/>
-                                            </ItemsPanelTemplate>
-                                        </ComboBox.ItemsPanel>
-                                    </ComboBox>
+                                    <ComboBox x:Name="areaComboBox" Padding="4" Height="30" Grid.Column="1"   Margin="3" Grid.Row="4" VerticalContentAlignment="Center"/>
                                     <Label Content="Bus Line Key:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
                                     <TextBlock x:Name="busLineKeyTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                                     <Label Content="First Station Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
-                                    <ComboBox x:Name="firstStationNameComboBox" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="2.8,5.6,-125.6,5.6" Grid.Row="2" VerticalAlignment="Center" Width="250" ItemsSource="{Binding}"  >
+                                    <ComboBox x:Name="firstStationNameComboBox" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="2.8,5.6,-125.6,5.6" Grid.Row="2" VerticalAlignment="Center" Width="350" ItemsSource="{Binding}"  >
                                         <ComboBox.ItemTemplate>
                                             <DataTemplate>
                                                 <Grid>
@@ -258,7 +253,7 @@
                                         </ComboBox.ItemTemplate>
                                     </ComboBox>
                                     <Label Content="Last Station Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
-                                    <ComboBox x:Name="lastStationNameComboBox" Grid.Column="1" HorizontalAlignment="Left" Height="Auto" Margin="2.8,5.6,-125.6,5.6" Grid.Row="3" VerticalAlignment="Center" Width="250" ItemsSource="{Binding}">
+                                    <ComboBox x:Name="lastStationNameComboBox" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="2.8,5.6,-125.6,5.6" Grid.Row="3" VerticalAlignment="Center" Width="350" ItemsSource="{Binding}">
                                         <ComboBox.ItemTemplate>
                                             <DataTemplate>
                                                 <Grid>
@@ -293,7 +288,7 @@
                 </TabItem>
                 <TabItem Header="Station" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
-                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
+                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -366,7 +361,7 @@
                                 </ListView>
                             </Grid>
                         </Border>
-                        <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed">
+                        <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
                             <Grid>
                                 <Grid x:Name="grid1" Height="200" Margin="130,36,532.8,404.8" >
                                     <Grid.ColumnDefinitions>
