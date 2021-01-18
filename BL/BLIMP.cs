@@ -519,12 +519,13 @@ namespace BL
             }
             catch(BO.BadBusLineKeyException ex)
             {
-
+                throw ex;
+            }
+            catch(DO.BadBusLineKeyException ex)
+            {
+                throw ex;
             }
 
-            Thread.Sleep(1500);
-
-            return lineOnRide;
         }
         #endregion
     }
