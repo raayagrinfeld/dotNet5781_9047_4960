@@ -408,6 +408,11 @@ namespace DL
         {
             throw new NotImplementedException();
         }
+
+        public BusesSchedule GetBusesSchedule(int busLineKey, TimeSpan time)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

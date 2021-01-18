@@ -12,6 +12,7 @@ namespace BlApi
         #region runNumber
         int getNextBusLineRunNumber();
         #endregion
+
         #region BusLineBO
         BusLineBO GetBusLine(int busLineKey);
         IEnumerable<BusLineBO> GetAllBusLines();
@@ -57,6 +58,10 @@ namespace BlApi
         void AddUser(BO.User user);
         void UpdateUser(BO.User user);
         void DeletUser(string userName);
+        #endregion
+
+        #region DrivingLine
+        DrivingLine TimeToTheStation(DrivingLine lineOnRide, StationBO DestinationStationName, TimeSpan time);
         #endregion
 
     }

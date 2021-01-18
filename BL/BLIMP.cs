@@ -8,18 +8,13 @@ using DO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace BL
 {
     public class BlImp1 : IBL
     {
         IDAL dl = DalFactory.GetDal();
-        #region singelton
-        static readonly BlImp1 instance = new BlImp1();
-        static BlImp1() { }// static ctor to ensure instance init is done just before first usage
-        BlImp1() { } // default => private
-        public static BlImp1 Instance { get => instance; }// The public Instance property to use
-        #endregion
 
         #region runNumber
         public int getNextBusLineRunNumber()
@@ -172,12 +167,12 @@ namespace BL
         {
             try
             {
-                if(busLine.busLineStations.Count()==0)
+                if (busLine.busLineStations.Count() == 0)
                 {
                     busLine.FirstStation = stationKey;
                 }
-                var thisBusStation=dl.GetBusStation(stationKey);
-                var BLstation = new BusLineStation { BusLineKey = busLine.BusLineKey, BusStationKey = stationKey, StationNumberInLine = busLine.busLineStations.Count()+1, IsActive = true, StationName=thisBusStation.StationName};
+                var thisBusStation = dl.GetBusStation(stationKey);
+                var BLstation = new BusLineStation { BusLineKey = busLine.BusLineKey, BusStationKey = stationKey, StationNumberInLine = busLine.busLineStations.Count() + 1, IsActive = true, StationName = thisBusStation.StationName };
                 ConsecutiveStations ConsecutiveStation = new ConsecutiveStations { Station1Key = dl.GetBusLineStationKey(busLine.BusLineKey, busLine.busLineStations.Count()), Station2Key = stationKey, IsActive = true };
                 dl.AddBusLineStation(BLstation);
                 if (ConsecutiveStation.Station1Key == -1)
@@ -194,8 +189,8 @@ namespace BL
                 {
                     dl.AddConsecutiveStations(ConsecutiveStation);
                 }
-                catch(DO.BadConsecutiveStationsException)
-                    { }
+                catch (DO.BadConsecutiveStationsException)
+                { }
                 busLine.busLineStations = from b in dl.GetAllBusLineStationBy(b => (b.BusLineKey == busLine.BusLineKey & b.IsActive))
                                           let busStationKey2 = dl.GetBusLineStationKey(busLine.BusLineKey, b.StationNumberInLine - 1)
                                           let ConsecutiveStations = dl.GetConsecutiveStations(busStationKey2, b.BusStationKey)
@@ -215,7 +210,7 @@ namespace BL
             {
                 throw new BO.BadBusLineKeyException("the line not exsist", ex);
             }
-            catch(DO.BadBusLineStationsException ex)
+            catch (DO.BadBusLineStationsException ex)
             {
                 throw new BO.BadBusLineStationsException(ex.Message, ex);
             }
@@ -228,8 +223,8 @@ namespace BL
                 dl.DeleteBusLineStationInOneBusLine(stationKey, busLine.BusLineKey);
                 if (busLine.LastStation == stationKey)
                 {
-                    BusLineStationBO stationNext =busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == busLinsStation.StationNumberInLine - 1 & b.IsActive));
-                    if(stationNext!=null)
+                    BusLineStationBO stationNext = busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == busLinsStation.StationNumberInLine - 1 & b.IsActive));
+                    if (stationNext != null)
                     {
                         busLine.LastStation = stationNext.BusStationKey;
                         busLine.LastStationName = stationNext.StationName;
@@ -244,8 +239,8 @@ namespace BL
                 {
                     if (busLine.FirstStation == stationKey)
                     {
-                        BusLineStationBO stationNext =busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == 1 & b.IsActive));
-                        if(stationNext!=null)
+                        BusLineStationBO stationNext = busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == 1 & b.IsActive));
+                        if (stationNext != null)
                         {
                             busLine.FirstStation = stationNext.BusStationKey;
                             busLine.FirstStationName = stationNext.StationName;
@@ -259,7 +254,7 @@ namespace BL
                     int keyPrev = dl.GetBusLineStationKey(busLine.BusLineKey, busLinsStation.StationNumberInLine - 1);
                     int keyNext = dl.GetBusLineStationKey(busLine.BusLineKey, busLinsStation.StationNumberInLine);
                     var newConsecutiveStation = new ConsecutiveStations { Station1Key = keyPrev, Station2Key = keyNext, IsActive = true };
-                    if(keyPrev==-1)
+                    if (keyPrev == -1)
                     {
                         newConsecutiveStation.Distance = 0;
                         newConsecutiveStation.DriveDistanceTime = TimeSpan.Zero;
@@ -273,7 +268,7 @@ namespace BL
                     {
                         dl.AddConsecutiveStations(newConsecutiveStation);
                     }
-                    catch(DO.BadConsecutiveStationsException)
+                    catch (DO.BadConsecutiveStationsException)
                     { }
                     UpdateBusLine(busLine);
                 }
@@ -500,6 +495,35 @@ namespace BL
             }
         }
 
+        #endregion
+
+        #region DrivingLine
+        public DrivingLine TimeToTheStation(DrivingLine lineOnRide, StationBO DestinationStationName, TimeSpan now)
+        {
+            try
+            { 
+               BO.BusLineBO busLine= GetBusLine(lineOnRide.BusLineKey);
+                DO.BusesSchedule schedule = dl.GetBusesSchedule(lineOnRide.BusLineKey, now);
+                List<TimeSpan> timeBus;
+                TimeSpan range = TimeBetweanStations(busLine,busLine.FirstStation, DestinationStationName.BusStationKey);
+                TimeSpan midtime = now - range;
+                while (midtime != now)
+                {
+                   
+                }
+
+                // lineOnRide.ArrivalTime = 
+                return lineOnRide;
+            }
+            catch(BO.BadBusLineKeyException ex)
+            {
+
+            }
+
+            Thread.Sleep(1500);
+
+            return lineOnRide;
+        }
         #endregion
     }
 }

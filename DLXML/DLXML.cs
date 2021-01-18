@@ -469,6 +469,16 @@ namespace DL
             else
                 throw new DO.BadBusesScheduleKeyException(scheduleKey, $"bad schedule key: {scheduleKey}");
         }
+        public BusesSchedule GetBusesSchedule(int busLineKey, TimeSpan time)
+        {
+            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+
+            DO.BusesSchedule sche = ListBusesSchedules.Find(b => b.BusKey == busLineKey&b.EndtHour>time &b.StartHour<time & b.IsActive);
+            if (sche != null)
+                return sche; //no need to Clone()
+            else
+                throw new DO.BadBusesScheduleKeyException(-1, $"this line don't work in this hour");
+        }
 
         public IEnumerable<BusesSchedule> GetAllBusSchedules()
         {
