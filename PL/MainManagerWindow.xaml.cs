@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Navigation;
 using System.Windows.Media;
 using System.Media;
 using BlApi;
@@ -21,6 +22,8 @@ using System.ComponentModel;
 using System.Device.Location;
 using System.Windows.Media.Imaging;
 using Microsoft.Win32;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
 enum Managment { Managmaent, regularUser};
 namespace PL
@@ -50,7 +53,7 @@ namespace PL
             GenderTextBox.ItemsSource= Enum.GetValues(typeof(gender));
             GropByArea.ItemsSource= Enum.GetValues(typeof(Areas));
             Premissiom.ItemsSource = Enum.GetValues(typeof(Managment));
-            webBrowserLocation.si
+
             refreshcontent();
            
         }
@@ -73,6 +76,7 @@ namespace PL
                 busLineStationsListBox.DataContext = selectedBusLine.busLineStations;
             }
         }
+
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
         {
@@ -299,9 +303,7 @@ namespace PL
                 listofBusAcurdingtoStation.DataContext = selectedStation.busLines;
                 longtitudTextBox.Text = selectedStation.Coordinates.Longitude.ToString();
                 latitudTextBox.Text = selectedStation.Coordinates.Latitude.ToString();
-                webBrowserLocation.Navigate("http://maps.google.com/maps?q=24.197611,120.780512");
-                //busLineDetialedGrid.DataContext = selectedStation;
-                //busLineStationsListBox.ItemsSource = selectedBusLine.busLineStations;
+                listofBusAcurdingtoStationList.ItemsSource = selectedStation.busLines;
             }
         }
         private void UserListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -554,7 +556,16 @@ namespace PL
             }
         }
 
-       
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ShowLocation showLocation = new ShowLocation("http://maps.google.com/maps?&z=15&q=" +latitudTextBox.Text +"+" + longtitudTextBox.Text + "&ll=" +latitudTextBox.Text +"+" + longtitudTextBox.Text);
+            showLocation.Show();
+        }
+
+        private void Button_Click_DeleteBusLineFromStation(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 
