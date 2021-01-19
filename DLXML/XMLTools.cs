@@ -11,7 +11,7 @@ namespace DL
 {
     class XMLTools
     {
-        static string dir = @"xml\";
+         static string dir = @"xml\";
         static XMLTools()
         {
             if (!Directory.Exists(dir))
@@ -29,7 +29,6 @@ namespace DL
                 throw new DO.XMLFileLoadCreateException(filePath, $"fail to create xml file: {filePath}", ex);
             }
         }
-
         public static XElement LoadListFromXMLElement(string filePath)
         {
             try
