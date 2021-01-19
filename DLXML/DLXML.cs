@@ -271,74 +271,118 @@ namespace DL
         #region ConsecutiveStation
         public void AddConsecutiveStations(ConsecutiveStations consecutiveStations)
         {
-            List<ConsecutiveStations> ConsecutiveStationsList = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            if (ConsecutiveStationsList.FirstOrDefault(b => (b.Station1Key == consecutiveStations.Station1Key && b.Station2Key == consecutiveStations.Station2Key&&b.IsActive)) != null)
-                throw new DO.BadConsecutiveStationsException(consecutiveStations.Station1Key, consecutiveStations.Station2Key, "dupicated consecutive station");
+            XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
+                                   where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString()
+                                   select p).FirstOrDefault();
 
+            if (ConsecutiveStationSearch != null)
+                throw new DO.BadConsecutiveStationsException (consecutiveStations.Station1Key, consecutiveStations.Station2Key, "Duplicate Consecutive Stations");
 
-            ConsecutiveStationsList.Add(consecutiveStations);
+            XElement ConSElem = new XElement("ConsecutiveStations",
+                                   new XElement("Station1Key", consecutiveStations.Station1Key),
+                                   new XElement("Station2Key", consecutiveStations.Station2Key),
+                                   new XElement("Distance", consecutiveStations.Distance),
+                                   new XElement("IsActive", consecutiveStations.IsActive),
+                                   new XElement("DriveDistanceTime", consecutiveStations.DriveDistanceTime.ToString()));
 
-            XMLTools.SaveListToXMLSerializer(ConsecutiveStationsList, ConsecutiveStationsPath);
+            ConsecutiveStationRootElem.Add(ConSElem);
+
+            XMLTools.SaveListToXMLElement(ConsecutiveStationRootElem, ConsecutiveStationsPath);
         }
         public void DeletConsecutiveStations(int key1, int key2)
         {
-            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            DO.ConsecutiveStations sic = ListConsecutiveStations.Find(s =>
-            {
-                if (s.Station1Key == key1 & s.Station2Key == key2 & s.IsActive)
-                {
-                    s.IsActive = false;
-                    return true;
-                }
-                else return false;
-            });
-            if (sic == null)
-                throw new DO.BadConsecutiveStationsException(key1, key2, "this consecutive station is not exsist");
+            XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
+                                                 where (p.Element("Station1Key").Value) == key1.ToString() & (p.Element("Station2Key").Value) == key2.ToString()
+                                                 select p).FirstOrDefault();
 
-            XMLTools.SaveListToXMLSerializer(ListConsecutiveStations, ConsecutiveStationsPath);
+            if (ConsecutiveStationSearch == null)
+                throw new DO.BadConsecutiveStationsException(key1, key2, "Duplicate Consecutive Stations");
+
+
+            (ConsecutiveStationSearch.Element("IsActive").Value) = false.ToString();
+
+            XMLTools.SaveListToXMLElement(ConsecutiveStationRootElem, ConsecutiveStationsPath);
         }
         public IEnumerable<ConsecutiveStations> GetAlConsecutiveStationsBy(Predicate<ConsecutiveStations> predicate)
         {
-            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            return from consecutiveStation in ListConsecutiveStations
-                   where (predicate(consecutiveStation)) & consecutiveStation.IsActive
-                   select consecutiveStation;
+            return (from p in ConsecutiveStationRootElem.Elements()
+                    let  c= new ConsecutiveStations()
+                    {
+                        Station1Key = Int32.Parse(p.Element("Station1Key").Value),
+                        Station2Key = Int32.Parse(p.Element("Station1Key").Value),
+                        DriveDistanceTime = TimeSpan.Parse(p.Element("DriveDistanceTime").Value),
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                        Distance = Int32.Parse(p.Element("Distance").Value),
+
+
+                    }
+                    where(predicate(c)& c.IsActive)
+                    select c
+                   );
         }
         public IEnumerable<ConsecutiveStations> GetAllConsecutiveStations()
         {
-            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            return from stations in ListConsecutiveStations
-                   where stations.IsActive
-                   select stations;
+            return (from p in ConsecutiveStationRootElem.Elements()
+                    select new ConsecutiveStations()
+                    {
+                        Station1Key = Int32.Parse(p.Element("Station1Key").Value),
+                        Station2Key = Int32.Parse(p.Element("Station1Key").Value),
+                        DriveDistanceTime = TimeSpan.Parse(p.Element("DriveDistanceTime").Value),
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                        Distance =Int32.Parse( p.Element("Distance").Value),
+                        
+
+                    }
+                   );
         }
         public ConsecutiveStations GetConsecutiveStations(int key1, int key2)
         {
-            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            DO.ConsecutiveStations stations = ListConsecutiveStations.Find(s => (s.Station1Key == key1 & s.Station2Key == key2 & s.IsActive));
-            if (stations != null)
-                return stations; //no need to Clone()
-            else
-                throw new DO.BadConsecutiveStationsException(key1, key2, $"bad consecutive stations: {key1}{key2}");
+            ConsecutiveStations consecutiveStation = (from p in ConsecutiveStationRootElem.Elements()
+                                                            where (p.Element("Station1Key").Value) == key1.ToString() & (p.Element("Station2Key").Value) == key2.ToString() & (p.Element("IsActive").Value) =="true"
+                                                      select new ConsecutiveStations()
+                                                      {
+                                                          Station1Key = Int32.Parse(p.Element("Station1Key").Value),
+                                                          Station2Key = Int32.Parse(p.Element("Station1Key").Value),
+                                                          DriveDistanceTime = TimeSpan.Parse(p.Element("DriveDistanceTime").Value),
+                                                          IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                                                          Distance = Int32.Parse(p.Element("Distance").Value),
+
+
+                                                      }).FirstOrDefault();
+            if(consecutiveStation==null)
+                throw new DO.BadConsecutiveStationsException(key1, key2, "Duplicate Consecutive Stations");
+            return consecutiveStation;
         }
         public void UpdateConsecutiveStations(ConsecutiveStations consecutiveStations)
         {
-            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            DO.ConsecutiveStations sic = ListConsecutiveStations.Find(b => (b.Station1Key == consecutiveStations.Station1Key & b.Station2Key == consecutiveStations.Station2Key & b.IsActive));
-            if (sic != null)
-            {
-                DeletConsecutiveStations(consecutiveStations.Station1Key, consecutiveStations.Station2Key);
-                AddConsecutiveStations(consecutiveStations);
-            }
+            XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
+                                                 where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString()
+                                                 select p).FirstOrDefault();
+
+            if (ConsecutiveStationSearch == null)
+                throw new DO.BadConsecutiveStationsException(consecutiveStations.Station1Key, consecutiveStations.Station2Key, "Duplicate Consecutive Stations");
             else
             {
-                throw new BadConsecutiveStationsException(consecutiveStations.Station1Key, consecutiveStations.Station2Key, $"bad bus user name: {consecutiveStations.Station1Key}{consecutiveStations.Station2Key}");
+                ConsecutiveStationSearch.Element("Station1Key").Value = consecutiveStations.Station1Key.ToString();
+                ConsecutiveStationSearch.Element("Station2Key").Value = consecutiveStations.Station2Key.ToString();
+                ConsecutiveStationSearch.Element("IsActive").Value = consecutiveStations.IsActive.ToString();
+                ConsecutiveStationSearch.Element("Distance").Value = consecutiveStations.Distance.ToString();
+                ConsecutiveStationSearch.Element("DriveDistanceTim").Value = consecutiveStations.DriveDistanceTime.ToString();
             }
+
+            XMLTools.SaveListToXMLElement(ConsecutiveStationRootElem, ConsecutiveStationsPath);
         }
         #endregion
 
