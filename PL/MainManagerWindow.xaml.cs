@@ -426,7 +426,7 @@ namespace PL
                                     try
                                     {
                                         Random r = new Random();
-                                        bl.AddBusStation(new StationBO { busLines = null, BusStationKey = 39100+r.Next(0,899),Coordinates=new GeoCoordinate(Double.Parse(addLatitudeTextBox.Text), Double.Parse(addLongitudeTextBox.Text)),StationAddress= addStationAddressTextBox.Text,IsActive=true, HasARoof= (bool)addRoof.IsChecked,StationName= addStationNameTextBox.Text });
+                                        bl.AddBusStation(new StationBO { busLines = null, BusStationKey = bl.getNextBusStationRunNumber(), Coordinates=new GeoCoordinate(Double.Parse(addLatitudeTextBox.Text), Double.Parse(addLongitudeTextBox.Text)),StationAddress= addStationAddressTextBox.Text,IsActive=true, HasARoof= (bool)addRoof.IsChecked,StationName= addStationNameTextBox.Text });
                                         refreshcontent();
                                         stationListBorder.Visibility = Visibility.Visible;
                                         addStationBorder.Visibility = Visibility.Collapsed;

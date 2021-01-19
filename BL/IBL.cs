@@ -11,6 +11,7 @@ namespace BlApi
     {
         #region runNumber
         int getNextBusLineRunNumber();
+        int getNextBusStationRunNumber();
         #endregion
 
         #region BusLineBO
