@@ -53,10 +53,10 @@ namespace PL
             GenderTextBox.ItemsSource= Enum.GetValues(typeof(gender));
             GropByArea.ItemsSource= Enum.GetValues(typeof(Areas));
             Premissiom.ItemsSource = Enum.GetValues(typeof(Managment));
-
             refreshcontent();
            
         }
+
 
         private void refreshcontent()
         {
@@ -71,9 +71,13 @@ namespace PL
             StationName.Text = "";
             UserNameSearch.Text = "";
             Premissiom.SelectedItem = null;
-            if(selectedBusLine!=null)
+            if (selectedBusLine != null)
             {
-                busLineStationsListBox.DataContext = selectedBusLine.busLineStations;
+                busLineStationsListBox.ItemsSource = selectedBusLine.busLineStations;
+            }
+            if (selectedStation != null)
+            {
+                listofBusAcurdingtoStationList.ItemsSource = selectedStation.busLines;
             }
         }
 
@@ -274,6 +278,11 @@ namespace PL
         private void Button_Click_DeleteBusStaion(object sender, RoutedEventArgs e)
         {
             bl.DeleteBusStation(((sender as Button).DataContext as StationBO).BusStationKey);
+            refreshcontent();
+        }
+        private void Button_Click_DeleteBusLineFromStation(object sender, RoutedEventArgs e)
+        {
+            bl.deleteBusStationInBusLine(((sender as Button).DataContext as BusLineBO), selectedStation.BusStationKey);
             refreshcontent();
         }
         //selction chenged
@@ -562,10 +571,7 @@ namespace PL
             showLocation.Show();
         }
 
-        private void Button_Click_DeleteBusLineFromStation(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }
 

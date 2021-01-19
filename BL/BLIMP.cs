@@ -94,12 +94,7 @@ namespace BL
         {
             try
             {
-                BusLineBO busLineBO = GetBusLine(busLine.BusLineKey);
-                if (busLineBO != null)
-                {
-                    DeleteBusLine(busLine.BusLineKey);
-                    AddBusLine(busLine);
-                }
+                dl.UpdateBusLine(BusLineBODOAdapter(busLine));
             }
             catch (DO.BadBusLineKeyException busExaption)
             {
@@ -226,7 +221,7 @@ namespace BL
         {
             try
             {
-                BusLineStation busLinsStation = dl.GetAllBusLineStationBy(b => (b.IsActive & b.BusStationKey == stationKey & b.BusLineKey == busLine.BusLineKey)).First();
+                BusLineStation busLinsStation = dl.GetAllBusLineStationBy(b => (b.IsActive & b.BusStationKey == stationKey & b.BusLineKey == busLine.BusLineKey)).FirstOrDefault();
                 dl.DeleteBusLineStationInOneBusLine(stationKey, busLine.BusLineKey);
                 if (busLine.LastStation == stationKey)
                 {
