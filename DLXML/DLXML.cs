@@ -39,8 +39,8 @@ namespace DL
             if (ListBuses.FirstOrDefault(b => b.BusLineKey == bus.BusLineKey &b.IsActive) != null)
                 throw new DO.BadBusLineKeyException(bus.BusLineKey, "This bus line already exist");
 
-            if (GetBusLine(bus.BusLineKey) == null)
-                throw new DO.BadBusLineKeyException(bus.BusLineKey, "Missing bus line");
+           if (GetBusLine(bus.BusLineKey) != null)
+             throw new DO.BadBusLineKeyException(bus.BusLineKey, "exsist bus line");
 
             ListBuses.Add(bus); //no need to Clone()
 
@@ -69,10 +69,11 @@ namespace DL
             List<BusLine> ListBusLines = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
 
             DO.BusLine bus = ListBusLines.Find(b => b.BusLineKey == busLineKey&b.IsActive);
-            if (bus != null)
-                return bus; //no need to Clone()
-            else
-                throw new DO.BadBusLineKeyException(busLineKey, $"bad bus line key: {busLineKey}");
+            return bus;
+            // if (bus != null)
+            return bus; //no need to Clone()
+           // else
+                //throw new DO.BadBusLineKeyException(busLineKey, $"bad bus line key: {busLineKey}");
         }
         public IEnumerable<BusLine> GetAllBusLines()
         {
@@ -200,12 +201,12 @@ namespace DL
             if (ListBusStations.FirstOrDefault(s => s.BusStationKey == station.BusStationKey & s.IsActive) != null)
                 throw new DO.BadBusLineKeyException(station.BusStationKey, "This bus station already exist");
 
-            if (GetBusStation(station.BusStationKey) == null)
-                throw new DO.BadBusLineKeyException(station.BusStationKey, "Missing bus station");
+           // if (GetBusStation(station.BusStationKey) == null)
+              //  throw new DO.BadBusLineKeyException(station.BusStationKey, "Missing bus station");
 
             ListBusStations.Add(station); //no need to Clone()
 
-            XMLTools.SaveListToXMLSerializer(ListBusStations, BusLinePath);
+            XMLTools.SaveListToXMLSerializer(ListBusStations, BusStationPath);
         }
         public void DeleteBusStation(int busStationKey)
         {
@@ -246,10 +247,10 @@ namespace DL
             List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
 
             DO.BusStation station = ListBusStations.Find(b => (b.BusStationKey == busStationKey & b.IsActive));
-            if (station != null)
+            //if (station != null)
                 return station; //no need to Clone()
-            else
-                throw new DO.BadBusStationKeyException(busStationKey, $"bad bus stationkey: {busStationKey}");
+            //else
+              //  throw new DO.BadBusStationKeyException(busStationKey, $"bad bus stationkey: {busStationKey}");
         }
         public void UpdateBusStation(BusStation station)
         {
