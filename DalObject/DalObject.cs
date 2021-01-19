@@ -123,7 +123,7 @@ namespace DL
 
         public void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey)
         {
-            BusLineStation busLineStation = DataSource.BusLineStationList.Find(b =>
+            BusLineStation busLineStation = DataSource.BusLineStationList.FirstOrDefault(b =>
             {
                 if (b.BusStationKey == BusStationKey & b.BusLineKey == BusLineKey & b.IsActive)
                 {
@@ -136,7 +136,7 @@ namespace DL
             {
                 throw new BadBusLineStationsException(BusStationKey, BusLineKey, "station is not in the bus Line path");
             }
-            DataSource.BusLineStationList.Find(b =>
+            DataSource.BusLineStationList.FindAll(b =>
             {
                 if (b.StationNumberInLine> busLineStation.StationNumberInLine & b.BusLineKey == BusLineKey & b.IsActive)
                 {
@@ -381,7 +381,7 @@ namespace DL
         #region BusSchedules
         public BusesSchedule GetBusesSchedule(int scheduleKey)
         {
-            return new BusesSchedule();
+            return null;
         }
 
         public IEnumerable<BusesSchedule> GetAllBusSchedules()

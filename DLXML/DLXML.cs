@@ -137,7 +137,7 @@ namespace DL
                 else return false;
             });
             if (sic == null)
-                throw new DO.BadBusLineStationsException(BusStationKey, 0, "this bus line ststion is not exsist");
+                throw new DO.BadBusLineStationsException(BusStationKey, 0, "this bus line ststion does not exsist");
 
             XMLTools.SaveListToXMLSerializer(ListBusLineStations, BusLineStationPath);
         }
@@ -154,7 +154,7 @@ namespace DL
                 else return false;
             });
             if (sic == null)
-                throw new DO.BadBusLineStationsException(BusStationKey, BusLineKey, "this bus line ststion is not exsist");
+                throw new DO.BadBusLineStationsException(BusStationKey, BusLineKey, "this bus line ststion does not exsist");
 
             XMLTools.SaveListToXMLSerializer(ListBusLineStations, BusLineStationPath);
         }
