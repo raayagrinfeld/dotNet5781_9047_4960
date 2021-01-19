@@ -462,40 +462,83 @@ namespace DL
         #region BusSchedules
         public BusesSchedule GetBusesSchedule(int scheduleKey)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
-            DO.BusesSchedule sche = ListBusesSchedules.Find(b => b.ScheduleKey == scheduleKey & b.IsActive);
-            if (sche != null)
-                return sche; //no need to Clone()
-            else
-                throw new DO.BadBusesScheduleKeyException(scheduleKey, $"bad schedule key: {scheduleKey}");
+           BusesSchedule BSchedule = (from p in ScheduleRootElem.Elements()
+                                 where (p.Element("ScheduleKey").Value) == scheduleKey.ToString()
+                                 select new BusesSchedule()
+                      {
+                          ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
+                          BusKey = Int32.Parse(p.Element("BusKey").Value),
+                          StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
+                          IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                          EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
+                          Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                      }
+                        ).FirstOrDefault();
+
+            if (BSchedule == null)
+                throw new DO.BadBusesScheduleKeyException(scheduleKey, "Duplicate schedule");
+
+            return BSchedule;
         }
         public BusesSchedule GetBusesSchedule(int busLineKey, TimeSpan time)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
-            DO.BusesSchedule sche = ListBusesSchedules.Find(b => b.BusKey == busLineKey&b.EndtHour>time &b.StartHour<time & b.IsActive);
-            if (sche != null)
-                return sche; //no need to Clone()
-            else
-                throw new DO.BadBusesScheduleKeyException(-1, $"this line don't work in this hour");
-        }
+            BusesSchedule BSchedule = (from p in ScheduleRootElem.Elements()
+                                       where (p.Element("BusKey").Value) == busLineKey.ToString()& TimeSpan.Parse(p.Element("StartHour").Value )< time& TimeSpan.Parse(p.Element("EndtHour").Value)>time
+                                       select new BusesSchedule()
+                                       {
+                                           ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
+                                           BusKey = Int32.Parse(p.Element("BusKey").Value),
+                                           StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
+                                           IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                                           EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
+                                           Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                                       }
+                         ).FirstOrDefault();
+
+            if (BSchedule == null)
+                throw new DO.BadBusesScheduleKeyException(-1, "Duplicate schedule");
+
+            return BSchedule;
+    }
 
         public IEnumerable<BusesSchedule> GetAllBusSchedules()
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
-            return from sch in ListBusesSchedules
-                   where sch.IsActive
-                   select sch;
+            return (from p in ScheduleRootElem.Elements()
+                    where (p.Element("IsActive").Value) =="true"
+                    select new BusesSchedule()
+                    {
+                        ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
+                        BusKey = Int32.Parse(p.Element("BusKey").Value),
+                        StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                        EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
+                        Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                    }
+                         );
         }
 
         public IEnumerable<BusesSchedule> GetAllBusSchedulesBy(Predicate<BusesSchedule> predicate)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
-            return from sch in ListBusesSchedules
-                   where sch.IsActive& predicate(sch)
-                   select sch;
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
+
+            return (from p in ScheduleRootElem.Elements()
+                    let sch= new BusesSchedule()
+                    {
+                        ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
+                        BusKey = Int32.Parse(p.Element("BusKey").Value),
+                        StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                        EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
+                        Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                    }
+                    where (sch.IsActive& predicate(sch))
+                    select sch);
         }
 
         public void AddBusSchedule(BusesSchedule schedule)
@@ -507,7 +550,7 @@ namespace DL
                                    select p).FirstOrDefault();
 
             if (ScheduleSearch != null)
-                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, "Duplicate user name");
+                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, "Duplicate schedule");
 
             XElement ScheduleElem = new XElement("BusesSchedule",
                                    new XElement("ScheduleKey", schedule.ScheduleKey.ToString()),
@@ -524,36 +567,38 @@ namespace DL
 
         public void UpdateBusSchedule(BusesSchedule schedule)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
-            BusesSchedule sche= ListBusesSchedules.Find(b => b.ScheduleKey == schedule.ScheduleKey&b.IsActive);
-            if (sche != null)
-            {
-                DeleteBusSchedule(sche.ScheduleKey);
-                AddBusSchedule(sche);
-            }
-            else
-            {
-                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, $"bad schedule key: {schedule.ScheduleKey}");
-            }
-            XMLTools.SaveListToXMLSerializer(ListBusesSchedules, BusSchedulePath);
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
+
+            XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
+                                       where (p.Element("ScheduleKey").Value) == schedule.ScheduleKey.ToString()
+                                       select p).FirstOrDefault();
+            if (ScheduleSearch == null)
+                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, "Duplicate schedule");
+
+            XElement ScheduleElem = new XElement("BusesSchedule",
+                                   new XElement("ScheduleKey", schedule.ScheduleKey.ToString()),
+                                   new XElement("BusKey", schedule.BusKey.ToString()),
+                                   new XElement("StartHour", schedule.StartHour.ToString()),
+                                   new XElement("EndtHour", schedule.EndtHour.ToString()),
+                                   new XElement("Frequency", schedule.Frequency.ToString()),
+                                   new XElement("IsActive", schedule.IsActive));
+
+            XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
         }
 
         public void DeleteBusSchedule(int scheduleKey)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
-            BusesSchedule sche = ListBusesSchedules.Find(b =>
-            {
-                if (b.ScheduleKey == scheduleKey & b.IsActive)
-                {
-                    b.IsActive = false;
-                    return true;
-                }
-                else return false;
-            });
-            if (sche == null)
-                throw new DO.BadBusesScheduleKeyException(scheduleKey, $"bad schedule key: {scheduleKey}");
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
-            XMLTools.SaveListToXMLSerializer(ListBusesSchedules, BusSchedulePath);
+            XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
+                                       where (p.Element("ScheduleKey").Value) == scheduleKey.ToString()
+                                       select p).FirstOrDefault();
+
+            if (ScheduleSearch == null)
+                throw new DO.BadBusesScheduleKeyException(scheduleKey, "Duplicate schedule");
+            (ScheduleSearch.Element("IsActive").Value) = false.ToString();
+
+            XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
         }
         #endregion
 
