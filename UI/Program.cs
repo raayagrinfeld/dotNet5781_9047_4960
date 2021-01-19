@@ -19,11 +19,7 @@ namespace PlConsole
         {
             Random r = new Random();
 
-           
-            dl.AddUser(new DO.User { UserName = "raaya", Password = "123", IsActive = true, ManagementPermission = true, gender = DO.gender.female, imagePath = null });
-            dl.AddUser(new DO.User { UserName = "odelia", Password = "1666", IsActive = true, ManagementPermission = true, gender = (DO.gender)0, imagePath = "Icons/wonan.png" });
-            dl.AddUser(new DO.User { UserName = "aviva", Password = "1111", IsActive = true, ManagementPermission = false, gender = (DO.gender)0, imagePath = null });
-            dl.AddUser(new DO.User { UserName = "myiah", Password = "6543", IsActive = true, ManagementPermission = false, gender = (DO.gender)0, imagePath = "Icons/wonan.png" });
+            //dl.AddBusSchedule(new DO.BusesSchedule { BusKey = 20001, IsActive = true, EndtHour = new TimeSpan(13, 0, 0, 0), Frequency = new TimeSpan(1, 0, 0, 0), StartHour = new TimeSpan(8, 0, 0, 0), ScheduleKey = 7 });
 
 
         }

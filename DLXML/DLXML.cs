@@ -500,17 +500,26 @@ namespace DL
 
         public void AddBusSchedule(BusesSchedule schedule)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
-            if (ListBusesSchedules.FirstOrDefault(b => b.ScheduleKey == schedule.ScheduleKey & b.IsActive) != null)
-                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, $"bad schedule key: {schedule.ScheduleKey}");
+            XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
+                                   where (p.Element("ScheduleKey").Value) == schedule.ScheduleKey.ToString()
+                                   select p).FirstOrDefault();
 
-            /*if (GetBusesSchedule(schedule.ScheduleKey) == null)
-                throw new DO.BadBusLineKeyException(schedule.ScheduleKey, "Missing bus line");*/
+            if (ScheduleSearch != null)
+                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, "Duplicate user name");
 
-            ListBusesSchedules.Add(schedule); //no need to Clone()
+            XElement ScheduleElem = new XElement("BusesSchedule",
+                                   new XElement("ScheduleKey", schedule.ScheduleKey.ToString()),
+                                   new XElement("BusKey", schedule.BusKey.ToString()),
+                                   new XElement("StartHour", schedule.StartHour.ToString()),
+                                   new XElement("EndtHour", schedule.EndtHour.ToString()),
+                                   new XElement("Frequency", schedule.Frequency.ToString()),
+                                   new XElement("IsActive", schedule.IsActive));
 
-            XMLTools.SaveListToXMLSerializer(ListBusesSchedules, BusSchedulePath);
+            ScheduleRootElem.Add(ScheduleElem);
+
+            XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
         }
 
         public void UpdateBusSchedule(BusesSchedule schedule)
