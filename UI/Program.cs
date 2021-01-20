@@ -19,11 +19,51 @@ namespace PlConsole
         {
             Random r = new Random();
 
-            dl.AddBusSchedule(new BusesSchedule { BusKey = 20000, EndtHour = new TimeSpan(13, 0, 0), Frequency = new TimeSpan(0, 20, 0), IsActive = true, ScheduleKey = 99, StartHour = new TimeSpan(8, 0, 0) });
-            dl.AddUser(new DO.User { UserName = "raaya", Password = "123", IsActive = true, ManagementPermission = true, gender = DO.gender.female, imagePath = null });
-            dl.AddUser(new DO.User { UserName = "odelia", Password = "1666", IsActive = true, ManagementPermission = true, gender = (DO.gender)0, imagePath = "Icons/wonan.png" });
-            dl.AddUser(new DO.User { UserName = "aviva", Password = "1111", IsActive = true, ManagementPermission = false, gender = (DO.gender)0, imagePath = null });
-            dl.AddUser(new DO.User { UserName = "myiah", Password = "6543", IsActive = true, ManagementPermission = false, gender = (DO.gender)0, imagePath = "Icons/wonan.png" });
+            for (int i = 0; i < 12; i++)
+            {
+                int prevBusLineStation = -1;
+                for (int j = 1; j < 6; j++)
+                {
+                    int busStationKey;
+                    do
+                    {
+                        busStationKey = r.Next(38880, RunNumbers.BusStationRunNumber);
+                    }
+                    while ((dl.GetAllBusLineStationBy(b=> true).FirstOrDefault(b => (b.BusLineKey == (20000 + i) & b.BusStationKey == busStationKey)) != null) || (dl.GetAllBusStations().FirstOrDefault(b => (b.BusStationKey == busStationKey)) == null));
+                    BusStation bus = dl.GetAllBusStations().FirstOrDefault(b => b.BusStationKey == busStationKey);
+                    if (j == 1)
+                    {
+                        dl.GetAllBusLines().FirstOrDefault(b => b.BusLineKey == (20000 + i)).FirstStation = busStationKey;
+                        dl.GetAllBusLines().FirstOrDefault(b => b.BusLineKey == (20000 + i)).FirstStationName = bus.StationName;
+                    }
+                    if (j == 5)
+                    {
+                        dl.GetAllBusLines().FirstOrDefault(b => b.BusLineKey == (20000 + i)).LastStation = busStationKey;
+                        dl.GetAllBusLines().FirstOrDefault(b => b.BusLineKey == (20000 + i)).LastStationName = bus.StationName;
+                    }
+                    dl.AddBusLineStation(new BusLineStation
+                    {
+                        BusLineKey = 20000 + i,
+                        StationName = bus.StationName,
+                        BusStationKey = busStationKey,
+                        IsActive = true,
+                        StationNumberInLine = j
+                    });
+                    var ConsecutiveStation = new ConsecutiveStations { Station1Key = prevBusLineStation, Station2Key = busStationKey, IsActive = true };
+                    if (ConsecutiveStation.Station1Key == -1)
+                    {
+                        ConsecutiveStation.Distance = 0;
+                        ConsecutiveStation.DriveDistanceTime = TimeSpan.Zero;
+                    }
+                    else
+                    {
+                        ConsecutiveStation.Distance = dl.GetAllBusStations().FirstOrDefault(b => (b.BusStationKey == prevBusLineStation & b.IsActive)).Coordinates.GetDistanceTo(dl.GetAllBusStations().FirstOrDefault(b => (b.BusStationKey == busStationKey & b.IsActive)).Coordinates);
+                        ConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(ConsecutiveStation.Distance * 0.01);
+                    }
+                    dl.AddConsecutiveStations(ConsecutiveStation);
+                    prevBusLineStation = busStationKey;
+                }
+            }
 
 
         }

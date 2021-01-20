@@ -29,6 +29,10 @@ namespace BL
             return ++DO.RunNumbers.BusLineRunNumber;
         }
 
+        public int getNextBusStationRunNumber()
+        {
+            return ++DO.RunNumbers.BusStationRunNumber;
+        }
         #endregion
 
         #region BusLineBO

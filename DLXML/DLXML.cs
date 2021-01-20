@@ -275,74 +275,118 @@ namespace DL
         #region ConsecutiveStation
         public void AddConsecutiveStations(ConsecutiveStations consecutiveStations)
         {
-            List<ConsecutiveStations> ConsecutiveStationsList = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            if (ConsecutiveStationsList.FirstOrDefault(b => (b.Station1Key == consecutiveStations.Station1Key && b.Station2Key == consecutiveStations.Station2Key&&b.IsActive)) != null)
-                throw new DO.BadConsecutiveStationsException(consecutiveStations.Station1Key, consecutiveStations.Station2Key, "dupicated consecutive station");
+            XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
+                                   where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString()
+                                   select p).FirstOrDefault();
 
+            if (ConsecutiveStationSearch != null)
+                throw new DO.BadConsecutiveStationsException (consecutiveStations.Station1Key, consecutiveStations.Station2Key, "Duplicate Consecutive Stations");
 
-            ConsecutiveStationsList.Add(consecutiveStations);
+            XElement ConSElem = new XElement("ConsecutiveStations",
+                                   new XElement("Station1Key", consecutiveStations.Station1Key),
+                                   new XElement("Station2Key", consecutiveStations.Station2Key),
+                                   new XElement("Distance", consecutiveStations.Distance),
+                                   new XElement("IsActive", consecutiveStations.IsActive),
+                                   new XElement("DriveDistanceTime", consecutiveStations.DriveDistanceTime.ToString()));
 
-            XMLTools.SaveListToXMLSerializer(ConsecutiveStationsList, ConsecutiveStationsPath);
+            ConsecutiveStationRootElem.Add(ConSElem);
+
+            XMLTools.SaveListToXMLElement(ConsecutiveStationRootElem, ConsecutiveStationsPath);
         }
         public void DeletConsecutiveStations(int key1, int key2)
         {
-            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            DO.ConsecutiveStations sic = ListConsecutiveStations.Find(s =>
-            {
-                if (s.Station1Key == key1 & s.Station2Key == key2 & s.IsActive)
-                {
-                    s.IsActive = false;
-                    return true;
-                }
-                else return false;
-            });
-            if (sic == null)
-                throw new DO.BadConsecutiveStationsException(key1, key2, "this consecutive station is not exsist");
+            XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
+                                                 where (p.Element("Station1Key").Value) == key1.ToString() & (p.Element("Station2Key").Value) == key2.ToString()
+                                                 select p).FirstOrDefault();
 
-            XMLTools.SaveListToXMLSerializer(ListConsecutiveStations, ConsecutiveStationsPath);
+            if (ConsecutiveStationSearch == null)
+                throw new DO.BadConsecutiveStationsException(key1, key2, "Duplicate Consecutive Stations");
+
+
+            (ConsecutiveStationSearch.Element("IsActive").Value) = false.ToString();
+
+            XMLTools.SaveListToXMLElement(ConsecutiveStationRootElem, ConsecutiveStationsPath);
         }
         public IEnumerable<ConsecutiveStations> GetAlConsecutiveStationsBy(Predicate<ConsecutiveStations> predicate)
         {
-            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            return from consecutiveStation in ListConsecutiveStations
-                   where (predicate(consecutiveStation)) & consecutiveStation.IsActive
-                   select consecutiveStation;
+            return (from p in ConsecutiveStationRootElem.Elements()
+                    let  c= new ConsecutiveStations()
+                    {
+                        Station1Key = Int32.Parse(p.Element("Station1Key").Value),
+                        Station2Key = Int32.Parse(p.Element("Station1Key").Value),
+                        DriveDistanceTime = TimeSpan.Parse(p.Element("DriveDistanceTime").Value),
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                        Distance = Int32.Parse(p.Element("Distance").Value),
+
+
+                    }
+                    where(predicate(c)& c.IsActive)
+                    select c
+                   );
         }
         public IEnumerable<ConsecutiveStations> GetAllConsecutiveStations()
         {
-            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            return from stations in ListConsecutiveStations
-                   where stations.IsActive
-                   select stations;
+            return (from p in ConsecutiveStationRootElem.Elements()
+                    select new ConsecutiveStations()
+                    {
+                        Station1Key = Int32.Parse(p.Element("Station1Key").Value),
+                        Station2Key = Int32.Parse(p.Element("Station1Key").Value),
+                        DriveDistanceTime = TimeSpan.Parse(p.Element("DriveDistanceTime").Value),
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                        Distance =Int32.Parse( p.Element("Distance").Value),
+                        
+
+                    }
+                   );
         }
         public ConsecutiveStations GetConsecutiveStations(int key1, int key2)
         {
-            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            DO.ConsecutiveStations stations = ListConsecutiveStations.Find(s => (s.Station1Key == key1 & s.Station2Key == key2 & s.IsActive));
-            if (stations != null)
-                return stations; //no need to Clone()
-            else
-                throw new DO.BadConsecutiveStationsException(key1, key2, $"bad consecutive stations: {key1}{key2}");
+            ConsecutiveStations consecutiveStation = (from p in ConsecutiveStationRootElem.Elements()
+                                                            where (p.Element("Station1Key").Value) == key1.ToString() & (p.Element("Station2Key").Value) == key2.ToString() & (p.Element("IsActive").Value) =="true"
+                                                      select new ConsecutiveStations()
+                                                      {
+                                                          Station1Key = Int32.Parse(p.Element("Station1Key").Value),
+                                                          Station2Key = Int32.Parse(p.Element("Station1Key").Value),
+                                                          DriveDistanceTime = TimeSpan.Parse(p.Element("DriveDistanceTime").Value),
+                                                          IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                                                          Distance = Int32.Parse(p.Element("Distance").Value),
+
+
+                                                      }).FirstOrDefault();
+            if(consecutiveStation==null)
+                throw new DO.BadConsecutiveStationsException(key1, key2, "Duplicate Consecutive Stations");
+            return consecutiveStation;
         }
         public void UpdateConsecutiveStations(ConsecutiveStations consecutiveStations)
         {
-            List<ConsecutiveStations> ListConsecutiveStations = XMLTools.LoadListFromXMLSerializer<ConsecutiveStations>(ConsecutiveStationsPath);
+            XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
-            DO.ConsecutiveStations sic = ListConsecutiveStations.Find(b => (b.Station1Key == consecutiveStations.Station1Key & b.Station2Key == consecutiveStations.Station2Key & b.IsActive));
-            if (sic != null)
-            {
-                DeletConsecutiveStations(consecutiveStations.Station1Key, consecutiveStations.Station2Key);
-                AddConsecutiveStations(consecutiveStations);
-            }
+            XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
+                                                 where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString()
+                                                 select p).FirstOrDefault();
+
+            if (ConsecutiveStationSearch == null)
+                throw new DO.BadConsecutiveStationsException(consecutiveStations.Station1Key, consecutiveStations.Station2Key, "Duplicate Consecutive Stations");
             else
             {
-                throw new BadConsecutiveStationsException(consecutiveStations.Station1Key, consecutiveStations.Station2Key, $"bad bus user name: {consecutiveStations.Station1Key}{consecutiveStations.Station2Key}");
+                ConsecutiveStationSearch.Element("Station1Key").Value = consecutiveStations.Station1Key.ToString();
+                ConsecutiveStationSearch.Element("Station2Key").Value = consecutiveStations.Station2Key.ToString();
+                ConsecutiveStationSearch.Element("IsActive").Value = consecutiveStations.IsActive.ToString();
+                ConsecutiveStationSearch.Element("Distance").Value = consecutiveStations.Distance.ToString();
+                ConsecutiveStationSearch.Element("DriveDistanceTim").Value = consecutiveStations.DriveDistanceTime.ToString();
             }
+
+            XMLTools.SaveListToXMLElement(ConsecutiveStationRootElem, ConsecutiveStationsPath);
         }
         #endregion
 
@@ -466,89 +510,143 @@ namespace DL
         #region BusSchedules
         public BusesSchedule GetBusesSchedule(int scheduleKey)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
-            DO.BusesSchedule sche = ListBusesSchedules.Find(b => b.ScheduleKey == scheduleKey & b.IsActive);
-            if (sche != null)
-                return sche; //no need to Clone()
-            else
-                throw new DO.BadBusesScheduleKeyException(scheduleKey, $"bad schedule key: {scheduleKey}");
+           BusesSchedule BSchedule = (from p in ScheduleRootElem.Elements()
+                                 where (p.Element("ScheduleKey").Value) == scheduleKey.ToString()
+                                 select new BusesSchedule()
+                      {
+                          ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
+                          BusKey = Int32.Parse(p.Element("BusKey").Value),
+                          StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
+                          IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                          EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
+                          Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                      }
+                        ).FirstOrDefault();
+
+            if (BSchedule == null)
+                throw new DO.BadBusesScheduleKeyException(scheduleKey, "Duplicate schedule");
+
+            return BSchedule;
         }
         public BusesSchedule GetBusesSchedule(int busLineKey, TimeSpan time)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
-            DO.BusesSchedule sche = ListBusesSchedules.Find(b => b.BusKey == busLineKey&b.EndtHour>time &b.StartHour<time & b.IsActive);
-            if (sche != null)
-                return sche; //no need to Clone()
-            else
-                throw new DO.BadBusesScheduleKeyException(-1, $"this line don't work in this hour");
-        }
+            BusesSchedule BSchedule = (from p in ScheduleRootElem.Elements()
+                                       where (p.Element("BusKey").Value) == busLineKey.ToString()& TimeSpan.Parse(p.Element("StartHour").Value )< time& TimeSpan.Parse(p.Element("EndtHour").Value)>time
+                                       select new BusesSchedule()
+                                       {
+                                           ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
+                                           BusKey = Int32.Parse(p.Element("BusKey").Value),
+                                           StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
+                                           IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                                           EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
+                                           Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                                       }
+                         ).FirstOrDefault();
+
+            if (BSchedule == null)
+                throw new DO.BadBusesScheduleKeyException(-1, "Duplicate schedule");
+
+            return BSchedule;
+    }
 
         public IEnumerable<BusesSchedule> GetAllBusSchedules()
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
-            return from sch in ListBusesSchedules
-                   where sch.IsActive
-                   select sch;
+            return (from p in ScheduleRootElem.Elements()
+                    where (p.Element("IsActive").Value) =="true"
+                    select new BusesSchedule()
+                    {
+                        ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
+                        BusKey = Int32.Parse(p.Element("BusKey").Value),
+                        StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                        EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
+                        Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                    }
+                         );
         }
 
         public IEnumerable<BusesSchedule> GetAllBusSchedulesBy(Predicate<BusesSchedule> predicate)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
-            return from sch in ListBusesSchedules
-                   where sch.IsActive& predicate(sch)
-                   select sch;
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
+
+            return (from p in ScheduleRootElem.Elements()
+                    let sch= new BusesSchedule()
+                    {
+                        ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
+                        BusKey = Int32.Parse(p.Element("BusKey").Value),
+                        StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                        EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
+                        Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                    }
+                    where (sch.IsActive& predicate(sch))
+                    select sch);
         }
 
         public void AddBusSchedule(BusesSchedule schedule)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
-            if (ListBusesSchedules.FirstOrDefault(b => b.ScheduleKey == schedule.ScheduleKey & b.IsActive) != null)
-                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, $"bad schedule key: {schedule.ScheduleKey}");
+            XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
+                                   where (p.Element("ScheduleKey").Value) == schedule.ScheduleKey.ToString()
+                                   select p).FirstOrDefault();
 
-            /*if (GetBusesSchedule(schedule.ScheduleKey) == null)
-                throw new DO.BadBusLineKeyException(schedule.ScheduleKey, "Missing bus line");*/
+            if (ScheduleSearch != null)
+                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, "Duplicate schedule");
 
-            ListBusesSchedules.Add(schedule); //no need to Clone()
+            XElement ScheduleElem = new XElement("BusesSchedule",
+                                   new XElement("ScheduleKey", schedule.ScheduleKey.ToString()),
+                                   new XElement("BusKey", schedule.BusKey.ToString()),
+                                   new XElement("StartHour", schedule.StartHour.ToString()),
+                                   new XElement("EndtHour", schedule.EndtHour.ToString()),
+                                   new XElement("Frequency", schedule.Frequency.ToString()),
+                                   new XElement("IsActive", schedule.IsActive));
 
-            XMLTools.SaveListToXMLSerializer(ListBusesSchedules, BusSchedulePath);
+            ScheduleRootElem.Add(ScheduleElem);
+
+            XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
         }
 
         public void UpdateBusSchedule(BusesSchedule schedule)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
-            BusesSchedule sche= ListBusesSchedules.Find(b => b.ScheduleKey == schedule.ScheduleKey&b.IsActive);
-            if (sche != null)
-            {
-                DeleteBusSchedule(sche.ScheduleKey);
-                AddBusSchedule(sche);
-            }
-            else
-            {
-                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, $"bad schedule key: {schedule.ScheduleKey}");
-            }
-            XMLTools.SaveListToXMLSerializer(ListBusesSchedules, BusSchedulePath);
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
+
+            XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
+                                       where (p.Element("ScheduleKey").Value) == schedule.ScheduleKey.ToString()
+                                       select p).FirstOrDefault();
+            if (ScheduleSearch == null)
+                throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, "Duplicate schedule");
+
+            XElement ScheduleElem = new XElement("BusesSchedule",
+                                   new XElement("ScheduleKey", schedule.ScheduleKey.ToString()),
+                                   new XElement("BusKey", schedule.BusKey.ToString()),
+                                   new XElement("StartHour", schedule.StartHour.ToString()),
+                                   new XElement("EndtHour", schedule.EndtHour.ToString()),
+                                   new XElement("Frequency", schedule.Frequency.ToString()),
+                                   new XElement("IsActive", schedule.IsActive));
+
+            XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
         }
 
         public void DeleteBusSchedule(int scheduleKey)
         {
-            List<BusesSchedule> ListBusesSchedules = XMLTools.LoadListFromXMLSerializer<BusesSchedule>(BusSchedulePath);
-            BusesSchedule sche = ListBusesSchedules.Find(b =>
-            {
-                if (b.ScheduleKey == scheduleKey & b.IsActive)
-                {
-                    b.IsActive = false;
-                    return true;
-                }
-                else return false;
-            });
-            if (sche == null)
-                throw new DO.BadBusesScheduleKeyException(scheduleKey, $"bad schedule key: {scheduleKey}");
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
-            XMLTools.SaveListToXMLSerializer(ListBusesSchedules, BusSchedulePath);
+            XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
+                                       where (p.Element("ScheduleKey").Value) == scheduleKey.ToString()
+                                       select p).FirstOrDefault();
+
+            if (ScheduleSearch == null)
+                throw new DO.BadBusesScheduleKeyException(scheduleKey, "Duplicate schedule");
+            (ScheduleSearch.Element("IsActive").Value) = false.ToString();
+
+            XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
         }
 
 
