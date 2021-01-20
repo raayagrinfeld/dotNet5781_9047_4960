@@ -357,4 +357,39 @@
     <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38908</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>ההגנה/חי''ש</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39039</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>גן חק''ל/רבאט</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38895</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>בן גוריון/פוקס</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39007</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>הנשיא הראשון/מכון ויצמן</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38881</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>דרך הפרחים/יסמין</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>
