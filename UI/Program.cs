@@ -18,8 +18,21 @@ namespace PlConsole
         static void Main(string[] args)
         {
             Random r = new Random();
+            
 
-            //dl.AddBusSchedule(new DO.BusesSchedule { BusKey = 20001, IsActive = true, EndtHour = new TimeSpan(13, 0, 0, 0), Frequency = new TimeSpan(1, 0, 0, 0), StartHour = new TimeSpan(8, 0, 0, 0), ScheduleKey = 7 });
+            for (int i = 0; i < 12; i++)
+            {
+                    dl.AddBusSchedule(new BusesSchedule
+                    {
+                        BusKey = 20000 + i,
+                        ScheduleKey = DO.RunNumbers.BusesSCheduleRunNumber++,
+                        StartHour =  new TimeSpan(19, 23, 0),
+                        EndtHour =  new TimeSpan(19+r.Next(1,4 ), r.Next(0, 36), 0),
+                        Frequency = new TimeSpan(0, r.Next(0, 90), 0),
+                        IsActive = true
+                    });
+                   
+            }
 
 
         }
