@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<ArrayOfBusLineStation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BusLineStation>
+    <BusStationKey>39029</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>חיים ברלב/מרדכי מקלף</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39013</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>הירדן/חרוד</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39024</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>עיריית מודיעין מכבים רעות</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38906</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>נחמיה/בית העלמין</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38907</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>יהודה הלוי/יוחנן הסנדלר</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38880</BusStationKey>
+    <BusLineKey>20001</BusLineKey>
+    <StationName>התאנה/האלון</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38905</BusStationKey>
+    <BusLineKey>20001</BusLineKey>
+    <StationName>אנילביץ'/שלום אש</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39039</BusStationKey>
+    <BusLineKey>20001</BusLineKey>
+    <StationName>גן חק''ל/רבאט</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38919</BusStationKey>
+    <BusLineKey>20001</BusLineKey>
+    <StationName>וייצמן/דרך יצחק רבין</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38904</BusStationKey>
+    <BusLineKey>20001</BusLineKey>
+    <StationName>יעקב פריימן/בנימין שמוטקין</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38889</BusStationKey>
+    <BusLineKey>20002</BusLineKey>
+    <StationName>העצמאות/וייצמן</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39017</BusStationKey>
+    <BusLineKey>20002</BusLineKey>
+    <StationName>האלונים א/הדקל</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39007</BusStationKey>
+    <BusLineKey>20002</BusLineKey>
+    <StationName>הנשיא הראשון/מכון ויצמן</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38881</BusStationKey>
+    <BusLineKey>20002</BusLineKey>
+    <StationName>דרך הפרחים/יסמין</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38895</BusStationKey>
+    <BusLineKey>20002</BusLineKey>
+    <StationName>בן גוריון/פוקס</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39013</BusStationKey>
+    <BusLineKey>20003</BusLineKey>
+    <StationName>הירדן/חרוד</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39049</BusStationKey>
+    <BusLineKey>20003</BusLineKey>
+    <StationName>פרנקל/ויתקין</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39042</BusStationKey>
+    <BusLineKey>20003</BusLineKey>
+    <StationName>היצירה/התקווה</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39039</BusStationKey>
+    <BusLineKey>20003</BusLineKey>
+    <StationName>גן חק''ל/רבאט</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38899</BusStationKey>
+    <BusLineKey>20003</BusLineKey>
+    <StationName>שושן/אופנהיימר</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38914</BusStationKey>
+    <BusLineKey>20004</BusLineKey>
+    <StationName>הדייגים/הנחשול</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38913</BusStationKey>
+    <BusLineKey>20004</BusLineKey>
+    <StationName>משה שרת/יעקב קנר</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39017</BusStationKey>
+    <BusLineKey>20004</BusLineKey>
+    <StationName>האלונים א/הדקל</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38899</BusStationKey>
+    <BusLineKey>20004</BusLineKey>
+    <StationName>שושן/אופנהיימר</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38910</BusStationKey>
+    <BusLineKey>20004</BusLineKey>
+    <StationName>צומת חולדה/כביש 411</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38886</BusStationKey>
+    <BusLineKey>20005</BusLineKey>
+    <StationName>בית ספר גוונים/ארז</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38905</BusStationKey>
+    <BusLineKey>20005</BusLineKey>
+    <StationName>אנילביץ'/שלום אש</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38883</BusStationKey>
+    <BusLineKey>20005</BusLineKey>
+    <StationName>יצחק רבין/פנחס ספיר</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38911</BusStationKey>
+    <BusLineKey>20005</BusLineKey>
+    <StationName>גרינשפן/יגאל אלון</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39006</BusStationKey>
+    <BusLineKey>20005</BusLineKey>
+    <StationName>ברמן/מלצר</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38906</BusStationKey>
+    <BusLineKey>20006</BusLineKey>
+    <StationName>נחמיה/בית העלמין</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39019</BusStationKey>
+    <BusLineKey>20006</BusLineKey>
+    <StationName>פארק תעשיות שילת</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39017</BusStationKey>
+    <BusLineKey>20006</BusLineKey>
+    <StationName>האלונים א/הדקל</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39029</BusStationKey>
+    <BusLineKey>20006</BusLineKey>
+    <StationName>חיים ברלב/מרדכי מקלף</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39018</BusStationKey>
+    <BusLineKey>20006</BusLineKey>
+    <StationName>פארק תעשיות שילת</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39002</BusStationKey>
+    <BusLineKey>20007</BusLineKey>
+    <StationName>שדרות יעקב/עזרא</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38913</BusStationKey>
+    <BusLineKey>20007</BusLineKey>
+    <StationName>משה שרת/יעקב קנר</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39014</BusStationKey>
+    <BusLineKey>20007</BusLineKey>
+    <StationName>האלונים/הדקל</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39029</BusStationKey>
+    <BusLineKey>20007</BusLineKey>
+    <StationName>חיים ברלב/מרדכי מקלף</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39013</BusStationKey>
+    <BusLineKey>20007</BusLineKey>
+    <StationName>הירדן/חרוד</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38883</BusStationKey>
+    <BusLineKey>20008</BusLineKey>
+    <StationName>יצחק רבין/פנחס ספיר</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39044</BusStationKey>
+    <BusLineKey>20008</BusLineKey>
+    <StationName>עמל/היצירה</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39018</BusStationKey>
+    <BusLineKey>20008</BusLineKey>
+    <StationName>פארק תעשיות שילת</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39029</BusStationKey>
+    <BusLineKey>20008</BusLineKey>
+    <StationName>חיים ברלב/מרדכי מקלף</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39012</BusStationKey>
+    <BusLineKey>20008</BusLineKey>
+    <StationName>הירדן/הערבה</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38916</BusStationKey>
+    <BusLineKey>20009</BusLineKey>
+    <StationName>יוסף בורג/משואות יצחק</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38907</BusStationKey>
+    <BusLineKey>20009</BusLineKey>
+    <StationName>יהודה הלוי/יוחנן הסנדלר</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39028</BusStationKey>
+    <BusLineKey>20009</BusLineKey>
+    <StationName>חיים ברלב/מרדכי מקלף</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39007</BusStationKey>
+    <BusLineKey>20009</BusLineKey>
+    <StationName>הנשיא הראשון/מכון ויצמן</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38888</BusStationKey>
+    <BusLineKey>20009</BusLineKey>
+    <StationName>דרך האילנות/מנחם בגין</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38895</BusStationKey>
+    <BusLineKey>20010</BusLineKey>
+    <StationName>בן גוריון/פוקס</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+</ArrayOfBusLineStation>

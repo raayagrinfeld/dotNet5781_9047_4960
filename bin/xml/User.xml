@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <UserName>raaya</UserName>
+    <Password>123</Password>
+    <ManagementPermission>true</ManagementPermission>
+    <IsActive>true</IsActive>
+    <gender>female</gender>
+    <imagePath>Icons/wonan.png</imagePath>
+  </User>
+  <User>
+    <UserName>odelia</UserName>
+    <Password>1666</Password>
+    <ManagementPermission>true</ManagementPermission>
+    <IsActive>true</IsActive>
+    <gender>male</gender>
+    <imagePath>Icons/wonan.png</imagePath>
+  </User>
+  <User>
+    <UserName>aviva</UserName>
+    <Password>1111</Password>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>true</IsActive>
+    <gender>male</gender>
+    <imagePath>Icons/wonan.png</imagePath>
+  </User>
+  <User>
+    <UserName>myiah</UserName>
+    <Password>6543</Password>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>true</IsActive>
+    <gender>male</gender>
+    <imagePath>Icons/wonan.png</imagePath>
+  </User>
+</ArrayOfUser>
