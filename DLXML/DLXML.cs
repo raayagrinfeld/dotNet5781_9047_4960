@@ -358,11 +358,11 @@ namespace DL
         {
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
             ConsecutiveStations ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
-                                                 where (p.Element("Station1Key").Value) == key1.ToString() & (p.Element("Station2Key").Value) == key2.ToString()
+                                                 where (p.Element("Station1Key").Value) == key1.ToString() && (p.Element("Station2Key").Value) == key2.ToString()
                                                  select new ConsecutiveStations()
                                                       {
                                                           Station1Key = Int32.Parse(p.Element("Station1Key").Value),
-                                                          Station2Key = Int32.Parse(p.Element("Station1Key").Value),
+                                                          Station2Key = Int32.Parse(p.Element("Station2Key").Value),
                                                           DriveDistanceTime = TimeSpan.Parse(p.Element("DriveDistanceTime").Value),
                                                           IsActive = Boolean.Parse(p.Element("IsActive").Value),
                                                           Distance = Int32.Parse(p.Element("Distance").Value),
@@ -370,7 +370,7 @@ namespace DL
 
                                                       }).FirstOrDefault();
             if (ConsecutiveStationSearch == null)
-                throw new DO.BadConsecutiveStationsException(key1, key2, "Duplicate Consecutive Stations");
+                throw new DO.BadConsecutiveStationsException(key1, key2, "Consecutive Stations not found");
             return ConsecutiveStationSearch;
         }
         public void UpdateConsecutiveStations(ConsecutiveStations consecutiveStations)
