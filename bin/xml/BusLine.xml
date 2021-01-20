@@ -6,7 +6,7 @@
     <Area>North</Area>
     <FirstStation>0</FirstStation>
     <LastStation>0</LastStation>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20001</BusLineKey>

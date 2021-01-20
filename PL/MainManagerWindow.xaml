@@ -281,10 +281,11 @@
                 <TabItem Header="Station" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="127*"/>
-                            <ColumnDefinition Width="886*"/>
+                            <ColumnDefinition Width="69*"/>
+                            <ColumnDefinition Width="57*"/>
+                            <ColumnDefinition Width="884*"/>
                         </Grid.ColumnDefinitions>
-                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -294,10 +295,10 @@
                                     <RowDefinition Height="15"/>
                                     <RowDefinition Height="40"/>
                                     <RowDefinition Height="15"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="40"/>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="37.333"/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.ColumnSpan="2" Margin="0,15,-0.2,0.2" Grid.RowSpan="2">
+                                <Grid Grid.ColumnSpan="2" Margin="0,15,0,0.333" Grid.RowSpan="2">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
@@ -309,9 +310,9 @@
                                     <TextBox x:Name="BusStationKey" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
                                     <Label Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by Station Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox x:Name="StationName" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
-                                    <Button x:Name="addStation" Content="Add station" Grid.Column="3" Margin="83.667,563,12,-565.867" Height="Auto" Click="addStation_Click"/>
+                                    <Button x:Name="addStation" Content="Add station" Grid.Column="3" Margin="53.333,558,42.333,-561" Height="Auto" Click="addStation_Click"/>
                                 </Grid>
-                                <ListView Grid.Row="3" x:Name="stationBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="stationBOListView_SelectionChanged" Grid.ColumnSpan="2">
+                                <ListView Grid.Row="3" x:Name="stationBOListView" BorderBrush="#FF17B419" Margin="0,10,0,39.333" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="stationBOListView_SelectionChanged" Grid.ColumnSpan="2">
                                     <ListView.View>
                                         <GridView>
                                             <GridViewColumn Header="Bus Station Key" DisplayMemberBinding="{Binding BusStationKey}" Width="100"/>
@@ -357,7 +358,7 @@
                                 </ListView>
                             </Grid>
                         </Border>
-                        <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
                             <Grid>
                                 <Grid x:Name="grid1" Height="200" Margin="130,36,532.8,404.8" >
                                     <Grid.ColumnDefinitions>
@@ -435,7 +436,7 @@
                                 </Button>
                             </Grid>
                         </Border>
-                        <Border x:Name="addStationBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Margin="10,-1,-10.2,1.8" Grid.ColumnSpan="2">
+                        <Border x:Name="addStationBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Margin="10,-1,-10.334,1.667" Grid.ColumnSpan="3">
                             <Grid>
                                 <Grid x:Name="grid6" Height="300" Width="400" Margin="80,36,532.8,404.8" >
                                     <Grid.ColumnDefinitions>
