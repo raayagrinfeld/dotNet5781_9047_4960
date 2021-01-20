@@ -4,8 +4,8 @@
     <BusLineKey>20000</BusLineKey>
     <LineNumber>3895500</LineNumber>
     <Area>North</Area>
-    <FirstStation>39029</FirstStation>
-    <LastStation>38907</LastStation>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
     <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
@@ -14,7 +14,7 @@
     <Area>General</Area>
     <FirstStation>0</FirstStation>
     <LastStation>0</LastStation>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20002</BusLineKey>
@@ -94,6 +94,15 @@
     <Area>North</Area>
     <FirstStation>0</FirstStation>
     <LastStation>0</LastStation>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20001</BusLineKey>
+    <LineNumber>1547503</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38880</FirstStation>
+    <LastStation>38880</LastStation>
+    <LastStationName>התאנה/האלון</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>
