@@ -173,11 +173,12 @@ namespace BL
         {
             try
             {
+                var thisBusStation = dl.GetBusStation(stationKey);
                 if (busLine.busLineStations.Count() == 0)
                 {
                     busLine.FirstStation = stationKey;
+                    busLine.FirstStationName = thisBusStation.StationName;
                 }
-                var thisBusStation = dl.GetBusStation(stationKey);
                 var BLstation = new BusLineStation { BusLineKey = busLine.BusLineKey, BusStationKey = stationKey, StationNumberInLine = busLine.busLineStations.Count() + 1, IsActive = true, StationName = thisBusStation.StationName };
                 ConsecutiveStations ConsecutiveStation = new ConsecutiveStations { Station1Key = dl.GetBusLineStationKey(busLine.BusLineKey, busLine.busLineStations.Count()), Station2Key = stationKey, IsActive = true };
                 dl.AddBusLineStation(BLstation);

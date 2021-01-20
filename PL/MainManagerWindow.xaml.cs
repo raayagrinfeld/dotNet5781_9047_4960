@@ -71,8 +71,6 @@ namespace PL
                 selectedBusLine = bl.GetBusLine(selectedBusLine.BusLineKey);
                 busLineDetialedGrid.DataContext = selectedBusLine;
                 busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
-                // busLineDetialedGrid.DataContext = bl.GetBusLine(selectedBusLine.BusLineKey);
-                //busLineStationsListview.ItemsSource = bl.GetBusLine(selectedBusLine.BusLineKey).busLineStations;
             }
             else
             {
@@ -90,32 +88,6 @@ namespace PL
 
             }
         }
-
-        //private void refreshcontent()
-        //{
-        //    busLineBOListView.ItemsSource = bl.GetAllBusLines();
-        //    busLineBOObservableCollectionFilter = new ObservableCollection<BusLineBO>(bl.GetAllBusLines());
-        //    lineNumber.Text = "";
-        //    GropByArea.SelectedItem = null;
-        //    //BusStationKey.Text = "";
-        //    //StationName.Text = "";
-        //    //UserNameSearch.Text = "";
-        //    //Premissiom.SelectedItem = null;
-        //}
-        //private void refreshcontent()
-        //{
-        //    stationBOListView.ItemsSource = bl.GetAllBusStations();
-        //    userBOListView.ItemsSource = bl.GetAllUsers();
-        //    BusStationKey.Text = "";
-        //    StationName.Text = "";
-        //}
-        //private void refreshcontent()
-        //{
-        //    userBOListView.ItemsSource = bl.GetAllUsers();
-        //    UserBOObservableCollectionFilter = new ObservableCollection<User>(bl.GetAllUsers());
-        //    UserNameSearch.Text = "";
-        //    Premissiom.SelectedItem = null;
-        //}
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
         {
