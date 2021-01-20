@@ -459,7 +459,7 @@ namespace DL
                     {
                         UserName = p.Element("UserName").Value,
                         Password = p.Element("Password").Value,
-                        gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
+                        gender = (gender)Enum.Parse(typeof(gender), p.Element("gender").Value),
                         IsActive = Boolean.Parse(p.Element("IsActive").Value),
                         ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
                         imagePath = p.Element("imagePath").Value
@@ -473,12 +473,12 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             User u = (from p in UserRootElem.Elements()
-                      where (p.Element("UserName").Value) == userName
+                      where (p.Element("UserName").Value) == userName 
                       select new User()
                       {
                           UserName = p.Element("UserName").Value,
                           Password = p.Element("Password").Value,
-                          gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
+                          gender = (gender)Enum.Parse(typeof(gender), p.Element("gender").Value),
                           IsActive = Boolean.Parse(p.Element("IsActive").Value),
                           ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
                           imagePath = p.Element("imagePath").Value
