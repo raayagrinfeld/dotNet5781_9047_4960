@@ -32,4 +32,20 @@
     <gender>male</gender>
     <imagePath>Icons/wonan.png</imagePath>
   </User>
+  <User>
+    <UserName>talya</UserName>
+    <Password>145</Password>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>true</IsActive>
+    <gender>male</gender>
+    <imagePath />
+  </User>
+  <User>
+    <UserName>yafa</UserName>
+    <Password>666</Password>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>true</IsActive>
+    <gender>male</gender>
+    <imagePath />
+  </User>
 </ArrayOfUser>
