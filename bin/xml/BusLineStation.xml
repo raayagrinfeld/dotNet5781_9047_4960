@@ -357,4 +357,11 @@
     <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38899</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>שושן/אופנהיימר</StationName>
+    <StationNumberInLine>6</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>
