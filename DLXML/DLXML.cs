@@ -113,6 +113,10 @@ namespace DL
         #endregion
 
         #region BusLineStation
+        public BusLineStation GetBusLineStation(int busLineKey, int StationNumberInLine)
+        {
+            throw new NotImplementedException();
+        }
         public void AddBusLineStation(BusLineStation station)
         {
             List<BusLineStation> BusLineStationList = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
@@ -546,6 +550,8 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ListBusesSchedules, BusSchedulePath);
         }
+
+
         #endregion
 
 

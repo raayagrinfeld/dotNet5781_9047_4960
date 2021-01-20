@@ -41,7 +41,7 @@ namespace PL
        // OpenFileDialog op;
        // User userWindow;
         private ObservableCollection<BusLineBO> busLineBOObservableCollectionFilter;
-        //private ObservableCollection<StationBO> StationBOObservableCollection;
+        //private ObservableCollection<BusLineStationBO> nisoy;
         private ObservableCollection<User> UserBOObservableCollectionFilter;
 
         public MainManagerWindow(User logedInUser)
@@ -53,34 +53,72 @@ namespace PL
             GenderTextBox.ItemsSource= Enum.GetValues(typeof(gender));
             GropByArea.ItemsSource= Enum.GetValues(typeof(Areas));
             Premissiom.ItemsSource = Enum.GetValues(typeof(Managment));
+            //refreshcontent();
+            //refreshcontent();
+            //refreshcontent();
             refreshcontent();
-           
         }
 
 
         private void refreshcontent()
         {
-            busLineBOListView.ItemsSource = bl.GetAllBusLines();
-            busLineBOObservableCollectionFilter= new ObservableCollection<BusLineBO>(bl.GetAllBusLines());
-            stationBOListView.ItemsSource = bl.GetAllBusStations();
+            busLineBOObservableCollectionFilter = new ObservableCollection<BusLineBO>(bl.GetAllBusLines());
             userBOListView.ItemsSource = bl.GetAllUsers();
             UserBOObservableCollectionFilter = new ObservableCollection<User>(bl.GetAllUsers());
             lineNumber.Text = "";
             GropByArea.SelectedItem = null;
-            BusStationKey.Text = "";
-            StationName.Text = "";
             UserNameSearch.Text = "";
             Premissiom.SelectedItem = null;
             if (selectedBusLine != null)
             {
-                busLineStationsListBox.ItemsSource = selectedBusLine.busLineStations;
+                selectedBusLine = bl.GetBusLine(selectedBusLine.BusLineKey);
+                busLineDetialedGrid.DataContext = selectedBusLine;
+                busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
+                // busLineDetialedGrid.DataContext = bl.GetBusLine(selectedBusLine.BusLineKey);
+                //busLineStationsListview.ItemsSource = bl.GetBusLine(selectedBusLine.BusLineKey).busLineStations;
             }
-            if (selectedStation != null)
+            else
             {
-                listofBusAcurdingtoStationList.ItemsSource = selectedStation.busLines;
+                busLineBOListView.ItemsSource = bl.GetAllBusLines();
+            }
+            if (selectedStation!=null)
+            {
+                listofBusAcurdingtoStationList.ItemsSource = bl.GetBusStation(selectedStation.BusStationKey).busLines;
+            }
+            else
+            {
+                stationBOListView.ItemsSource = bl.GetAllBusStations();
+                StationName.Text = "";
+                BusStationKey.Text = "";
+
             }
         }
 
+        //private void refreshcontent()
+        //{
+        //    busLineBOListView.ItemsSource = bl.GetAllBusLines();
+        //    busLineBOObservableCollectionFilter = new ObservableCollection<BusLineBO>(bl.GetAllBusLines());
+        //    lineNumber.Text = "";
+        //    GropByArea.SelectedItem = null;
+        //    //BusStationKey.Text = "";
+        //    //StationName.Text = "";
+        //    //UserNameSearch.Text = "";
+        //    //Premissiom.SelectedItem = null;
+        //}
+        //private void refreshcontent()
+        //{
+        //    stationBOListView.ItemsSource = bl.GetAllBusStations();
+        //    userBOListView.ItemsSource = bl.GetAllUsers();
+        //    BusStationKey.Text = "";
+        //    StationName.Text = "";
+        //}
+        //private void refreshcontent()
+        //{
+        //    userBOListView.ItemsSource = bl.GetAllUsers();
+        //    UserBOObservableCollectionFilter = new ObservableCollection<User>(bl.GetAllUsers());
+        //    UserNameSearch.Text = "";
+        //    Premissiom.SelectedItem = null;
+        //}
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
         {
@@ -165,7 +203,11 @@ namespace PL
                 }
             lineNumber.Text ="";
         }
-        private void ClearGrouping_click(object sender, RoutedEventArgs e)
+        private void ClearGrouping_click_busLine(object sender, RoutedEventArgs e)
+        {
+            refreshcontent();
+        }
+        private void ClearGrouping_click_user(object sender, RoutedEventArgs e)
         {
             refreshcontent();
         }
@@ -294,7 +336,7 @@ namespace PL
                 busLineListBorder.Visibility = Visibility.Collapsed;
                 BusLineDetialedBorder.Visibility = Visibility.Visible;
                 busLineDetialedGrid.DataContext = selectedBusLine;
-                busLineStationsListBox.ItemsSource = selectedBusLine.busLineStations;
+                busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
             }
         }
         private void busLineBOListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -309,7 +351,6 @@ namespace PL
                 stationListBorder.Visibility = Visibility.Collapsed;
                 StationDetailedBorder.Visibility = Visibility.Visible;
                 grid1.DataContext = selectedStation;
-                listofBusAcurdingtoStation.DataContext = selectedStation.busLines;
                 longtitudTextBox.Text = selectedStation.Coordinates.Longitude.ToString();
                 latitudTextBox.Text = selectedStation.Coordinates.Latitude.ToString();
                 listofBusAcurdingtoStationList.ItemsSource = selectedStation.busLines;
@@ -334,6 +375,7 @@ namespace PL
             busLineListBorder.Visibility = Visibility.Visible;
             StationOptionsToAdd.Visibility = Visibility.Collapsed;
             selectedBusLine = null;
+            refreshcontent();
         }
 
         #endregion
@@ -475,6 +517,8 @@ namespace PL
             stationListBorder.Visibility = Visibility.Visible;
             addStationBorder.Visibility = Visibility.Collapsed;
             StationDetailedBorder.Visibility = Visibility.Collapsed;
+            selectedStation = null;
+            refreshcontent();
         }
         #endregion
 
@@ -561,6 +605,7 @@ namespace PL
             {
                 StationOptionsToAdd.Visibility = Visibility.Collapsed;
                 bl.AddStation(selectedBusLine, selectedStationToAdd.BusStationKey);
+                busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
                 refreshcontent();
             }
         }
@@ -571,7 +616,7 @@ namespace PL
             showLocation.Show();
         }
 
-        
+
     }
 }
 

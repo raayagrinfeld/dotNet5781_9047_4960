@@ -83,6 +83,16 @@ namespace DL
         #endregion
 
         #region BusLineStation
+        public BusLineStation GetBusLineStation(int busLineKey, int key)
+        {
+            BusLineStation busLineStation = DataSource.BusLineStationList.Find(b => (b.BusStationKey == key & b.BusLineKey == busLineKey & b.IsActive));
+            if (busLineStation != null)
+            {
+                return busLineStation;
+            }
+            throw new BadBusLineStationsException(key, busLineKey, "station is not in the bus Line path");
+        }
+
         public int GetBusLineStationKey(int BusLineKey, int StationNumberInLine)//helping func, returns -1 if the station doesnt exist
         {
             var buslinestation = DataSource.BusLineStationList.FirstOrDefault(b => (b.BusLineKey == BusLineKey & b.StationNumberInLine == StationNumberInLine & b.IsActive));

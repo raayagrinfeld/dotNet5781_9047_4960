@@ -34,23 +34,13 @@ namespace BO
         public override string ToString() => base.ToString() + $", bad user name: {USERNAME}";
     }
     #endregion
-    //#region ConsecutiveStations
-    //public class BadConsecutiveStationsException : Exception
-    //{
-    //    public int KEY1, KEY2;
-    //    public BadConsecutiveStationsException(string message, Exception innerException) :
-    //        base(message, innerException)
-    //    {
-    //        KEY1 = ((DO.BadConsecutiveStationsException)innerException).KEY1;
-    //        KEY2 = ((DO.BadConsecutiveStationsException)innerException).KEY2;
-    //    }
-    //    public override string ToString() => base.ToString() + $", bad Consecutive Stations station key: {KEY1} and {KEY2}";
-    //}
-    //#endregion
     #region BusLineStationExceptions
     public class BadBusLineStationsException : Exception
     {
         public int KEY1, KEY2;
+        public BadBusLineStationsException(int Key1, int Key2, string message) :
+            base(message)
+        { KEY1 = Key1; KEY2 = Key2; }
         public BadBusLineStationsException(string message, Exception innerException) :
             base(message, innerException)
         { KEY1 = ((DO.BadBusLineStationsException)innerException).KEY1; KEY2 = ((DO.BadBusLineStationsException)innerException).KEY2; }

@@ -31,7 +31,8 @@ namespace APIDL
 
         #region BusLineStation
         IEnumerable<BusLineStation> GetAllBusLineStationBy(Predicate<BusLineStation> predicate);
-        int GetBusLineStationKey(int BusLineKey, int StationNumberInLine);
+        int GetBusLineStationKey(int BusLineKey, int key);
+        BusLineStation GetBusLineStation(int busLineKey, int StationNumberInLine);
         void AddBusLineStation(BusLineStation station);
         void UpdateBusLineStation(BusLineStation station);
         void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey);

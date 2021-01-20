@@ -193,24 +193,21 @@ namespace BL
                 }
                 catch (DO.BadConsecutiveStationsException)
                 { }
-                busLine.busLineStations = from b in dl.GetAllBusLineStationBy(b => (b.BusLineKey == busLine.BusLineKey & b.IsActive))
-                                          let busStationKey2 = dl.GetBusLineStationKey(busLine.BusLineKey, b.StationNumberInLine - 1)
-                                          let ConsecutiveStations = dl.GetConsecutiveStations(busStationKey2, b.BusStationKey)
-                                          select ConsecutiveStations.CopyToBusLineStationBO(b);
-                //stationBO.busLines = from b in GetAllBusLines()
-                //                     where HasBusStation(b, stationKey)
-                //                     select b;
+                //busLine.busLineStations = from b in dl.GetAllBusLineStationBy(b => (b.BusLineKey == busLine.BusLineKey & b.IsActive))
+                //                          let busStationKey2 = dl.GetBusLineStationKey(busLine.BusLineKey, b.StationNumberInLine - 1)
+                //                          let ConsecutiveStations = dl.GetConsecutiveStations(busStationKey2, b.BusStationKey)
+                //                          select ConsecutiveStations.CopyToBusLineStationBO(b);
                 busLine.LastStation = stationKey;
                 busLine.LastStationName = thisBusStation.StationName;
                 UpdateBusLine(busLine);
             }
             catch (DO.BadBusStationKeyException ex)
             {
-                throw new BO.BadBusStationKeyException("the station not exsist", ex);
+                throw new BO.BadBusStationKeyException("the station does not exsist", ex);
             }
             catch (DO.BadBusLineKeyException ex)
             {
-                throw new BO.BadBusLineKeyException("the line not exsist", ex);
+                throw new BO.BadBusLineKeyException("the line does not exsist", ex);
             }
             catch (DO.BadBusLineStationsException ex)
             {
@@ -219,75 +216,67 @@ namespace BL
         }
         public void deleteBusStationInBusLine(BusLineBO busLine, int stationKey)
         {
+            BusLineStationBO station_to_delete;
+            StationBO PrevStation;
+            StationBO NextStation;
+            if (busLine.busLineStations.Count()<3)
+            {
+                throw new BO.BadBusLineStationsException(busLine.BusLineKey, stationKey,"can not delete, mini amount of station is 2");
+            }
             try
             {
-                BusLineStation busLinsStation = dl.GetAllBusLineStationBy(b => (b.IsActive & b.BusStationKey == stationKey & b.BusLineKey == busLine.BusLineKey)).FirstOrDefault();
+                station_to_delete = BusLineStationDOBOAdapter(dl.GetBusLineStation(busLine.BusLineKey, stationKey));
                 dl.DeleteBusLineStationInOneBusLine(stationKey, busLine.BusLineKey);
+            }
+            catch (DO.BadBusLineStationsException ex)
+            {
+                throw new BO.BadBusLineStationsException(ex.Message, ex);
+            }
+            if (busLine.FirstStation != stationKey && busLine.LastStation != stationKey)
+            {
+                PrevStation = GetBusStation(dl.GetBusLineStationKey(busLine.BusLineKey, station_to_delete.StationNumberInLine - 1));
+                NextStation = GetBusStation(dl.GetBusLineStationKey(busLine.BusLineKey, station_to_delete.StationNumberInLine));
+                var newConsecutiveStation = new ConsecutiveStations { Station1Key = PrevStation.BusStationKey, Station2Key = NextStation.BusStationKey, IsActive = true };
+                newConsecutiveStation.Distance = PrevStation.Coordinates.GetDistanceTo(NextStation.Coordinates);
+                newConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(newConsecutiveStation.Distance * 0.01);
+                try
+                {
+                    dl.AddConsecutiveStations(newConsecutiveStation);
+                }
+                catch (DO.BadConsecutiveStationsException)//tis okay if the consecutive station allrady exist
+                { }
+            }
+            else
+            {
                 if (busLine.LastStation == stationKey)
                 {
-                    BusLineStationBO stationNext = busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == busLinsStation.StationNumberInLine - 1 & b.IsActive));
-                    if (stationNext != null)
-                    {
-                        busLine.LastStation = stationNext.BusStationKey;
-                        busLine.LastStationName = stationNext.StationName;
-                    }
-                    else
-                    {
-                        busLine.LastStation = 0;
-                        busLine.LastStationName = "";
-                    }
+                    PrevStation = GetBusStation(dl.GetBusLineStationKey(busLine.BusLineKey, station_to_delete.StationNumberInLine - 1));
+                    busLine.LastStation = PrevStation.BusStationKey;
+                    busLine.LastStationName = PrevStation.StationName;
                 }
                 else
                 {
                     if (busLine.FirstStation == stationKey)
                     {
-                        BusLineStationBO stationNext = busLine.busLineStations.FirstOrDefault(b => (b.StationNumberInLine == 1 & b.IsActive));
-                        if (stationNext != null)
+                        NextStation = GetBusStation(dl.GetBusLineStationKey(busLine.BusLineKey, station_to_delete.StationNumberInLine));
+                        var newConsecutiveStation = new ConsecutiveStations { Station1Key = -1, Station2Key = NextStation.BusStationKey, IsActive = true , Distance=0, DriveDistanceTime=TimeSpan.Zero};
+                        try
                         {
-                            busLine.FirstStation = stationNext.BusStationKey;
-                            busLine.FirstStationName = stationNext.StationName;
+                            dl.AddConsecutiveStations(newConsecutiveStation);
                         }
-                        else
-                        {
-                            busLine.FirstStation = 0;
-                            busLine.FirstStationName = "";
-                        }
+                        catch (DO.BadConsecutiveStationsException)//tis okay if the consecutive station allrady exist
+                        { }
+                        busLine.FirstStation = NextStation.BusStationKey;
+                        busLine.FirstStationName = NextStation.StationName;
                     }
-                    int keyPrev = dl.GetBusLineStationKey(busLine.BusLineKey, busLinsStation.StationNumberInLine - 1);
-                    int keyNext = dl.GetBusLineStationKey(busLine.BusLineKey, busLinsStation.StationNumberInLine);
-                    var newConsecutiveStation = new ConsecutiveStations { Station1Key = keyPrev, Station2Key = keyNext, IsActive = true };
-                    if (keyPrev == -1)
-                    {
-                        newConsecutiveStation.Distance = 0;
-                        newConsecutiveStation.DriveDistanceTime = TimeSpan.Zero;
-                    }
-                    else
-                    {
-                        newConsecutiveStation.Distance = GetBusStation(keyPrev).Coordinates.GetDistanceTo(GetBusStation(keyNext).Coordinates);
-                        newConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(newConsecutiveStation.Distance * 0.01);
-                    }
-                    try
-                    {
-                        dl.AddConsecutiveStations(newConsecutiveStation);
-                    }
-                    catch (DO.BadConsecutiveStationsException)
-                    { }
-                    UpdateBusLine(busLine);
                 }
             }
-            catch (DO.BadBusLineStationsException ex)
-            {
-                throw new BO.BadBusStationKeyException("this station in not exsist or unactive", ex);
-            }
-            catch (DO.BadBusLineKeyException ex)
-            {
-                throw new BO.BadBusStationKeyException("this line in not exsist or unactive", ex);
-            }
+            UpdateBusLine(busLine);
         }
-        public IEnumerable<BO.BusLineStationBO> GetAllBusLineStationOfBusLine(BusLineBO busLine)
+
+    public IEnumerable<BO.BusLineStationBO> GetAllBusLineStationOfBusLine(BusLineBO busLine)
         {
-            return from b in busLine.busLineStations.Where(b => b.IsActive)
-                   select b;
+            return busLine.busLineStations;
         }
         #endregion
 
@@ -348,10 +337,7 @@ namespace BL
         {
             try
             {
-                foreach (var busLine in GetBusStation(busStationKey).busLines)
-                {
-                    deleteBusStationInBusLine(busLine, busStationKey);
-                }
+                dl.DeleteBusLineStationAllBusLine(busStationKey);
                 dl.DeleteBusStation(busStationKey);
             }
             catch (DO.BadBusStationKeyException busExaption)

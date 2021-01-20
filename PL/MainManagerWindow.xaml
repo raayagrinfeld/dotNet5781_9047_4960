@@ -53,7 +53,7 @@
                             <ColumnDefinition Width="740*"/>
                             <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
-                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2">
+                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -78,7 +78,7 @@
                                     <TextBox x:Name="lineNumber" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedBusLine" Margin="1" VerticalContentAlignment="Center"/>
                                     <Label x:Name="label2" Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by area" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <ComboBox x:Name="GropByArea" Padding="4" Height="30" Grid.Column="3" Text="" SelectionChanged="GropByArea_SelectionChanged" Margin="1" VerticalContentAlignment="Center"/>
-                                    <Button Content="clear filters" Grid.Column="5" Click="ClearGrouping_click"/>
+                                    <Button Content="clear filters" Grid.Column="5" Click="ClearGrouping_click_busLine"/>
                                 </Grid>
                                 <ListView Grid.Row="3" x:Name="busLineBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" MouseDoubleClick="busLineBOListView_MouseDoubleClick"  SelectionChanged="busLineBOListView_SelectionChanged" Grid.ColumnSpan="2">
                                     <ListView.View>
@@ -124,7 +124,7 @@
                                 <Button Content="add new bus"  Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Grid.Row="4" Click="Button_Click_AddBusLine" Margin="0,0.2,30.8,9.8" Grid.Column="1"/>
                             </Grid>
                         </Border>
-                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2" >
+                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2" >
                             <Grid>
 
                                 <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin="173,91,0,0" HorizontalAlignment="Left" >
@@ -148,28 +148,29 @@
                                     <Label VerticalAlignment="Center" Grid.Row="0" Margin="3,3,0,3.4" HorizontalAlignment="Left" Grid.Column="0" Content="Bus Line Key:" Grid.ColumnSpan="2"/>
                                     <TextBlock x:Name="busLineKeyTextBox" Width="120" VerticalAlignment="Center" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="2.8,8,0,7.4" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2"/>
                                     <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,36.8,0,37.6" HorizontalAlignment="Left" Grid.Column="0" Content="bus Line Stations:" Grid.ColumnSpan="2"/>
-                                    <ListBox Name="busLineStationsListBox"  Width="586" VerticalAlignment="Center" Grid.Row="3" Margin="2.8,2.8,-233.6,-232.4" ItemsSource="{Binding}" Height="336" HorizontalAlignment="Left"  Grid.Column="2" Grid.ColumnSpan="4">
-                                        <ListBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <Grid>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="100" />
-                                                        <ColumnDefinition Width="50" />
-                                                        <ColumnDefinition Width="100" />
-                                                        <ColumnDefinition Width="150" />
-                                                        <ColumnDefinition Width="90" />
-                                                    </Grid.ColumnDefinitions>
-                                                    <TextBlock Text="station Key: " Grid.Column="0"/>
-                                                    <TextBlock Text="{Binding BusStationKey}" Grid.Column="1"/>
-                                                    <TextBlock Text="  station name: " Grid.Column="2"/>
-                                                    <TextBlock Text="{Binding StationName}" Grid.Column="3"/>
-                                                    <Button Click="Button_Click_DeleteStationFromBusLine" Grid.Column="4" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
-                                                        <Image Source="Icons/garbage.png" Margin="5"/>
-                                                    </Button>
-                                                </Grid>
-                                            </DataTemplate>
-                                        </ListBox.ItemTemplate>
-                                    </ListBox>
+                                    <ListView  x:Name="busLineStationsListview" BorderBrush="#FF17B419" Width="586" VerticalAlignment="Center" Grid.Row="3"  Height="336" HorizontalAlignment="Left"  Grid.Column="2" Grid.ColumnSpan="4">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn Header="Bus Station Key" DisplayMemberBinding="{Binding BusStationKey}" Width="120"/>
+                                                <GridViewColumn Header="Station Name" Width="220" >
+                                                    <GridViewColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock  Text="{Binding StationName}" FlowDirection="RightToLeft"/>
+                                                        </DataTemplate>
+                                                    </GridViewColumn.CellTemplate>
+                                                </GridViewColumn>
+                                                <GridViewColumn Header="delete"  Width="50">
+                                                    <GridViewColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <Button Click="Button_Click_DeleteStationFromBusLine" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                                                                <Image Source="Icons/garbage.png" Margin="5"/>
+                                                            </Button>
+                                                        </DataTemplate>
+                                                    </GridViewColumn.CellTemplate>
+                                                </GridViewColumn>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
                                     <Label VerticalAlignment="Center" Grid.Row="1" Margin="3,3.6,0,2.8" HorizontalAlignment="Left" Grid.Column="0" Content="First Station:" Grid.ColumnSpan="2"/>
                                     <TextBlock x:Name="firstStationTextBox" Width="120" VerticalAlignment="Center" Text="{Binding FirstStation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="2.8,7.6,0,7.8" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2"/>
                                     <Label VerticalAlignment="Center" Grid.Row="1" Margin="3.6,3.6,0,2.8" HorizontalAlignment="Left" Grid.Column="4" Content="Last Station:"/>
@@ -201,9 +202,6 @@
                                                 <TextBlock Text="{Binding BusStationKey}" Grid.Column="1"/>
                                                 <TextBlock Text="  station name: " Grid.Column="2"/>
                                                 <TextBlock Text="{Binding StationName}" Grid.Column="3"/>
-                                                <Button Click="Button_Click_DeleteStationFromBusLine" Grid.Column="4" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
-                                                    <Image Source="Icons/garbage.png" Margin="5"/>
-                                                </Button>
                                             </Grid>
                                         </DataTemplate>
                                     </ComboBox.ItemTemplate>
@@ -245,9 +243,6 @@
                                                     <TextBlock Text="{Binding BusStationKey}" Grid.Column="1"/>
                                                     <TextBlock Text="  station name: " Grid.Column="2"/>
                                                     <TextBlock Text="{Binding StationName}" Grid.Column="3"/>
-                                                    <Button Click="Button_Click_DeleteStationFromBusLine" Grid.Column="4" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
-                                                        <Image Source="Icons/garbage.png" Margin="5"/>
-                                                    </Button>
                                                 </Grid>
                                             </DataTemplate>
                                         </ComboBox.ItemTemplate>
@@ -268,9 +263,6 @@
                                                     <TextBlock Text="{Binding BusStationKey}" Grid.Column="1"/>
                                                     <TextBlock Text="  station name: " Grid.Column="2"/>
                                                     <TextBlock Text="{Binding StationName}" Grid.Column="3"/>
-                                                    <Button Click="Button_Click_DeleteStationFromBusLine" Grid.Column="4" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
-                                                        <Image Source="Icons/garbage.png" Margin="5"/>
-                                                    </Button>
                                                 </Grid>
                                             </DataTemplate>
                                         </ComboBox.ItemTemplate>
@@ -288,7 +280,11 @@
                 </TabItem>
                 <TabItem Header="Station" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
-                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="127*"/>
+                            <ColumnDefinition Width="886*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -361,7 +357,7 @@
                                 </ListView>
                             </Grid>
                         </Border>
-                        <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
+                        <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
                             <Grid>
                                 <Grid x:Name="grid1" Height="200" Margin="130,36,532.8,404.8" >
                                     <Grid.ColumnDefinitions>
@@ -390,7 +386,7 @@
                                     <Button Content="show in map" Grid.Column="2" HorizontalAlignment="Left" Margin="10.4,3.8,-79.8,6.2" Grid.Row="1" Width="75" Height="Auto" Click="Button_Click"/>
 
                                 </Grid>
-                                <Grid x:Name="listofBusAcurdingtoStation">
+                                <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="5*"/>
                                         <RowDefinition Height="5*"/>
@@ -439,7 +435,7 @@
                                 </Button>
                             </Grid>
                         </Border>
-                        <Border x:Name="addStationBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Margin="10,-1,-10.333,1.667">
+                        <Border x:Name="addStationBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Margin="10,-1,-10.2,1.8" Grid.ColumnSpan="2">
                             <Grid>
                                 <Grid x:Name="grid6" Height="300" Width="400" Margin="80,36,532.8,404.8" >
                                     <Grid.ColumnDefinitions>
@@ -511,7 +507,7 @@
                                     <Label Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by Premissiom" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <ComboBox x:Name="Premissiom" Padding="4" Height="30" Grid.Column="3" Text="" SelectionChanged="Premissiom_selectionChanged" Margin="1" VerticalContentAlignment="Center"/>
                                     <Button x:Name="addUser" Content="Add user" Grid.Column="3" Margin="83.667,563,12,-565.867" Height="Auto" Click="Button_addUser_Click"/>
-                                    <Button Content="clear filters" Grid.Column="5" Click="ClearGrouping_click"/>
+                                    <Button Content="clear filters" Grid.Column="5" Click="ClearGrouping_click_user"/>
 
                                 </Grid>
                                 <ListView Grid.Row="3" x:Name="userBOListView" BorderBrush="#FF17B419" Margin="0,9.6,-0.2,39.8" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="UserListView_SelectionChanged" Grid.ColumnSpan="3">
