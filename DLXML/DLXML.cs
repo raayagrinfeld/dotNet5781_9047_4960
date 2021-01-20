@@ -181,6 +181,8 @@ namespace DL
             List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
 
             DO.BusLineStation station = ListBusLineStations.Find(b => (b.BusLineKey == BusLineKey & b.StationNumberInLine == StationNumberInLine & b.IsActive));
+            if (StationNumberInLine == 0)
+                return -1;
             if (station != null)
                 return station.BusStationKey; //no need to Clone()
             else
@@ -355,10 +357,9 @@ namespace DL
         public ConsecutiveStations GetConsecutiveStations(int key1, int key2)
         {
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
-
-            ConsecutiveStations consecutiveStation = (from p in ConsecutiveStationRootElem.Elements()
-                                                            where (p.Element("Station1Key").Value) == key1.ToString() & (p.Element("Station2Key").Value) == key2.ToString() & (p.Element("IsActive").Value) =="true"
-                                                      select new ConsecutiveStations()
+            ConsecutiveStations ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
+                                                 where (p.Element("Station1Key").Value) == key1.ToString() & (p.Element("Station2Key").Value) == key2.ToString()
+                                                 select new ConsecutiveStations()
                                                       {
                                                           Station1Key = Int32.Parse(p.Element("Station1Key").Value),
                                                           Station2Key = Int32.Parse(p.Element("Station1Key").Value),
@@ -368,9 +369,9 @@ namespace DL
 
 
                                                       }).FirstOrDefault();
-            if(consecutiveStation==null)
+            if (ConsecutiveStationSearch == null)
                 throw new DO.BadConsecutiveStationsException(key1, key2, "Duplicate Consecutive Stations");
-            return consecutiveStation;
+            return ConsecutiveStationSearch;
         }
         public void UpdateConsecutiveStations(ConsecutiveStations consecutiveStations)
         {
