@@ -115,7 +115,12 @@ namespace DL
         #region BusLineStation
         public BusLineStation GetBusLineStation(int busLineKey, int StationNumberInLine)
         {
-            throw new NotImplementedException();
+            List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
+
+            BusLineStation busLineStation = ListBusLineStations.Find(b => b.BusLineKey == busLineKey & b.StationNumberInLine == StationNumberInLine & b.IsActive);
+            if (busLineStation == null)
+                throw new DO.BadBusLineStationsException(busLineKey, StationNumberInLine, "this line does not have this station");
+            return busLineStation;
         }
         public void AddBusLineStation(BusLineStation station)
         {
