@@ -310,7 +310,7 @@
                                     <TextBox x:Name="BusStationKey" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
                                     <Label Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by Station Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <TextBox x:Name="StationName" Padding="4" Height="30" Grid.Column="3" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1" VerticalContentAlignment="Center"/>
-                                    <Button x:Name="addStation" Content="Add station" Grid.Column="3" Margin="53.333,558,42.333,-561" Height="Auto" Click="addStation_Click"/>
+                                    <Button x:Name="addStation" Content="Add station" Grid.Column="3" Grid.Row="0"  Margin="53.333,558,42.333,-561" Height="Auto" Click="addStation_Click"/>
                                 </Grid>
                                 <ListView Grid.Row="3" x:Name="stationBOListView" BorderBrush="#FF17B419" Margin="0,10,0,39.333" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="stationBOListView_SelectionChanged" Grid.ColumnSpan="2">
                                     <ListView.View>
