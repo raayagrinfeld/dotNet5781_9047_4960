@@ -18,9 +18,15 @@ namespace PlConsole
         static void Main(string[] args)
         {
             Random r = new Random();
+            dl.AddConsecutiveStations(new ConsecutiveStations { 
+                Distance = dl.GetBusStation(39029).Coordinates.GetDistanceTo(dl.GetBusStation(39013).Coordinates), 
+                DriveDistanceTime= TimeSpan.FromMinutes((dl.GetBusStation(39029).Coordinates.GetDistanceTo(dl.GetBusStation(39013).Coordinates)*0.01)),
+                 IsActive=true,
+                  Station1Key= 39029,
+                   Station2Key= 39013
+            });
 
-            dl.GetConsecutiveStations(-1, 38895);
-            dl.GetConsecutiveStations(38895, 39013);
+           
 
 
         }

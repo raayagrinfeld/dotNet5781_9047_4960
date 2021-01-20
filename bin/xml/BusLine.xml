@@ -4,8 +4,8 @@
     <BusLineKey>20000</BusLineKey>
     <LineNumber>3895500</LineNumber>
     <Area>North</Area>
-    <FirstStation>0</FirstStation>
-    <LastStation>0</LastStation>
+    <FirstStation>39029</FirstStation>
+    <LastStation>38907</LastStation>
     <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
