@@ -250,10 +250,10 @@ namespace DL
             List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
 
             DO.BusStation station = ListBusStations.Find(b => (b.BusStationKey == busStationKey & b.IsActive));
-            //if (station != null)
+            if (station != null)
                 return station; //no need to Clone()
-            //else
-              //  throw new DO.BadBusStationKeyException(busStationKey, $"bad bus stationkey: {busStationKey}");
+            else
+               throw new DO.BadBusStationKeyException(busStationKey, $"bad bus stationkey: {busStationKey}");
         }
         public void UpdateBusStation(BusStation station)
         {
@@ -318,10 +318,11 @@ namespace DL
                     let  c= new ConsecutiveStations()
                     {
                         Station1Key = Int32.Parse(p.Element("Station1Key").Value),
-                        Station2Key = Int32.Parse(p.Element("Station1Key").Value),
+                        Station2Key = Int32.Parse(p.Element("Station2Key").Value),
                         DriveDistanceTime = TimeSpan.Parse(p.Element("DriveDistanceTime").Value),
                         IsActive = Boolean.Parse(p.Element("IsActive").Value),
-                        Distance = Int32.Parse(p.Element("Distance").Value)
+                        Distance = Double.Parse(p.Element("Distance").Value),
+
                     }
                     where(predicate(c)& c.IsActive)
                     select c
@@ -378,7 +379,7 @@ namespace DL
                 ConsecutiveStationSearch.Element("Station2Key").Value = consecutiveStations.Station2Key.ToString();
                 ConsecutiveStationSearch.Element("IsActive").Value = consecutiveStations.IsActive.ToString();
                 ConsecutiveStationSearch.Element("Distance").Value = consecutiveStations.Distance.ToString();
-                ConsecutiveStationSearch.Element("DriveDistanceTim").Value = consecutiveStations.DriveDistanceTime.ToString();
+                ConsecutiveStationSearch.Element("DriveDistanceTime").Value = consecutiveStations.DriveDistanceTime.ToString();
             }
 
             XMLTools.SaveListToXMLElement(ConsecutiveStationRootElem, ConsecutiveStationsPath);

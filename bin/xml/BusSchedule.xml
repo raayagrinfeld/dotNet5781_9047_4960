@@ -352,4 +352,12 @@
     <Frequency>01:10:00</Frequency>
     <IsActive>true</IsActive>
   </BusesSchedule>
+  <BusesSchedule>
+    <ScheduleKey>40049</ScheduleKey>
+    <BusKey>20000</BusKey>
+    <StartHour>08:00:00</StartHour>
+    <EndtHour>10:00:00</EndtHour>
+    <Frequency>00:20:00</Frequency>
+    <IsActive>true</IsActive>
+  </BusesSchedule>
 </ArrayOfBusesSchedule>

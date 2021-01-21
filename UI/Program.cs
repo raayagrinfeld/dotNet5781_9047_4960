@@ -13,18 +13,10 @@ namespace PlConsole
 {
     class Program
     {
-        static IBL bl;
+        static IBL bl= BlFactory.GetBL();
         static IDAL dl = DalFactory.GetDal();
         static void Main(string[] args)
         {
-
-            dl.AddBusLine((new BusLine
-            {
-                BusLineKey = 20000,
-                LineNumber = 3895500,
-                Area = DO.Areas.North,
-                IsActive = true
-            }));
         }
     }
 }

@@ -458,6 +458,36 @@ namespace PL
             stationListBorder.Visibility = Visibility.Collapsed;
             addStationBorder.Visibility = Visibility.Visible;
         }
+        private void TextBox_OnlyNumbersAndDigit_PreviewKeyDown(object sender, KeyEventArgs e)//allow only numbers
+        {
+                TextBox text = sender as TextBox;
+                if (text == null) return;
+                if (e == null) return;
+
+                //allow get out of the text box
+                if ((e.Key == Key.Enter) || e.Key == Key.Return || e.Key == Key.Tab)
+                    return;
+
+                //allow list of system keys (add other key here if you want to allow)
+                if (e.Key == Key.Escape || e.Key == Key.Back || e.Key == Key.Delete ||
+                    e.Key == Key.CapsLock || e.Key == Key.LeftShift || e.Key == Key.Home
+                 || e.Key == Key.End || e.Key == Key.Insert || e.Key == Key.Down || e.Key == Key.Right|| e.Key==Key.OemPeriod)
+                    return;
+
+                char c = (char)KeyInterop.VirtualKeyFromKey(e.Key);
+
+                //allow control system keys
+                if (Char.IsControl(c)) return;
+
+                //allow digits (without Shift or Alt)
+                if (Char.IsDigit(c))
+                    if (!(Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightAlt)))
+                        return; //let this key be written inside the textbox
+
+                //forbid letters and signs (#,$, %, ...)
+                e.Handled = true; //ignore this key. mark event as handled, will not be routed to other controls
+                return;
+        }
         private void add_From_addStationWindow_Click(object sender, RoutedEventArgs e)
         {
             if(addLatitudeTextBox.Text!=""&addLongitudeTextBox.Text!="")
@@ -634,7 +664,10 @@ namespace PL
             showLocation.Show();
         }
 
+        private void longtitudTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
 
+        }
     }
 }
 

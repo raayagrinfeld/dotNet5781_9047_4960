@@ -126,6 +126,26 @@
     <Area>South</Area>
     <FirstStation>0</FirstStation>
     <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20000</BusLineKey>
+    <LineNumber>3898690</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38888</FirstStation>
+    <LastStation>38888</LastStation>
+    <FirstStationName>דרך האילנות/מנחם בגין</FirstStationName>
+    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20000</BusLineKey>
+    <LineNumber>3898690</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38888</FirstStation>
+    <LastStation>38917</LastStation>
+    <FirstStationName>דרך האילנות/מנחם בגין</FirstStationName>
+    <LastStationName>יוסף בורג/כתריאל רפפורט</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>
