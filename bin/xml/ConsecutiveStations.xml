@@ -11,7 +11,7 @@
     <Station1Key>38888</Station1Key>
     <Station2Key>38917</Station2Key>
     <Distance>18537.3101047505</Distance>
-    <IsActive>True</IsActive>
+    <IsActive>true</IsActive>
     <DriveDistanceTime>03:05:22.3860000</DriveDistanceTime>
   </ConsecutiveStations>
 </ArrayOfConsecutiveStations>

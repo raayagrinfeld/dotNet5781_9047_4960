@@ -313,7 +313,17 @@ namespace PL
                 BusLineDetialedBorder.Visibility = Visibility.Visible;
                 busLineDetialedGrid.DataContext = selectedBusLine;
                 busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
+                DrivingLineListView.ItemsSource = bl.GetAllDrivingsBy(b => b.BusLineKey == selectedBusLine.BusLineKey);
             }
+        }
+        private void DrivingLineView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void Button_Click_DeleteDrivingLine(object sender, RoutedEventArgs e)
+        {
+            bl.DeleteDrivingLine(((sender as Button).DataContext as DrivingLine).BusLineKey, ((sender as Button).DataContext as DrivingLine).StartHour);
+            refreshcontent();
         }
         private void busLineBOListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {

@@ -126,7 +126,7 @@
                         <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Margin="3,4,-1.333,-2.333" Grid.ColumnSpan="3" Grid.RowSpan="2" RenderTransformOrigin="0.444,0.525" >
                             <Grid Grid.Row="0">
 
-                                <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin="1,91,0,0" HorizontalAlignment="Left" >
+                                <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin="1,96,0,0" HorizontalAlignment="Left" >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
@@ -147,8 +147,8 @@
                                     <TextBox x:Name="areaTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Area, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="2.667,5.667,0,8.733" Height="24" HorizontalAlignment="Left" Grid.Column="2"/>
                                     <Label VerticalAlignment="Center" Grid.Row="0" Margin="3,3,0,4.667" HorizontalAlignment="Left" Grid.Column="0" Content="Bus Line Key:" Grid.ColumnSpan="2"/>
                                     <TextBlock x:Name="busLineKeyTextBox" Width="120" VerticalAlignment="Center" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="2.667,8,0,7.667" Height="23" HorizontalAlignment="Left" Grid.Column="2"/>
-                                    <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,151.267,0,152.733" HorizontalAlignment="Left" Grid.Column="0" Content="bus Line Stations:" Grid.ColumnSpan="2"/>
-                                    <ListView  x:Name="busLineStationsListview" BorderBrush="#FF17B419" Width="586" VerticalAlignment="Center" Grid.Row="2"  Height="336" HorizontalAlignment="Left"  Grid.Column="1" Grid.ColumnSpan="5" RenderTransformOrigin="0.5,0.5" Margin="139,37.667,0,0.733" Grid.RowSpan="2">
+                                    <Label VerticalAlignment="Center" Grid.Row="3" Margin="-1,25.667,0,277.667" HorizontalAlignment="Left" Grid.Column="0" Content="bus Line Stations:" Grid.ColumnSpan="2"/>
+                                    <ListView  x:Name="busLineStationsListview" BorderBrush="#FF17B419" Width="479" VerticalAlignment="Center" Grid.Row="2"  Height="336" HorizontalAlignment="Left"  Grid.Column="1" Grid.ColumnSpan="5" RenderTransformOrigin="0.5,0.5" Margin="139,37,0,1.667" Grid.RowSpan="2">
                                         <ListView.RenderTransform>
                                             <TransformGroup>
                                                 <ScaleTransform/>
@@ -191,7 +191,43 @@
 
                                 </Grid>
                                 <Grid Grid.Row="1">
-
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ListView x:Name="DrivingLineListView" HorizontalAlignment="Left" Height="311" Margin="723,232,0,0" VerticalAlignment="Top" Width="276" SelectionChanged="DrivingLineView_SelectionChanged" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+                                        <ListView.View >
+                                            <GridView>
+                                                <GridViewColumn Header="Station Name" Width="220" >
+                                                    <GridViewColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock  Text="{Binding StartHour}" FlowDirection="RightToLeft"/>
+                                                        </DataTemplate>
+                                                    </GridViewColumn.CellTemplate>
+                                                </GridViewColumn>
+                                                <GridViewColumn Header="delete"  Width="50">
+                                                    <GridViewColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <Button Click="Button_Click_DeleteDrivingLine" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                                                                <Image Source="Icons/garbage.png" Margin="5"/>
+                                                            </Button>
+                                                        </DataTemplate>
+                                                    </GridViewColumn.CellTemplate>
+                                                </GridViewColumn>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                    <Button x:Name="AddDriving" Content="Add Driving Line" Grid.Column="0" Grid.Row="1"  Margin="725,556,185.333,48.667" ></Button>
                                 </Grid>
                                 <Button Click="Button_Click_BackArrowBusLine" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <Image Source="Icons/left-arrow.png"/>
