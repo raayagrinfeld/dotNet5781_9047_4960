@@ -409,7 +409,7 @@ namespace DL
         {
         }
 
-        public void DeleteBusSchedule(int scheduleKey)
+        public void DeleteBusSchedule(int busLineKey, TimeSpan time)
         {
         }
 

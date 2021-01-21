@@ -59,20 +59,18 @@ namespace APIDL
 
         #region BusesSchedule
         
-        BusesSchedule GetBusesSchedule(int scheduleKey);
         BusesSchedule GetBusesSchedule(int busLineKey, TimeSpan time);
         IEnumerable<BusesSchedule> GetAllBusSchedules();
         IEnumerable<BusesSchedule> GetAllBusSchedulesBy(Predicate< BusesSchedule> predicate);
         void AddBusSchedule(BusesSchedule schedule);
         void UpdateBusSchedule(BusesSchedule schedule);
-        void DeleteBusSchedule(int scheduleKey);
+        void DeleteBusSchedule(int busLineKey, TimeSpan time);
 
         #endregion
 
         #region RunNumbers
         int GetRunNumber_BusLIne();
         int GetRunNumber_BusStation();
-        int GetRunNumber_BusesSChedule();
 
         #endregion
 

@@ -49,10 +49,12 @@ namespace BO
     #region LineDrivingExceptions
     public class BadDrivingLineException: Exception
     {
-        public int DRIVINGLINEKEY;
+        public int BUSLINEKEY;
+        public string TIME;
         public BadDrivingLineException(string message, Exception innerException) :
-            base(message, innerException) => DRIVINGLINEKEY = ((DO.BadBusesScheduleKeyException)innerException).BusesScheduleKEY;
-        public override string ToString() => base.ToString() + $", bad line key: {DRIVINGLINEKEY}";
+            base(message, innerException)
+        { BUSLINEKEY = ((DO.BadBusesScheduleKeyException)innerException).BUSLINEKEY; TIME = ((DO.BadBusesScheduleKeyException)innerException).Time; }
+        public override string ToString() => base.ToString() + $", bad driving line time and bus: {TIME}{BUSLINEKEY}";
     }
     #endregion
 }

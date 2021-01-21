@@ -89,13 +89,16 @@ namespace DO
     #region BusesSchedule
     public class BadBusesScheduleKeyException : Exception
     {
-        public int BusesScheduleKEY;
-        public BadBusesScheduleKeyException(int ScheduleKey) : base() => BusesScheduleKEY = ScheduleKey;
-        public BadBusesScheduleKeyException(int ScheduleKey, string message) :
-            base(message) => BusesScheduleKEY = ScheduleKey;
-        public BadBusesScheduleKeyException(int ScheduleKey, string message, Exception innerException) :
-            base(message, innerException) => BusesScheduleKEY = ScheduleKey;
-        public override string ToString() => base.ToString() + $", bad schedule key: {BusesScheduleKEY}";
+        public int BUSLINEKEY;
+        public string Time;
+        public BadBusesScheduleKeyException(int BusLineKey, string time) : base()  {BUSLINEKEY=BusLineKey ; Time = time; }
+        public BadBusesScheduleKeyException(int BusLineKey, string time, string message) :
+            base(message)
+        { BUSLINEKEY = BusLineKey; Time = time; }
+        public BadBusesScheduleKeyException(int BusLineKey, string time, string message, Exception innerException) :
+            base(message, innerException)
+        { BUSLINEKEY = BusLineKey; Time = time; }
+        public override string ToString() => base.ToString() + $", bad schedule : {BUSLINEKEY}{Time}";
     }
     #endregion
 }
