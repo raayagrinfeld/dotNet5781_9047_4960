@@ -6,13 +6,11 @@
         xmlns:local="clr-namespace:PL"
         xmlns:BO="clr-namespace:BO;assembly=BL" x:Class="PL.UpdateDrivingLine"
         mc:Ignorable="d"
-        Title="UpdateDrivingLine" Height="200" Width="400" Loaded="Window_Loaded">
-    <Window.Resources>
-        <CollectionViewSource x:Key="drivingLineViewSource" d:DesignSource="{d:DesignInstance {x:Type BO:DrivingLine}, CreateList=True}"/>
-    </Window.Resources>
+        Title="UpdateDrivingLine" Height="200" Width="400" >
+    
     <Grid>
 
-        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="19,16,0,0" HorizontalAlignment="Left" DataContext="{StaticResource drivingLineViewSource}">
+        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="19,16,0,0" HorizontalAlignment="Left" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
