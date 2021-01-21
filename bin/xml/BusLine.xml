@@ -1,14 +1,6 @@
 <?xml version="1.0"?>
 <ArrayOfBusLine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <BusLine>
-    <BusLineKey>20000</BusLineKey>
-    <LineNumber>3895500</LineNumber>
-    <Area>North</Area>
-    <FirstStation>0</FirstStation>
-    <LastStation>0</LastStation>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
     <BusLineKey>20001</BusLineKey>
     <LineNumber>1547503</LineNumber>
     <Area>General</Area>

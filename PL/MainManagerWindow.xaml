@@ -225,8 +225,6 @@
                                     </Grid.RowDefinitions>
                                     <Label Content="Area:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
                                     <ComboBox x:Name="areaComboBox" Padding="4" Height="30" Grid.Column="1"   Margin="3" Grid.Row="4" VerticalContentAlignment="Center"/>
-                                    <Label Content="Bus Line Key:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
-                                    <TextBlock x:Name="busLineKeyTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
                                     <Label Content="First Station Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
                                     <ComboBox x:Name="firstStationNameComboBox" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="2.8,5.6,-125.6,5.6" Grid.Row="2" VerticalAlignment="Center" Width="350" ItemsSource="{Binding}"  >
                                         <ComboBox.ItemTemplate>

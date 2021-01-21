@@ -1,27 +1,6 @@
 <?xml version="1.0"?>
 <ArrayOfBusLineStation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <BusLineStation>
-    <BusStationKey>38889</BusStationKey>
-    <BusLineKey>20000</BusLineKey>
-    <StationName>העצמאות/וייצמן</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38881</BusStationKey>
-    <BusLineKey>20000</BusLineKey>
-    <StationName>דרך הפרחים/יסמין</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38887</BusStationKey>
-    <BusLineKey>20000</BusLineKey>
-    <StationName>דרך האילנות/אלון</StationName>
-    <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
     <BusStationKey>38880</BusStationKey>
     <BusLineKey>20001</BusLineKey>
     <StationName>התאנה/האלון</StationName>
@@ -40,13 +19,6 @@
     <BusLineKey>20002</BusLineKey>
     <StationName>פארק תעשיות שילת</StationName>
     <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38899</BusStationKey>
-    <BusLineKey>20000</BusLineKey>
-    <StationName>שושן/אופנהיימר</StationName>
-    <StationNumberInLine>6</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
 </ArrayOfBusLineStation>

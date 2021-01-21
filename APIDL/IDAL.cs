@@ -75,7 +75,6 @@ namespace APIDL
         int GetRunNumber_BusStation();
         int GetRunNumber_BusesSChedule();
 
-
         #endregion
 
     }

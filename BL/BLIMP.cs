@@ -178,7 +178,7 @@ namespace BL
             try
             {
                 var thisBusStation = dl.GetBusStation(stationKey);
-                if (busLine.busLineStations.Count() == 0)
+                if (busLine.busLineStations==null|| busLine.busLineStations.Count() == 0)
                 {
                     busLine.FirstStation = stationKey;
                     busLine.FirstStationName = thisBusStation.StationName;
