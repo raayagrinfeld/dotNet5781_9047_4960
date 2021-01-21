@@ -318,7 +318,8 @@ namespace PL
         }
         private void DrivingLineView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            AddDrivingLine addDriving = new AddDrivingLine(((sender as Button).DataContext as DrivingLine));
+            addDriving.Show();
         }
         private void Button_Click_DeleteDrivingLine(object sender, RoutedEventArgs e)
         {

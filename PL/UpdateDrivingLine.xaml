@@ -1,0 +1,35 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        xmlns:BO="clr-namespace:BO;assembly=BL" x:Class="PL.UpdateDrivingLine"
+        mc:Ignorable="d"
+        Title="UpdateDrivingLine" Height="200" Width="400" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="drivingLineViewSource" d:DesignSource="{d:DesignInstance {x:Type BO:DrivingLine}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid>
+
+        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="19,16,0,0" HorizontalAlignment="Left" DataContext="{StaticResource drivingLineViewSource}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Bus Line Key:"/>
+            <TextBlock x:Name="busLineKeyTextBlock" VerticalAlignment="Center" Text="{Binding BusLineKey}" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Last Station Name:"/>
+            <TextBlock x:Name="lastStationNameTextBlock" VerticalAlignment="Center" Text="{Binding LastStationName}" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Start Hour:"/>
+            <TextBox x:Name="startHourTextBox" Width="120" VerticalAlignment="Center" Text="{Binding StartHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+        </Grid>
+        <Button x:Name="button" Content="add"  Click="Add_Click" HorizontalAlignment="Left" Margin="326,128,0,0" VerticalAlignment="Top" Width="58"/>
+
+    </Grid>
+</Window>
