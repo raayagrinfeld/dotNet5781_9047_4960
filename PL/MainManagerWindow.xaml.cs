@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
 using System.Windows.Media;
+using System.Windows.Forms;
 using System.Media;
 using BlApi;
 using BO;
@@ -34,7 +35,7 @@ namespace PL
     public partial class MainManagerWindow : Window
     {
         public static IBL bl = BlFactory.GetBL();
-        OpenFileDialog op; //for getting image input from user
+        Microsoft.Win32.OpenFileDialog op; //for getting image input from user
         User user;
         BusLineBO selectedBusLine=null;
         StationBO selectedStation=null;
@@ -54,6 +55,7 @@ namespace PL
             GenderTextBox.ItemsSource= Enum.GetValues(typeof(gender));
             GropByArea.ItemsSource= Enum.GetValues(typeof(Areas));
             Premissiom.ItemsSource = Enum.GetValues(typeof(Managment));
+            //latitudTextBox.
             refreshcontent();
         }
 

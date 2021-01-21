@@ -375,8 +375,8 @@
                                     <Label Content="Bus Station Key:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
                                     <TextBlock x:Name="busStationKeyTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="0" Text="{Binding BusStationKey}" VerticalAlignment="Center"/>
                                     <Label Content="Coordinates:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
-                                    <TextBox x:Name="latitudTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" TextChanged="cordinationChanged" VerticalAlignment="Center" Width="80"/>
-                                    <TextBox x:Name="longtitudTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="99.6,7.8,-11.6,8.4" Grid.Row="1" TextChanged="cordinationChanged" VerticalAlignment="Center" Width="80"/>
+                                    <TextBox x:Name="latitudTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" VerticalAlignment="Center" Width="80"/>
+                                    <TextBox x:Name="longtitudTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="99.6,7.8,-11.6,8.4" Grid.Row="1"  VerticalAlignment="Center" Width="80"/>
                                     <Label Content="Has ARoof:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
                                     <CheckBox x:Name="hasARoofCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding HasARoof, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
                                     <Label Content="Station Address:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
