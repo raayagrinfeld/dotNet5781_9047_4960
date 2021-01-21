@@ -26,6 +26,8 @@ namespace PL
         public static IBL bl = BlFactory.GetBL();
         User user;
         Driving drive =new Driving();
+        StationBO selectedStation;
+
         public MainUserWindow(User logedInUser)
         {
             InitializeComponent();
@@ -120,6 +122,7 @@ namespace PL
         #region sort by header click
         GridViewColumnHeader _lastHeaderClicked = null;
         ListSortDirection _lastDirection = ListSortDirection.Ascending;
+
         private void SearchFilterChangedBusStation(object sender, TextChangedEventArgs e)
         {
 
@@ -127,7 +130,16 @@ namespace PL
 
         private void stationBOListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            selectedStation = (stationBOListView.SelectedItem as StationBO);
+            if (selectedStation != null)
+            {
+                stationListBorder.Visibility = Visibility.Collapsed;
+                StationDetailedBorder.Visibility = Visibility.Visible;
+                grid1.DataContext = selectedStation;
+                longtitudTextBox.Text = selectedStation.Coordinates.Longitude.ToString();
+                latitudTextBox.Text = selectedStation.Coordinates.Latitude.ToString();
+                listofBusAcurdingtoStationList.ItemsSource = selectedStation.busLines;
+            }
         }
         void GridViewColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
         {
