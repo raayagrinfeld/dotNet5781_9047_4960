@@ -113,7 +113,7 @@
 
                     </Grid>
                 </TabItem>
-                <TabItem Header="בהמשך" Width="180" Height="30" FontSize="16">
+                <TabItem Header="stations" Width="180" Height="30" FontSize="16">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="243*"/>
