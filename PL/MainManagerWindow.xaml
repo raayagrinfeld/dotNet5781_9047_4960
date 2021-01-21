@@ -480,7 +480,7 @@
                             <ColumnDefinition Width="908*"/>
                         </Grid.ColumnDefinitions>
                         <Grid Background="#FFE5E5E5" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2"/>
-                        <Border x:Name="userListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="userListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="71*"/>
@@ -568,7 +568,7 @@
                                 </Button>
                             </Grid>
                         </Border>
-                        <Border x:Name="UserDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Margin="6,0,-6.2,-0.2" Grid.ColumnSpan="2">
+                        <Border x:Name="UserDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Margin="6,0,-6.2,-0.2" Grid.ColumnSpan="2">
                             <Grid>
 
                                 <Grid x:Name="UserDetialedGrid" VerticalAlignment="Top" Margin="159,101,0,0" HorizontalAlignment="Left" Height="257" Width="541" >

@@ -88,6 +88,10 @@ namespace PL
                 BusStationKey.Text = "";
 
             }
+            if(selectedUser==null)
+            {
+                userBOListView.ItemsSource = bl.GetAllUsers();
+            }
         }
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
@@ -543,6 +547,7 @@ namespace PL
                 UserImage.Source = bitmap;
                 selectedUser = null;
             }
+            refreshcontent();
         }
         private void addUser_Click(object sender, RoutedEventArgs e)
         {
