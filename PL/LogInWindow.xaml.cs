@@ -106,6 +106,7 @@ namespace PL
                     {
                         user.Gender = gender.male;
                     }
+                    bl.UpdateUser(user);
                     MainUserWindow windowUser = new MainUserWindow(user);
                     windowUser.Show();
                     this.Close();

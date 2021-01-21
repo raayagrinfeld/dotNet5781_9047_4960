@@ -421,7 +421,7 @@ namespace DL
                                    new XElement("Password", user.Password),
                                    new XElement("ManagementPermission", user.ManagementPermission),
                                    new XElement("IsActive", user.IsActive),
-                                   new XElement("gender", user.gender.ToString()),
+                                   new XElement("Gender", user.Gender.ToString()),
                                    new XElement("imagePath", user.imagePath));
 
             UserRootElem.Add(UserElem);
@@ -451,7 +451,7 @@ namespace DL
                     {
                         UserName = p.Element("UserName").Value,
                         Password = p.Element("Password").Value,
-                        gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
+                        Gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
                         IsActive = Boolean.Parse(p.Element("IsActive").Value),
                         ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
                         imagePath= p.Element("imagePath").Value
@@ -468,7 +468,7 @@ namespace DL
                     {
                         UserName = p.Element("UserName").Value,
                         Password = p.Element("Password").Value,
-                        gender = (gender)Enum.Parse(typeof(gender), p.Element("gender").Value),
+                        Gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
                         IsActive = Boolean.Parse(p.Element("IsActive").Value),
                         ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
                         imagePath = p.Element("imagePath").Value
@@ -487,7 +487,7 @@ namespace DL
                       {
                           UserName = p.Element("UserName").Value,
                           Password = p.Element("Password").Value,
-                          gender = (gender)Enum.Parse(typeof(gender), p.Element("gender").Value),
+                          Gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
                           IsActive = Boolean.Parse(p.Element("IsActive").Value),
                           ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
                           imagePath = p.Element("imagePath").Value

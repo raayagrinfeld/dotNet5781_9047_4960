@@ -5,7 +5,7 @@
     <Password>123</Password>
     <ManagementPermission>true</ManagementPermission>
     <IsActive>true</IsActive>
-    <gender>female</gender>
+    <Gender>female</Gender>
     <imagePath>Icons/wonan.png</imagePath>
   </User>
   <User>
@@ -13,7 +13,7 @@
     <Password>1666</Password>
     <ManagementPermission>true</ManagementPermission>
     <IsActive>true</IsActive>
-    <gender>male</gender>
+    <Gender>male</Gender>
     <imagePath>Icons/wonan.png</imagePath>
   </User>
   <User>
@@ -21,7 +21,7 @@
     <Password>1111</Password>
     <ManagementPermission>false</ManagementPermission>
     <IsActive>true</IsActive>
-    <gender>male</gender>
+    <Gender>male</Gender>
     <imagePath>Icons/wonan.png</imagePath>
   </User>
   <User>
@@ -29,23 +29,15 @@
     <Password>6543</Password>
     <ManagementPermission>false</ManagementPermission>
     <IsActive>true</IsActive>
-    <gender>male</gender>
+    <Gender>male</Gender>
     <imagePath>Icons/wonan.png</imagePath>
   </User>
   <User>
-    <UserName>talya</UserName>
-    <Password>145</Password>
-    <ManagementPermission>false</ManagementPermission>
-    <IsActive>true</IsActive>
-    <gender>male</gender>
-    <imagePath />
-  </User>
-  <User>
-    <UserName>yafa</UserName>
+    <UserName>kim</UserName>
     <Password>666</Password>
     <ManagementPermission>false</ManagementPermission>
-    <IsActive>true</IsActive>
-    <gender>male</gender>
+    <IsActive>False</IsActive>
+    <Gender>male</Gender>
     <imagePath />
   </User>
 </ArrayOfUser>
