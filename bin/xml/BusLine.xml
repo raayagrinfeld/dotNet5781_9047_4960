@@ -14,7 +14,7 @@
     <Area>Center</Area>
     <FirstStation>0</FirstStation>
     <LastStation>0</LastStation>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20003</BusLineKey>
@@ -38,7 +38,7 @@
     <Area>General</Area>
     <FirstStation>0</FirstStation>
     <LastStation>0</LastStation>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20006</BusLineKey>
@@ -92,9 +92,8 @@
     <BusLineKey>20001</BusLineKey>
     <LineNumber>1547503</LineNumber>
     <Area>General</Area>
-    <FirstStation>38880</FirstStation>
-    <LastStation>38880</LastStation>
-    <LastStationName>התאנה/האלון</LastStationName>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
     <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
@@ -106,11 +105,27 @@
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
-    <BusLineKey>200013</BusLineKey>
-    <LineNumber>999</LineNumber>
+    <BusLineKey>20002</BusLineKey>
+    <LineNumber>9075638</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20005</BusLineKey>
+    <LineNumber>8871728</LineNumber>
     <Area>General</Area>
     <FirstStation>0</FirstStation>
     <LastStation>0</LastStation>
-    <IsActive>false</IsActive>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20000</BusLineKey>
+    <LineNumber>3898690</LineNumber>
+    <Area>South</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>
