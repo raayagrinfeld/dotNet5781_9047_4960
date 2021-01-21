@@ -30,7 +30,7 @@
     <StationName>דרך הפרחים/יסמין</StationName>
     <StationAddress>רחוב:דרך הפרחים 46 עיר: גדרה</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38883</BusStationKey>
@@ -46,7 +46,7 @@
     <StationName>יצחק רבין/פנחס ספיר</StationName>
     <StationAddress>רחוב:דרך יצחק רבין  עיר: גדרה</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38884</BusStationKey>
@@ -62,7 +62,7 @@
     <StationName>מנחם בגין/יצחק רבין</StationName>
     <StationAddress> רחוב:שדרות מנחם בגין 4 עיר: גדרה</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38885</BusStationKey>
@@ -78,7 +78,7 @@
     <StationName>חיים הרצוג/דולב</StationName>
     <StationAddress> רחוב:חיים הרצוג 12 עיר: גדרה</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38886</BusStationKey>
@@ -94,7 +94,7 @@
     <StationName>בית ספר גוונים/ארז</StationName>
     <StationAddress> רחוב:ארז 2 עיר: גדרה</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38887</BusStationKey>
@@ -110,7 +110,7 @@
     <StationName>דרך האילנות/אלון</StationName>
     <StationAddress> רחוב:דרך האילנות 13 עיר: גדרה</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38888</BusStationKey>
@@ -142,7 +142,7 @@
     <StationName>העצמאות/וייצמן</StationName>
     <StationAddress> רחוב:העצמאות 1 עיר: גדרה</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38895</BusStationKey>
@@ -158,7 +158,7 @@
     <StationName>בן גוריון/פוקס</StationName>
     <StationAddress> רחוב:שדרות בן גוריון 39 עיר: גדרה</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38898</BusStationKey>
@@ -174,7 +174,7 @@
     <StationName>לוי אשכול/הרב דוד ישראל</StationName>
     <StationAddress> רחוב:לוי אשכול  עיר: רחובות</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38899</BusStationKey>
@@ -190,7 +190,7 @@
     <StationName>שושן/אופנהיימר</StationName>
     <StationAddress> רחוב:ד''ר אריה שושן  עיר: רחובות</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38901</BusStationKey>
@@ -206,7 +206,7 @@
     <StationName>הרב דוד ישראל/אריה דולצין</StationName>
     <StationAddress> רחוב:הרב דוד ישראל 63 עיר: רחובות</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38903</BusStationKey>
@@ -302,7 +302,7 @@
     <StationName>ההגנה/חי''ש</StationName>
     <StationAddress> רחוב:ההגנה 37 עיר: רחובות</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38909</BusStationKey>
@@ -414,7 +414,7 @@
     <StationName>יוסף בורג/כתריאל רפפורט</StationName>
     <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38919</BusStationKey>
@@ -542,6 +542,310 @@
     <StationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</StationName>
     <StationAddress> רחוב:הרב יעקב ברמן 4 עיר: רחובות</StationAddress>
     <HasARoof>false</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38901</BusStationKey>
+    <Coordinates>
+      <Latitude>31.882474</Latitude>
+      <Longitude>34.80506</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>הרב דוד ישראל/אריה דולצין</StationName>
+    <StationAddress> רחוב:הרב דוד ישראל 63 עיר: רחובות</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38899</BusStationKey>
+    <Coordinates>
+      <Latitude>31.910119</Latitude>
+      <Longitude>34.805809</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>שושן/אופנהיימר</StationName>
+    <StationAddress> רחוב:ד''ר אריה שושן  עיר: רחובות</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.820043</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82004</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82006</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82007</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82009</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82008</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82009</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82008</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82007</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82006</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82008</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82009</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82008</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82009</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38908</BusStationKey>
+    <Coordinates>
+      <Latitude>31.893823</Latitude>
+      <Longitude>34.824617</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>ההגנה/חי''ש</StationName>
+    <StationAddress> רחוב:ההגנה 37 עיר: רחובות</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82008</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38917</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968939</Latitude>
+      <Longitude>34.82007</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
     <IsActive>true</IsActive>
   </BusStation>
 </ArrayOfBusStation>

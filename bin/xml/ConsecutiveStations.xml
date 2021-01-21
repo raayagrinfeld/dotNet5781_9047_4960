@@ -10,8 +10,8 @@
   <ConsecutiveStations>
     <Station1Key>38888</Station1Key>
     <Station2Key>38917</Station2Key>
-    <Distance>18536.526904816936</Distance>
-    <IsActive>true</IsActive>
-    <DriveDistanceTime>03:05:21.9160000</DriveDistanceTime>
+    <Distance>18537.3101047505</Distance>
+    <IsActive>True</IsActive>
+    <DriveDistanceTime>03:05:22.3860000</DriveDistanceTime>
   </ConsecutiveStations>
 </ArrayOfConsecutiveStations>

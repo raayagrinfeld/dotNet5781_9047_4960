@@ -351,11 +351,14 @@ namespace BL
             {
                 dl.DeleteBusLineStationAllBusLine(busStationKey);
                 dl.DeleteBusStation(busStationKey);
-                var ConsecutiveStationToUpdate = dl.GetAlConsecutiveStationsBy(b => b.IsActive &&  (b.Station1Key == busStationKey || b.Station2Key == busStationKey));
-                foreach (var item in ConsecutiveStationToUpdate)
-                {
-                    dl.DeletConsecutiveStations(item.Station1Key, item.Station2Key);
-                }
+               //IEnumerable< ConsecutiveStations >ConsecutiveStationToUpdate = dl.GetAlConsecutiveStationsBy(b => b.IsActive &&  (b.Station1Key == busStationKey || b.Station2Key == busStationKey));
+               // if (ConsecutiveStationToUpdate.Count()!=0)
+                //{
+                 //   foreach (ConsecutiveStations item in ConsecutiveStationToUpdate)
+                 //   {
+                       // dl.DeletConsecutiveStations(item.Station1Key, item.Station2Key);
+                 //   }
+                //}
             }
             catch (DO.BadBusStationKeyException busExaption)
             {
@@ -375,7 +378,8 @@ namespace BL
                 var ConsecutiveStationToUpdate = dl.GetAlConsecutiveStationsBy(b => b.IsActive &&b.Station1Key!=-1&& (b.Station1Key == station.BusStationKey || b.Station2Key == station.BusStationKey));
                 foreach (var item in ConsecutiveStationToUpdate)
                 {
-                    var NewConsecutiveStation =new ConsecutiveStations { Station1Key = item.Station1Key, Station2Key = item.Station2Key, IsActive = true, Distance = GetBusStation(item.Station1Key).Coordinates.GetDistanceTo(GetBusStation(item.Station2Key).Coordinates) };
+                    double distance = GetBusStation(item.Station1Key).Coordinates.GetDistanceTo(GetBusStation(item.Station2Key).Coordinates);
+                    ConsecutiveStations NewConsecutiveStation =new ConsecutiveStations { Station1Key = item.Station1Key, Station2Key = item.Station2Key, IsActive = true , Distance=distance};
                     NewConsecutiveStation.DriveDistanceTime= TimeSpan.FromMinutes(NewConsecutiveStation.Distance * 0.01);
                     dl.UpdateConsecutiveStations(NewConsecutiveStation);
                 }
