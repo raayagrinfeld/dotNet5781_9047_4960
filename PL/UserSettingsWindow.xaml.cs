@@ -25,6 +25,8 @@ namespace PL
     {
         OpenFileDialog op; //for getting image input from user
         User userWindow;
+        public static IBL bl = BlFactory.GetBL();
+
         public UserSettingsWindow(User user)
         {
             userWindow = user;
@@ -32,7 +34,7 @@ namespace PL
             InitializeComponent();
             CombBx_Gender.ItemsSource = Enum.GetValues(typeof(gender));
             grid1.DataContext = user;
-            if (user.imagePath != null)
+            if (user.imagePath != "")
             {
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
@@ -55,6 +57,29 @@ namespace PL
                 userWindow.imagePath = op.FileName;
                 UserImage.Source = new BitmapImage(new Uri(op.FileName));
             }
+        }
+
+        private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
+        {
+            SystemCommands.MinimizeWindow(this);
+        }
+
+        private void Button_Click_CloseWindow(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            bl.UpdateUser(userWindow);
+        }
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ((Button)sender).Width *= 1.1;
+            ((Button)sender).Height *= 1.1;
+        }
+
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ((Button)sender).Width /= 1.1;
+            ((Button)sender).Height /= 1.1;
         }
     }
 }

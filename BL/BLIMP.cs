@@ -468,7 +468,7 @@ namespace BL
             }
             catch (DO.BadUserNameException busExaption)
             {
-                throw new BO.BadUserNameException("this username exsist", busExaption);
+                throw new BO.BadUserNameException("this username doesnt exist", busExaption);
             }
         }
         public void UpdateUser(BO.User user)
@@ -484,7 +484,7 @@ namespace BL
             }
             catch (DO.BadUserNameException busExaption)
             {
-                throw new BO.BadUserNameException("this username exsist", busExaption);
+                throw new BO.BadUserNameException("this username doesnt exsist", busExaption);
             }
         }
 

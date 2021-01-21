@@ -143,7 +143,6 @@ namespace PL
         {
             MainUserWindow userWindow = new MainUserWindow(user);
             userWindow.Show();
-            this.Close();
         }
 
         private void MenuItem_Click_LogOut(object sender, RoutedEventArgs e)

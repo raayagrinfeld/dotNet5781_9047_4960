@@ -29,6 +29,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL", "PL\PL.csproj", "{26DA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLXML", "DLXML\DLXML.csproj", "{43874499-EEFE-46C3-873F-E1E7288F4C47}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserIcons", "UserIcons", "{9A9A7D36-8E0A-4A04-8B3C-650FDAB1DDBB}"
+	ProjectSection(SolutionItems) = preProject
+		bin\UserIcons\woman.png = bin\UserIcons\woman.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

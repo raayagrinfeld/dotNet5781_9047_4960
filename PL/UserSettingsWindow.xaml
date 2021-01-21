@@ -5,11 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="UserSettingsWindow" Height="200" Width="400" >
+        Title="UserSettingsWindow" Height="250" Width="400" WindowStyle="None" >
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="ManageButtonStackPanel" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 10 0">
+            <Button Click="Button_Click_MinimizeWindow" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Background="#FF1B1B1C">
+                <Image Source="Icons/substract.png" Margin="5"/>
+            </Button>
+            <Button Click="Button_Click_CloseWindow" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                <Image Source="Icons/cancel.png" Margin="5"/>
+            </Button>
 
-        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="41,39,0,0" HorizontalAlignment="Left" >
+        </StackPanel>
+        <Image Source="Icons\BusUslcon.jpeg" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="0" Margin="10 0 0 0"/>
+        <Grid x:Name="grid1" Grid.Row="1" VerticalAlignment="Top" Margin="41,39,0,0" HorizontalAlignment="Left" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -27,10 +40,10 @@
             <Label x:Name="Label_Gender" Content="Gender:" Grid.Row="2" Grid.Column="0"/>
             <ComboBox x:Name="CombBx_Gender" Margin="2" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" SelectedValue="{Binding Path=Gender, Mode=TwoWay}"/>
         </Grid>
-        <Border x:Name="ImageBorder" Width="100" Height="90" BorderThickness="2" BorderBrush="Black" Margin="284,13,9.6,67.4">
+        <Border Grid.Row="1" x:Name="ImageBorder" Width="100" Height="90" BorderThickness="2" BorderBrush="Black" Margin="284,13,9.6,67.4">
             <Image x:Name="UserImage" Source="Icons/user.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="97" />
         </Border>
-        <Button x:Name="Button_UploadImage" Content="uplode image" Click="Button_Click_UploadImage" Margin="286,120,13.6,10.4" />
-        <Label Content="is manager" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="{Binding ManagementPermission}" Margin="41,13,0,0" Width="147"/>
+        <Button Grid.Row="1"  x:Name="Button_UploadImage" Content="uplode image" Click="Button_Click_UploadImage" Margin="286,120,13.6,10.4" />
+        <Label Grid.Row="1" Content="is manager" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="{Binding ManagementPermission}" Margin="41,13,0,0" Width="147"/>
     </Grid>
 </Window>

@@ -6,15 +6,15 @@
     <ManagementPermission>true</ManagementPermission>
     <IsActive>true</IsActive>
     <Gender>female</Gender>
-    <imagePath>Icons/wonan.png</imagePath>
+    <imagePath />
   </User>
   <User>
     <UserName>odelia</UserName>
     <Password>1666</Password>
     <ManagementPermission>true</ManagementPermission>
-    <IsActive>true</IsActive>
+    <IsActive>False</IsActive>
     <Gender>male</Gender>
-    <imagePath>Icons/wonan.png</imagePath>
+    <imagePath>UserIcons\woman.png</imagePath>
   </User>
   <User>
     <UserName>myiah</UserName>
@@ -22,7 +22,7 @@
     <ManagementPermission>false</ManagementPermission>
     <IsActive>true</IsActive>
     <Gender>male</Gender>
-    <imagePath>Icons/wonan.png</imagePath>
+    <imagePath />
   </User>
   <User>
     <UserName>yaron</UserName>
@@ -38,7 +38,7 @@
     <ManagementPermission>false</ManagementPermission>
     <IsActive>true</IsActive>
     <Gender>female</Gender>
-    <imagePath></imagePath>
+    <imagePath />
   </User>
   <User>
     <UserName>aviva</UserName>
@@ -46,6 +46,14 @@
     <ManagementPermission>false</ManagementPermission>
     <IsActive>true</IsActive>
     <Gender>female</Gender>
-    <imagePath>Icons/wonan.png</imagePath>
+    <imagePath />
+  </User>
+  <User>
+    <UserName>odelia</UserName>
+    <Password>1666</Password>
+    <ManagementPermission>true</ManagementPermission>
+    <IsActive>true</IsActive>
+    <Gender>male</Gender>
+    <imagePath>C:\Users\Keren\source\repos\raayagrinfeld\dotNet5781_9047_4960\PL\Icons\BusUslcon.jpeg</imagePath>
   </User>
 </ArrayOfUser>
