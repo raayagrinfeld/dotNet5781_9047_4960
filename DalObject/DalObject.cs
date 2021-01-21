@@ -59,10 +59,6 @@ namespace DL
                 throw new BadBusLineKeyException(bus.BusLineKey, $"bad bus line key: {bus.BusLineKey}");
             }
         }
-        public void UpdateBusLine(int busLineKey, Action<BusLine> update)
-        {
-            throw new NotImplementedException();
-        }
         public void DeleteBusLine(int busLineKey)
         {
             BusLine busLine = DataSource.BusLineList.Find(b =>

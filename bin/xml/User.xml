@@ -62,6 +62,6 @@
     <ManagementPermission>true</ManagementPermission>
     <IsActive>true</IsActive>
     <Gender>female</Gender>
-    <imagePath>C:\Users\drhbp\OneDrive\תמונות\images (1).jpg</imagePath>
+    <imagePath>C:\Users\Keren\source\repos\raayagrinfeld\dotNet5781_9047_4960\PL\Icons\save-file-option.png</imagePath>
   </User>
 </ArrayOfUser>

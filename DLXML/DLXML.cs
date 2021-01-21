@@ -60,7 +60,7 @@ namespace DL
                 else return false;
             });
             if (sic == null)
-                throw new DO.BadBusLineKeyException(busLineKey, "this bus line is not exsist");
+                throw new DO.BadBusLineKeyException(busLineKey, "this bus line does not exsist");
 
             XMLTools.SaveListToXMLSerializer(ListBusLines, BusLinePath);
         }
@@ -68,12 +68,11 @@ namespace DL
         {
             List<BusLine> ListBusLines = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
 
-            DO.BusLine bus = ListBusLines.Find(b => b.BusLineKey == busLineKey&b.IsActive);
-            return bus;
-            // if (bus != null)
-            return bus; //no need to Clone()
-           // else
-                //throw new DO.BadBusLineKeyException(busLineKey, $"bad bus line key: {busLineKey}");
+            DO.BusLine busLine = ListBusLines.Find(b => b.BusLineKey == busLineKey&b.IsActive);
+            if (busLine != null)
+                return busLine;
+            else
+                throw new BadBusLineKeyException(busLineKey, $"bad bus line key: {busLineKey}");
         }
         public IEnumerable<BusLine> GetAllBusLines()
         {
@@ -105,10 +104,6 @@ namespace DL
                 throw new BadBusLineKeyException(bus.BusLineKey, $"bad bus line key: {bus.BusLineKey}");
             }
             XMLTools.SaveListToXMLSerializer(ListBuses, BusLinePath);
-        }
-        public void UpdateBusLine(int busLineKey, Action<BusLine> update)
-        {
-            throw new NotImplementedException();
         }
         #endregion
 
@@ -266,7 +261,7 @@ namespace DL
         public void UpdateBusStation(BusStation station)
         {
             List<BusStation> ListStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
-            BusStation busStation = ListStations.Find(b => b.BusStationKey == station.BusStationKey);
+            BusStation busStation = ListStations.Find(b => (b.BusStationKey == station.BusStationKey & b.IsActive));
             if (busStation != null)
             {
                 DeleteBusStation(station.BusStationKey);
@@ -285,8 +280,8 @@ namespace DL
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
             XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
-                                   where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString()
-                                   select p).FirstOrDefault();
+                                   where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString() && (p.Element("IsActive").Value) == "true"
+                                                 select p).FirstOrDefault();
 
             if (ConsecutiveStationSearch != null)
                 throw new DO.BadConsecutiveStationsException (consecutiveStations.Station1Key, consecutiveStations.Station2Key, "Duplicate Consecutive Stations");
@@ -307,7 +302,7 @@ namespace DL
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
             XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
-                                                 where (p.Element("Station1Key").Value) == key1.ToString() & (p.Element("Station2Key").Value) == key2.ToString()
+                                                 where (p.Element("Station1Key").Value) == key1.ToString() && (p.Element("Station2Key").Value) == key2.ToString() && (p.Element("IsActive").Value) == "true"
                                                  select p).FirstOrDefault();
 
             if (ConsecutiveStationSearch == null)
@@ -358,7 +353,7 @@ namespace DL
         {
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
             ConsecutiveStations ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
-                                                            where (p.Element("Station1Key").Value) == key1.ToString() && (p.Element("Station2Key").Value) == key2.ToString()
+                                                            where (p.Element("Station1Key").Value) == key1.ToString() && (p.Element("Station2Key").Value) == key2.ToString() && (p.Element("IsActive").Value) == "true"
                                                             select new ConsecutiveStations()
                                                             {
                                                                 Station1Key = Int32.Parse(p.Element("Station1Key").Value),
@@ -372,21 +367,12 @@ namespace DL
             return ConsecutiveStationSearch;
         }
 
-        /*
-         <ConsecutiveStations>
-    <Station1Key>38895</Station1Key>
-    <Station2Key>39013</Station2Key>
-    <Distance>15708.559554031353</Distance>
-    <IsActive>true</IsActive>
-    <DriveDistanceTime>02:37:05.1360000</DriveDistanceTime>
-  </ConsecutiveStations>
-         * */
         public void UpdateConsecutiveStations(ConsecutiveStations consecutiveStations)
         {
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
             XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
-                                                 where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString()
+                                                 where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString() && (p.Element("IsActive").Value) == "true"
                                                  select p).FirstOrDefault();
 
             if (ConsecutiveStationSearch == null)
@@ -433,7 +419,7 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             XElement userSearch = (from p in UserRootElem.Elements()
-                                   where (p.Element("UserName").Value) == userName
+                                   where (p.Element("UserName").Value) == userName &&(p.Element("IsActive").Value) == "true"
                                    select p).FirstOrDefault();
 
             if (userSearch == null)
@@ -447,6 +433,7 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             return (from p in UserRootElem.Elements()
+                    where (p.Element("IsActive").Value) == "true"
                     select new User()
                     {
                         UserName = p.Element("UserName").Value,
@@ -464,6 +451,7 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             return (from p in UserRootElem.Elements()
+                    where (p.Element("IsActive").Value) == "true"
                     let u = new User()
                     {
                         UserName = p.Element("UserName").Value,
@@ -482,7 +470,7 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             User u = (from p in UserRootElem.Elements()
-                      where (p.Element("UserName").Value) == userName 
+                      where (p.Element("UserName").Value) == userName && (p.Element("IsActive").Value) == "true"
                       select new User()
                       {
                           UserName = p.Element("UserName").Value,
@@ -504,7 +492,7 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             XElement userSearch = (from p in UserRootElem.Elements()
-                                   where (p.Element("UserName").Value) == user.UserName
+                                   where (p.Element("UserName").Value) == user.UserName && (p.Element("IsActive").Value) == "true"
                                    select p).FirstOrDefault();
 
             if (userSearch == null)
@@ -526,18 +514,18 @@ namespace DL
         {
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
-           BusesSchedule BSchedule = (from p in ScheduleRootElem.Elements()
-                                 where (p.Element("ScheduleKey").Value) == scheduleKey.ToString()
-                                 select new BusesSchedule()
-                      {
-                          ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
-                          BusKey = Int32.Parse(p.Element("BusKey").Value),
-                          StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
-                          IsActive = Boolean.Parse(p.Element("IsActive").Value),
-                          EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
-                          Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
-                      }
-                        ).FirstOrDefault();
+            BusesSchedule BSchedule = (from p in ScheduleRootElem.Elements()
+                                       where (p.Element("ScheduleKey").Value) == scheduleKey.ToString() && (p.Element("IsActive").Value) == "true"
+                                       select new BusesSchedule()
+                                       {
+                                           ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
+                                           BusKey = Int32.Parse(p.Element("BusKey").Value),
+                                           StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
+                                           IsActive = Boolean.Parse(p.Element("IsActive").Value),
+                                           EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
+                                           Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                                       }
+                         ).FirstOrDefault();
 
             if (BSchedule == null)
                 throw new DO.BadBusesScheduleKeyException(scheduleKey, "Duplicate schedule");
@@ -549,7 +537,7 @@ namespace DL
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             BusesSchedule BSchedule = (from p in ScheduleRootElem.Elements()
-                                       where (p.Element("BusKey").Value) == busLineKey.ToString()& TimeSpan.Parse(p.Element("StartHour").Value )< time& TimeSpan.Parse(p.Element("EndtHour").Value)>time
+                                       where (p.Element("BusKey").Value) == busLineKey.ToString() && (p.Element("IsActive").Value) == "true" & TimeSpan.Parse(p.Element("StartHour").Value )< time& TimeSpan.Parse(p.Element("EndtHour").Value)>time
                                        select new BusesSchedule()
                                        {
                                            ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
@@ -565,14 +553,14 @@ namespace DL
                 throw new DO.BadBusesScheduleKeyException(-1, "Duplicate schedule");
 
             return BSchedule;
-    }
+        }
 
         public IEnumerable<BusesSchedule> GetAllBusSchedules()
         {
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             return (from p in ScheduleRootElem.Elements()
-                    where (p.Element("IsActive").Value) =="true"
+                    where (p.Element("IsActive").Value) == "true"
                     select new BusesSchedule()
                     {
                         ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
@@ -608,8 +596,8 @@ namespace DL
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
-                                   where (p.Element("ScheduleKey").Value) == schedule.ScheduleKey.ToString()
-                                   select p).FirstOrDefault();
+                                   where (p.Element("ScheduleKey").Value) == schedule.ScheduleKey.ToString() && (p.Element("IsActive").Value) == "true"
+                                       select p).FirstOrDefault();
 
             if (ScheduleSearch != null)
                 throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, "Duplicate schedule");
@@ -632,7 +620,7 @@ namespace DL
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
-                                       where (p.Element("ScheduleKey").Value) == schedule.ScheduleKey.ToString()
+                                       where (p.Element("ScheduleKey").Value) == schedule.ScheduleKey.ToString() && (p.Element("IsActive").Value) == "true"
                                        select p).FirstOrDefault();
             if (ScheduleSearch == null)
                 throw new DO.BadBusesScheduleKeyException(schedule.ScheduleKey, "Duplicate schedule");
@@ -653,7 +641,7 @@ namespace DL
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
-                                       where (p.Element("ScheduleKey").Value) == scheduleKey.ToString()
+                                       where (p.Element("ScheduleKey").Value) == scheduleKey.ToString() && (p.Element("IsActive").Value) == "true"
                                        select p).FirstOrDefault();
 
             if (ScheduleSearch == null)
