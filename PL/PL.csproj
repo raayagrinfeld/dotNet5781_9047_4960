@@ -60,6 +60,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddDrivingLine.xaml.cs">
+      <DependentUpon>AddDrivingLine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ConvertStationToStationName.cs" />
     <Compile Include="ShowLocation.xaml.cs">
       <DependentUpon>ShowLocation.xaml</DependentUpon>
@@ -67,6 +70,10 @@
     <Compile Include="UserSettingsWindow.xaml.cs">
       <DependentUpon>UserSettingsWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddDrivingLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LogInWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +129,7 @@
     <None Include="Properties\DataSources\BO.BusLineBO.datasource" />
     <None Include="Properties\DataSources\BO.BusLineStationBO.datasource" />
     <None Include="Properties\DataSources\BO.Driving.datasource" />
+    <None Include="Properties\DataSources\BO.DrivingLine.datasource" />
     <None Include="Properties\DataSources\BO.StationBO.datasource" />
     <None Include="Properties\DataSources\BO.User.datasource" />
     <None Include="Properties\Settings.settings">
