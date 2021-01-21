@@ -48,12 +48,10 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="266*"/>
-                            <ColumnDefinition Width="740*"/>
-                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="583*"/>
+                            <ColumnDefinition Width="421*"/>
                         </Grid.ColumnDefinitions>
-                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2">
+                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,0,0,1.667" Grid.ColumnSpan="3" Grid.RowSpan="2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -124,10 +122,10 @@
                                 <Button Content="add new bus"  Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Grid.Row="4" Click="Button_Click_AddBusLine" Margin="0,0.2,30.8,9.8" Grid.Column="1"/>
                             </Grid>
                         </Border>
-                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2" >
-                            <Grid>
+                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Margin="3,0,0,1.667" Grid.ColumnSpan="3" Grid.RowSpan="2" >
+                            <Grid Grid.Row="0">
 
-                                <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin="173,91,0,0" HorizontalAlignment="Left" >
+                                <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin=",91,0,0" HorizontalAlignment="Left" >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
@@ -209,7 +207,7 @@
 
                             </Grid>
                         </Border>
-                        <Border x:Name="AddBusLineBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2">
+                        <Border x:Name="AddBusLineBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,0,0,1.667" Grid.ColumnSpan="3" Grid.RowSpan="2">
                             <Grid>
                                 <Grid x:Name="AddBusDataGrid"  HorizontalAlignment="Left" Margin="147,84,0,0" VerticalAlignment="Top" Height="331" Width="612">
                                     <Grid.ColumnDefinitions>
@@ -597,9 +595,9 @@
                                     <Border Grid.Column="5" Width="150" Height="120" BorderThickness="2" BorderBrush="Black" >
                                         <Image x:Name="UserImage" Source="Icons/user.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Border>
-                                    <Button Grid.Row="3" Grid.Column="5"  x:Name="Button_UploadImage" Content="uplode image" Click="Button_Click_UploadImage"  /> 
+                                    <Button Grid.Row="3" Grid.Column="5"  x:Name="Button_UploadImage" Content="uplode image" Click="Button_Click_UploadImage"  />
                                 </Grid>
-                                
+
                                 <Button Click="Button_Click_BackArrowUser" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <Image Source="Icons/left-arrow.png"/>
                                 </Button>
