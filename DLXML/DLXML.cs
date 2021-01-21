@@ -27,6 +27,7 @@ namespace DL
         string BusStationPath = @"BusStation.xml"; //XMLSerializer
         string ConsecutiveStationsPath = @"ConsecutiveStations.xml"; //XMLSerializer
         string BusSchedulePath = @"BusSchedule.xml"; //XMLSerializer
+        string RunNumbersPath = @"RumNumbers.xml";
 
 
         #endregion
@@ -664,6 +665,69 @@ namespace DL
         }
 
 
+        #endregion
+
+        #region RunNumbers
+        public int GetRunNumber_BusLIne()
+        {
+
+            List<string> ListRunNumbers = XMLTools.LoadListFromXMLSerializer<string>(RunNumbersPath);
+            string RunNumberBus = ListRunNumbers.FirstOrDefault(b => b.StartsWith("BusLineRumNumber"));
+            if (RunNumberBus != null)
+            {
+                ListRunNumbers.Remove(RunNumberBus);
+                XMLTools.SaveListToXMLSerializer(ListRunNumbers, RunNumbersPath);
+                ListRunNumbers.Add("BusLineRumNumber" + ((Int32.Parse(RunNumberBus.Remove(0, 15))) + 1).ToString());
+                XMLTools.SaveListToXMLSerializer(ListRunNumbers, RunNumbersPath);
+                return Int32.Parse(RunNumberBus.Remove(0, 15));
+            }
+            else
+            {
+                ListRunNumbers.Add("BusLineRumNumber" + 20000.ToString());
+                XMLTools.SaveListToXMLSerializer(ListRunNumbers, RunNumbersPath);
+                return -1;
+            }
+        }
+
+        public int GetRunNumber_BusStation()
+        {
+            List<string> ListRunNumbers = XMLTools.LoadListFromXMLSerializer<string>(RunNumbersPath);
+            string RunNumberBusStation = ListRunNumbers.FirstOrDefault(b => b.StartsWith("BusStationRumNumber"));
+            if (RunNumberBusStation != null)
+            {
+                ListRunNumbers.Remove(RunNumberBusStation);
+                XMLTools.SaveListToXMLSerializer(ListRunNumbers, RunNumbersPath);
+                ListRunNumbers.Add("BusStationRumNumber" + ((Int32.Parse(RunNumberBusStation.Remove(0, 19))) + 1).ToString());
+                XMLTools.SaveListToXMLSerializer(ListRunNumbers, RunNumbersPath);
+                return Int32.Parse(RunNumberBusStation.Remove(0, 19));
+            }
+            else
+            {
+                ListRunNumbers.Add("BusStationRumNumber" + 39051.ToString());
+                XMLTools.SaveListToXMLSerializer(ListRunNumbers, RunNumbersPath);
+                return -1;
+            }
+        }
+
+        public int GetRunNumber_BusesSChedule()
+        {
+            List<string> ListRunNumbers = XMLTools.LoadListFromXMLSerializer<string>(RunNumbersPath);
+            string RunNumberBusesSChedule = ListRunNumbers.FirstOrDefault(b => b.StartsWith("BusesSCheduleRumNumber"));
+            if (RunNumberBusesSChedule != null)
+            {
+                ListRunNumbers.Remove(RunNumberBusesSChedule);
+                XMLTools.SaveListToXMLSerializer(ListRunNumbers, RunNumbersPath);
+                ListRunNumbers.Add("BusesSCheduleRumNumber"+((Int32.Parse(RunNumberBusesSChedule.Remove(0, "BusesSCheduleRumNumber".Length))) + 1).ToString());
+                XMLTools.SaveListToXMLSerializer(ListRunNumbers, RunNumbersPath);
+                return Int32.Parse(RunNumberBusesSChedule.Remove(0, "BusesSCheduleRumNumber".Length));
+            }
+            else
+            {
+                ListRunNumbers.Add("BusesSCheduleRumNumber" + 40048.ToString());
+                XMLTools.SaveListToXMLSerializer(ListRunNumbers, RunNumbersPath);
+                return -1;
+            }
+        }
         #endregion
 
 
