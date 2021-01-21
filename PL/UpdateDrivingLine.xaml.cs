@@ -33,6 +33,7 @@ namespace PL
             DrivingLine drivingLine = grid1.DataContext as DrivingLine;
             drivingLine.IsActive = true;
             drivingLine.LastStationName = bl.GetBusLine(drivingLine.BusLineKey).LastStationName;
+            this.Close();
             try
             {
                 bl.AddDrivingLine(drivingLine);
