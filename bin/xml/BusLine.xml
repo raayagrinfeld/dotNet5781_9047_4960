@@ -97,4 +97,20 @@
     <LastStationName>התאנה/האלון</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
+  <BusLine>
+    <BusLineKey>200012</BusLineKey>
+    <LineNumber>66</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200013</BusLineKey>
+    <LineNumber>999</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
 </ArrayOfBusLine>

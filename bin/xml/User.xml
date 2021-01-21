@@ -6,7 +6,7 @@
     <ManagementPermission>true</ManagementPermission>
     <IsActive>False</IsActive>
     <Gender>female</Gender>
-    <imagePath />
+    <imagePath>UserIcons\woman.png</imagePath>
   </User>
   <User>
     <UserName>odelia</UserName>
@@ -20,7 +20,7 @@
     <UserName>myiah</UserName>
     <Password>6543</Password>
     <ManagementPermission>false</ManagementPermission>
-    <IsActive>true</IsActive>
+    <IsActive>False</IsActive>
     <Gender>male</Gender>
     <imagePath />
   </User>
@@ -28,7 +28,7 @@
     <UserName>yaron</UserName>
     <Password>555</Password>
     <ManagementPermission>false</ManagementPermission>
-    <IsActive>true</IsActive>
+    <IsActive>False</IsActive>
     <Gender>male</Gender>
     <imagePath />
   </User>
@@ -52,7 +52,7 @@
     <UserName>odelia</UserName>
     <Password>1666</Password>
     <ManagementPermission>true</ManagementPermission>
-    <IsActive>true</IsActive>
+    <IsActive>False</IsActive>
     <Gender>male</Gender>
     <imagePath>C:\Users\Keren\source\repos\raayagrinfeld\dotNet5781_9047_4960\PL\Icons\BusUslcon.jpeg</imagePath>
   </User>
@@ -60,8 +60,64 @@
     <UserName>raaya</UserName>
     <Password>123</Password>
     <ManagementPermission>true</ManagementPermission>
+    <IsActive>False</IsActive>
+    <Gender>female</Gender>
+    <imagePath>UserIcons\woman.png</imagePath>
+  </User>
+  <User>
+    <UserName>raaya</UserName>
+    <Password>123</Password>
+    <ManagementPermission>true</ManagementPermission>
+    <IsActive>False</IsActive>
+    <Gender>female</Gender>
+    <imagePath>UserIcons\woman.png</imagePath>
+  </User>
+  <User>
+    <UserName>Aron</UserName>
+    <Password>56789</Password>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>true</IsActive>
+    <Gender>male</Gender>
+    <imagePath />
+  </User>
+  <User>
+    <UserName>yaron</UserName>
+    <Password>555</Password>
+    <ManagementPermission>true</ManagementPermission>
+    <IsActive>true</IsActive>
+    <Gender>male</Gender>
+    <imagePath></imagePath>
+  </User>
+  <User>
+    <UserName>odelia</UserName>
+    <Password>1666</Password>
+    <ManagementPermission>true</ManagementPermission>
+    <IsActive>False</IsActive>
+    <Gender>male</Gender>
+    <imagePath>C:\Users\Keren\source\repos\raayagrinfeld\dotNet5781_9047_4960\PL\Icons\BusUslcon.jpeg</imagePath>
+  </User>
+  <User>
+    <UserName>myiah</UserName>
+    <Password>6543</Password>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>true</IsActive>
+    <Gender>male</Gender>
+    <imagePath></imagePath>
+  </User>
+  <User>
+    <UserName>raaya</UserName>
+    <Password>123</Password>
+    <ManagementPermission>true</ManagementPermission>
     <IsActive>true</IsActive>
     <Gender>female</Gender>
-    <imagePath>C:\Users\Keren\source\repos\raayagrinfeld\dotNet5781_9047_4960\PL\Icons\save-file-option.png</imagePath>
+    <imagePath>UserIcons\woman.png</imagePath>
+  </User>
+  <User>
+    <UserName>odelia</UserName>
+    <Password>1666</Password>
+    <ManagementPermission>true</ManagementPermission>
+    <IsActive>true</IsActive>
+    <Gender>female</Gender>
+    <imagePath>C:\Users\Keren\source\repos\raayagrinfeld\dotNet5781_9047_4960\PL\Icons\BusUslcon.jpeg</imagePath>
   </User>
 </ArrayOfUser>

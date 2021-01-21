@@ -21,4 +21,11 @@
     <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38887</BusStationKey>
+    <BusLineKey>200013</BusLineKey>
+    <StationName>דרך האילנות/אלון</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>
