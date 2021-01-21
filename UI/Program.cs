@@ -17,14 +17,14 @@ namespace PlConsole
         static IDAL dl = DalFactory.GetDal();
         static void Main(string[] args)
         {
-            Random r = new Random();
-            dl.GetRunNumber_BusLIne();
 
-
-
-
-
-
+            dl.AddBusLine((new BusLine
+            {
+                BusLineKey = 20000,
+                LineNumber = 3895500,
+                Area = DO.Areas.North,
+                IsActive = true
+            }));
         }
     }
 }

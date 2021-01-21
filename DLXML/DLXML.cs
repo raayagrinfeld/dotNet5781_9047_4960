@@ -42,7 +42,6 @@ namespace DL
 
            if (GetBusLine(bus.BusLineKey) != null)
              throw new DO.BadBusLineKeyException(bus.BusLineKey, "exsist bus line");
-
             ListBuses.Add(bus); //no need to Clone()
 
             XMLTools.SaveListToXMLSerializer(ListBuses, BusLinePath);

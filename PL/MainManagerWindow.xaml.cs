@@ -229,7 +229,7 @@ namespace PL
         {
             busLineListBorder.Visibility = Visibility.Collapsed;
             BusLineBO AddbusLine = new BusLineBO();
-            AddbusLine.BusLineKey = bl.getNextBusLineRunNumber();
+            //AddbusLine.BusLineKey = bl.getNextBusLineRunNumber();
             AddBusDataGrid.DataContext = AddbusLine;
             firstStationNameComboBox.DataContext = bl.GetAllBusStations();
             lastStationNameComboBox.DataContext = bl.GetAllBusStations();
@@ -245,7 +245,8 @@ namespace PL
             else
             {
                 BusLineBO AddbusLine = AddBusDataGrid.DataContext as BusLineBO;
-                if(AddbusLine!=null)
+                AddbusLine.BusLineKey = bl.getNextBusLineRunNumber();
+                if (AddbusLine!=null)
                 {
                     bl.AddBusLine(AddbusLine);
                     bl.AddStation(AddbusLine, (firstStationNameComboBox.SelectedItem as StationBO).BusStationKey);
