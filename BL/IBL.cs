@@ -63,7 +63,7 @@ namespace BlApi
         #endregion
 
         #region DrivingLine
-        DrivingLine TimeToTheStation(DrivingLine lineOnRide, StationBO DestinationStationName, TimeSpan time);
+
         #endregion
 
     }

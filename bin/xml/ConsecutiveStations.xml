@@ -1,3 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfConsecutiveStations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ConsecutiveStations>
+    <Station1Key>-1</Station1Key>
+    <Station2Key>38888</Station2Key>
+    <Distance>0</Distance>
+    <IsActive>true</IsActive>
+    <DriveDistanceTime>00:00:00</DriveDistanceTime>
+  </ConsecutiveStations>
+  <ConsecutiveStations>
+    <Station1Key>38888</Station1Key>
+    <Station2Key>38917</Station2Key>
+    <Distance>18536.526904816936</Distance>
+    <IsActive>true</IsActive>
+    <DriveDistanceTime>03:05:21.9160000</DriveDistanceTime>
+  </ConsecutiveStations>
 </ArrayOfConsecutiveStations>

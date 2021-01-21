@@ -1,3 +1,17 @@
 <?xml version="1.0"?>
 <ArrayOfBusLineStation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BusLineStation>
+    <BusStationKey>38888</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>דרך האילנות/מנחם בגין</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38917</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>יוסף בורג/כתריאל רפפורט</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>

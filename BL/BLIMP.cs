@@ -497,7 +497,7 @@ namespace BL
         #endregion
 
         #region DrivingLine
-        public DrivingLine TimeToTheStation(DrivingLine lineOnRide, StationBO DestinationStationName, TimeSpan now)
+       /* public DrivingLine TimeToTheStation(DrivingLine lineOnRide, StationBO DestinationStationName, TimeSpan now)
         {
             try
             { 
@@ -525,7 +525,8 @@ namespace BL
                 throw ex;
             }
 
-        }
+        }*/
+
         #endregion
     }
 }
