@@ -311,7 +311,6 @@
                                     <TextBox x:Name="BusStationKey" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1.333,5,0.001,5" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
                                     <Label Grid.Column="3"  FontSize="16" Content="search by Station Name" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="34.999,4,34.667,4"/>
                                     <TextBox x:Name="StationName" Padding="4" Height="30" Grid.Column="4" Text="" TextChanged="SearchFilterChangedBusStation" Margin="1.333,5,0.334,5" VerticalContentAlignment="Center"/>
-                                    <Button x:Name="addStation" Content="Add station" Grid.Column="4" Grid.Row="0"  Margin="53.333,558,42.334,-561" Height="Auto" Click="addStation_Click"/>
                                 </Grid>
                                 <ListView Grid.Row="3" x:Name="stationBOListView" BorderBrush="#FF17B419" Margin="0,10,0,39.333" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"  SelectionChanged="stationBOListView_SelectionChanged" Grid.ColumnSpan="2">
                                     <ListView.View>
@@ -357,6 +356,7 @@
                                         </ContextMenu>
                                     </ListView.ContextMenu>
                                 </ListView>
+                                <Button x:Name="addStation" Content="Add station" Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Margin="0,518,29,20.667" Grid.Column="1" Click="addStation_Click" Grid.Row="3" Grid.RowSpan="2"/>
                             </Grid>
                         </Border>
                         <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
@@ -508,7 +508,6 @@
                                     <TextBox x:Name="UserNameSearch" Height="30" Padding="4" Grid.Column="1" Text="" TextChanged="SearchFilterChangedUser" Margin="1" VerticalContentAlignment="Center"/>
                                     <Label Grid.Row="2" Grid.Column="2"  FontSize="16" Content="search by Premissiom" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                     <ComboBox x:Name="Premissiom" Padding="4" Height="30" Grid.Column="3" Text="" SelectionChanged="Premissiom_selectionChanged" Margin="1" VerticalContentAlignment="Center"/>
-                                    <Button x:Name="addUser" Content="Add user" Grid.Column="4" Grid.Row="0" Margin="50.333,560,44.667,-562.867" Height="Auto" Click="Button_addUser_Click"/>
                                     <Button Content="clear filters" Grid.Column="5" Click="ClearGrouping_click_user"/>
 
                                 </Grid>
@@ -542,6 +541,7 @@
                                         </ContextMenu>
                                     </ListView.ContextMenu>
                                 </ListView>
+                                <Button x:Name="addUser" Content="Add user" Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Margin="0,523,28.667,15.667" Grid.Column="2"  Grid.Row="3" Grid.RowSpan="2" Click="Button_addUser_Click"/>
                             </Grid>
                         </Border>
                         <Border x:Name="addUserBorder" Visibility="Collapsed" Margin="26,20,-26.2,-20.2" Grid.ColumnSpan="2">
