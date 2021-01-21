@@ -231,9 +231,9 @@ namespace BL
             BusLineStationBO station_to_delete;
             StationBO PrevStation;
             StationBO NextStation;
-            if (busLine.busLineStations.Count()<3)
+            if (busLine.busLineStations.Count() < 3)
             {
-                throw new BO.BadBusLineStationsException(busLine.BusLineKey, stationKey,"can not delete, mini amount of station is 2");
+                throw new BO.BadBusLineStationsException(busLine.BusLineKey, stationKey, "can not delete, mini amount of station is 2");
             }
             try
             {
@@ -271,7 +271,7 @@ namespace BL
                     if (busLine.FirstStation == stationKey)
                     {
                         NextStation = GetBusStation(dl.GetBusLineStationKey(busLine.BusLineKey, station_to_delete.StationNumberInLine));
-                        var newConsecutiveStation = new ConsecutiveStations { Station1Key = -1, Station2Key = NextStation.BusStationKey, IsActive = true , Distance=0, DriveDistanceTime=TimeSpan.Zero};
+                        var newConsecutiveStation = new ConsecutiveStations { Station1Key = -1, Station2Key = NextStation.BusStationKey, IsActive = true, Distance = 0, DriveDistanceTime = TimeSpan.Zero };
                         try
                         {
                             dl.AddConsecutiveStations(newConsecutiveStation);
@@ -286,7 +286,7 @@ namespace BL
             UpdateBusLine(busLine);
         }
 
-    public IEnumerable<BO.BusLineStationBO> GetAllBusLineStationOfBusLine(BusLineBO busLine)
+        public IEnumerable<BO.BusLineStationBO> GetAllBusLineStationOfBusLine(BusLineBO busLine)
         {
             return busLine.busLineStations;
         }
@@ -375,7 +375,7 @@ namespace BL
                     DeleteBusStation(station.BusStationKey);
                     AddBusStation(station);
                 }
-                var ConsecutiveStationToUpdate = dl.GetAlConsecutiveStationsBy(b => b.IsActive &&b.Station1Key!=-1&& (b.Station1Key == station.BusStationKey || b.Station2Key == station.BusStationKey));
+                var ConsecutiveStationToUpdate = dl.GetAlConsecutiveStationsBy(b => b.IsActive && b.Station1Key != -1 && (b.Station1Key == station.BusStationKey || b.Station2Key == station.BusStationKey));
                 foreach (var item in ConsecutiveStationToUpdate)
                 {
                     double distance = GetBusStation(item.Station1Key).Coordinates.GetDistanceTo(GetBusStation(item.Station2Key).Coordinates);
@@ -511,39 +511,64 @@ namespace BL
             }
         }
 
+
         #endregion
 
         #region DrivingLine
-       /* public DrivingLine TimeToTheStation(DrivingLine lineOnRide, StationBO DestinationStationName, TimeSpan now)
+       
+        DrivingLine DrivingLineBODOAdapter(DO.BusesSchedule busesSchedule)
         {
-            try
-            { 
-               BO.BusLineBO busLine= GetBusLine(lineOnRide.BusLineKey);
-                DO.BusesSchedule schedule = dl.GetBusesSchedule(lineOnRide.BusLineKey, now);
-                List<TimeSpan> timeBus= new List<TimeSpan>();
-                TimeSpan range = TimeBetweanStations(busLine,busLine.FirstStation, DestinationStationName.BusStationKey);
-                TimeSpan midtime = now - range;
-                TimeSpan t = new TimeSpan(0, 0, 0);
-                while (midtime > t)
-                {
-                    timeBus.Add(range-t);
-                    t += schedule.Frequency;
-                }
+            return null;
+        }
+        public DrivingLine GetDrivingLine(int ScheduleKey)
+        {
+            throw new NotImplementedException();
+        }
 
-                lineOnRide.ArrivalTime = timeBus;
-                return lineOnRide;
-            }
-            catch(BO.BadBusLineKeyException ex)
-            {
-                throw ex;
-            }
-            catch(DO.BadBusLineKeyException ex)
-            {
-                throw ex;
-            }
+        public IEnumerable<DrivingLine> GetAllDrivings()
+        {
+            throw new NotImplementedException();
+        }
 
-        }*/
+        public IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate)
+        {
+            throw new NotImplementedException();
+        }
 
+        public void AddDrivingLine(DrivingLine drivingLine)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateDrivingLine(DrivingLine drivingLine)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteDrivingLine(int ScheduleKey)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<DrivingLine> BusLineInDrivingToStation(StationBO DestinationStation, TimeSpan time)
+        {
+            return GetAllDrivingsBy(b => b.IsActive && b.StartHour < time && b.ArrivalTime > time, DestinationStation);
+        }
+
+        public DrivingLine GetDrivingLine(int ScheduleKey, StationBO DestinationStation)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<DrivingLine> GetAllDrivings(StationBO DestinationStation)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate, StationBO DestinationStation)
+        {
+           return 
+        }
         #endregion
     }
 }

@@ -515,11 +515,9 @@ namespace DL
                                        select new BusesSchedule()
                                        {
                                            ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
-                                           BusKey = Int32.Parse(p.Element("BusKey").Value),
+                                           BusLineKey = Int32.Parse(p.Element("BusLineKey").Value),
                                            StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
-                                           IsActive = Boolean.Parse(p.Element("IsActive").Value),
-                                           EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
-                                           Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                                           IsActive = Boolean.Parse(p.Element("IsActive").Value)
                                        }
                          ).FirstOrDefault();
 
@@ -533,15 +531,13 @@ namespace DL
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             BusesSchedule BSchedule = (from p in ScheduleRootElem.Elements()
-                                       where (p.Element("BusKey").Value) == busLineKey.ToString() && (p.Element("IsActive").Value) == "true" & TimeSpan.Parse(p.Element("StartHour").Value )<= time& TimeSpan.Parse(p.Element("EndtHour").Value)>=time
+                                       where (p.Element("BusLineKey").Value) == busLineKey.ToString() && (p.Element("IsActive").Value) == "true" & TimeSpan.Parse(p.Element("StartHour").Value )< time
                                        select new BusesSchedule()
                                        {
                                            ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
-                                           BusKey = Int32.Parse(p.Element("BusKey").Value),
+                                           BusLineKey = Int32.Parse(p.Element("BusLineKey").Value),
                                            StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
-                                           IsActive = Boolean.Parse(p.Element("IsActive").Value),
-                                           EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
-                                           Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                                           IsActive = Boolean.Parse(p.Element("IsActive").Value)
                                        }
                          ).FirstOrDefault();
 
@@ -560,11 +556,9 @@ namespace DL
                     select new BusesSchedule()
                     {
                         ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
-                        BusKey = Int32.Parse(p.Element("BusKey").Value),
+                        BusLineKey = Int32.Parse(p.Element("BusLineKey").Value),
                         StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
-                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
-                        EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
-                        Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value)
                     }
                          );
         }
@@ -577,11 +571,9 @@ namespace DL
                     let sch= new BusesSchedule()
                     {
                         ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),
-                        BusKey = Int32.Parse(p.Element("BusKey").Value),
+                        BusLineKey = Int32.Parse(p.Element("BusLineKey").Value),
                         StartHour = TimeSpan.Parse(p.Element("StartHour").Value),
-                        IsActive = Boolean.Parse(p.Element("IsActive").Value),
-                        EndtHour = TimeSpan.Parse(p.Element("EndtHour").Value),
-                        Frequency = TimeSpan.Parse(p.Element("Frequency").Value)
+                        IsActive = Boolean.Parse(p.Element("IsActive").Value)
                     }
                     where (sch.IsActive& predicate(sch))
                     select sch);
@@ -600,10 +592,8 @@ namespace DL
 
             XElement ScheduleElem = new XElement("BusesSchedule",
                                    new XElement("ScheduleKey", schedule.ScheduleKey.ToString()),
-                                   new XElement("BusKey", schedule.BusKey.ToString()),
+                                   new XElement("BusLineKey", schedule.BusLineKey.ToString()),
                                    new XElement("StartHour", schedule.StartHour.ToString()),
-                                   new XElement("EndtHour", schedule.EndtHour.ToString()),
-                                   new XElement("Frequency", schedule.Frequency.ToString()),
                                    new XElement("IsActive", schedule.IsActive));
 
             ScheduleRootElem.Add(ScheduleElem);
@@ -623,10 +613,8 @@ namespace DL
 
             XElement ScheduleElem = new XElement("BusesSchedule",
                                    new XElement("ScheduleKey", schedule.ScheduleKey.ToString()),
-                                   new XElement("BusKey", schedule.BusKey.ToString()),
+                                   new XElement("BusLineKey", schedule.BusLineKey.ToString()),
                                    new XElement("StartHour", schedule.StartHour.ToString()),
-                                   new XElement("EndtHour", schedule.EndtHour.ToString()),
-                                   new XElement("Frequency", schedule.Frequency.ToString()),
                                    new XElement("IsActive", schedule.IsActive));
 
             XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
@@ -641,7 +629,7 @@ namespace DL
                                        select p).FirstOrDefault();
 
             if (ScheduleSearch == null)
-                throw new DO.BadBusesScheduleKeyException(scheduleKey, "Duplicate schedule");
+                throw new DO.BadBusesScheduleKeyException(scheduleKey, "schedule doesnt exist");
             (ScheduleSearch.Element("IsActive").Value) = false.ToString();
 
             XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);

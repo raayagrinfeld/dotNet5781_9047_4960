@@ -12,5 +12,7 @@ namespace BO
         public TimeSpan StartHour { get; set; }
         public string LastStationName { get; set; }
         public TimeSpan ArrivalTime { get; set; }
+        public bool IsActive { get; set; }
+
     }
 }

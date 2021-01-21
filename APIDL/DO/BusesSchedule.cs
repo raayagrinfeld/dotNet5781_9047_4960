@@ -8,10 +8,9 @@ namespace DO
 {
     public class BusesSchedule
     {
-        public int BusKey { get; set; }
+        public int ScheduleKey { get; set; }
+        public int BusLineKey { get; set; }
         public TimeSpan StartHour { get; set; }
-        public TimeSpan EndtHour { get; set; }
-        public TimeSpan Frequency { get; set; }
         public bool IsActive { get; set; }
 
 
