@@ -572,7 +572,15 @@ namespace BL
 
         public DrivingLine GetDrivingLine(int busLineKey, TimeSpan time, StationBO DestinationStation)
         {
-            return DrivingLineBODOAdapter(dl.GetBusesSchedule(busLineKey, time),DestinationStation);
+            try
+            {
+                return DrivingLineBODOAdapter(dl.GetBusesSchedule(busLineKey, time),DestinationStation);
+            }
+            catch(DO.BadBusesScheduleKeyException ex)
+            {
+                throw new BO.BadDrivingLineException("driving line doesnt exist", ex);
+            }
+
         }
 
         public IEnumerable<DrivingLine> GetAllDrivings(StationBO DestinationStation)
