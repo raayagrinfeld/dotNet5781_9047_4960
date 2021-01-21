@@ -204,5 +204,16 @@ namespace PL
             dataView.Refresh();
         }
         #endregion
+
+        private void Button_ClickShowMap(object sender, RoutedEventArgs e)
+        {
+            ShowLocation showLocation = new ShowLocation("http://maps.google.com/maps?&z=15&q=" + latitudTextBox.Text + "+" + longtitudTextBox.Text + "&ll=" + latitudTextBox.Text + "+" + longtitudTextBox.Text);
+            showLocation.Show();
+        }
+
+        private void Button_Click_BackArrowBusStation(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
