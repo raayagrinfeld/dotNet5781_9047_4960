@@ -34,7 +34,7 @@ namespace PL
     public partial class MainManagerWindow : Window
     {
         public static IBL bl = BlFactory.GetBL();
-        OpenFileDialog op; //for getting image input from user
+        Microsoft.Win32.OpenFileDialog op; //for getting image input from user
         User user;
         BusLineBO selectedBusLine=null;
         StationBO selectedStation=null;
@@ -54,6 +54,7 @@ namespace PL
             GenderTextBox.ItemsSource= Enum.GetValues(typeof(gender));
             GropByArea.ItemsSource= Enum.GetValues(typeof(Areas));
             Premissiom.ItemsSource = Enum.GetValues(typeof(Managment));
+            //latitudTextBox.
             refreshcontent();
         }
 
@@ -551,6 +552,11 @@ namespace PL
             stationListBorder.Visibility = Visibility.Visible;
             addStationBorder.Visibility = Visibility.Collapsed;
             StationDetailedBorder.Visibility = Visibility.Collapsed;
+            if(selectedStation!=null)
+            {
+                selectedStation.Coordinates = new GeoCoordinate(Double.Parse(latitudTextBox.Text), Double.Parse(longtitudTextBox.Text));
+                bl.UpdateBusStation(selectedStation);
+            }
             selectedStation = null;
             refreshcontent();
         }
@@ -632,10 +638,7 @@ namespace PL
 
         #endregion
 
-        private void cordinationChanged(object sender, TextChangedEventArgs e)
-        {
-          //  selectedStation.Coordinates = new GeoCoordinate(double.Parse(latitudTextBox.Text), double.Parse(longtitudTextBox.Text));
-        }
+
 
         private void Button_Click_AddStationToBus(object sender, RoutedEventArgs e)
         {
