@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
 using System.Windows.Media;
-using System.Windows.Forms;
 using System.Media;
 using BlApi;
 using BO;
@@ -523,6 +522,11 @@ namespace PL
             stationListBorder.Visibility = Visibility.Visible;
             addStationBorder.Visibility = Visibility.Collapsed;
             StationDetailedBorder.Visibility = Visibility.Collapsed;
+            if(selectedStation!=null)
+            {
+                selectedStation.Coordinates = new GeoCoordinate(Double.Parse(latitudTextBox.Text), Double.Parse(longtitudTextBox.Text));
+                bl.UpdateBusStation(selectedStation);
+            }
             selectedStation = null;
             refreshcontent();
         }
