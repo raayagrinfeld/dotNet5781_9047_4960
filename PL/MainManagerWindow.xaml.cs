@@ -503,6 +503,7 @@ namespace PL
             userListBorder.Visibility = Visibility.Visible;
             addUserBorder.Visibility = Visibility.Collapsed;
             UserDetialedBorder.Visibility = Visibility.Collapsed;
+            bl.UpdateUser(selectedUser);
         }
         private void addUser_Click(object sender, RoutedEventArgs e)
         {

@@ -17,14 +17,6 @@
     <imagePath>Icons/wonan.png</imagePath>
   </User>
   <User>
-    <UserName>aviva</UserName>
-    <Password>1111</Password>
-    <ManagementPermission>false</ManagementPermission>
-    <IsActive>true</IsActive>
-    <Gender>male</Gender>
-    <imagePath>Icons/wonan.png</imagePath>
-  </User>
-  <User>
     <UserName>myiah</UserName>
     <Password>6543</Password>
     <ManagementPermission>false</ManagementPermission>
@@ -33,11 +25,27 @@
     <imagePath>Icons/wonan.png</imagePath>
   </User>
   <User>
+    <UserName>yaron</UserName>
+    <Password>555</Password>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>true</IsActive>
+    <Gender>male</Gender>
+    <imagePath />
+  </User>
+  <User>
     <UserName>kim</UserName>
     <Password>666</Password>
     <ManagementPermission>false</ManagementPermission>
-    <IsActive>False</IsActive>
-    <Gender>male</Gender>
-    <imagePath />
+    <IsActive>true</IsActive>
+    <Gender>female</Gender>
+    <imagePath></imagePath>
+  </User>
+  <User>
+    <UserName>aviva</UserName>
+    <Password>1111</Password>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>true</IsActive>
+    <Gender>female</Gender>
+    <imagePath>Icons/wonan.png</imagePath>
   </User>
 </ArrayOfUser>

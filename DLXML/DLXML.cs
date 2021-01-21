@@ -410,8 +410,8 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             XElement userSearch = (from p in UserRootElem.Elements()
-                             where (p.Element("UserName").Value) == user.UserName
-                             select p).FirstOrDefault();
+                             where (p.Element("UserName").Value) == user.UserName& p.Element("IsActive").Value=="true"
+                                   select p).FirstOrDefault();
 
             if (userSearch != null)
                 throw new DO.BadUserNameException(user.UserName, "Duplicate user name");
