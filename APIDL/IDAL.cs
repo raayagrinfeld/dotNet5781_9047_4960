@@ -15,7 +15,6 @@ namespace APIDL
         IEnumerable<BusLine> GetAllBusLinesBy(Predicate<BusLine> predicate);
         void AddBusLine(BusLine bus);
         void UpdateBusLine(BusLine bus);
-        void UpdateBusLine(int busLineKey, Action<BusLine> update); //method that knows to updt specific fields in bus
         void DeleteBusLine(int busLineKey);
         BusLine GetBusLine(int busLineKey);
         #endregion
