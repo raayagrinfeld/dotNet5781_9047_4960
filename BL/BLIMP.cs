@@ -516,23 +516,9 @@ namespace BL
 
         #region DrivingLine
        
-        DrivingLine DrivingLineBODOAdapter(DO.BusesSchedule busesSchedule)
+        DrivingLine DrivingLineBODOAdapter(DO.BusesSchedule busesSchedule, StationBO DestinationStation = null)
         {
             return null;
-        }
-        public DrivingLine GetDrivingLine(int ScheduleKey)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<DrivingLine> GetAllDrivings()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate)
-        {
-            throw new NotImplementedException();
         }
 
         public void AddDrivingLine(DrivingLine drivingLine)
@@ -545,7 +531,7 @@ namespace BL
             throw new NotImplementedException();
         }
 
-        public void DeleteDrivingLine(int ScheduleKey)
+        public void DeleteDrivingLine(int busLineKey, TimeSpan time)
         {
             throw new NotImplementedException();
         }
@@ -555,19 +541,22 @@ namespace BL
             return GetAllDrivingsBy(b => b.IsActive && b.StartHour < time && b.ArrivalTime > time, DestinationStation);
         }
 
-        public DrivingLine GetDrivingLine(int ScheduleKey, StationBO DestinationStation)
+        public DrivingLine GetDrivingLine(int busLineKey, TimeSpan time, StationBO DestinationStation)
         {
-            throw new NotImplementedException();
+            return DrivingLineBODOAdapter(dl.GetBusesSchedule(busLineKey, time),DestinationStation);
         }
 
         public IEnumerable<DrivingLine> GetAllDrivings(StationBO DestinationStation)
         {
-            throw new NotImplementedException();
+            return from b in dl.GetAllBusSchedules()
+                   select DrivingLineBODOAdapter(b, DestinationStation);
         }
 
         public IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate, StationBO DestinationStation)
         {
-           return 
+            return from b in GetAllDrivings(DestinationStation)
+                   where predicate(b)
+                   select b;
         }
         #endregion
     }

@@ -62,12 +62,9 @@ namespace BlApi
         #endregion
 
         #region DrivingLine
-        DrivingLine GetDrivingLine(int busLineKey, TimeSpan time);
-        IEnumerable<DrivingLine> GetAllDrivings();
-        IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate); 
-        DrivingLine GetDrivingLine(int busLineKey, TimeSpan time, StationBO DestinationStation);
-        IEnumerable<DrivingLine> GetAllDrivings(StationBO DestinationStation);
-        IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate, StationBO DestinationStation);
+        DrivingLine GetDrivingLine(int busLineKey, TimeSpan time, StationBO DestinationStation = null);
+        IEnumerable<DrivingLine> GetAllDrivings(StationBO DestinationStation=null);
+        IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate, StationBO DestinationStation = null); 
         void AddDrivingLine(DrivingLine drivingLine);
         void UpdateDrivingLine(DrivingLine drivingLine);
         void DeleteDrivingLine(int busLineKey, TimeSpan time);
