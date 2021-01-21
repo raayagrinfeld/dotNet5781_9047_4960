@@ -77,4 +77,11 @@
     <IsActive>true</IsActive>
     <DriveDistanceTime>00:00:00</DriveDistanceTime>
   </ConsecutiveStations>
+  <ConsecutiveStations>
+    <Station1Key>-1</Station1Key>
+    <Station2Key>38895</Station2Key>
+    <Distance>0</Distance>
+    <IsActive>true</IsActive>
+    <DriveDistanceTime>00:00:00</DriveDistanceTime>
+  </ConsecutiveStations>
 </ArrayOfConsecutiveStations>

@@ -138,6 +138,16 @@
     <Area>South</Area>
     <FirstStation>0</FirstStation>
     <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20000</BusLineKey>
+    <LineNumber>3898690</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38895</FirstStation>
+    <LastStation>38895</LastStation>
+    <FirstStationName>בן גוריון/פוקס</FirstStationName>
+    <LastStationName>בן גוריון/פוקס</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>

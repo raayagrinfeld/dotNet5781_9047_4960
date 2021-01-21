@@ -63,4 +63,11 @@
     <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38895</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>בן גוריון/פוקס</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>
