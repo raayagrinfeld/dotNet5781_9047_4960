@@ -111,12 +111,7 @@
                 </TabItem>
                 <TabItem Header="stations" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="69*"/>
-                            <ColumnDefinition Width="57*"/>
-                            <ColumnDefinition Width="884*"/>
-                        </Grid.ColumnDefinitions>
-                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
+                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -175,76 +170,83 @@
                                 </ListView>
                             </Grid>
                         </Border>
-                        <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
+                        <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
                             <Grid>
-                                <Grid x:Name="grid1" Margin="130,47,422,402.667" >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="9*"/>
-                                        <RowDefinition Height="2*"/>
-                                    </Grid.RowDefinitions>
-                                    <Label Content="Bus Station Key:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,2.333" Grid.Row="0" VerticalAlignment="Center"/>
-                                    <TextBlock x:Name="busStationKeyTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="3.333,11,0,10.333" Grid.Row="0" Text="{Binding BusStationKey}" VerticalAlignment="Center"/>
-                                    <Label Content="Coordinates:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,5.667,0,3.333" Grid.Row="1" VerticalAlignment="Center"/>
-                                    <TextBlock x:Name="latitudTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3.333,9.667,0,7.333" Grid.Row="1" VerticalAlignment="Center" Width="80" />
-                                    <TextBlock x:Name="longtitudTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="99.333,9.667,0,7.333" Grid.Row="1" VerticalAlignment="Center" Width="80" />
-                                    <Label Content="Has ARoof:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,4.667,0,1.667" Grid.Row="2" VerticalAlignment="Center"/>
-                                    <CheckBox x:Name="hasARoofCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding HasARoof, Mode=OneWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3.333,10.667,0,6.667" Grid.Row="2" VerticalAlignment="Center"/>
-                                    <Label Content="Station Address:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,5.333,0,1" Grid.Row="3" VerticalAlignment="Center"/>
-                                    <TextBlock x:Name="stationAddressTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3.333,9.333,0,5" Grid.Row="3" Text="{Binding StationAddress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="200"/>
-                                    <Label Content="Station Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,6,0,0.333" Grid.Row="4" VerticalAlignment="Center"/>
-                                    <TextBlock x:Name="stationNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3.333,10,0,4.333" Grid.Row="4" Text="{Binding StationName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="200"/>
-                                    <Button Content="show in map" Grid.Column="2" HorizontalAlignment="Left" Margin="10.667,4.667,-99.667,5" Grid.Row="1" Width="95" Height="Auto" Click="Button_ClickShowMap"/>
-
-                                </Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
                                 <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="5*"/>
-                                        <RowDefinition Height="5*"/>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="100"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="100"/>
-                                    </Grid.ColumnDefinitions>
-                                    <ListView Grid.Row="1" Grid.Column="1" x:Name="listofBusAcurdingtoStationList" BorderBrush="#FF17B419" Margin="0,0,104,33.667" Grid.RowSpan="2">
-                                        <ListView.View>
-                                            <GridView>
-                                                <GridViewColumn Header="Line Number" DisplayMemberBinding="{Binding LineNumber}" Width="100"/>
-                                                <GridViewColumn Header="Bus Line Key" DisplayMemberBinding="{Binding BusLineKey}" Width="100"/>
-                                                <GridViewColumn Header="First Station Name"  Width="220">
-                                                    <GridViewColumn.CellTemplate>
-                                                        <DataTemplate>
-                                                            <TextBlock  Text="{Binding FirstStationName}" FlowDirection="RightToLeft"/>
-                                                        </DataTemplate>
-                                                    </GridViewColumn.CellTemplate>
-                                                </GridViewColumn>
-                                                <GridViewColumn Header="Last Station Name" Width="220">
-                                                    <GridViewColumn.CellTemplate>
-                                                        <DataTemplate>
-                                                            <TextBlock  Text="{Binding LastStationName}" FlowDirection="RightToLeft"/>
-                                                        </DataTemplate>
-                                                    </GridViewColumn.CellTemplate>
-                                                </GridViewColumn>
-                                            </GridView>
-                                        </ListView.View>
-                                    </ListView>
-                                </Grid>
+                                    <Grid Grid.Column="0" x:Name="grid1" Margin="130,47,422,402.667" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="9*"/>
+                                            <RowDefinition Height="2*"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Content="Bus Station Key:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,2.333" Grid.Row="0" VerticalAlignment="Center"/>
+                                        <TextBlock x:Name="busStationKeyTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="3.333,11,0,10.333" Grid.Row="0" Text="{Binding BusStationKey}" VerticalAlignment="Center"/>
+                                        <Label Content="Coordinates:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,5.667,0,3.333" Grid.Row="1" VerticalAlignment="Center"/>
+                                        <TextBlock x:Name="latitudTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3.333,9.667,0,7.333" Grid.Row="1" VerticalAlignment="Center" Width="80" />
+                                        <TextBlock x:Name="longtitudTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="99.333,9.667,0,7.333" Grid.Row="1" VerticalAlignment="Center" Width="80" />
+                                        <Label Content="Has ARoof:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,4.667,0,1.667" Grid.Row="2" VerticalAlignment="Center"/>
+                                        <CheckBox x:Name="hasARoofCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding HasARoof, Mode=OneWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3.333,10.667,0,6.667" Grid.Row="2" VerticalAlignment="Center"/>
+                                        <Label Content="Station Address:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,5.333,0,1" Grid.Row="3" VerticalAlignment="Center"/>
+                                        <TextBlock x:Name="stationAddressTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3.333,9.333,0,5" Grid.Row="3" Text="{Binding StationAddress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="200"/>
+                                        <Label Content="Station Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,6,0,0.333" Grid.Row="4" VerticalAlignment="Center"/>
+                                        <TextBlock x:Name="stationNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3.333,10,0,4.333" Grid.Row="4" Text="{Binding StationName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="200"/>
+                                        <Button Content="show in map" Grid.Column="2" HorizontalAlignment="Left" Margin="10.667,4.667,-99.667,5" Grid.Row="1" Width="95" Height="Auto" Click="Button_ClickShowMap"/>
 
-                                <Button Click="Button_Click_BackArrowBusStation" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                    <Image Source="Icons/left-arrow.png"/>
-                                </Button>
+                                    </Grid>
+                                    <Grid Grid.Column="0" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="5*"/>
+                                            <RowDefinition Height="5*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="100"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ListView Grid.Row="1" Grid.Column="1" x:Name="listofBusAcurdingtoStationList" BorderBrush="#FF17B419" Margin="0,0,104,33.667" Grid.RowSpan="2">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Header="Line Number" DisplayMemberBinding="{Binding LineNumber}" Width="100"/>
+                                                    <GridViewColumn Header="Bus Line Key" DisplayMemberBinding="{Binding BusLineKey}" Width="100"/>
+                                                    <GridViewColumn Header="First Station Name"  Width="220">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock  Text="{Binding FirstStationName}" FlowDirection="RightToLeft"/>
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+                                                    <GridViewColumn Header="Last Station Name" Width="220">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock  Text="{Binding LastStationName}" FlowDirection="RightToLeft"/>
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </Grid>
+
+                                    <Button Grid.Column=" 0" Click="Button_Click_BackArrowBusStation" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <Image Source="Icons/left-arrow.png"/>
+                                    </Button>
+                                </Grid>
                             </Grid>
+
                         </Border>
                     </Grid>
                 </TabItem>
