@@ -567,7 +567,7 @@ namespace BL
 
         public IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate, StationBO DestinationStation)
         {
-            throw new NotImplementedException();
+           return 
         }
         #endregion
     }

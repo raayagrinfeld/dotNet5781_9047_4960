@@ -531,7 +531,7 @@ namespace DL
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             BusesSchedule BSchedule = (from p in ScheduleRootElem.Elements()
-                                       where (p.Element("BusLineKey").Value) == busLineKey.ToString() && (p.Element("IsActive").Value) == "true" & TimeSpan.Parse(p.Element("StartHour").Value )< time& TimeSpan.Parse(p.Element("EndtHour").Value)>time
+                                       where (p.Element("BusLineKey").Value) == busLineKey.ToString() && (p.Element("IsActive").Value) == "true" & TimeSpan.Parse(p.Element("StartHour").Value )< time
                                        select new BusesSchedule()
                                        {
                                            ScheduleKey = Int32.Parse(p.Element("ScheduleKey").Value),

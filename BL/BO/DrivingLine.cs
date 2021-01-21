@@ -8,7 +8,6 @@ namespace BO
 {
    public  class DrivingLine
     {
-        public int ScheduleKey { get; set; }
         public int BusLineKey { get; set; }
         public TimeSpan StartHour { get; set; }
         public string LastStationName { get; set; }
