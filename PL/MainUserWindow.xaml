@@ -106,7 +106,6 @@
                                 <Label x:Name="NoBusLable" Grid.ColumnSpan="5" Content="There is no bus between this satations" HorizontalAlignment="Center" Height="51" Margin="133,26.939,50.667,0" Grid.Row="1" VerticalAlignment="Top" Width="807" Visibility="Collapsed"/>
                             </Grid>
                         </Border>
-
                     </Grid>
                 </TabItem>
                 <TabItem Header="stations" Width="180" Height="30" FontSize="16">

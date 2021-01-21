@@ -322,7 +322,7 @@
                         </Border>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Station" Width="180" Height="30" FontSize="16">
+                <TabItem Header="Station" Width="180" Height="30" FontSize="16" Margin="0,-2,0,2">
                     <Grid Background="#FFE5E5E5">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="69*"/>
@@ -339,7 +339,6 @@
                                     <RowDefinition Height="15"/>
                                     <RowDefinition Height="40"/>
                                     <RowDefinition Height="15"/>
-                                    <RowDefinition/>
                                     <RowDefinition Height="37.333"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.ColumnSpan="2" Margin="0,15,0,0.333" Grid.RowSpan="2">
