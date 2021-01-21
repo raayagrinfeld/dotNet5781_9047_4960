@@ -4,7 +4,7 @@
     <UserName>raaya</UserName>
     <Password>123</Password>
     <ManagementPermission>true</ManagementPermission>
-    <IsActive>true</IsActive>
+    <IsActive>False</IsActive>
     <Gender>female</Gender>
     <imagePath />
   </User>
@@ -55,5 +55,13 @@
     <IsActive>true</IsActive>
     <Gender>male</Gender>
     <imagePath>C:\Users\Keren\source\repos\raayagrinfeld\dotNet5781_9047_4960\PL\Icons\BusUslcon.jpeg</imagePath>
+  </User>
+  <User>
+    <UserName>raaya</UserName>
+    <Password>123</Password>
+    <ManagementPermission>true</ManagementPermission>
+    <IsActive>true</IsActive>
+    <Gender>female</Gender>
+    <imagePath>C:\Users\drhbp\OneDrive\תמונות\images (1).jpg</imagePath>
   </User>
 </ArrayOfUser>
