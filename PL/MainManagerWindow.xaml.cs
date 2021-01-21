@@ -602,10 +602,7 @@ namespace PL
 
         #endregion
 
-        private void cordinationChanged(object sender, TextChangedEventArgs e)
-        {
-          //  selectedStation.Coordinates = new GeoCoordinate(double.Parse(latitudTextBox.Text), double.Parse(longtitudTextBox.Text));
-        }
+
 
         private void Button_Click_AddStationToBus(object sender, RoutedEventArgs e)
         {
