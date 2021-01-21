@@ -208,7 +208,7 @@
                                     <ListView x:Name="DrivingLineListView" HorizontalAlignment="Left" Height="311" Margin="723,232,0,0" VerticalAlignment="Top" Width="276" SelectionChanged="DrivingLineView_SelectionChanged" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
                                         <ListView.View >
                                             <GridView>
-                                                <GridViewColumn Header="Station Name" Width="220" >
+                                                <GridViewColumn Header="Statrt Time" Width="220" >
                                                     <GridViewColumn.CellTemplate>
                                                         <DataTemplate>
                                                             <TextBlock  Text="{Binding StartHour}" FlowDirection="RightToLeft"/>
