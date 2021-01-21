@@ -227,7 +227,7 @@
                                             </GridView>
                                         </ListView.View>
                                     </ListView>
-                                    <Button x:Name="AddDriving" Content="Add Driving Line" Grid.Column="0" Grid.Row="1"  Margin="725,556,185.333,48.667" ></Button>
+                                    <Button x:Name="AddDriving" Content="Add Driving Line" Grid.Column="0" Grid.Row="1"  Margin="725,556,185.333,48.667"   Click="AddDriving_Click"></Button>
                                 </Grid>
                                 <Button Click="Button_Click_BackArrowBusLine" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <Image Source="Icons/left-arrow.png"/>

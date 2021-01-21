@@ -674,9 +674,10 @@ namespace PL
             showLocation.Show();
         }
 
-        private void longtitudTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void AddDriving_Click(object sender, RoutedEventArgs e)
         {
-
+            AddDrivingLine addDriving = new AddDrivingLine(new DrivingLine { BusLineKey=selectedBusLine.BusLineKey});
+            addDriving.Show();
         }
     }
 }

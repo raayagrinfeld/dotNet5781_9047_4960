@@ -30,7 +30,17 @@ namespace PL
         }
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            
+            DrivingLine drivingLine = grid1.DataContext as DrivingLine;
+            drivingLine.IsActive = true;
+            drivingLine.LastStationName = bl.GetBusLine(drivingLine.BusLineKey).LastStationName;
+            try
+            {
+                bl.AddDrivingLine(drivingLine);
+            }
+            catch(BO.BadDrivingLineException ex)
+            {
+
+            }
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
