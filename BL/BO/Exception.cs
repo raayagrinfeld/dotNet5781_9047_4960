@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BO
 {
     [Serializable]
-    #region BusExceptions
+    #region BusLineExceptions
     public class BadBusLineKeyException : Exception
     {
         public int BUSLINEKEY;
@@ -44,6 +44,15 @@ namespace BO
         public BadBusLineStationsException(string message, Exception innerException) :
             base(message, innerException)
         { KEY1 = ((DO.BadBusLineStationsException)innerException).KEY1; KEY2 = ((DO.BadBusLineStationsException)innerException).KEY2; }
+    }
+    #endregion
+    #region LineDrivingExceptions
+    public class BadDrivingLineException: Exception
+    {
+        public int DRIVINGLINEKEY;
+        public BadDrivingLineException(string message, Exception innerException) :
+            base(message, innerException) => DRIVINGLINEKEY = ((DO.BadBusesScheduleKeyException)innerException).BusesScheduleKEY;
+        public override string ToString() => base.ToString() + $", bad line key: {DRIVINGLINEKEY}";
     }
     #endregion
 }

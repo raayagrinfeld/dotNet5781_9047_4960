@@ -54,7 +54,6 @@ namespace BlApi
         #region User
         BO.User GetUser(string userName);
         IEnumerable<IGrouping<bool, User>> GetUserGrouptByManagment();
-
         IEnumerable<BO.User> GetAllUsers();
         IEnumerable<BO.User> GetAlUersBy(Predicate<BO.User> predicate);
         void AddUser(BO.User user);
@@ -63,7 +62,16 @@ namespace BlApi
         #endregion
 
         #region DrivingLine
-        DrivingLine TimeToTheStation(DrivingLine lineOnRide, StationBO DestinationStationName, TimeSpan time);
+        DrivingLine GetDrivingLine(int ScheduleKey);
+        IEnumerable<DrivingLine> GetAllDrivings();
+        IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate); 
+        DrivingLine GetDrivingLine(int ScheduleKey, StationBO DestinationStation);
+        IEnumerable<DrivingLine> GetAllDrivings(StationBO DestinationStation);
+        IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate, StationBO DestinationStation);
+        void AddDrivingLine(DrivingLine drivingLine);
+        void UpdateDrivingLine(DrivingLine drivingLine);
+        void DeleteDrivingLine(int ScheduleKey);
+        IEnumerable<DrivingLine> BusLineInDrivingToStation(StationBO DestinationStation, TimeSpan time);
         #endregion
 
     }

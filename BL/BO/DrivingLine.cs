@@ -8,9 +8,12 @@ namespace BO
 {
    public  class DrivingLine
     {
+        public int ScheduleKey { get; set; }
         public int BusLineKey { get; set; }
         public TimeSpan StartHour { get; set; }
         public string LastStationName { get; set; }
-        public IEnumerable< TimeSpan> ArrivalTime { get; set; }
+        public TimeSpan ArrivalTime { get; set; }
+        public bool IsActive { get; set; }
+
     }
 }
