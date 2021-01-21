@@ -28,4 +28,39 @@
     <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38886</BusStationKey>
+    <BusLineKey>20003</BusLineKey>
+    <StationName>בית ספר גוונים/ארז</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38887</BusStationKey>
+    <BusLineKey>20004</BusLineKey>
+    <StationName>דרך האילנות/אלון</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38889</BusStationKey>
+    <BusLineKey>20002</BusLineKey>
+    <StationName>העצמאות/וייצמן</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38898</BusStationKey>
+    <BusLineKey>20002</BusLineKey>
+    <StationName>לוי אשכול/הרב דוד ישראל</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38888</BusStationKey>
+    <BusLineKey>20005</BusLineKey>
+    <StationName>דרך האילנות/מנחם בגין</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>

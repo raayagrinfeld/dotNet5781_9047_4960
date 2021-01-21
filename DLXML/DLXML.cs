@@ -39,9 +39,6 @@ namespace DL
 
             if (ListBuses.FirstOrDefault(b => b.BusLineKey == bus.BusLineKey &b.IsActive) != null)
                 throw new DO.BadBusLineKeyException(bus.BusLineKey, "This bus line already exist");
-
-           if (GetBusLine(bus.BusLineKey) != null)
-             throw new DO.BadBusLineKeyException(bus.BusLineKey, "exsist bus line");
             ListBuses.Add(bus); //no need to Clone()
 
             XMLTools.SaveListToXMLSerializer(ListBuses, BusLinePath);
@@ -103,7 +100,7 @@ namespace DL
             {
                 throw new BadBusLineKeyException(bus.BusLineKey, $"bad bus line key: {bus.BusLineKey}");
             }
-            XMLTools.SaveListToXMLSerializer(ListBuses, BusLinePath);
+            //XMLTools.SaveListToXMLSerializer(ListBuses, BusLinePath);
         }
         #endregion
 

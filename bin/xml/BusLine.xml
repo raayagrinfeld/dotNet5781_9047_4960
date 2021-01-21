@@ -14,7 +14,7 @@
     <Area>Center</Area>
     <FirstStation>0</FirstStation>
     <LastStation>0</LastStation>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20003</BusLineKey>
@@ -38,7 +38,7 @@
     <Area>General</Area>
     <FirstStation>0</FirstStation>
     <LastStation>0</LastStation>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20006</BusLineKey>
@@ -112,5 +112,32 @@
     <FirstStation>0</FirstStation>
     <LastStation>0</LastStation>
     <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20002</BusLineKey>
+    <LineNumber>9075638</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>38898</LastStation>
+    <LastStationName>לוי אשכול/הרב דוד ישראל</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20005</BusLineKey>
+    <LineNumber>8871728</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38888</FirstStation>
+    <LastStation>38888</LastStation>
+    <FirstStationName>דרך האילנות/מנחם בגין</FirstStationName>
+    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20000</BusLineKey>
+    <LineNumber>3898690</LineNumber>
+    <Area>South</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>
