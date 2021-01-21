@@ -42,7 +42,7 @@
                     </MenuItem>
                 </Menu>
             </DockPanel>
-            <TabControl Grid.Row="1" x:Name="TabControl_Manager"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="al" >
+            <TabControl Grid.Row="1" x:Name="TabControl_Manager"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
                 <TabItem Header="Search a Bus" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
                         <Border x:Name="SearchBus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Margin="10,10,9.667,9.667">
@@ -124,14 +124,7 @@
                                     </GridViewColumn>
                                 </GridView>
                             </ListView.View>
-                            <ListView.ContextMenu>
-                                <ContextMenu>
-                                    <MenuItem Header="update station information" Click="Button_Click_UpdateStationInformation" />
-                                    <MenuItem Header="deleteStation" Click="Button_Click_DeleteBusStaion" />
-                                </ContextMenu>
-                            </ListView.ContextMenu>
                         </ListView>
-                        <Button x:Name="addStation" Content="Add station" Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Margin="0,518,29,20.667" Grid.Column="1" Click="addStation_Click" Grid.Row="3" Grid.RowSpan="2"/>
                     </Grid>
 
                 </TabItem>

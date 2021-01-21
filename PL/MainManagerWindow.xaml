@@ -125,7 +125,8 @@
                         </Border>
                         <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Margin="3,4,-1.333,-2.333" Grid.ColumnSpan="3" Grid.RowSpan="2" RenderTransformOrigin="0.444,0.525" >
                             <Grid Grid.Row="0">
-                                <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin="3,91,0,0" HorizontalAlignment="Left" >
+
+                                <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin="1,91,0,0" HorizontalAlignment="Left" >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
