@@ -53,7 +53,7 @@
                             <ColumnDefinition Width="740*"/>
                             <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
-                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2">
+                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -124,7 +124,7 @@
                                 <Button Content="add new bus"  Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Grid.Row="4" Click="Button_Click_AddBusLine" Margin="0,0.2,30.8,9.8" Grid.Column="1"/>
                             </Grid>
                         </Border>
-                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2" >
+                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Margin="3,0.4,2.8,1.8" Grid.ColumnSpan="4" Grid.RowSpan="2" >
                             <Grid>
 
                                 <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin="173,91,0,0" HorizontalAlignment="Left" >
