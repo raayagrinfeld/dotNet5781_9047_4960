@@ -35,13 +35,10 @@ namespace PL
             StationsBox.Text = bl.GetAllBusStations().ToString();
             NoBusLable.Visibility = Visibility.Collapsed;
             listBuses.Visibility = Visibility.Collapsed;
+            stationBOListView.ItemsSource = bl.GetAllBusStations();
+
         }
-     /*   public MainUserWindow()
-        {
-            InitializeComponent();
-            StationsBox.ItemsSource = bl.GetAllBusStations();
-            StationsBox2.ItemsSource = bl.GetAllBusStations();
-        }*/
+
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
         {
             SystemCommands.MinimizeWindow(this);
@@ -98,19 +95,6 @@ namespace PL
             this.Close();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-            System.Windows.Data.CollectionViewSource drivingViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("drivingViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // drivingViewSource.Source = [generic data source]
-            //System.Windows.Data.CollectionViewSource stationBOViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("stationBOViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // stationBOViewSource.Source = [generic data source]
-            System.Windows.Data.CollectionViewSource stationBOViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("stationBOViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // stationBOViewSource.Source = [generic data source]
-        }
         private void SearchBus_Click(object sender, RoutedEventArgs e)
         {
             if (StationsBox.SelectedIndex != -1 & StationsBox2.SelectedIndex != -1)

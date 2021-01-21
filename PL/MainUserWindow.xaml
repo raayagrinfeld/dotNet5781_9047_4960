@@ -7,7 +7,7 @@
         xmlns:BO="clr-namespace:BO;assembly=BL" x:Class="PL.MainUserWindow"
         mc:Ignorable="d"
         Title="MainUserWindow" MinHeight="720" MinWidth="1020" Height="700" Width="1000"  WindowStyle="None" Closed="When_Window_CLosed" 
-        AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown" WindowState="Maximized" Icon="Icons\BusUslcon.jpeg" Loaded="Window_Loaded" >
+        AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown" WindowState="Maximized" Icon="Icons\BusUslcon.jpeg"  >
     <Window.Resources>
         <CollectionViewSource x:Key="drivingViewSource" d:DesignSource="{d:DesignInstance {x:Type BO:Driving}, CreateList=True}"/>
         <local:ConvertStationToStationName x:Key="StationConvert" />
@@ -49,28 +49,65 @@
 
                             <Grid x:Name="searchB" DataContext="{StaticResource stationBOViewSource}" >
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="100"/>
-                                    <RowDefinition Height="100"/>
-                                    <RowDefinition Height="100"/>
-                                    <RowDefinition Height="100"/>
-                                    <RowDefinition Height="100"/>
-                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="57*"/>
+                                    <RowDefinition Height="149*"/>
+                                    <RowDefinition Height="103*"/>
+                                    <RowDefinition Height="103*"/>
+                                    <RowDefinition Height="103*"/>
+                                    <RowDefinition Height="103*"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="200*"/>
-                                    <ColumnDefinition Width="200*"/>
-                                    <ColumnDefinition Width="200*"/>
-                                    <ColumnDefinition Width="200*"/>
-                                    <ColumnDefinition Width="200*"/>
-                                    <ColumnDefinition Width="200*"/>
+                                    <ColumnDefinition Width="168*"/>
+                                    <ColumnDefinition Width="299*"/>
+                                    <ColumnDefinition Width="217*"/>
+                                    <ColumnDefinition Width="299*"/>
+                                    <ColumnDefinition Width="58*"/>
                                 </Grid.ColumnDefinitions>
-                                <ComboBox x:Name="StationsBox" Grid.Column="2" Grid.Row="0"  Margin="0.333,0,0,55.667" />
-                                <Label Content="Choose a source station" Grid.Row="0" Grid.Column="1"/>
-                                <ComboBox x:Name="StationsBox2" Grid.Column="3" Grid.Row="0" Text="{Binding stationBOViewSource , Converter={StaticResource StationConvert }}" Grid.ColumnSpan="2" Margin="165,0,0,55.667"/>
-                                <Label Content="Choose a destanation station" Grid.Column="3"  Grid.Row="0" />
-                                <Button x:Name="search" Content="Search Bus" HorizontalAlignment="Left" Height="42" Margin="10,3,0,0" VerticalAlignment="Top" Width="145" Click="SearchBus_Click" Grid.Column="5"/>
-                                <ListBox x:Name="listBuses" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="991" Visibility="Collapsed" Margin="0,99.333,0,-5" Grid.Row="1" Background="Aqua" Grid.ColumnSpan="6" Grid.RowSpan="5"/>
-                                <Label x:Name="NoBusLable" Grid.ColumnSpan="6" Content="There is no bus between this satations" HorizontalAlignment="Center" Height="51" Margin="83,27.333,0,0" Grid.Row="1" VerticalAlignment="Top" Width="807" Visibility="Collapsed"/>
+                                <ComboBox x:Name="StationsBox" ItemsSource="{Binding}" Grid.Column="1" Grid.Row="0" >
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="50" />
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="150" />
+                                                    <ColumnDefinition Width="90" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="station Key: " Grid.Column="0"/>
+                                                <TextBlock Text="{Binding BusStationKey}" Grid.Column="1"/>
+                                                <TextBlock Text="  station name: " Grid.Column="2"/>
+                                                <TextBlock Text="{Binding StationName}" Grid.Column="3"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox> 
+                                <Label Content="Choose source station" Grid.Row="0" Grid.Column="0" Margin="2,12,0,13.667" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <ComboBox x:Name="StationsBox2" Grid.Column="3" Grid.Row="0"  ItemsSource="{Binding}" >
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="50" />
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="150" />
+                                                    <ColumnDefinition Width="90" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="station Key: " Grid.Column="0"/>
+                                                <TextBlock Text="{Binding BusStationKey}" Grid.Column="1"/>
+                                                <TextBlock Text="  station name: " Grid.Column="2"/>
+                                                <TextBlock Text="{Binding StationName}" Grid.Column="3"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                                <Label Content="Choose destanation station" Grid.Column="2"  Grid.Row="0" Margin="5.333,12,243.667,10.333" Grid.ColumnSpan="2" />
+                                <Button x:Name="search" HorizontalAlignment="Center" Height="42" VerticalAlignment="Top"  Click="SearchBus_Click" Grid.Column="4" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Width="42">
+                                    <Image Source="Icons\loupe (1).png"/>
+                                </Button>
+                                <ListBox x:Name="listBuses" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="991" Visibility="Collapsed" Margin="0,98.939,-0.333,0" Grid.Row="1" Background="Aqua" Grid.ColumnSpan="5" Grid.RowSpan="5"/>
+                                <Label x:Name="NoBusLable" Grid.ColumnSpan="5" Content="There is no bus between this satations" HorizontalAlignment="Center" Height="51" Margin="133,26.939,50.667,0" Grid.Row="1" VerticalAlignment="Top" Width="807" Visibility="Collapsed"/>
                             </Grid>
                         </Border>
 

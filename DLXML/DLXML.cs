@@ -336,7 +336,7 @@ namespace DL
                     select new ConsecutiveStations()
                     {
                         Station1Key = Int32.Parse(p.Element("Station1Key").Value),
-                        Station2Key = Int32.Parse(p.Element("Station1Key").Value),
+                        Station2Key = Int32.Parse(p.Element("Station2Key").Value),
                         DriveDistanceTime = TimeSpan.Parse(p.Element("DriveDistanceTime").Value),
                         IsActive = Boolean.Parse(p.Element("IsActive").Value),
                         Distance =Int32.Parse( p.Element("Distance").Value),

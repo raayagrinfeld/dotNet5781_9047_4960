@@ -28,7 +28,7 @@
     <UserName>odelia</UserName>
     <Password>1666</Password>
     <ManagementPermission>true</ManagementPermission>
-    <IsActive>true</IsActive>
+    <IsActive>False</IsActive>
     <Gender>male</Gender>
     <imagePath>UserIcons\cow.png</imagePath>
   </User>
@@ -103,5 +103,13 @@
     <IsActive>true</IsActive>
     <Gender>female</Gender>
     <imagePath>UserIcons\dinosaur.png</imagePath>
+  </User>
+  <User>
+    <UserName>odelia</UserName>
+    <Password>1666</Password>
+    <ManagementPermission>true</ManagementPermission>
+    <IsActive>true</IsActive>
+    <Gender>male</Gender>
+    <imagePath>UserIcons\cow.png</imagePath>
   </User>
 </ArrayOfUser>
