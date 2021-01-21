@@ -26,12 +26,16 @@ namespace BL
         #region runNumber
         public int getNextBusLineRunNumber()
         {
-            return ++DO.RunNumbers.BusLineRunNumber;
+            return dl.GetRunNumber_BusLIne();
         }
 
         public int getNextBusStationRunNumber()
         {
-            return ++DO.RunNumbers.BusStationRunNumber;
+            return dl.GetRunNumber_BusStation();
+        }
+        public int getNextBusScheduleRunNumber()
+        {
+            return dl.GetRunNumber_BusesSChedule();
         }
         #endregion
 
