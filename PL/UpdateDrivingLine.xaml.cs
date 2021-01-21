@@ -12,18 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BO;
-using BlApi;
 using BL;
+using BlApi;
 
 namespace PL
 {
     /// <summary>
-    /// Interaction logic for AddDrivingLine.xaml
+    /// Interaction logic for UpdateDrivingLine.xaml
     /// </summary>
-    public partial class AddDrivingLine : Window
+    public partial class UpdateDrivingLine : Window
     {
         IBL bl = BlFactory.GetBL();
-        public AddDrivingLine(DrivingLine drivingLine)
+        public UpdateDrivingLine(DrivingLine drivingLine)
         {
             InitializeComponent();
             grid1.DataContext = drivingLine;
@@ -38,17 +38,13 @@ namespace PL
             {
                 bl.AddDrivingLine(drivingLine);
             }
-            catch(BO.BadDrivingLineException ex)
+            catch (BO.BadDrivingLineException ex)
             {
 
             }
         }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
 
             System.Windows.Data.CollectionViewSource drivingLineViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("drivingLineViewSource")));

@@ -1,3 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfBusesSchedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BusesSchedule>
+    <BusLineKey>20003</BusLineKey>
+    <StartHour>08:00:00</StartHour>
+    <IsActive>False</IsActive>
+  </BusesSchedule>
+  <BusesSchedule>
+    <BusLineKey>20003</BusLineKey>
+    <StartHour>09:00:00</StartHour>
+    <IsActive>False</IsActive>
+  </BusesSchedule>
+  <BusesSchedule>
+    <BusLineKey>20003</BusLineKey>
+    <StartHour>08:30:00</StartHour>
+    <IsActive>true</IsActive>
+  </BusesSchedule>
+  <BusesSchedule>
+    <BusLineKey>20003</BusLineKey>
+    <StartHour>09:00:00</StartHour>
+    <IsActive>true</IsActive>
+  </BusesSchedule>
+  <BusesSchedule>
+    <BusLineKey>20003</BusLineKey>
+    <StartHour>09:00:05</StartHour>
+    <IsActive>False</IsActive>
+  </BusesSchedule>
 </ArrayOfBusesSchedule>

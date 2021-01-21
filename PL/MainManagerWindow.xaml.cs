@@ -318,7 +318,9 @@ namespace PL
         }
         private void DrivingLineView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            AddDrivingLine addDriving = new AddDrivingLine(DrivingLineListView.SelectedItem as DrivingLine);
+            addDriving.Show();
+            DrivingLineListView.ItemsSource = bl.GetAllDrivingsBy(b => b.BusLineKey == selectedBusLine.BusLineKey);
         }
         private void Button_Click_DeleteDrivingLine(object sender, RoutedEventArgs e)
         {
@@ -678,6 +680,8 @@ namespace PL
         {
             AddDrivingLine addDriving = new AddDrivingLine(new DrivingLine { BusLineKey=selectedBusLine.BusLineKey});
             addDriving.Show();
+            DrivingLineListView.ItemsSource = bl.GetAllDrivingsBy(b => b.BusLineKey == selectedBusLine.BusLineKey);
+            refreshcontent();
         }
     }
 }

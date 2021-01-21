@@ -67,6 +67,9 @@
     <Compile Include="ShowLocation.xaml.cs">
       <DependentUpon>ShowLocation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpdateDrivingLine.xaml.cs">
+      <DependentUpon>UpdateDrivingLine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserSettingsWindow.xaml.cs">
       <DependentUpon>UserSettingsWindow.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <DependentUpon>MainUserWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="ShowLocation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateDrivingLine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
