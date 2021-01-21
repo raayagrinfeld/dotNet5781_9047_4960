@@ -54,7 +54,12 @@ namespace PL
               "Portable Network Graphic (*.png)|*.png";
             if (op.ShowDialog() == true)
             {
-                userWindow.imagePath = op.FileName;
+                string s= op.FileName;
+                if (s.Contains("UserIcons"))
+                {
+                    s=s.Remove(0, s.IndexOf("UserIcons"));
+                }
+                userWindow.imagePath = s;
                 UserImage.Source = new BitmapImage(new Uri(op.FileName));
             }
         }

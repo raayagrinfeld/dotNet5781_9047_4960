@@ -31,6 +31,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLXML", "DLXML\DLXML.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserIcons", "UserIcons", "{9A9A7D36-8E0A-4A04-8B3C-650FDAB1DDBB}"
 	ProjectSection(SolutionItems) = preProject
+		bin\UserIcons\cow.png = bin\UserIcons\cow.png
+		bin\UserIcons\dinosaur.png = bin\UserIcons\dinosaur.png
+		bin\UserIcons\dollars.png = bin\UserIcons\dollars.png
+		bin\UserIcons\plant-pot.png = bin\UserIcons\plant-pot.png
+		bin\UserIcons\user.png = bin\UserIcons\user.png
 		bin\UserIcons\woman.png = bin\UserIcons\woman.png
 	EndProjectSection
 EndProject

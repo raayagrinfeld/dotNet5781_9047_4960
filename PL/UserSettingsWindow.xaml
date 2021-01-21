@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="UserSettingsWindow" Height="250" Width="400" WindowStyle="None" >
+        Title="UserSettingsWindow" Height="250" Width="420" WindowStyle="None" >
 
     <Grid>
         <Grid.RowDefinitions>

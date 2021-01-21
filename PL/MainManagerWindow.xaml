@@ -480,7 +480,7 @@
                             <ColumnDefinition Width="908*"/>
                         </Grid.ColumnDefinitions>
                         <Grid Background="#FFE5E5E5" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2"/>
-                        <Border x:Name="userListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
+                        <Border x:Name="userListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="2" Margin="0,0,-0.2,-0.2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="71*"/>
@@ -568,7 +568,7 @@
                                 </Button>
                             </Grid>
                         </Border>
-                        <Border x:Name="UserDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Margin="6,0,-6.2,-0.2" Grid.ColumnSpan="2">
+                        <Border x:Name="UserDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Margin="6,0,-6.2,-0.2" Grid.ColumnSpan="2">
                             <Grid>
 
                                 <Grid x:Name="UserDetialedGrid" VerticalAlignment="Top" Margin="159,101,0,0" HorizontalAlignment="Left" Height="257" Width="541" >
@@ -594,9 +594,12 @@
                                     <ComboBox x:Name="GenderTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Path=Gender, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="0.667,38,0,46.333" Height="23" HorizontalAlignment="Left" Grid.Column="3" Grid.ColumnSpan="2"/>
                                     <Label VerticalAlignment="Center" Grid.Row="4" Margin="2.333,44.333,0,4.334" HorizontalAlignment="Left" Grid.Column="1" Content="Management Permission:" Height="66" Width="145" Grid.RowSpan="2"/>
                                     <CheckBox Name="PremissionCheckBox" IsChecked="{Binding ManagementPermission , Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Grid.Row="4" Margin="6.667,52.333,-38.333,-59.333"  Height="122"  Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
-                                    <Image x:Name="UserImage" Source="Icons/user.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="97" Height="98" Margin="31.333,2,-127,7.333" Grid.Column="5" />
-                                    <Label x:Name="label1" Content="Image" Grid.Column="5" HorizontalAlignment="Left" Height="40" Margin="34.333,7.667,-139,0" Grid.Row="3" VerticalAlignment="Top" Width="108" Grid.RowSpan="2"/>
+                                    <Border Grid.Column="5" Width="150" Height="120" BorderThickness="2" BorderBrush="Black" >
+                                        <Image x:Name="UserImage" Source="Icons/user.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <Button Grid.Row="3" Grid.Column="5"  x:Name="Button_UploadImage" Content="uplode image" Click="Button_Click_UploadImage"  /> 
                                 </Grid>
+                                
                                 <Button Click="Button_Click_BackArrowUser" Width="25" Height="25" Template="{StaticResource TitleBarButtons}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <Image Source="Icons/left-arrow.png"/>
                                 </Button>

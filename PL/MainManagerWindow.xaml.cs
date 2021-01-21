@@ -34,6 +34,7 @@ namespace PL
     public partial class MainManagerWindow : Window
     {
         public static IBL bl = BlFactory.GetBL();
+        OpenFileDialog op; //for getting image input from user
         User user;
         BusLineBO selectedBusLine=null;
         StationBO selectedStation=null;
@@ -333,6 +334,35 @@ namespace PL
                 userListBorder.Visibility = Visibility.Collapsed;
                 UserDetialedBorder.Visibility = Visibility.Visible;
                 UserDetialedGrid.DataContext = selectedUser;
+                if(selectedUser.imagePath!="")
+                { 
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(System.IO.Path.GetFullPath(user.imagePath));
+                    bitmap.EndInit();
+                    UserImage.Source = bitmap;
+                }
+            }
+        }
+        private void Button_Click_UploadImage(object sender, RoutedEventArgs e)
+        {
+            if(selectedUser != null)
+            {
+                op = new OpenFileDialog();
+                op.Title = "Select a picture";
+                op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+                  "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+                  "Portable Network Graphic (*.png)|*.png";
+                if (op.ShowDialog() == true)
+                {
+                    string s = op.FileName;
+                    if (s.Contains("UserIcons"))
+                    {
+                        s = s.Remove(0, s.IndexOf("UserIcons"));
+                    }
+                    selectedUser.imagePath = s;
+                    UserImage.Source = new BitmapImage(new Uri(op.FileName));
+                }
             }
         }
 
@@ -506,6 +536,11 @@ namespace PL
             if(selectedUser!=null)
             {
                 bl.UpdateUser(selectedUser);
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(System.IO.Path.GetFullPath("UserIcons/user.png"));
+                bitmap.EndInit();
+                UserImage.Source = bitmap;
                 selectedUser = null;
             }
         }
