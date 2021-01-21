@@ -70,6 +70,13 @@ namespace APIDL
 
         #endregion
 
+        #region RunNumbers
+        int GetRunNumber_BusLIne();
+        int GetRunNumber_BusStation();
+        int GetRunNumber_BusesSChedule();
+
+
+        #endregion
 
     }
 }

@@ -422,5 +422,20 @@ namespace DL
             return null;
         }
         #endregion
+        #region RunNumber
+        public int GetRunNumber_BusLIne()
+        {
+            return ++RunNumbers.BusLineRunNumber;
+        }
+        public int GetRunNumber_BusStation()
+        {
+            return ++RunNumbers.BusStationRunNumber;
+        }
+        public int GetRunNumber_BusesSChedule()
+        {
+            return ++RunNumbers.BusesSCheduleRunNumber;
+        }
+
+        #endregion
     }
 }
