@@ -92,6 +92,14 @@
     <UserName>raaya</UserName>
     <Password>123</Password>
     <ManagementPermission>true</ManagementPermission>
+    <IsActive>False</IsActive>
+    <Gender>female</Gender>
+    <imagePath>UserIcons\dinosaur.png</imagePath>
+  </User>
+  <User>
+    <UserName>raaya</UserName>
+    <Password>123</Password>
+    <ManagementPermission>true</ManagementPermission>
     <IsActive>true</IsActive>
     <Gender>female</Gender>
     <imagePath>UserIcons\dinosaur.png</imagePath>

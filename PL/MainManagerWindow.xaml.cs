@@ -251,6 +251,7 @@ namespace PL
             {
                 BusLineBO AddbusLine = AddBusDataGrid.DataContext as BusLineBO;
                 AddbusLine.BusLineKey = bl.getNextBusLineRunNumber();
+                AddbusLine.IsActive = true;
                 if (AddbusLine!=null)
                 {
                     bl.AddBusLine(AddbusLine);
