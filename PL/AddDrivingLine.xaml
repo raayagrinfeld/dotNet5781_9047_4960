@@ -6,13 +6,14 @@
         xmlns:local="clr-namespace:PL"
         xmlns:BO="clr-namespace:BO;assembly=BL" x:Class="PL.AddDrivingLine"
         mc:Ignorable="d"
-        Title="AddDrivingLine" Height="200" Width="400" Loaded="Window_Loaded_1">
+        Title="AddDrivingLine" Height="204.603" Width="400" Loaded="Window_Loaded_1">
 
     <Window.Resources>
         <CollectionViewSource x:Key="drivingLineViewSource" d:DesignSource="{d:DesignInstance {x:Type BO:DrivingLine}, CreateList=True}"/>
     </Window.Resources>
     <Grid x:Name="grid1" DataContext="{StaticResource drivingLineViewSource}" HorizontalAlignment="Left" Margin="68,55,0,0" VerticalAlignment="Top" Height="78" Width="231">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
@@ -20,11 +21,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Label Content="Bus Line Key:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-        <TextBlock x:Name="busLineKeyTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-        <Label Content="Start Hour:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
-        <TextBox x:Name="startHourTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding StartHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-        <Button x:Name="button" Content="add" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="164.667,31.333,-101.333,-42.667" VerticalAlignment="Top" Width="64" Grid.Row="1"/>
+        <Label Content="Bus Line Key:" Grid.Column="1" HorizontalAlignment="Left" Margin="2.667,3,0,7.667" Grid.Row="0" VerticalAlignment="Center" Height="26" Width="79"/>
+        <Image Source=" Icons\key.png" Grid.Column="0" Grid.Row="0" Margin="3,6,2.333,4.667"/>
+        <TextBlock x:Name="busLineKeyTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="3.333,5,0,8.667" Grid.Row="0" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        <Label Content="Start Hour:" Grid.Column="1" HorizontalAlignment="Left" Margin="2.667,5.333,0,9.667" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="67"/>
+        <TextBox x:Name="startHourTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="3.333,7.333,0,10.667" Grid.Row="1" Text="{Binding StartHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        <Image Source=" Icons\clock.png" Grid.Column="0" Grid.Row="1" Margin="3,8.333,2.333,6.667"/>
+        <Button x:Name="button" Content="add" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="64" Margin="146.667,27.667,-87.333,-31" Grid.Row="1" Grid.Column="2"/>
     </Grid>
 
 </Window>

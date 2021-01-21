@@ -180,5 +180,11 @@
   <ItemGroup>
     <Resource Include="Icons\loupe %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\clock.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
