@@ -34,10 +34,6 @@ namespace BL
         {
             return dl.GetRunNumber_BusStation();
         }
-        public int getNextBusScheduleRunNumber()
-        {
-            return dl.GetRunNumber_BusesSChedule();
-        }
         #endregion
 
         #region BusLineBO
@@ -518,22 +514,55 @@ namespace BL
        
         DrivingLine DrivingLineBODOAdapter(DO.BusesSchedule busesSchedule, StationBO DestinationStation = null)
         {
-            return null;
+            DrivingLine drivingLine = new DrivingLine();
+            busesSchedule.CopyPropertiesTo(drivingLine);
+            if (DestinationStation == null)
+                drivingLine.ArrivalTime = TimeBetweanStations( GetBusLine(busesSchedule.BusLineKey) , dl.GetBusLine(busesSchedule.BusLineKey).FirstStation, dl.GetBusLine(busesSchedule.BusLineKey).LastStation);
+            else
+                drivingLine.ArrivalTime = TimeBetweanStations(GetBusLine(busesSchedule.BusLineKey), dl.GetBusLine(busesSchedule.BusLineKey).FirstStation, DestinationStation.BusStationKey);
+            return drivingLine;
+        }
+        DO.BusesSchedule DrivingLineDOBOAdapter(DrivingLine drivingLine)
+        {
+            BusesSchedule schedule = new BusesSchedule();
+            drivingLine.CopyPropertiesTo(schedule);
+            return schedule;
         }
 
         public void AddDrivingLine(DrivingLine drivingLine)
         {
-            throw new NotImplementedException();
+            try
+            {
+                dl.AddBusSchedule(DrivingLineDOBOAdapter(drivingLine));
+            }
+            catch (DO.BadBusesScheduleKeyException ex)
+            {
+                throw new BO.BadDrivingLineException("duplicate driving line", ex);
+            }
         }
 
         public void UpdateDrivingLine(DrivingLine drivingLine)
         {
-            throw new NotImplementedException();
+            try
+            {
+                dl.UpdateBusSchedule(DrivingLineDOBOAdapter(drivingLine));
+            }
+            catch (DO.BadBusesScheduleKeyException ex)
+            {
+                throw new BO.BadDrivingLineException("duplicate driving line", ex);
+            }
         }
 
         public void DeleteDrivingLine(int busLineKey, TimeSpan time)
         {
-            throw new NotImplementedException();
+            try
+            {
+                dl.DeleteBusSchedule(busLineKey,time);
+            }
+            catch (DO.BadBusesScheduleKeyException ex)
+            {
+                throw new BO.BadDrivingLineException("duplicate driving line", ex);
+            }
         }
 
         public IEnumerable<DrivingLine> BusLineInDrivingToStation(StationBO DestinationStation, TimeSpan time)
