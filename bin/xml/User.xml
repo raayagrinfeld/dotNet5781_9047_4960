@@ -5,7 +5,7 @@
     <Password>YVSypMeJULv6CzAxrB5mWKMrEWNPL5RvPu46ViLN0ThGFf/08BNe0PmJ/cKR9SUDL5ju8+5sXDBkWJ5QP6j7zg==</Password>
     <Salt>706175321</Salt>
     <ManagementPermission>False</ManagementPermission>
-    <IsActive>true</IsActive>
+    <IsActive>False</IsActive>
     <Gender>male</Gender>
     <imagePath></imagePath>
   </User>
@@ -13,10 +13,10 @@
     <UserName>raaya</UserName>
     <Password>MgbRrfIhTU5LTUCUdO8I4wcySe/4AQ4dOtLqA/bm/PG9vfN5z0khVvgO38LobAlsGcMQiN2cbt8zFwhd5S2EyA==</Password>
     <Salt>858561543</Salt>
-    <ManagementPermission>true</ManagementPermission>
-    <IsActive>true</IsActive>
+    <ManagementPermission>True</ManagementPermission>
+    <IsActive>True</IsActive>
     <Gender>female</Gender>
-    <imagePath />
+    <imagePath>UserIcons\plant-pot.png</imagePath>
   </User>
   <User>
     <UserName>odelia</UserName>
@@ -31,10 +31,10 @@
     <UserName>aviva</UserName>
     <Password>riI1o+sTyV0sjd77/Nd4Dpcy32cGy7zZ5Bg5d70k3fuFj4ahVLSv0hYhPzzf0SioTre7AMWt+IhQIEKh4TFAHw==</Password>
     <Salt>1784629565</Salt>
-    <ManagementPermission>false</ManagementPermission>
-    <IsActive>true</IsActive>
+    <ManagementPermission>False</ManagementPermission>
+    <IsActive>True</IsActive>
     <Gender>male</Gender>
-    <imagePath />
+    <imagePath></imagePath>
   </User>
   <User>
     <UserName>myiah</UserName>
