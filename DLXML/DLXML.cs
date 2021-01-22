@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DO;
 using APIDL;
 using System.Xml.Linq;
+using System.Security.Cryptography;
 
 namespace DL
 {
@@ -389,6 +390,8 @@ namespace DL
         #region UserXML
         public void AddUser(User user)
         {
+            Random r = new Random();
+            int salt = r.Next();
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             XElement userSearch = (from p in UserRootElem.Elements()
@@ -400,7 +403,8 @@ namespace DL
 
             XElement UserElem = new XElement("User",
                                    new XElement("UserName", user.UserName),
-                                   new XElement("Password", user.Password),
+                                   new XElement("Password", hashPassword(user.Password + salt)),
+                                   new XElement("Salt", salt),
                                    new XElement("ManagementPermission", user.ManagementPermission),
                                    new XElement("IsActive", user.IsActive),
                                    new XElement("Gender", user.Gender.ToString()),
@@ -434,6 +438,7 @@ namespace DL
                     {
                         UserName = p.Element("UserName").Value,
                         Password = p.Element("Password").Value,
+                        Salt =Int32.Parse(p.Element("Salt").Value),
                         Gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
                         IsActive = Boolean.Parse(p.Element("IsActive").Value),
                         ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
@@ -452,6 +457,7 @@ namespace DL
                     {
                         UserName = p.Element("UserName").Value,
                         Password = p.Element("Password").Value,
+                        Salt = Int32.Parse(p.Element("Salt").Value),
                         Gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
                         IsActive = Boolean.Parse(p.Element("IsActive").Value),
                         ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
@@ -470,7 +476,7 @@ namespace DL
                       select new User()
                       {
                           UserName = p.Element("UserName").Value,
-                          Password = p.Element("Password").Value,
+                          Password = hashPassword(p.Element("Password").Value+ p.Element("Salt").Value),
                           Gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
                           IsActive = Boolean.Parse(p.Element("IsActive").Value),
                           ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
@@ -503,6 +509,12 @@ namespace DL
             }
             XMLTools.SaveListToXMLElement(UserRootElem, UserPath);
         }
+        private static string hashPassword(string passwordWithSalt)
+        {
+            SHA512 shaM = new SHA512Managed();
+            return Convert.ToBase64String(shaM.ComputeHash(Encoding.UTF8.GetBytes(passwordWithSalt)));
+        }
+
         #endregion
 
         #region BusSchedules

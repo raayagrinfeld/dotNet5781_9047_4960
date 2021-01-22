@@ -259,7 +259,7 @@
                                     <TextBox x:Name="textBoxClock" Grid.Row="1" Grid.Column="0"/>
                                     <Label Grid.Row="1" Grid.Column="1" Content="X" ></Label>
                                     <TextBox x:Name="textBoxSpeed" Grid.Row="1" Grid.Column="2"/>
-                                    <ListView x:Name="DrivingLineListView" HorizontalAlignment="Left" Height="311"  VerticalAlignment="Top" Width="276" SelectionChanged="DrivingLineView_SelectionChanged" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="-23,120,-1,0">
+                                    <ListView x:Name="DrivingLineListView1" HorizontalAlignment="Left" Height="311"  VerticalAlignment="Top" Width="276" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="-23,120,-1,0">
                                         <ListView.View >
                                             <GridView>
                                                 <GridViewColumn Header="Bus Number">

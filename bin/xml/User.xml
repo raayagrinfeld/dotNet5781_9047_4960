@@ -112,4 +112,28 @@
     <Gender>male</Gender>
     <imagePath>UserIcons\cow.png</imagePath>
   </User>
+  <User>
+    <UserName>ron</UserName>
+    <Password>675</Password>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>False</IsActive>
+    <Gender>male</Gender>
+    <imagePath />
+  </User>
+  <User>
+    <UserName>ggg</UserName>
+    <Password>666</Password>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>False</IsActive>
+    <Gender>male</Gender>
+    <imagePath />
+  </User>
+  <User>
+    <UserName>ggg</UserName>
+    <Password>666</Password>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>true</IsActive>
+    <Gender>male</Gender>
+    <imagePath></imagePath>
+  </User>
 </ArrayOfUser>
