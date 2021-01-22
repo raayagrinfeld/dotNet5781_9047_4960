@@ -146,7 +146,7 @@
     <LastStation>38917</LastStation>
     <FirstStationName>דרך האילנות/מנחם בגין</FirstStationName>
     <LastStationName>יוסף בורג/כתריאל רפפורט</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20003</BusLineKey>
@@ -496,6 +496,36 @@
     <LastStation>38913</LastStation>
     <FirstStationName>שדרות משה דיין/יוסף לישנסקי</FirstStationName>
     <LastStationName>משה שרת/יעקב קנר</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20000</BusLineKey>
+    <LineNumber>3898690</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38888</FirstStation>
+    <LastStation>38880</LastStation>
+    <FirstStationName>דרך האילנות/מנחם בגין</FirstStationName>
+    <LastStationName>התאנה/האלון</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20000</BusLineKey>
+    <LineNumber>3898690</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38888</FirstStation>
+    <LastStation>38903</LastStation>
+    <FirstStationName>דרך האילנות/מנחם בגין</FirstStationName>
+    <LastStationName>קרוננברג/ארגמן</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20000</BusLineKey>
+    <LineNumber>3898690</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38888</FirstStation>
+    <LastStation>38903</LastStation>
+    <FirstStationName>דרך האילנות/מנחם בגין</FirstStationName>
+    <LastStationName>קרוננברג/ארגמן</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>

@@ -259,4 +259,18 @@
     <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38880</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>התאנה/האלון</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>false</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38903</BusStationKey>
+    <BusLineKey>20000</BusLineKey>
+    <StationName>קרוננברג/ארגמן</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>

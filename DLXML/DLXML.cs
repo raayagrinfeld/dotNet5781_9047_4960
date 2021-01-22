@@ -106,13 +106,13 @@ namespace DL
         #endregion
 
         #region BusLineStation
-        public BusLineStation GetBusLineStation(int busLineKey, int StationNumberInLine)
+        public BusLineStation GetBusLineStation(int busLineKey, int key)
         {
             List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
 
-            BusLineStation busLineStation = ListBusLineStations.Find(b => b.BusLineKey == busLineKey & b.StationNumberInLine == StationNumberInLine & b.IsActive);
+            BusLineStation busLineStation = ListBusLineStations.Find(b => b.BusLineKey == busLineKey & b.BusStationKey == key & b.IsActive);
             if (busLineStation == null)
-                throw new DO.BadBusLineStationsException(busLineKey, StationNumberInLine, "this line does not have this station");
+                throw new DO.BadBusLineStationsException(busLineKey, key, "this line does not have this station");
             return busLineStation;
         }
         public void AddBusLineStation(BusLineStation station)
@@ -157,7 +157,14 @@ namespace DL
             });
             if (sic == null)
                 throw new DO.BadBusLineStationsException(BusStationKey, BusLineKey, "this bus line ststion does not exsist");
-
+            ListBusLineStations.FindAll(b =>
+            {
+                if (b.StationNumberInLine > sic.StationNumberInLine & b.BusLineKey == BusLineKey & b.IsActive)
+                {
+                    b.StationNumberInLine--;
+                }
+                return false;           //so it goes trough all the stations
+            });
             XMLTools.SaveListToXMLSerializer(ListBusLineStations, BusLineStationPath);
         }
         public IEnumerable<BusLineStation> GetAllBusLineStationBy(Predicate<BusLineStation> predicate)
