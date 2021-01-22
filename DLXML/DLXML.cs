@@ -390,21 +390,22 @@ namespace DL
         #region UserXML
         public void AddUser(User user)
         {
-            Random r = new Random();
-            int salt = r.Next();
+
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             XElement userSearch = (from p in UserRootElem.Elements()
-                             where (p.Element("UserName").Value) == user.UserName& p.Element("IsActive").Value=="true"
+                             where (p.Element("UserName").Value) == user.UserName& Boolean.Parse(p.Element("IsActive").Value)
                                    select p).FirstOrDefault();
 
             if (userSearch != null)
                 throw new DO.BadUserNameException(user.UserName, "Duplicate user name");
-
+           
+            string decode = hashPassword(user.Password + user.Salt.ToString());
+           
             XElement UserElem = new XElement("User",
                                    new XElement("UserName", user.UserName),
-                                   new XElement("Password", hashPassword(user.Password + salt)),
-                                   new XElement("Salt", salt),
+                                   new XElement("Password",decode ),
+                                   new XElement("Salt", user.Salt),
                                    new XElement("ManagementPermission", user.ManagementPermission),
                                    new XElement("IsActive", user.IsActive),
                                    new XElement("Gender", user.Gender.ToString()),
@@ -433,7 +434,7 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             return (from p in UserRootElem.Elements()
-                    where (p.Element("IsActive").Value) == "true"
+                    where (Boolean.Parse(p.Element("IsActive").Value))
                     select new User()
                     {
                         UserName = p.Element("UserName").Value,
@@ -452,7 +453,7 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             return (from p in UserRootElem.Elements()
-                    where (p.Element("IsActive").Value) == "true"
+                    where (Boolean.Parse(p.Element("IsActive").Value))
                     let u = new User()
                     {
                         UserName = p.Element("UserName").Value,
@@ -461,7 +462,7 @@ namespace DL
                         Gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
                         IsActive = Boolean.Parse(p.Element("IsActive").Value),
                         ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
-                        imagePath = p.Element("imagePath").Value
+                        imagePath = p.Element("imagePath").Value,
                     }
                     where predicate(u)
                     select u
@@ -472,15 +473,16 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             User u = (from p in UserRootElem.Elements()
-                      where (p.Element("UserName").Value) == userName && (p.Element("IsActive").Value) == "true"
+                      where (p.Element("UserName").Value) == userName && Boolean.Parse(p.Element("IsActive").Value)
                       select new User()
                       {
                           UserName = p.Element("UserName").Value,
-                          Password = hashPassword(p.Element("Password").Value+ p.Element("Salt").Value),
+                          Password = (p.Element("Password").Value),
                           Gender = (gender)Enum.Parse(typeof(gender), p.Element("Gender").Value),
                           IsActive = Boolean.Parse(p.Element("IsActive").Value),
                           ManagementPermission = Boolean.Parse(p.Element("ManagementPermission").Value),
-                          imagePath = p.Element("imagePath").Value
+                          imagePath = p.Element("imagePath").Value,
+                          Salt= Int32.Parse(p.Element("Salt").Value)
                       }
                         ).FirstOrDefault();
 
@@ -494,7 +496,7 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             XElement userSearch = (from p in UserRootElem.Elements()
-                                   where (p.Element("UserName").Value) == user.UserName && (p.Element("IsActive").Value) == "true"
+                                   where (p.Element("UserName").Value) == user.UserName && Boolean.Parse(p.Element("IsActive").Value)
                                    select p).FirstOrDefault();
 
             if (userSearch == null)
@@ -506,6 +508,7 @@ namespace DL
                 userSearch.Element("IsActive").Value = user.IsActive.ToString();
                 userSearch.Element("ManagementPermission").Value = user.ManagementPermission.ToString();
                 userSearch.Element("imagePath").Value = user.imagePath;
+                userSearch.Element("Salt").Value = user.Salt.ToString();
             }
             XMLTools.SaveListToXMLElement(UserRootElem, UserPath);
         }

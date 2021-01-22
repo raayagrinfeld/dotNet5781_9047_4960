@@ -602,7 +602,8 @@ namespace PL
         {
             try
             {
-                bl.AddUser(new User { UserName = userNameTextBox.Text, Password = passwordTextBox.Text, IsActive = true, ManagementPermission = false });
+                Random r = new Random();
+                bl.AddUser(new User {Salt=r.Next() , UserName = userNameTextBox.Text, Password = passwordTextBox.Text, IsActive = true, ManagementPermission = false });
                 User user = bl.GetUser(userNameTextBox.Text);
                 if (user.UserName == "" || user.Password == "")
                 {

@@ -260,7 +260,7 @@
                                     <TextBox x:Name="timerTextelock" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,539.667" Grid.RowSpan="2" />
                                     <Label Grid.Row="1" Grid.Column="2" Content="X" Margin="0,5,10.667,447.667" Grid.RowSpan="2" />
                                     <TextBox x:Name="textBoxSpeed" Grid.Row="1" Grid.Column="3" Margin="0.333,0,0,539.667" Grid.RowSpan="2" />
-                                    <ListView x:Name="DrivingLineListView" HorizontalAlignment="Left" Height="311"  VerticalAlignment="Top" Width="276" SelectionChanged="DrivingLineView_SelectionChanged" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="-23,120.333,-1,0">
+                                    <ListView x:Name="DrivingLineListView" HorizontalAlignment="Left" Height="311"  VerticalAlignment="Top" Width="276" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="-23,120.333,-1,0">
                                         <ListView.View >
                                             <GridView>
                                                 <GridViewColumn Header="Bus Number">
