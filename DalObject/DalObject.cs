@@ -417,6 +417,10 @@ namespace DL
         {
             return null;
         }
+        public void UpdateBusSchedule(BusesSchedule scheduleold, BusesSchedule schedulenew)
+        {
+           
+        }
         #endregion
         #region RunNumber
         public int GetRunNumber_BusLIne()

@@ -48,7 +48,7 @@
   <BusesSchedule>
     <BusLineKey>20004</BusLineKey>
     <StartHour>10:00:00</StartHour>
-    <IsActive>true</IsActive>
+    <IsActive>False</IsActive>
   </BusesSchedule>
   <BusesSchedule>
     <BusLineKey>20004</BusLineKey>
@@ -68,12 +68,12 @@
   <BusesSchedule>
     <BusLineKey>20006</BusLineKey>
     <StartHour>11:30:00</StartHour>
-    <IsActive>true</IsActive>
+    <IsActive>False</IsActive>
   </BusesSchedule>
   <BusesSchedule>
     <BusLineKey>20006</BusLineKey>
     <StartHour>16:00:00</StartHour>
-    <IsActive>true</IsActive>
+    <IsActive>False</IsActive>
   </BusesSchedule>
   <BusesSchedule>
     <BusLineKey>20006</BusLineKey>
@@ -173,6 +173,26 @@
   <BusesSchedule>
     <BusLineKey>20002</BusLineKey>
     <StartHour>16:00:00</StartHour>
+    <IsActive>true</IsActive>
+  </BusesSchedule>
+  <BusesSchedule>
+    <BusLineKey>20006</BusLineKey>
+    <StartHour>15:00:00</StartHour>
+    <IsActive>False</IsActive>
+  </BusesSchedule>
+  <BusesSchedule>
+    <BusLineKey>20004</BusLineKey>
+    <StartHour>09:00:00</StartHour>
+    <IsActive>true</IsActive>
+  </BusesSchedule>
+  <BusesSchedule>
+    <BusLineKey>20006</BusLineKey>
+    <StartHour>14:00:00</StartHour>
+    <IsActive>False</IsActive>
+  </BusesSchedule>
+  <BusesSchedule>
+    <BusLineKey>20006</BusLineKey>
+    <StartHour>15:00:00</StartHour>
     <IsActive>true</IsActive>
   </BusesSchedule>
 </ArrayOfBusesSchedule>

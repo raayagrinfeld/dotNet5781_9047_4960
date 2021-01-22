@@ -63,7 +63,7 @@ namespace APIDL
         IEnumerable<BusesSchedule> GetAllBusSchedules();
         IEnumerable<BusesSchedule> GetAllBusSchedulesBy(Predicate< BusesSchedule> predicate);
         void AddBusSchedule(BusesSchedule schedule);
-        void UpdateBusSchedule(BusesSchedule schedule);
+        void UpdateBusSchedule(BusesSchedule scheduleold, BusesSchedule schedulenew);
         void DeleteBusSchedule(int busLineKey, TimeSpan time);
 
         #endregion

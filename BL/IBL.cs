@@ -66,7 +66,7 @@ namespace BlApi
         IEnumerable<DrivingLine> GetAllDrivings(StationBO DestinationStation=null);
         IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate, StationBO DestinationStation = null); 
         void AddDrivingLine(DrivingLine drivingLine);
-        void UpdateDrivingLine(DrivingLine drivingLine);
+        void UpdateDrivingLine(DrivingLine drivingLineold, DrivingLine drivingLinenew);
         void DeleteDrivingLine(int busLineKey, TimeSpan time);
         IEnumerable<DrivingLine> BusLineInDrivingToStation(StationBO DestinationStation, TimeSpan time);
         #endregion

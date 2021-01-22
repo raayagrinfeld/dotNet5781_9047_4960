@@ -25,31 +25,26 @@ namespace PL
         IBL bl = BlFactory.GetBL();
         public UpdateDrivingLine(DrivingLine drivingLine)
         {
+
             InitializeComponent();
             grid1.DataContext = drivingLine;
         }
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            DrivingLine drivingLine = grid1.DataContext as DrivingLine;
-            drivingLine.IsActive = true;
-            drivingLine.LastStationName = bl.GetBusLine(drivingLine.BusLineKey).LastStationName;
-            this.Close();
+            DrivingLine driveline = grid1.DataContext as DrivingLine;
+            driveline.IsActive = true;
+            driveline.LastStationName = bl.GetBusLine(driveline.BusLineKey).LastStationName;
             try
             {
-                bl.AddDrivingLine(drivingLine);
+                bl.DeleteDrivingLine(driveline.BusLineKey, driveline.StartHour);
+                driveline.StartHour = TimeSpan.Parse(startHourTextBox.Text);
+                bl.AddDrivingLine(driveline);
+                this.Close();
             }
             catch (BO.BadDrivingLineException ex)
             {
 
             }
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-            System.Windows.Data.CollectionViewSource drivingLineViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("drivingLineViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // drivingLineViewSource.Source = [generic data source]
         }
     }
 }

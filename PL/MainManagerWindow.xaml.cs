@@ -75,6 +75,7 @@ namespace PL
                     selectedBusLine = bl.GetBusLine(selectedBusLine.BusLineKey);
                     busLineDetialedGrid.DataContext = selectedBusLine;
                     busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
+                    DrivingLineListView.ItemsSource = bl.GetAllDrivingsBy(b => b.BusLineKey == selectedBusLine.BusLineKey &b.IsActive);
                 }
                 catch(BO.BadBusLineKeyException ex)
                 {
@@ -365,9 +366,12 @@ namespace PL
         }
         private void DrivingLineView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            AddDrivingLine addDriving = new AddDrivingLine(DrivingLineListView.SelectedItem as DrivingLine);
-            addDriving.Show();
-            DrivingLineListView.ItemsSource = bl.GetAllDrivingsBy(b => b.BusLineKey == selectedBusLine.BusLineKey);
+            UpdateDrivingLine updateDriving = new UpdateDrivingLine (DrivingLineListView.SelectedItem as DrivingLine);
+            updateDriving.ShowDialog();
+            while (updateDriving.IsActive)
+            {
+            }
+            refreshcontent();
         }
         private void Button_Click_DeleteDrivingLine(object sender, RoutedEventArgs e)
         {
@@ -762,8 +766,10 @@ namespace PL
         private void AddDriving_Click(object sender, RoutedEventArgs e)
         {
             AddDrivingLine addDriving = new AddDrivingLine(new DrivingLine { BusLineKey=selectedBusLine.BusLineKey, LastStationName= selectedBusLine .LastStationName});
-            addDriving.Show();
-            DrivingLineListView.ItemsSource = bl.GetAllDrivingsBy(b => b.BusLineKey == selectedBusLine.BusLineKey);
+            addDriving.ShowDialog();
+            while (addDriving.IsActive)
+            {
+            }
             refreshcontent();
         }
     }
