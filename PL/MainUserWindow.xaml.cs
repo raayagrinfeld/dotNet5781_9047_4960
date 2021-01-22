@@ -65,7 +65,7 @@ namespace PL
         {
             while (isTimerRun)
             {
-                timerworker .ReportProgress(231); 
+                timerworker.ReportProgress(231); 
                 Thread.Sleep((int)Math.Round(1000/speetTime));
             }
         }
@@ -244,14 +244,18 @@ namespace PL
 
         private void Button_Click_BackArrowBusStation(object sender, RoutedEventArgs e)
         {
-
+            stationListBorder.Visibility = Visibility.Visible;
+            StationDetailedBorder.Visibility = Visibility.Collapsed;
+            timerTextelock.Text = "00:00:00";
+            textBoxSpeed.Text = "1";
+            selectedStation = null;
         }
 
         private void simulation_Button_Click(object sender, RoutedEventArgs e)
         {
             if(textBoxSpeed.IsEnabled == true&& StartTimerIsInFormat)
             {
-                textBoxSpeed.IsEnabled = false;
+                timerTextelock.IsEnabled = false;
                 textBoxSpeed.IsEnabled = false;
                 //tsStartTime = DateTime.Now.TimeOfDay;
                 // tsStartTime = new TimeSpan(timerTextelock.Text); 
@@ -264,7 +268,7 @@ namespace PL
             else if(textBoxSpeed.IsEnabled == false)
             {
                 isTimerRun = false;
-                textBoxSpeed.IsEnabled = true;
+                timerTextelock.IsEnabled = true;
                 textBoxSpeed.IsEnabled = true;
                 simulation_Button.Content = "start simulation";
             }
