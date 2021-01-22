@@ -41,7 +41,7 @@ namespace PL
                 try
                 {
                     User user = bl.GetUser(userNameTextBox.Text);
-                    if (user.Password == passwordTextBox.Password)
+                    if (user.Password == bl.Decode(passwordTextBox.Password, user.Salt))
                     {
                         if (user.ManagementPermission)
                         {
@@ -85,7 +85,8 @@ namespace PL
             exsist.Visibility = Visibility.Collapsed;
             try
             {
-                bl.AddUser(new User { UserName = SignUpUser.Text, Password = signUpPaswword.Password, IsActive = true, ManagementPermission = false });
+                Random r = new Random();
+                bl.AddUser(new User { Salt= r.Next() ,UserName = SignUpUser.Text, Password = signUpPaswword.Password, IsActive = true, ManagementPermission = false });
                 User user = bl.GetUser(SignUpUser.Text);
                 if (user.UserName == "" || user.Password == "")
                 {

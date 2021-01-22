@@ -58,6 +58,7 @@ namespace BlApi
         void AddUser(BO.User user);
         void UpdateUser(BO.User user);
         void DeletUser(string userName);
+        string Decode(string HashPassword, int Salt);
         #endregion
 
         #region DrivingLine

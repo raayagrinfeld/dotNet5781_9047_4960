@@ -10,6 +10,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.Text;
+
 
 namespace BL
 {
@@ -494,24 +497,26 @@ namespace BL
         {
             try
             {
-                BO.User userBO = GetUser(user.UserName);
-                if (userBO != null)
-                {
-                    DeletUser(user.UserName);
-                    AddUser(user);
-                }
+                dl.UpdateUser(UserBODOAdapter(user));
             }
             catch (DO.BadUserNameException busExaption)
             {
                 throw new BO.BadUserNameException("this username doesnt exsist", busExaption);
             }
         }
-
-
+       public  string Decode(string HashPassword, int Salt)
+        {
+            return hashPassword(HashPassword + Salt);
+        }
+        private static string hashPassword(string passwordWithSalt)
+        {
+            SHA512 shaM = new SHA512Managed();
+            return Convert.ToBase64String(shaM.ComputeHash(Encoding.UTF8.GetBytes(passwordWithSalt)));
+        }
         #endregion
 
         #region DrivingLine
-       
+
         DrivingLine DrivingLineBODOAdapter(DO.BusesSchedule busesSchedule, StationBO DestinationStation = null)
         {
             DrivingLine drivingLine = new DrivingLine();
