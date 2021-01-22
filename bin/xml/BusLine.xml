@@ -386,7 +386,7 @@
     <LastStation>38920</LastStation>
     <FirstStationName>שדרות משה דיין/יוסף לישנסקי</FirstStationName>
     <LastStationName>שדרות משה דיין/יוסף לישנסקי</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20002</BusLineKey>
@@ -486,6 +486,16 @@
     <LastStation>38910</LastStation>
     <FirstStationName>משה שרת/יעקב קנר</FirstStationName>
     <LastStationName>צומת חולדה/כביש 411</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20005</BusLineKey>
+    <LineNumber>8871728</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38920</FirstStation>
+    <LastStation>38913</LastStation>
+    <FirstStationName>שדרות משה דיין/יוסף לישנסקי</FirstStationName>
+    <LastStationName>משה שרת/יעקב קנר</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>

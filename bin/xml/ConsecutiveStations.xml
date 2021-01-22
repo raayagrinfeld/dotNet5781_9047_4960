@@ -217,4 +217,11 @@
     <IsActive>true</IsActive>
     <DriveDistanceTime>01:49:41.2170000</DriveDistanceTime>
   </ConsecutiveStations>
+  <ConsecutiveStations>
+    <Station1Key>38920</Station1Key>
+    <Station2Key>38913</Station2Key>
+    <Distance>996.70693198128458</Distance>
+    <IsActive>true</IsActive>
+    <DriveDistanceTime>00:09:58.0240000</DriveDistanceTime>
+  </ConsecutiveStations>
 </ArrayOfConsecutiveStations>

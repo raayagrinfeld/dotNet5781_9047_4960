@@ -761,7 +761,7 @@ namespace PL
 
         private void AddDriving_Click(object sender, RoutedEventArgs e)
         {
-            AddDrivingLine addDriving = new AddDrivingLine(new DrivingLine { BusLineKey=selectedBusLine.BusLineKey});
+            AddDrivingLine addDriving = new AddDrivingLine(new DrivingLine { BusLineKey=selectedBusLine.BusLineKey, LastStationName= selectedBusLine .LastStationName});
             addDriving.Show();
             DrivingLineListView.ItemsSource = bl.GetAllDrivingsBy(b => b.BusLineKey == selectedBusLine.BusLineKey);
             refreshcontent();

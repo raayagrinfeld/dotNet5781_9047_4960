@@ -252,4 +252,11 @@
     <StationNumberInLine>3</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38913</BusStationKey>
+    <BusLineKey>20005</BusLineKey>
+    <StationName>משה שרת/יעקב קנר</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>

@@ -9,7 +9,7 @@
         Title="AddDrivingLine" Height="204.603" Width="400" >
 
 
-    <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="44,26,0,0" VerticalAlignment="Top" Height="117" Width="271">
+    <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="44,26,0,0" VerticalAlignment="Top" Height="148" Width="345">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="25"/>
             <ColumnDefinition Width="Auto"/>
@@ -29,7 +29,7 @@
         <Label Content="Start Hour:" Grid.Column="1" HorizontalAlignment="Left" Margin="2.667,5.333,0,9.667" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="67"/>
         <TextBox x:Name="startHourTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="3.333,7.333,0,10.667" Grid.Row="2" Text="{Binding StartHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         <Image Source=" Icons\clock.png" Grid.Column="0" Grid.Row="2" Margin="3,8.333,2.333,6.667"/>
-        <Button x:Name="button" Content="add" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="64" Margin="139.667,28,-79,-30.667" Grid.Row="2" Grid.Column="2"/>
+        <Button x:Name="button" Content="add" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Grid.Column="2" Click="Add_Click" RenderTransformOrigin="1.31,0.574" Margin="147.667,23,-58.667,-25.667" Grid.Row="2"/>
     </Grid>
 
 </Window>
