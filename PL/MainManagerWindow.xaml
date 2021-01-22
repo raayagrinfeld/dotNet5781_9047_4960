@@ -114,7 +114,6 @@
                                     </ListView.View>
                                     <ListView.ContextMenu>
                                         <ContextMenu>
-                                            <MenuItem Header="update bus information" Click="Button_Click_UpdateBusInformation" />
                                             <MenuItem Header="deleteBus" Click="Button_Click_DeleteBusLine" />
                                         </ContextMenu>
                                     </ListView.ContextMenu>
@@ -394,7 +393,6 @@
                                     </ListView.View>
                                     <ListView.ContextMenu>
                                         <ContextMenu>
-                                            <MenuItem Header="update station information" Click="Button_Click_UpdateStationInformation" />
                                             <MenuItem Header="deleteStation" Click="Button_Click_DeleteBusStaion" />
                                         </ContextMenu>
                                     </ListView.ContextMenu>
@@ -584,7 +582,6 @@
                                     </ListView.View>
                                     <ListView.ContextMenu>
                                         <ContextMenu>
-                                            <MenuItem Header="update station information" Click="Button_Click_UpdateStationInformation" />
                                             <MenuItem Header="deleteUser" Click="Button_Click_DeleteUser" />
                                         </ContextMenu>
                                     </ListView.ContextMenu>

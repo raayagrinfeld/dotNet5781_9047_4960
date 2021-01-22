@@ -235,7 +235,6 @@ namespace PL
         {
             busLineListBorder.Visibility = Visibility.Collapsed;
             BusLineBO AddbusLine = new BusLineBO();
-            //AddbusLine.BusLineKey = bl.getNextBusLineRunNumber();
             AddBusDataGrid.DataContext = AddbusLine;
             firstStationNameComboBox.DataContext = bl.GetAllBusStations();
             lastStationNameComboBox.DataContext = bl.GetAllBusStations();
@@ -269,18 +268,6 @@ namespace PL
             }
             
         }
-
-        //update button click
-        private void Button_Click_UpdateBusInformation(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Button_Click_UpdateStationInformation(object sender, RoutedEventArgs e)
-        {
-
-        }
-        
-
 
         //delete button click
         private void Button_Click_DeleteStationFromBusLine(object sender, RoutedEventArgs e)
@@ -359,27 +346,6 @@ namespace PL
                     bitmap.UriSource = new Uri(System.IO.Path.GetFullPath(user.imagePath));
                     bitmap.EndInit();
                     UserImage.Source = bitmap;
-                }
-            }
-        }
-        private void Button_Click_UploadImage(object sender, RoutedEventArgs e)
-        {
-            if(selectedUser != null)
-            {
-                op = new OpenFileDialog();
-                op.Title = "Select a picture";
-                op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
-                  "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
-                  "Portable Network Graphic (*.png)|*.png";
-                if (op.ShowDialog() == true)
-                {
-                    string s = op.FileName;
-                    if (s.Contains("UserIcons"))
-                    {
-                        s = s.Remove(0, s.IndexOf("UserIcons"));
-                    }
-                    selectedUser.imagePath = s;
-                    UserImage.Source = new BitmapImage(new Uri(op.FileName));
                 }
             }
         }
@@ -576,6 +542,27 @@ namespace PL
 
 #region users click
         //go to add user window
+        private void Button_Click_UploadImage(object sender, RoutedEventArgs e)
+        {
+            if (selectedUser != null)
+            {
+                op = new OpenFileDialog();
+                op.Title = "Select a picture";
+                op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+                  "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+                  "Portable Network Graphic (*.png)|*.png";
+                if (op.ShowDialog() == true)
+                {
+                    string s = op.FileName;
+                    if (s.Contains("UserIcons"))
+                    {
+                        s = s.Remove(0, s.IndexOf("UserIcons"));
+                    }
+                    selectedUser.imagePath = s;
+                    UserImage.Source = new BitmapImage(new Uri(op.FileName));
+                }
+            }
+        }
         private void Button_addUser_Click(object sender, RoutedEventArgs e)
         {
             userListBorder.Visibility = Visibility.Collapsed;
