@@ -172,8 +172,8 @@
                         <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"  />
                                 </Grid.ColumnDefinitions>
                                 <Grid>
                                     <Grid Grid.Column="0" x:Name="grid1" Margin="130,47,422,402.667" >
@@ -216,7 +216,7 @@
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="100"/>
                                         </Grid.ColumnDefinitions>
-                                        <ListView Grid.Row="1" x:Name="listofBusAcurdingtoStationList" BorderBrush="#FF17B419" Margin="12,26,81.667,7.667" Grid.RowSpan="2" Grid.ColumnSpan="3">
+                                        <ListView x:Name="listofBusAcurdingtoStationList" BorderBrush="#FF17B419" Margin="10,272,83.2,52.8" Grid.RowSpan="3" Grid.ColumnSpan="3">
                                             <ListView.View>
                                                 <GridView>
                                                     <GridViewColumn Header="Line Number" DisplayMemberBinding="{Binding LineNumber}" Width="100"/>
@@ -246,21 +246,24 @@
                                 </Grid>
                                 <Grid Grid.Column="1" Height="639" Margin="0.333,0,0.333,-0.333" VerticalAlignment="Top">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="46"/>
-                                        <RowDefinition Height="52.667"/>
-                                        <RowDefinition/>
+                                        <RowDefinition Height="0.5*"/>
+                                        <RowDefinition Height="0.5*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="6*"/>
+                                        <RowDefinition Height="0.5*"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="0"/>
-                                        <ColumnDefinition Width="176"/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition Width="41.333"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="0.25*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="0.2*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Row="0" Grid.Column="0" Content="clock:" Margin="0,0,4,2" Grid.ColumnSpan="2" ></Label>
-                                    <TextBox x:Name="timerTextelock" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,539.667" Grid.RowSpan="2" />
-                                    <Label Grid.Row="1" Grid.Column="2" Content="X" Margin="0,5,10.667,447.667" Grid.RowSpan="2" />
-                                    <TextBox x:Name="textBoxSpeed" Grid.Row="1" Grid.Column="3" Margin="0.333,0,0,539.667" Grid.RowSpan="2" />
-                                    <ListView x:Name="DrivingLineListView" HorizontalAlignment="Left" Height="311"  VerticalAlignment="Top" Width="276" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="-23,120.333,-1,0">
+                                    <Label Grid.Row="0" Grid.Column="0" Content="clock:" ></Label>
+                                    <TextBox x:Name="timerTextelock" Padding="5" Text="00:00:00" Grid.Row="1" Grid.Column="0" TextChanged="timerTextelock_TextChanged" />
+                                    <Label Grid.Row="1" Grid.Column="1" Content="X" />
+                                    <TextBox x:Name="textBoxSpeed" Text="1" Padding="5" Grid.Row="1" Grid.Column="2" TextChanged="timerTextelock_TextChanged"/>
+                                    <Button x:Name="simulation_Button" Content="start simulation" Grid.Row=" 2" Grid.Column="0" Grid.ColumnSpan=" 4" VerticalAlignment="Center" Width="200" Click="simulation_Button_Click"/>
+                                    <ListView x:Name="DrivingLineListView" BorderBrush="#FF17B419" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
                                         <ListView.View >
                                             <GridView>
                                                 <GridViewColumn Header="Bus Number">
@@ -270,7 +273,14 @@
                                                         </DataTemplate>
                                                     </GridViewColumn.CellTemplate>
                                                 </GridViewColumn>
-                                                <GridViewColumn Header="Staty Time"  Width="200">
+                                                <GridViewColumn Header="start Time"  Width="115">
+                                                    <GridViewColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <TextBlock  Text="{Binding StartHour}" FlowDirection="RightToLeft"/>
+                                                        </DataTemplate>
+                                                    </GridViewColumn.CellTemplate>
+                                                </GridViewColumn>
+                                                <GridViewColumn Header="arrival Time"  Width="115">
                                                     <GridViewColumn.CellTemplate>
                                                         <DataTemplate>
                                                             <TextBlock  Text="{Binding ArrivalTime}" FlowDirection="RightToLeft"/>

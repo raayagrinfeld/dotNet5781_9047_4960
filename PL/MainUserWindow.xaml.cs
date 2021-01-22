@@ -33,6 +33,8 @@ namespace PL
         private BackgroundWorker timerworker;
         private bool isTimerRun;
         private TimeSpan tsStartTime;
+        double speetTime;
+        bool StartTimerIsInFormat = false;
 
         public MainUserWindow(User logedInUser)
         {
@@ -44,21 +46,11 @@ namespace PL
             NoBusLable.Visibility = Visibility.Collapsed;
             listBuses.Visibility = Visibility.Collapsed;
             stationBOListView.ItemsSource = bl.GetAllBusStations();
-
-
             stopWatch = new Stopwatch();
             timerworker = new BackgroundWorker();
             timerworker.DoWork += Worker_DoWork;
             timerworker.ProgressChanged += Worker_ProgressChanged;
             timerworker.WorkerReportsProgress = true;
-            tsStartTime = DateTime.Now.TimeOfDay; 
-           // tsStartTime = new TimeSpan(timerTextelock.Text); 
-
-            stopWatch.Restart();
-            isTimerRun = true;
-
-            timerworker.RunWorkerAsync();
-
         }
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
@@ -74,8 +66,7 @@ namespace PL
             while (isTimerRun)
             {
                 timerworker .ReportProgress(231); 
-                Thread.Sleep(1000/ Int32.Parse(textBoxSpeed.Text));
-
+                Thread.Sleep((int)Math.Round(1000/speetTime));
             }
         }
 
@@ -254,6 +245,47 @@ namespace PL
         private void Button_Click_BackArrowBusStation(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void simulation_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(textBoxSpeed.IsEnabled == true&& StartTimerIsInFormat)
+            {
+                textBoxSpeed.IsEnabled = false;
+                textBoxSpeed.IsEnabled = false;
+                //tsStartTime = DateTime.Now.TimeOfDay;
+                // tsStartTime = new TimeSpan(timerTextelock.Text); 
+                simulation_Button.Content = "stop simulation";
+                stopWatch.Restart();
+                isTimerRun = true;
+                timerworker.RunWorkerAsync();
+
+            }
+            else if(textBoxSpeed.IsEnabled == false)
+            {
+                isTimerRun = false;
+                textBoxSpeed.IsEnabled = true;
+                textBoxSpeed.IsEnabled = true;
+                simulation_Button.Content = "start simulation";
+            }
+
+
+        }
+
+        private void timerTextelock_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (simulation_Button != null)
+            {
+                if (TimeSpan.TryParse(timerTextelock.Text, out tsStartTime) & Double.TryParse(textBoxSpeed.Text, out speetTime))
+                {
+                    StartTimerIsInFormat = true;
+                    simulation_Button.IsEnabled = true;
+                }
+                else
+                {
+                    simulation_Button.IsEnabled = false;
+                }
+            }
         }
     }
 }
