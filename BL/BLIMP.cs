@@ -338,7 +338,7 @@ namespace BL
             }
             catch (DO.BadBusStationKeyException busExaption)
             {
-                throw new BO.BadBusStationKeyException("dupliceited bus lune station", busExaption);
+                throw new BO.BadBusStationKeyException("dupliceited bus line station", busExaption);
             }
         }
         public void DeleteBusStation(int busStationKey)

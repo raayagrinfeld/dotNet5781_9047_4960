@@ -70,9 +70,16 @@ namespace PL
             Premissiom.SelectedItem = null;
             if (selectedBusLine != null)
             {
-                selectedBusLine = bl.GetBusLine(selectedBusLine.BusLineKey);
-                busLineDetialedGrid.DataContext = selectedBusLine;
-                busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
+                try
+                {
+                    selectedBusLine = bl.GetBusLine(selectedBusLine.BusLineKey);
+                    busLineDetialedGrid.DataContext = selectedBusLine;
+                    busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
+                }
+                catch(BO.BadBusLineKeyException ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR in updating the bus-line information", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             else
             {
@@ -80,7 +87,14 @@ namespace PL
             }
             if (selectedStation!=null)
             {
-                listofBusAcurdingtoStationList.ItemsSource = bl.GetBusStation(selectedStation.BusStationKey).busLines;
+                try
+                {
+                    listofBusAcurdingtoStationList.ItemsSource = bl.GetBusStation(selectedStation.BusStationKey).busLines;
+                }
+                catch (BO.BadBusStationKeyException ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR in updating the bus-station information", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             else
             {
@@ -255,15 +269,30 @@ namespace PL
                 AddbusLine.IsActive = true;
                 if (AddbusLine!=null)
                 {
-                    bl.AddBusLine(AddbusLine);
-                    bl.AddStation(AddbusLine, (firstStationNameComboBox.SelectedItem as StationBO).BusStationKey);
-                    bl.AddStation(AddbusLine, (lastStationNameComboBox.SelectedItem as StationBO).BusStationKey);
-                    AddbusLine.Area = (Areas)areaComboBox.SelectedItem;
-                    AddbusLine.LineNumber = Int32.Parse(lineNumberTextBox1.Text);
-                    bl.UpdateBusLine(AddbusLine);
-                    AddBusLineBorder.Visibility = Visibility.Collapsed;
-                    busLineListBorder.Visibility = Visibility.Visible;
-                    refreshcontent();
+                    try
+                    {
+                        bl.AddBusLine(AddbusLine);
+                        bl.AddStation(AddbusLine, (firstStationNameComboBox.SelectedItem as StationBO).BusStationKey);
+                        bl.AddStation(AddbusLine, (lastStationNameComboBox.SelectedItem as StationBO).BusStationKey);
+                        AddbusLine.Area = (Areas)areaComboBox.SelectedItem;
+                        AddbusLine.LineNumber = Int32.Parse(lineNumberTextBox1.Text);
+                        bl.UpdateBusLine(AddbusLine);
+                        AddBusLineBorder.Visibility = Visibility.Collapsed;
+                        busLineListBorder.Visibility = Visibility.Visible;
+                        refreshcontent();
+                    }
+                    catch (BO.BadBusLineKeyException ex)
+                    {
+                        MessageBox.Show(ex.Message, "ERROR in adding the new bus-line", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    catch (BO.BadBusStationKeyException ex)
+                    {
+                        MessageBox.Show(ex.Message, "ERROR in adding the new bus-line", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    catch (BO.BadBusLineStationsException ex)
+                    {
+                        MessageBox.Show(ex.Message, "ERROR in adding the new bus-line", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 
             }
@@ -285,23 +314,54 @@ namespace PL
         //delete button click
         private void Button_Click_DeleteStationFromBusLine(object sender, RoutedEventArgs e)
         {
-            bl.deleteBusStationInBusLine(selectedBusLine, ((sender as Button).DataContext as BusLineStationBO).BusStationKey);
-            refreshcontent();
+            try
+            {
+
+
+                bl.deleteBusStationInBusLine(selectedBusLine, ((sender as Button).DataContext as BusLineStationBO).BusStationKey);
+                refreshcontent();
+            }
+            catch (BO.BadBusLineStationsException ex)//if station doesnt exist oe if there is less the 3 station in bus-line
+            {
+                MessageBox.Show(ex.Message, "ERROR in deleting station in bus", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         private void Button_Click_DeleteBusLine(object sender, RoutedEventArgs e)
         {
-            bl.DeleteBusLine(((sender as Button).DataContext as BusLineBO).BusLineKey);
-            refreshcontent();
+            try
+            {
+                bl.DeleteBusLine(((sender as Button).DataContext as BusLineBO).BusLineKey);
+                refreshcontent();
+            }
+            catch (BO.BadBusLineKeyException ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR in deleting bus-line", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
         private void Button_Click_DeleteBusStaion(object sender, RoutedEventArgs e)
         {
-            bl.DeleteBusStation(((sender as Button).DataContext as StationBO).BusStationKey);
-            refreshcontent();
+            try
+            {
+                bl.DeleteBusStation(((sender as Button).DataContext as StationBO).BusStationKey);
+                refreshcontent();
+            }
+            catch (BO.BadBusLineStationsException ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR in deleting station", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
-        private void Button_Click_DeleteBusLineFromStation(object sender, RoutedEventArgs e)
+        private void Button_Click_DeleteBusLineFromStation(object sender, RoutedEventArgs e)//deletes line from station = deleting busstation in busline
         {
-            bl.deleteBusStationInBusLine(((sender as Button).DataContext as BusLineBO), selectedStation.BusStationKey);
-            refreshcontent();
+            try
+            {
+                bl.deleteBusStationInBusLine(((sender as Button).DataContext as BusLineBO), selectedStation.BusStationKey);
+                refreshcontent();
+            }
+            catch (BO.BadBusLineStationsException ex)//if station doesnt exist oe if there is less the 3 station in bus-line
+            {
+                MessageBox.Show(ex.Message, "ERROR in deleting station in bus", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         //selction chenged
         private void busLineBOListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -324,8 +384,15 @@ namespace PL
         }
         private void Button_Click_DeleteDrivingLine(object sender, RoutedEventArgs e)
         {
-            bl.DeleteDrivingLine(((sender as Button).DataContext as DrivingLine).BusLineKey, ((sender as Button).DataContext as DrivingLine).StartHour);
-            refreshcontent();
+            try
+            {
+                bl.DeleteDrivingLine(((sender as Button).DataContext as DrivingLine).BusLineKey, ((sender as Button).DataContext as DrivingLine).StartHour);
+                refreshcontent();
+            }
+            catch(BadDrivingLineException ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR in deleting driving line of bus-line", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         private void busLineBOListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
@@ -566,8 +633,15 @@ namespace PL
             StationDetailedBorder.Visibility = Visibility.Collapsed;
             if(selectedStation!=null)
             {
-                selectedStation.Coordinates = new GeoCoordinate(Double.Parse(latitudTextBox.Text), Double.Parse(longtitudTextBox.Text));
-                bl.UpdateBusStation(selectedStation);
+                try
+                {
+                    selectedStation.Coordinates = new GeoCoordinate(Double.Parse(latitudTextBox.Text), Double.Parse(longtitudTextBox.Text));
+                    bl.UpdateBusStation(selectedStation);
+                }
+                catch (BadBusLineKeyException ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR in updating the bus-station information", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             selectedStation = null;
             refreshcontent();
@@ -588,51 +662,27 @@ namespace PL
             UserDetialedBorder.Visibility = Visibility.Collapsed;
             if(selectedUser!=null)
             {
-                bl.UpdateUser(selectedUser);
-                BitmapImage bitmap = new BitmapImage();
-                bitmap.BeginInit();
-                bitmap.UriSource = new Uri(System.IO.Path.GetFullPath("UserIcons/user.png"));
-                bitmap.EndInit();
-                UserImage.Source = bitmap;
-                selectedUser = null;
+                try
+                {
+                    bl.UpdateUser(selectedUser);
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(System.IO.Path.GetFullPath("UserIcons/user.png"));
+                    bitmap.EndInit();
+                    UserImage.Source = bitmap;
+                }
+                catch(BadUserNameException ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR in updating the user information", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
+            selectedUser = null;
             refreshcontent();
         }
         private void addUser_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                bl.AddUser(new User { UserName = userNameTextBox.Text, Password = passwordTextBox.Text, IsActive = true, ManagementPermission = false });
-                User user = bl.GetUser(userNameTextBox.Text);
-                if (user.UserName == "" || user.Password == "")
-                {
-                    SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
-                    simpleSound.Play();
-                    passwordTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
-                    passwordTextBox.Clear();
-                    userNameTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
-                    userNameTextBox.Clear();
-                }
-                else
-                {
-                    if (CombBx_Gender.SelectedIndex != -1)
-                    {
-                        user.Gender = (gender)CombBx_Gender.SelectedValue;
-                    }
-                    else
-                    {
-                        user.Gender = gender.male;
-                    }
-                    refreshcontent();
-                    passwordTextBox.Clear();
-                    userNameTextBox.Clear();
-                    CombBx_Gender.SelectedIndex = -1;
-                    userListBorder.Visibility = Visibility.Visible;
-                    addUserBorder.Visibility = Visibility.Collapsed;
-                }
-
-            }
-            catch (BO.BadUserNameException ex)
+            User userToAdd = new User { UserName = userNameTextBox.Text, Password = passwordTextBox.Text, IsActive = true, ManagementPermission = false };
+            if (userToAdd.UserName == "" || userToAdd.Password == "")
             {
                 SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
                 simpleSound.Play();
@@ -641,11 +691,50 @@ namespace PL
                 userNameTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
                 userNameTextBox.Clear();
             }
+            else
+            {
+                if (CombBx_Gender.SelectedIndex != -1)
+                {
+                    userToAdd.Gender = (gender)CombBx_Gender.SelectedValue;
+                }
+                else
+                {
+                    userToAdd.Gender = gender.male;
+                }
+                try
+                {
+                    bl.AddUser(userToAdd);
+                    refreshcontent();
+                    passwordTextBox.Clear();
+                    userNameTextBox.Clear();
+                    CombBx_Gender.SelectedIndex = -1;
+                    userListBorder.Visibility = Visibility.Visible;
+                    addUserBorder.Visibility = Visibility.Collapsed;
+                }
+                catch (BadUserNameException ex)
+                {
+                    SoundPlayer simpleSound = new SoundPlayer(@"c:/Windows/Media/Windows Background.wav");
+                    simpleSound.Play();
+                    passwordTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                    passwordTextBox.Clear();
+                    userNameTextBox.BorderBrush = new SolidColorBrush(Color.FromRgb(250, 23, 23));
+                    userNameTextBox.Clear();
+                    MessageBox.Show(ex.Message, "ERROR in adding the user information", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+            }
         }
         private void Button_Click_DeleteUser(object sender, RoutedEventArgs e)
         {
-            bl.DeletUser(((sender as Button).DataContext as User).UserName);
-            refreshcontent();
+            try
+            {
+                bl.DeletUser(((sender as Button).DataContext as User).UserName);
+                refreshcontent();
+            }
+            catch(BadUserNameException ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR in user", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         #endregion
@@ -663,10 +752,17 @@ namespace PL
             StationBO selectedStationToAdd = (StationOptionsToAdd.SelectedItem as StationBO);
             if (selectedStationToAdd != null& selectedBusLine!=null)
             {
-                StationOptionsToAdd.Visibility = Visibility.Collapsed;
-                bl.AddStation(selectedBusLine, selectedStationToAdd.BusStationKey);
-                busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
-                refreshcontent();
+                try
+                {
+                    StationOptionsToAdd.Visibility = Visibility.Collapsed;
+                    bl.AddStation(selectedBusLine, selectedStationToAdd.BusStationKey);
+                    busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
+                    refreshcontent();
+                }
+                catch(BadBusStationKeyException ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR in adding station in bus", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
