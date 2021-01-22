@@ -58,7 +58,7 @@ namespace PL
             refreshcontent();
         }
 
-
+        #region General
         private void refreshcontent()
         {
             busLineBOObservableCollectionFilter = new ObservableCollection<BusLineBO>(bl.GetAllBusLines());
@@ -170,11 +170,11 @@ namespace PL
         {
             LogInWindow logInWindow = new LogInWindow();
             logInWindow.Show();
-            this.Close();
+            //this.Close();
         }
+        #endregion
 
-
-#region filter BusLine, station and user
+        #region filter BusLine, station and user
         private void SearchFilterChangedBusLine(object sender, TextChangedEventArgs e)
         {
 
@@ -244,8 +244,41 @@ namespace PL
 
         #endregion
 
-#region bus line butten clicks
-        //add button click
+        #region bus line butten clicks
+        #region add
+        private void StationOptionsToAdd_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            StationBO selectedStationToAdd = (StationOptionsToAdd.SelectedItem as StationBO);
+            if (selectedStationToAdd != null & selectedBusLine != null)
+            {
+                try
+                {
+                    StationOptionsToAdd.Visibility = Visibility.Collapsed;
+                    bl.AddStation(selectedBusLine, selectedStationToAdd.BusStationKey);
+                    busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
+                    refreshcontent();
+                }
+                catch (BadBusStationKeyException ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR in adding station in bus", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+        private void Button_Click_AddStationToBus(object sender, RoutedEventArgs e)
+        {
+            StationOptionsToAdd.Visibility = Visibility.Visible;
+            StationOptionsToAdd.DataContext = bl.GetAllBusStations();
+        }
+
+        private void AddDriving_Click(object sender, RoutedEventArgs e)
+        {
+            AddDrivingLine addDriving = new AddDrivingLine(new DrivingLine { BusLineKey = selectedBusLine.BusLineKey, LastStationName = selectedBusLine.LastStationName });
+            addDriving.ShowDialog();
+            while (addDriving.IsActive)
+            {
+            }
+            refreshcontent();
+        }
         private void Button_Click_AddBusLine(object sender, RoutedEventArgs e)
         {
             busLineListBorder.Visibility = Visibility.Collapsed;
@@ -298,8 +331,9 @@ namespace PL
             }
             
         }
+        #endregion
 
-        //delete button click
+        #region delete
         private void Button_Click_DeleteStationFromBusLine(object sender, RoutedEventArgs e)
         {
             try
@@ -327,18 +361,6 @@ namespace PL
             }
 
         }
-        private void Button_Click_DeleteBusStaion(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                bl.DeleteBusStation(((sender as Button).DataContext as StationBO).BusStationKey);
-                refreshcontent();
-            }
-            catch (BO.BadBusLineStationsException ex)
-            {
-                MessageBox.Show(ex.Message, "ERROR in deleting station", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
         private void Button_Click_DeleteBusLineFromStation(object sender, RoutedEventArgs e)//deletes line from station = deleting busstation in busline
         {
             try
@@ -351,7 +373,9 @@ namespace PL
                 MessageBox.Show(ex.Message, "ERROR in deleting station in bus", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        //selction chenged
+        #endregion
+
+        #region selction chenged
         private void busLineBOListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedBusLine = (busLineBOListView.SelectedItem as BusLineBO);
@@ -420,10 +444,11 @@ namespace PL
                 }
             }
         }
+        #endregion
 
-        //go back
+        #region go back
         private void Button_Click_BackArrowBusLine(object sender, RoutedEventArgs e)
-        {
+        { 
             AddBusLineBorder.Visibility = Visibility.Collapsed;
             BusLineDetialedBorder.Visibility = Visibility.Collapsed;
             busLineListBorder.Visibility = Visibility.Visible;
@@ -431,10 +456,10 @@ namespace PL
             selectedBusLine = null;
             refreshcontent();
         }
-
+        #endregion
         #endregion
 
-#region sort by header click
+        #region sort by header click
         GridViewColumnHeader _lastHeaderClicked = null;
         ListSortDirection _lastDirection = ListSortDirection.Ascending;
         void GridViewColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
@@ -501,67 +526,38 @@ namespace PL
         }
         #endregion
 
-#region stations click
+        #region stations click
+        #region add
         private void addStation_Click(object sender, RoutedEventArgs e)
         {
             stationListBorder.Visibility = Visibility.Collapsed;
             addStationBorder.Visibility = Visibility.Visible;
         }
-        private void TextBox_OnlyNumbersAndDigit_PreviewKeyDown(object sender, KeyEventArgs e)//allow only numbers
-        {
-                TextBox text = sender as TextBox;
-                if (text == null) return;
-                if (e == null) return;
-
-                //allow get out of the text box
-                if ((e.Key == Key.Enter) || e.Key == Key.Return || e.Key == Key.Tab)
-                    return;
-
-                //allow list of system keys (add other key here if you want to allow)
-                if (e.Key == Key.Escape || e.Key == Key.Back || e.Key == Key.Delete ||
-                    e.Key == Key.CapsLock || e.Key == Key.LeftShift || e.Key == Key.Home
-                 || e.Key == Key.End || e.Key == Key.Insert || e.Key == Key.Down || e.Key == Key.Right|| e.Key==Key.OemPeriod)
-                    return;
-
-                char c = (char)KeyInterop.VirtualKeyFromKey(e.Key);
-
-                //allow control system keys
-                if (Char.IsControl(c)) return;
-
-                //allow digits (without Shift or Alt)
-                if (Char.IsDigit(c))
-                    if (!(Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightAlt)))
-                        return; //let this key be written inside the textbox
-
-                //forbid letters and signs (#,$, %, ...)
-                e.Handled = true; //ignore this key. mark event as handled, will not be routed to other controls
-                return;
-        }
         private void add_From_addStationWindow_Click(object sender, RoutedEventArgs e)
         {
-            if(addLatitudeTextBox.Text!=""&addLongitudeTextBox.Text!="")
+            if (addLatitudeTextBox.Text != "" & addLongitudeTextBox.Text != "")
             {
                 if (31 < Double.Parse(addLatitudeTextBox.Text) & Double.Parse(addLatitudeTextBox.Text) < 35)
                 {
                     if (31 < Double.Parse(addLongitudeTextBox.Text) & Double.Parse(addLongitudeTextBox.Text) < 35)
                     {
                         if (addStationAddressTextBox.Text != "")
-                        {   
+                        {
                             if (addStationNameTextBox.Text != "")
                             {
-                                    try
-                                    {
-                                        Random r = new Random();
-                                        bl.AddBusStation(new StationBO { busLines = null, BusStationKey = bl.getNextBusStationRunNumber(), Coordinates=new GeoCoordinate(Double.Parse(addLatitudeTextBox.Text), Double.Parse(addLongitudeTextBox.Text)),StationAddress= addStationAddressTextBox.Text,IsActive=true, HasARoof= (bool)addRoof.IsChecked,StationName= addStationNameTextBox.Text });
-                                        refreshcontent();
-                                        stationListBorder.Visibility = Visibility.Visible;
-                                        addStationBorder.Visibility = Visibility.Collapsed;
+                                try
+                                {
+                                    Random r = new Random();
+                                    bl.AddBusStation(new StationBO { busLines = null, BusStationKey = bl.getNextBusStationRunNumber(), Coordinates = new GeoCoordinate(Double.Parse(addLatitudeTextBox.Text), Double.Parse(addLongitudeTextBox.Text)), StationAddress = addStationAddressTextBox.Text, IsActive = true, HasARoof = (bool)addRoof.IsChecked, StationName = addStationNameTextBox.Text });
+                                    refreshcontent();
+                                    stationListBorder.Visibility = Visibility.Visible;
+                                    addStationBorder.Visibility = Visibility.Collapsed;
 
-                                    }
-                                    catch (BO.BadBusStationKeyException ex)
-                                    {
-                                        exsistStation.Visibility = Visibility.Visible;
-                                    }
+                                }
+                                catch (BO.BadBusStationKeyException ex)
+                                {
+                                    exsistStation.Visibility = Visibility.Visible;
+                                }
                             }
                             else
                             {
@@ -596,6 +592,57 @@ namespace PL
                 addLatitudeTextBox.Clear();
             }
         }
+        #endregion
+
+        #region delete
+        private void Button_Click_DeleteBusStaion(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                bl.DeleteBusStation(((sender as Button).DataContext as StationBO).BusStationKey);
+                refreshcontent();
+            }
+            catch (BO.BadBusLineStationsException ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR in deleting station", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        #endregion
+
+        #region filters
+        private void TextBox_OnlyNumbersAndDigit_PreviewKeyDown(object sender, KeyEventArgs e)//allow only numbers
+        {
+                TextBox text = sender as TextBox;
+                if (text == null) return;
+                if (e == null) return;
+
+                //allow get out of the text box
+                if ((e.Key == Key.Enter) || e.Key == Key.Return || e.Key == Key.Tab)
+                    return;
+
+                //allow list of system keys (add other key here if you want to allow)
+                if (e.Key == Key.Escape || e.Key == Key.Back || e.Key == Key.Delete ||
+                    e.Key == Key.CapsLock || e.Key == Key.LeftShift || e.Key == Key.Home
+                 || e.Key == Key.End || e.Key == Key.Insert || e.Key == Key.Down || e.Key == Key.Right|| e.Key==Key.OemPeriod)
+                    return;
+
+                char c = (char)KeyInterop.VirtualKeyFromKey(e.Key);
+
+                //allow control system keys
+                if (Char.IsControl(c)) return;
+
+                //allow digits (without Shift or Alt)
+                if (Char.IsDigit(c))
+                    if (!(Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightAlt)))
+                        return; //let this key be written inside the textbox
+
+                //forbid letters and signs (#,$, %, ...)
+                e.Handled = true; //ignore this key. mark event as handled, will not be routed to other controls
+                return;
+        }
+        #endregion
+
+        #region go back
         private void Button_Click_BackArrowBusStation(object sender, RoutedEventArgs e)
         {
             stationListBorder.Visibility = Visibility.Visible;
@@ -618,8 +665,17 @@ namespace PL
         }
         #endregion
 
-#region users click
-        //go to add user window
+        #region map
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ShowLocation showLocation = new ShowLocation("http://maps.google.com/maps?&z=15&q=" + latitudTextBox.Text + "+" + longtitudTextBox.Text + "&ll=" + latitudTextBox.Text + "+" + longtitudTextBox.Text);
+            showLocation.Show();
+        }
+        #endregion
+        #endregion
+
+        #region users click
+        #region image
         private void Button_Click_UploadImage(object sender, RoutedEventArgs e)
         {
             if (selectedUser != null)
@@ -641,34 +697,13 @@ namespace PL
                 }
             }
         }
+        #endregion
+
+        #region add
         private void Button_addUser_Click(object sender, RoutedEventArgs e)
         {
             userListBorder.Visibility = Visibility.Collapsed;
             addUserBorder.Visibility = Visibility.Visible;
-        }
-        private void Button_Click_BackArrowUser(object sender, RoutedEventArgs e)
-        {
-            userListBorder.Visibility = Visibility.Visible;
-            addUserBorder.Visibility = Visibility.Collapsed;
-            UserDetialedBorder.Visibility = Visibility.Collapsed;
-            if(selectedUser!=null)
-            {
-                try
-                {
-                    bl.UpdateUser(selectedUser);
-                    BitmapImage bitmap = new BitmapImage();
-                    bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(System.IO.Path.GetFullPath("UserIcons/user.png"));
-                    bitmap.EndInit();
-                    UserImage.Source = bitmap;
-                }
-                catch(BadUserNameException ex)
-                {
-                    MessageBox.Show(ex.Message, "ERROR in updating the user information", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-            selectedUser = null;
-            refreshcontent();
         }
         private void addUser_Click(object sender, RoutedEventArgs e)
         {
@@ -715,6 +750,37 @@ namespace PL
 
             }
         }
+
+        #endregion
+
+        #region go back
+        private void Button_Click_BackArrowUser(object sender, RoutedEventArgs e)
+        {
+            userListBorder.Visibility = Visibility.Visible;
+            addUserBorder.Visibility = Visibility.Collapsed;
+            UserDetialedBorder.Visibility = Visibility.Collapsed;
+            if(selectedUser!=null)
+            {
+                try
+                {
+                    bl.UpdateUser(selectedUser);
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(System.IO.Path.GetFullPath("UserIcons/user.png"));
+                    bitmap.EndInit();
+                    UserImage.Source = bitmap;
+                }
+                catch(BadUserNameException ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR in updating the user information", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            selectedUser = null;
+            refreshcontent();
+        }
+        #endregion
+
+        #region delete
         private void Button_Click_DeleteUser(object sender, RoutedEventArgs e)
         {
             try
@@ -727,51 +793,13 @@ namespace PL
                 MessageBox.Show(ex.Message, "ERROR in user", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        #endregion
 
         #endregion
 
 
 
-        private void Button_Click_AddStationToBus(object sender, RoutedEventArgs e)
-        {
-            StationOptionsToAdd.Visibility = Visibility.Visible;
-            StationOptionsToAdd.DataContext = bl.GetAllBusStations();
-        }
 
-        private void StationOptionsToAdd_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            StationBO selectedStationToAdd = (StationOptionsToAdd.SelectedItem as StationBO);
-            if (selectedStationToAdd != null& selectedBusLine!=null)
-            {
-                try
-                {
-                    StationOptionsToAdd.Visibility = Visibility.Collapsed;
-                    bl.AddStation(selectedBusLine, selectedStationToAdd.BusStationKey);
-                    busLineStationsListview.ItemsSource = selectedBusLine.busLineStations;
-                    refreshcontent();
-                }
-                catch(BadBusStationKeyException ex)
-                {
-                    MessageBox.Show(ex.Message, "ERROR in adding station in bus", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ShowLocation showLocation = new ShowLocation("http://maps.google.com/maps?&z=15&q=" +latitudTextBox.Text +"+" + longtitudTextBox.Text + "&ll=" +latitudTextBox.Text +"+" + longtitudTextBox.Text);
-            showLocation.Show();
-        }
-
-        private void AddDriving_Click(object sender, RoutedEventArgs e)
-        {
-            AddDrivingLine addDriving = new AddDrivingLine(new DrivingLine { BusLineKey=selectedBusLine.BusLineKey, LastStationName= selectedBusLine .LastStationName});
-            addDriving.ShowDialog();
-            while (addDriving.IsActive)
-            {
-            }
-            refreshcontent();
-        }
     }
 }
 
