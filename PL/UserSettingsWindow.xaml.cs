@@ -64,6 +64,11 @@ namespace PL
             }
         }
 
+        private void Chang_Password_Click(object sender, RoutedEventArgs e)
+        {
+            passwordTextBox.Visibility = Visibility.Visible;
+            lablaP.Visibility = Visibility.Visible;
+        }
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
         {
             SystemCommands.MinimizeWindow(this);
@@ -85,6 +90,14 @@ namespace PL
         {
             ((Button)sender).Width /= 1.1;
             ((Button)sender).Height /= 1.1;
+        }
+
+
+        private void passwordTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            User user = grid1.DataContext as User;
+            user.Password = bl.Decode(passwordTextBox.Text,user.Salt);
+            bl.UpdateUser(user);
         }
     }
 }

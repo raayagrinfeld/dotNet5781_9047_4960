@@ -33,17 +33,18 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Password:"/>
-            <TextBox x:Name="passwordTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Password, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Password:" Visibility="Collapsed" x:Name="lablaP"/>
+            <TextBox x:Name="passwordTextBox" Width="120" VerticalAlignment="Center"  Visibility="Collapsed" Grid.Row="2" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1" TextChanged="passwordTextBox_TextChanged"/>
             <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="User Name:"/>
             <TextBox x:Name="userNameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding UserName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
-            <Label x:Name="Label_Gender" Content="Gender:" Grid.Row="2" Grid.Column="0"/>
-            <ComboBox x:Name="CombBx_Gender" Margin="2" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" SelectedValue="{Binding Path=Gender, Mode=TwoWay}"/>
+            <Label x:Name="Label_Gender" Content="Gender:" Grid.Row="1" Grid.Column="0"/>
+            <ComboBox x:Name="CombBx_Gender" Margin="2" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" SelectedValue="{Binding Path=Gender, Mode=TwoWay}"/>
         </Grid>
         <Border Grid.Row="1" x:Name="ImageBorder" Width="100" Height="90" BorderThickness="2" BorderBrush="Black" Margin="284,13,9.6,67.4">
             <Image x:Name="UserImage" Source="Icons/user.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="97" />
         </Border>
         <Button Grid.Row="1"  x:Name="Button_UploadImage" Content="uplode image" Click="Button_Click_UploadImage" Margin="286,120,13.6,10.4" />
         <Label Grid.Row="1" Content="is manager" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="{Binding ManagementPermission}" Margin="41,13,0,0" Width="147"/>
+        <Button x:Name="button" Content="Change Password" HorizontalAlignment="Left" Height="29" Margin="198,8,0,0" VerticalAlignment="Top" Width="122" Click="Chang_Password_Click"/>
     </Grid>
 </Window>
