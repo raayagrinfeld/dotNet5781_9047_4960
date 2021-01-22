@@ -15,6 +15,8 @@ using BlApi;
 using BO;
 using BL;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Threading;
 
 namespace PL
 {
@@ -27,6 +29,10 @@ namespace PL
         User user;
         Driving drive =new Driving();
         StationBO selectedStation;
+        private Stopwatch stopWatch;
+        private BackgroundWorker timerworker;
+        private bool isTimerRun;
+        private TimeSpan tsStartTime;
 
         public MainUserWindow(User logedInUser)
         {
@@ -39,7 +45,41 @@ namespace PL
             listBuses.Visibility = Visibility.Collapsed;
             stationBOListView.ItemsSource = bl.GetAllBusStations();
 
+
+            stopWatch = new Stopwatch();
+            timerworker = new BackgroundWorker();
+            timerworker.DoWork += Worker_DoWork;
+            timerworker.ProgressChanged += Worker_ProgressChanged;
+            timerworker.WorkerReportsProgress = true;
+            tsStartTime = DateTime.Now.TimeOfDay; 
+           // tsStartTime = new TimeSpan(timerTextelock.Text); 
+
+            stopWatch.Restart();
+            isTimerRun = true;
+
+            timerworker.RunWorkerAsync();
+
         }
+        private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            //string timerText = stopWatch.Elapsed.ToString();
+            //timerText = timerText.Substring(0, 8); 
+            TimeSpan tsCurentTime = tsStartTime + stopWatch.Elapsed; 
+            string timerText = tsCurentTime.ToString().Substring(0, 8);
+            this.timerTextelock.Text = timerText;
+            DrivingLineListView.ItemsSource = bl.BusLineInDrivingToStation(selectedStation, tsCurentTime);
+        }
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (isTimerRun)
+            {
+                timerworker .ReportProgress(231); 
+                Thread.Sleep(1000/ Int32.Parse(textBoxSpeed.Text));
+
+            }
+        }
+
+
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
         {
