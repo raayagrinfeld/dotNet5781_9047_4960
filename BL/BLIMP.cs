@@ -165,13 +165,22 @@ namespace BL
         }
         public TimeSpan TimeBetweanStations(BusLineBO busLine, int firstStationKey, int lastStationKey)
         {
-            List<BusLineStationBO> PartOfBusLineStation = busLine.busLineStations.OrderBy(b => b.StationNumberInLine).ToList().FindAll(b => b.StationNumberInLine >= firstStationKey & b.StationNumberInLine <= lastStationKey & b.IsActive);
-            TimeSpan timeOfDravel = TimeSpan.Zero;
-            foreach (BusLineStationBO BLStationBO in PartOfBusLineStation)
+            try
             {
-                timeOfDravel += BLStationBO.DriveDistanceTimeFromLastStation;
+                BusLineStationBO firstStation = BusLineStationDOBOAdapter(dl.GetBusLineStation(busLine.BusLineKey, firstStationKey));
+                BusLineStationBO LastStation = BusLineStationDOBOAdapter(dl.GetBusLineStation(busLine.BusLineKey, lastStationKey));
+                List<BusLineStationBO> PartOfBusLineStation = busLine.busLineStations.OrderBy(b => b.StationNumberInLine).ToList().FindAll(b => b.StationNumberInLine >= firstStation.StationNumberInLine & b.StationNumberInLine <= LastStation.StationNumberInLine & b.IsActive);
+                TimeSpan timeOfDravel = TimeSpan.Zero;
+                foreach (BusLineStationBO BLStationBO in PartOfBusLineStation)
+                {
+                    timeOfDravel += BLStationBO.DriveDistanceTimeFromLastStation;
+                }
+                return timeOfDravel;
             }
-            return timeOfDravel;
+            catch (DO.BadBusLineKeyException busExaption)
+            {
+                throw new BO.BadBusLineKeyException("this bus not exsist", busExaption);
+            }
         }
         public void AddStation(BusLineBO busLine, int stationKey)
         {
