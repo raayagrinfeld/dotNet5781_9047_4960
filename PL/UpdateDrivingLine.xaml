@@ -7,10 +7,8 @@
         xmlns:BO="clr-namespace:BO;assembly=BL" x:Class="PL.UpdateDrivingLine"
         mc:Ignorable="d"
         Title="UpdateDrivingLine" Height="200" Width="400" >
-    
-    <Grid>
 
-        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="19,16,0,0" HorizontalAlignment="Left" >
+    <Grid x:Name="grid1" VerticalAlignment="Top" Margin="19,16,0,0" HorizontalAlignment="Left" Height="148" Width="374" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -22,16 +20,15 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Label Content="Bus Line Key:" Grid.Column="1" HorizontalAlignment="Left" Margin="2.667,3,0,7.667" Grid.Row="0" VerticalAlignment="Center" Height="26" Width="79"/>
-        <Image Source=" Icons\key.png" Grid.Column="0" Grid.Row="0" Margin="3,6,2.333,4.667"/>
-        <TextBlock x:Name="busLineKeyTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="3.333,5,0,8.667" Grid.Row="0" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-        <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="1" Content="Last Station Name:"/>
-        <Image Source="Icons\bus-stop.png" Grid.Column=" 0" Margin="1,0.667,2,2" Grid.Row="1"/>
-        <TextBlock x:Name="lastStationNameTextBlock" VerticalAlignment="Center" Text="{Binding LastStationName}" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="2"/>
-        <Label Content="Start Hour:" Grid.Column="1" HorizontalAlignment="Left" Margin="2.667,5.333,0,9.667" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="67"/>
-        <TextBox x:Name="startHourTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="3.333,7.333,0,10.667" Grid.Row="2" Text="{Binding StartHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-        <Image Source=" Icons\clock.png" Grid.Column="0" Grid.Row="2" Margin="3,8.333,2.333,6.667"/>
-        </Grid>
-        <Button x:Name="button" Content="update"  Click="Add_Click" HorizontalAlignment="Left" Margin="326,128,0,0" VerticalAlignment="Top" Width="58"/>
-
+            <Image Source=" Icons\key.png" Grid.Column="0" Grid.Row="0" Margin="3,6,2.333,4.667"/>
+            <TextBlock x:Name="busLineKeyTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="3.333,5,0,8.667" Grid.Row="0" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="1" Content="Last Station Name:"/>
+            <Image Source="Icons\bus-stop.png" Grid.Column=" 0" Margin="1,0.667,2,2" Grid.Row="1"/>
+        <TextBlock x:Name="lastStationNameTextBlock" VerticalAlignment="Center"  Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="2"  Text="{Binding LastStationName, Mode=OneWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+            <Label Content="Start Hour:" Grid.Column="1" HorizontalAlignment="Left" Margin="2.667,5.333,0,9.667" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="67"/>
+            <TextBox x:Name="startHourTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="3.333,7.333,0,10.667" Grid.Row="2" Text="{Binding StartHour, Mode=OneWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Image Source=" Icons\clock.png" Grid.Column="0" Grid.Row="2" Margin="3,8.333,2.333,6.667"/>
+        <Button x:Name="button" Content="update"  Click="Add_Click" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="58" Grid.Column="2" Margin="169.667,38.667,-103.667,-27.333" Grid.Row="2"/>
     </Grid>
+
 </Window>

@@ -546,11 +546,11 @@ namespace BL
             }
         }
 
-        public void UpdateDrivingLine(DrivingLine drivingLine)
+        public void UpdateDrivingLine(DrivingLine drivingLineold, DrivingLine drivingLinenew)
         {
             try
             {
-                dl.UpdateBusSchedule(DrivingLineDOBOAdapter(drivingLine));
+                dl.UpdateBusSchedule(DrivingLineDOBOAdapter(drivingLineold), (DrivingLineDOBOAdapter(drivingLinenew)));
             }
             catch (DO.BadBusesScheduleKeyException ex)
             {
