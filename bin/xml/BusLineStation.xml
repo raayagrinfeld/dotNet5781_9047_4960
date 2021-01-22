@@ -154,4 +154,102 @@
     <StationNumberInLine>4</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38907</BusStationKey>
+    <BusLineKey>20010</BusLineKey>
+    <StationName>יהודה הלוי/יוחנן הסנדלר</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38916</BusStationKey>
+    <BusLineKey>20010</BusLineKey>
+    <StationName>יוסף בורג/משואות יצחק</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38921</BusStationKey>
+    <BusLineKey>20010</BusLineKey>
+    <StationName>השר חיים שפירא/יוסף ספיר</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38920</BusStationKey>
+    <BusLineKey>20005</BusLineKey>
+    <StationName>שדרות משה דיין/יוסף לישנסקי</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38907</BusStationKey>
+    <BusLineKey>20002</BusLineKey>
+    <StationName>יהודה הלוי/יוחנן הסנדלר</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38916</BusStationKey>
+    <BusLineKey>20002</BusLineKey>
+    <StationName>יוסף בורג/משואות יצחק</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38914</BusStationKey>
+    <BusLineKey>20002</BusLineKey>
+    <StationName>הדייגים/הנחשול</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38911</BusStationKey>
+    <BusLineKey>20001</BusLineKey>
+    <StationName>גרינשפן/יגאל אלון</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38919</BusStationKey>
+    <BusLineKey>20001</BusLineKey>
+    <StationName>וייצמן/דרך יצחק רבין</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38920</BusStationKey>
+    <BusLineKey>20001</BusLineKey>
+    <StationName>שדרות משה דיין/יוסף לישנסקי</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38916</BusStationKey>
+    <BusLineKey>20001</BusLineKey>
+    <StationName>יוסף בורג/משואות יצחק</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38913</BusStationKey>
+    <BusLineKey>20011</BusLineKey>
+    <StationName>משה שרת/יעקב קנר</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38888</BusStationKey>
+    <BusLineKey>20011</BusLineKey>
+    <StationName>דרך האילנות/מנחם בגין</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38910</BusStationKey>
+    <BusLineKey>20011</BusLineKey>
+    <StationName>צומת חולדה/כביש 411</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>
