@@ -401,10 +401,15 @@ namespace BL
                 var ConsecutiveStationToUpdate = dl.GetAlConsecutiveStationsBy(b => b.IsActive && b.Station1Key != -1 && (b.Station1Key == station.BusStationKey || b.Station2Key == station.BusStationKey));
                 foreach (var item in ConsecutiveStationToUpdate)
                 {
-                    double distance = GetBusStation(item.Station1Key).Coordinates.GetDistanceTo(GetBusStation(item.Station2Key).Coordinates);
-                    ConsecutiveStations NewConsecutiveStation =new ConsecutiveStations { Station1Key = item.Station1Key, Station2Key = item.Station2Key, IsActive = true , Distance=distance};
-                    NewConsecutiveStation.DriveDistanceTime= TimeSpan.FromMinutes(NewConsecutiveStation.Distance * 0.01);
-                    dl.UpdateConsecutiveStations(NewConsecutiveStation);
+                    try
+                    {
+                        double distance = GetBusStation(item.Station1Key).Coordinates.GetDistanceTo(GetBusStation(item.Station2Key).Coordinates);
+                        ConsecutiveStations NewConsecutiveStation = new ConsecutiveStations { Station1Key = item.Station1Key, Station2Key = item.Station2Key, IsActive = true, Distance = distance };
+                        NewConsecutiveStation.DriveDistanceTime = TimeSpan.FromMinutes(NewConsecutiveStation.Distance * 0.01);
+                        dl.UpdateConsecutiveStations(NewConsecutiveStation);
+                    }
+                    catch(DO.BadBusStationKeyException ex)
+                    { }
                 }
             }
             catch (DO.BadBusLineKeyException busExaption)

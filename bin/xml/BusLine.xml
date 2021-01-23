@@ -440,7 +440,7 @@
     <LastStation>39004</LastStation>
     <FirstStationName>נחמיה/בית העלמין</FirstStationName>
     <LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>200027</BusLineKey>
@@ -470,6 +470,16 @@
     <LastStation>39005</LastStation>
     <FirstStationName>התאנה/האלון</FirstStationName>
     <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200028</BusLineKey>
+    <LineNumber>11</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38906</FirstStation>
+    <LastStation>39004</LastStation>
+    <FirstStationName>נחמיה/בית העלמין</FirstStationName>
+    <LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
 </ArrayOfBusLine>
