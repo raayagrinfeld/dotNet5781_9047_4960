@@ -536,7 +536,7 @@
     <LastStation>39002</LastStation>
     <FirstStationName>נחמיה/בית העלמין</FirstStationName>
     <LastStationName>שדרות יעקב/עזרא</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20004</BusLineKey>
@@ -556,7 +556,7 @@
     <LastStation>38903</LastStation>
     <FirstStationName>יעקב פריימן/בנימין שמוטקין</FirstStationName>
     <LastStationName>קרוננברג/ארגמן</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20008</BusLineKey>
@@ -756,6 +756,36 @@
     <LastStation>38922</LastStation>
     <FirstStationName>דרך האילנות/מנחם בגין</FirstStationName>
     <LastStationName>השר חיים שפירא/הרב שלום ג'רופי</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20003</BusLineKey>
+    <LineNumber>3898894</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38906</FirstStation>
+    <LastStation>39002</LastStation>
+    <FirstStationName>נחמיה/בית העלמין</FirstStationName>
+    <LastStationName>שדרות יעקב/עזרא</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20003</BusLineKey>
+    <LineNumber>3898894</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38906</FirstStation>
+    <LastStation>39002</LastStation>
+    <FirstStationName>נחמיה/בית העלמין</FirstStationName>
+    <LastStationName>שדרות יעקב/עזרא</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20004</BusLineKey>
+    <LineNumber>4897570</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38904</FirstStation>
+    <LastStation>38903</LastStation>
+    <FirstStationName>יעקב פריימן/בנימין שמוטקין</FirstStationName>
+    <LastStationName>קרוננברג/ארגמן</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>

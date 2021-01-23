@@ -307,7 +307,7 @@ namespace DL
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
             XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
-                                                 where (p.Element("Station1Key").Value) == key1.ToString() && (p.Element("Station2Key").Value) == key2.ToString() && (p.Element("IsActive").Value) == "true"
+                                                 where (p.Element("Station1Key").Value) == key1.ToString() && (p.Element("Station2Key").Value) == key2.ToString() && Boolean.Parse(p.Element("IsActive").Value)
                                                  select p).FirstOrDefault();
 
             if (ConsecutiveStationSearch == null)
@@ -427,7 +427,7 @@ namespace DL
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
             XElement userSearch = (from p in UserRootElem.Elements()
-                                   where (p.Element("UserName").Value) == userName &&(p.Element("IsActive").Value) == "true"
+                                   where (p.Element("UserName").Value) == userName &&Boolean.Parse(p.Element("IsActive").Value)
                                    select p).FirstOrDefault();
 
             if (userSearch == null)
@@ -533,7 +533,7 @@ namespace DL
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             BusesSchedule BSchedule = (from p in ScheduleRootElem.Elements()
-                                       where (p.Element("BusLineKey").Value) == busLineKey.ToString() && (p.Element("IsActive").Value) == "true" & TimeSpan.Parse(p.Element("StartHour").Value )==time
+                                       where (p.Element("BusLineKey").Value) == busLineKey.ToString() && Boolean.Parse(p.Element("IsActive").Value) & TimeSpan.Parse(p.Element("StartHour").Value )==time
                                        select new BusesSchedule()
                                        {
                                            BusLineKey = Int32.Parse(p.Element("BusLineKey").Value),
@@ -553,7 +553,7 @@ namespace DL
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             return (from p in ScheduleRootElem.Elements()
-                    where (p.Element("IsActive").Value) == "true"
+                    where Boolean.Parse(p.Element("IsActive").Value)
                     select new BusesSchedule()
                     {
                         BusLineKey = Int32.Parse(p.Element("BusLineKey").Value),
@@ -583,7 +583,7 @@ namespace DL
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
-                                       where (p.Element("BusLineKey").Value) == schedule.BusLineKey.ToString() && (p.Element("IsActive").Value) == "true" & TimeSpan.Parse(p.Element("StartHour").Value) == schedule.StartHour
+                                       where (p.Element("BusLineKey").Value) == schedule.BusLineKey.ToString() && Boolean.Parse(p.Element("IsActive").Value) & TimeSpan.Parse(p.Element("StartHour").Value) == schedule.StartHour
                                        select p).FirstOrDefault();
 
             if (ScheduleSearch != null)
@@ -604,7 +604,7 @@ namespace DL
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
-                                       where (p.Element("BusLineKey").Value) == scheduleold.BusLineKey.ToString() && (p.Element("IsActive").Value) == "true" & TimeSpan.Parse(p.Element("StartHour").Value) == scheduleold.StartHour
+                                       where (p.Element("BusLineKey").Value) == scheduleold.BusLineKey.ToString() && Boolean.Parse(p.Element("IsActive").Value) & TimeSpan.Parse(p.Element("StartHour").Value) == scheduleold.StartHour
                                        select p).FirstOrDefault();
 
             if (ScheduleSearch == null)
@@ -620,7 +620,7 @@ namespace DL
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
             XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
-                                       where (p.Element("BusLineKey").Value) == busLineKey.ToString() && (p.Element("IsActive").Value) == "true" & TimeSpan.Parse(p.Element("StartHour").Value) == time
+                                       where (p.Element("BusLineKey").Value) == busLineKey.ToString() && Boolean.Parse(p.Element("IsActive").Value) & TimeSpan.Parse(p.Element("StartHour").Value) == time
                                        select p).FirstOrDefault();
 
             if (ScheduleSearch == null)
