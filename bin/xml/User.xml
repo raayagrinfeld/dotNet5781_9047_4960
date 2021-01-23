@@ -45,4 +45,13 @@
     <Gender>male</Gender>
     <imagePath>UserIcons\dollars.png</imagePath>
   </User>
+  <User>
+    <UserName>ttt</UserName>
+    <Password>btxWusXq3jE8AQI4BI6+B0QttJoLtt7+aOXFs/ajP24ZlNIJXwXnew5bdC5Bh5/LrwoNIjFrQxLupzFUcHfwGw==</Password>
+    <Salt>0</Salt>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>False</IsActive>
+    <Gender>male</Gender>
+    <imagePath />
+  </User>
 </ArrayOfUser>

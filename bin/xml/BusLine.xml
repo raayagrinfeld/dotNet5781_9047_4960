@@ -798,4 +798,108 @@
     <LastStationName>קרוננברג/ארגמן</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
+  <BusLine>
+    <BusLineKey>200012</BusLineKey>
+    <LineNumber>666</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200012</BusLineKey>
+    <LineNumber>666</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38910</LastStation>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>צומת חולדה/כביש 411</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200012</BusLineKey>
+    <LineNumber>666</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38901</FirstStation>
+    <LastStation>38901</LastStation>
+    <FirstStationName>הרב דוד ישראל/אריה דולצין</FirstStationName>
+    <LastStationName>הרב דוד ישראל/אריה דולצין</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200012</BusLineKey>
+    <LineNumber>666</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38901</FirstStation>
+    <LastStation>38901</LastStation>
+    <FirstStationName>הרב דוד ישראל/אריה דולצין</FirstStationName>
+    <LastStationName>הרב דוד ישראל/אריה דולצין</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200013</BusLineKey>
+    <LineNumber>66</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200013</BusLineKey>
+    <LineNumber>66</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38920</FirstStation>
+    <LastStation>38920</LastStation>
+    <FirstStationName>שדרות משה דיין/יוסף לישנסקי</FirstStationName>
+    <LastStationName>שדרות משה דיין/יוסף לישנסקי</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200013</BusLineKey>
+    <LineNumber>66</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38911</FirstStation>
+    <LastStation>38911</LastStation>
+    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+    <LastStationName>גרינשפן/יגאל אלון</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200013</BusLineKey>
+    <LineNumber>66</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38911</FirstStation>
+    <LastStation>38911</LastStation>
+    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+    <LastStationName>גרינשפן/יגאל אלון</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200014</BusLineKey>
+    <LineNumber>65</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200014</BusLineKey>
+    <LineNumber>65</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38921</FirstStation>
+    <LastStation>38921</LastStation>
+    <FirstStationName>השר חיים שפירא/יוסף ספיר</FirstStationName>
+    <LastStationName>השר חיים שפירא/יוסף ספיר</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200014</BusLineKey>
+    <LineNumber>65</LineNumber>
+    <Area>General</Area>
+    <FirstStation>39001</FirstStation>
+    <LastStation>39001</LastStation>
+    <FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
+    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
 </ArrayOfBusLine>

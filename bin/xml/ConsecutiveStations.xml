@@ -31,8 +31,8 @@
   <ConsecutiveStations>
     <Station1Key>38910</Station1Key>
     <Station2Key>38911</Station2Key>
-    <Distance>18059.654227372088</Distance>
-    <IsActive>true</IsActive>
+    <Distance>18059.6542273721</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>03:00:35.7930000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
@@ -214,7 +214,7 @@
     <Station1Key>38888</Station1Key>
     <Station2Key>38910</Station2Key>
     <Distance>10968.6950385705</Distance>
-    <IsActive>true</IsActive>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>01:49:41.2170000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
@@ -318,15 +318,15 @@
   <ConsecutiveStations>
     <Station1Key>38921</Station1Key>
     <Station2Key>38910</Station2Key>
-    <Distance>24534.594582734182</Distance>
-    <IsActive>true</IsActive>
+    <Distance>24534.5945827342</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>04:05:20.7570000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
     <Station1Key>38910</Station1Key>
     <Station2Key>39002</Station2Key>
-    <Distance>17281.076811168026</Distance>
-    <IsActive>true</IsActive>
+    <Distance>17281.076811168</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>02:52:48.6460000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
@@ -340,7 +340,7 @@
     <Station1Key>38880</Station1Key>
     <Station2Key>38910</Station2Key>
     <Distance>7001.51893026612</Distance>
-    <IsActive>true</IsActive>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>01:10:00.9110000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
@@ -391,5 +391,26 @@
     <Distance>7505.22698181339</Distance>
     <IsActive>True</IsActive>
     <DriveDistanceTime>01:15:03.1360000</DriveDistanceTime>
+  </ConsecutiveStations>
+  <ConsecutiveStations>
+    <Station1Key>-1</Station1Key>
+    <Station2Key>38910</Station2Key>
+    <Distance>0</Distance>
+    <IsActive>true</IsActive>
+    <DriveDistanceTime>00:00:00</DriveDistanceTime>
+  </ConsecutiveStations>
+  <ConsecutiveStations>
+    <Station1Key>-1</Station1Key>
+    <Station2Key>38901</Station2Key>
+    <Distance>0</Distance>
+    <IsActive>true</IsActive>
+    <DriveDistanceTime>00:00:00</DriveDistanceTime>
+  </ConsecutiveStations>
+  <ConsecutiveStations>
+    <Station1Key>-1</Station1Key>
+    <Station2Key>39001</Station2Key>
+    <Distance>0</Distance>
+    <IsActive>true</IsActive>
+    <DriveDistanceTime>00:00:00</DriveDistanceTime>
   </ConsecutiveStations>
 </ArrayOfConsecutiveStations>

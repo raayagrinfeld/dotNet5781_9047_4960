@@ -60,6 +60,7 @@ namespace PL
         }
 
         #region General
+        //מעדכן את הנתונים בכל החלונות
         private void refreshcontent()
         {
             busLineBOObservableCollectionFilter = new ObservableCollection<BusLineBO>(bl.GetAllBusLines());
@@ -110,12 +111,12 @@ namespace PL
                 userBOListView.ItemsSource = bl.GetAllUsers();
             }
         }
-
+        //מקטין את החלון
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
         {
             SystemCommands.MinimizeWindow(this);
         }
-
+        //מגדיל את החלון
         private void Button_Click_MaximizeWindow(object sender, RoutedEventArgs e)
         {
             if (this.WindowState == WindowState.Maximized)
@@ -123,12 +124,12 @@ namespace PL
             else
                 SystemCommands.MaximizeWindow(this);
         }
-
+        //סוגר את החלון
         private void Button_Click_CloseWindow(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
+        
         private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
 
@@ -142,7 +143,7 @@ namespace PL
             ((Button)sender).Width /= 1.1;
             ((Button)sender).Height /= 1.1;
         }
-
+        //סוגר את כל החלונות אם החלון מנהל סגור
         private void When_Window_CLosed(object sender, EventArgs e)
         {
             Environment.Exit(Environment.ExitCode);
@@ -153,29 +154,23 @@ namespace PL
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
-
+        //פותח החלון ההגדרות של המשתמש
         private void MenuItem_Click_OpenUserSettingsWindow(object sender, RoutedEventArgs e)
         {
             UserSettingsWindow userSettings = new UserSettingsWindow(user);
             userSettings.Show();
             refreshcontent();
         }
-
+        //עובר לחלון של הממשק משתמש
         private void MenuItem_Click_ShowUserInterface(object sender, RoutedEventArgs e)
         {
             MainUserWindow userWindow = new MainUserWindow(user);
             userWindow.Show();
         }
-
-        //private void MenuItem_Click_LogOut(object sender, RoutedEventArgs e)
-        //{
-        //    LogInWindow logInWindow = new LogInWindow();
-        //    logInWindow.Show();
-        //    //this.Close();
-        //}
         #endregion
 
         #region filter BusLine, station and user
+        //מחפש את האוטובוס לפי מספר קו
         private void SearchFilterChangedBusLine(object sender, TextChangedEventArgs e)
         {
 
@@ -183,6 +178,7 @@ namespace PL
                                                                                         where CheckIfStringsAreEqual(lineNumber.Text, item.LineNumber.ToString())
                                                                                  select item));
         }
+        // ממיין את הקווים לפי אזור
         private void GropByArea_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             foreach (var item in bl.GetBusLineGrouptByArea())
@@ -193,14 +189,17 @@ namespace PL
                 }
             lineNumber.Text ="";
         }
+        //מוחק את הדברים שלפיהם חיפשנו ומחזיר לרשימה של הכל
         private void ClearGrouping_click_busLine(object sender, RoutedEventArgs e)
         {
             refreshcontent();
         }
+        //מוחק את הדברים שלפיהם חיפשנו ומחזיר לרשימה של הכל
         private void ClearGrouping_click_user(object sender, RoutedEventArgs e)
         {
             refreshcontent();
         }
+        //מחפש תחנה לפי שם או מספר
         private void SearchFilterChangedBusStation(object sender, TextChangedEventArgs e)
         {
             stationBOListView.ItemsSource = new ObservableCollection<StationBO>((from item in bl.GetAllBusStations()
@@ -210,12 +209,14 @@ namespace PL
                                                                                       where CheckIfStringsAreEqual(StationName.Text, g.StationName)
                                                                                       select g));
         }
+        //מחפש משתמש לפי השם
         private void SearchFilterChangedUser(object sender, TextChangedEventArgs e)
         {
             userBOListView.ItemsSource = new ObservableCollection<User>((from item in bl.GetAllUsers()
                                                                          where CheckIfStringsAreEqual(UserNameSearch.Text, item.UserName)
                                                                          select item));                                            
         }
+        //מחפש משתמש לפי הרשאה 
         private void Premissiom_selectionChanged(object sender, SelectionChangedEventArgs e)
         {
             foreach (var item in bl.GetUserGrouptByManagment())
@@ -226,7 +227,7 @@ namespace PL
                 }
             UserNameSearch.Text = "";
         }
-
+        //בודק אם חלק ממחרוזת נמצא בשורת חיפוש שלנו
         private bool CheckIfStringsAreEqual(string a, string b)
         {
             if (a.Length > b.Length)
@@ -247,6 +248,7 @@ namespace PL
 
         #region bus line butten clicks
         #region add
+        //
         private void StationOptionsToAdd_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             StationBO selectedStationToAdd = (StationOptionsToAdd.SelectedItem as StationBO);
@@ -315,6 +317,7 @@ namespace PL
                     {
                         bl.AddBusLine(AddbusLine);
                         bl.AddStation(AddbusLine, (firstStationNameComboBox.SelectedItem as StationBO).BusStationKey);
+                        AddbusLine = bl.GetBusLine(AddbusLine.BusLineKey);
                         bl.AddStation(AddbusLine, (lastStationNameComboBox.SelectedItem as StationBO).BusStationKey);
                         AddbusLine.Area = (Areas)areaComboBox.SelectedItem;
                         AddbusLine.LineNumber = Int32.Parse(lineNumberTextBox1.Text);
@@ -541,11 +544,13 @@ namespace PL
 
         #region stations click
         #region add
+        //go to add station Border
         private void addStation_Click(object sender, RoutedEventArgs e)
         {
             stationListBorder.Visibility = Visibility.Collapsed;
             addStationBorder.Visibility = Visibility.Visible;
         }
+        //add station to the xml
         private void add_From_addStationWindow_Click(object sender, RoutedEventArgs e)
         {
             if (addLatitudeTextBox.Text != "" & addLongitudeTextBox.Text != "")
@@ -612,6 +617,7 @@ namespace PL
         #endregion
 
         #region delete
+        //delete satation
         private void Button_Click_DeleteBusStaion(object sender, RoutedEventArgs e)
         {
             try
@@ -627,6 +633,7 @@ namespace PL
         #endregion
 
         #region filters
+        //מאפשר לשים רק נקודה ומספרים בקורדינאטות
         private void TextBox_OnlyNumbersAndDigit_PreviewKeyDown(object sender, KeyEventArgs e)//allow only numbers
         {
                 TextBox text = sender as TextBox;
@@ -660,6 +667,7 @@ namespace PL
         #endregion
 
         #region go back
+        //go back to the list stations view
         private void Button_Click_BackArrowBusStation(object sender, RoutedEventArgs e)
         {
             stationListBorder.Visibility = Visibility.Visible;
@@ -683,6 +691,7 @@ namespace PL
         #endregion
 
         #region map
+        //show the station in the map
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ShowLocation showLocation = new ShowLocation("http://maps.google.com/maps?&z=15&q=" + latitudTextBox.Text + "+" + longtitudTextBox.Text + "&ll=" + latitudTextBox.Text + "+" + longtitudTextBox.Text);
@@ -693,6 +702,7 @@ namespace PL
 
         #region users click
         #region image
+        //upload image
         private void Button_Click_UploadImage(object sender, RoutedEventArgs e)
         {
             if (selectedUser != null)
@@ -717,11 +727,13 @@ namespace PL
         #endregion
 
         #region add
+        //go to add user Border
         private void Button_addUser_Click(object sender, RoutedEventArgs e)
         {
             userListBorder.Visibility = Visibility.Collapsed;
             addUserBorder.Visibility = Visibility.Visible;
         }
+        //add new user to the xml
         private void addUser_Click(object sender, RoutedEventArgs e)
         {
             User userToAdd = new User { UserName = userNameTextBox.Text, Password = passwordTextBox.Text, IsActive = true, ManagementPermission = false };
@@ -771,6 +783,7 @@ namespace PL
         #endregion
 
         #region go back
+        //go back to the user list view
         private void Button_Click_BackArrowUser(object sender, RoutedEventArgs e)
         {
             userListBorder.Visibility = Visibility.Visible;
@@ -802,6 +815,7 @@ namespace PL
         #endregion
 
         #region delete
+        //delete user
         private void Button_Click_DeleteUser(object sender, RoutedEventArgs e)
         {
             try
