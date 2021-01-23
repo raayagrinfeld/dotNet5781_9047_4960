@@ -130,7 +130,7 @@
                 </TabItem>
                 <TabItem Header="stations" Width="180" Height="30" FontSize="16">
                     <Grid Background="#FFE5E5E5">
-                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
+                        <Border x:Name="stationListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="2*"/>
@@ -189,7 +189,7 @@
                                 </ListView>
                             </Grid>
                         </Border>
-                        <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
+                        <Border x:Name="StationDetailedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.ColumnSpan="3" Margin="0,0,-0.334,-0.333">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="2*"/>
