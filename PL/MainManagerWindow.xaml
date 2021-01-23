@@ -143,7 +143,7 @@
                                         <ColumnDefinition Width="1.333"/>
                                     </Grid.ColumnDefinitions>
                                     <Label VerticalAlignment="Center" Grid.Row="2" Margin="3,2.667,0,4.733" HorizontalAlignment="Left" Grid.Column="0" Content="Area:" Grid.ColumnSpan="2"/>
-                                    <TextBox x:Name="areaTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Area, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="2.667,5.667,0,8.733" Height="24" HorizontalAlignment="Left" Grid.Column="2"/>
+                                    <ComboBox x:Name="areaTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Area, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="2.667,5.667,0,8.733" Height="24" HorizontalAlignment="Left" Grid.Column="2"/>
                                     <Label VerticalAlignment="Center" Grid.Row="0" Margin="3,3,0,4.667" HorizontalAlignment="Left" Grid.Column="0" Content="Bus Line Key:" Grid.ColumnSpan="2"/>
                                     <TextBlock x:Name="busLineKeyTextBox" Width="120" VerticalAlignment="Center" Text="{Binding BusLineKey, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="2.667,8,0,7.667" Height="23" HorizontalAlignment="Left" Grid.Column="2"/>
                                     <Label VerticalAlignment="Center" Grid.Row="3" Margin="-1,25.667,0,277.667" HorizontalAlignment="Left" Grid.Column="0" Content="bus Line Stations:" Grid.ColumnSpan="2"/>

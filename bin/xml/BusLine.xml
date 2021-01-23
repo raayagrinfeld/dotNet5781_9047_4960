@@ -1,357 +1,357 @@
 <?xml version="1.0"?>
 <ArrayOfBusLine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>General</Area>
-    <FirstStation>0</FirstStation>
-    <LastStation>0</LastStation>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>38911</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>גרינשפן/יגאל אלון</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>38914</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>הדייגים/הנחשול</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>38914</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>הדייגים/הנחשול</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>General</Area>
-    <FirstStation>0</FirstStation>
-    <LastStation>0</LastStation>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38919</FirstStation>
-    <LastStation>38919</LastStation>
-    <FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
-    <LastStationName>וייצמן/דרך יצחק רבין</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38919</FirstStation>
-    <LastStation>39001</LastStation>
-    <FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
-    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38919</FirstStation>
-    <LastStation>39001</LastStation>
-    <FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
-    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>39001</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>38880</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>התאנה/האלון</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>38917</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>יוסף בורג/כתריאל רפפורט</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38919</FirstStation>
-    <LastStation>38917</LastStation>
-    <FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
-    <LastStationName>יוסף בורג/כתריאל רפפורט</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38919</FirstStation>
-    <LastStation>38906</LastStation>
-    <FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
-    <LastStationName>נחמיה/בית העלמין</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38919</FirstStation>
-    <LastStation>39004</LastStation>
-    <FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
-    <LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38919</FirstStation>
-    <LastStation>39004</LastStation>
-    <FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
-    <LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200029</BusLineKey>
-    <LineNumber>100</LineNumber>
-    <Area>General</Area>
-    <FirstStation>0</FirstStation>
-    <LastStation>0</LastStation>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200029</BusLineKey>
-    <LineNumber>100</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38914</FirstStation>
-    <LastStation>38914</LastStation>
-    <FirstStationName>הדייגים/הנחשול</FirstStationName>
-    <LastStationName>הדייגים/הנחשול</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200029</BusLineKey>
-    <LineNumber>100</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38914</FirstStation>
-    <LastStation>39001</LastStation>
-    <FirstStationName>הדייגים/הנחשול</FirstStationName>
-    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200029</BusLineKey>
-    <LineNumber>100</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38914</FirstStation>
-    <LastStation>39001</LastStation>
-    <FirstStationName>הדייגים/הנחשול</FirstStationName>
-    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200029</BusLineKey>
-    <LineNumber>100</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38914</FirstStation>
-    <LastStation>39001</LastStation>
-    <FirstStationName>הדייגים/הנחשול</FirstStationName>
-    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>North</Area>
-    <FirstStation>39001</FirstStation>
-    <LastStation>39004</LastStation>
-    <FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
-    <LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>North</Area>
-    <FirstStation>39001</FirstStation>
-    <LastStation>39004</LastStation>
-    <FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
-    <LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38911</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38917</FirstStation>
-    <LastStation>39004</LastStation>
-    <FirstStationName>יוסף בורג/כתריאל רפפורט</FirstStationName>
-    <LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38880</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>התאנה/האלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38880</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>התאנה/האלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38880</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>התאנה/האלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200028</BusLineKey>
-    <LineNumber>11</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38917</FirstStation>
-    <LastStation>39004</LastStation>
-    <FirstStationName>יוסף בורג/כתריאל רפפורט</FirstStationName>
-    <LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
-    <IsActive>true</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200027</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38880</FirstStation>
-    <LastStation>39005</LastStation>
-    <FirstStationName>התאנה/האלון</FirstStationName>
-    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
-    <IsActive>true</IsActive>
-  </BusLine>
-</ArrayOfBusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>General</Area>
+		<FirstStation>0</FirstStation>
+		<LastStation>0</LastStation>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>General</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>38911</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>גרינשפן/יגאל אלון</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>General</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>38914</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>הדייגים/הנחשול</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>38914</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>הדייגים/הנחשול</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>General</Area>
+		<FirstStation>0</FirstStation>
+		<LastStation>0</LastStation>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>General</Area>
+		<FirstStation>38919</FirstStation>
+		<LastStation>38919</LastStation>
+		<FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
+		<LastStationName>וייצמן/דרך יצחק רבין</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>General</Area>
+		<FirstStation>38919</FirstStation>
+		<LastStation>39001</LastStation>
+		<FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
+		<LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38919</FirstStation>
+		<LastStation>39001</LastStation>
+		<FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
+		<LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>39001</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>38880</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>התאנה/האלון</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>38917</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>יוסף בורג/כתריאל רפפורט</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38919</FirstStation>
+		<LastStation>38917</LastStation>
+		<FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
+		<LastStationName>יוסף בורג/כתריאל רפפורט</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38919</FirstStation>
+		<LastStation>38906</LastStation>
+		<FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
+		<LastStationName>נחמיה/בית העלמין</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38919</FirstStation>
+		<LastStation>39004</LastStation>
+		<FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
+		<LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38919</FirstStation>
+		<LastStation>39004</LastStation>
+		<FirstStationName>וייצמן/דרך יצחק רבין</FirstStationName>
+		<LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200029</BusLineKey>
+		<LineNumber>100</LineNumber>
+		<Area>General</Area>
+		<FirstStation>0</FirstStation>
+		<LastStation>0</LastStation>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200029</BusLineKey>
+		<LineNumber>100</LineNumber>
+		<Area>General</Area>
+		<FirstStation>38914</FirstStation>
+		<LastStation>38914</LastStation>
+		<FirstStationName>הדייגים/הנחשול</FirstStationName>
+		<LastStationName>הדייגים/הנחשול</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200029</BusLineKey>
+		<LineNumber>100</LineNumber>
+		<Area>General</Area>
+		<FirstStation>38914</FirstStation>
+		<LastStation>39001</LastStation>
+		<FirstStationName>הדייגים/הנחשול</FirstStationName>
+		<LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200029</BusLineKey>
+		<LineNumber>100</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38914</FirstStation>
+		<LastStation>39001</LastStation>
+		<FirstStationName>הדייגים/הנחשול</FirstStationName>
+		<LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200029</BusLineKey>
+		<LineNumber>100</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38914</FirstStation>
+		<LastStation>39001</LastStation>
+		<FirstStationName>הדייגים/הנחשול</FirstStationName>
+		<LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>North</Area>
+		<FirstStation>39001</FirstStation>
+		<LastStation>39004</LastStation>
+		<FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
+		<LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>North</Area>
+		<FirstStation>39001</FirstStation>
+		<LastStation>39004</LastStation>
+		<FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
+		<LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38911</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>גרינשפן/יגאל אלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38917</FirstStation>
+		<LastStation>39004</LastStation>
+		<FirstStationName>יוסף בורג/כתריאל רפפורט</FirstStationName>
+		<LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38880</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>התאנה/האלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38880</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>התאנה/האלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38880</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>התאנה/האלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>false</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200028</BusLineKey>
+		<LineNumber>11</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38917</FirstStation>
+		<LastStation>39004</LastStation>
+		<FirstStationName>יוסף בורג/כתריאל רפפורט</FirstStationName>
+		<LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
+		<IsActive>true</IsActive>
+	</BusLine>
+	<BusLine>
+		<BusLineKey>200027</BusLineKey>
+		<LineNumber>10</LineNumber>
+		<Area>North</Area>
+		<FirstStation>38880</FirstStation>
+		<LastStation>39005</LastStation>
+		<FirstStationName>התאנה/האלון</FirstStationName>
+		<LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
+		<IsActive>true</IsActive>
+	</BusLine>
+	</ArrayOfB

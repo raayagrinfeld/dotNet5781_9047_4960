@@ -10,26 +10,26 @@ namespace BlApi
     public interface IBL
     {
         #region runNumber
-        int getNextBusLineRunNumber();
-        int getNextBusStationRunNumber();
+        int getNextBusLineRunNumber();// get Next Bus Line Run Number
+        int getNextBusStationRunNumber();//get Next Bus Station Run Number
         #endregion
 
         #region BusLineBO
-        BusLineBO GetBusLine(int busLineKey);
-        IEnumerable<BusLineBO> GetAllBusLines();
-        IEnumerable<BusLineBO> GetAllBusLinesBy(Predicate<BusLineBO> predicate);
-        bool HasBusStation(BusLineBO busLine, int stationKey);//done
-        void UpdateBusLine(BusLineBO busLine);
-        void AddBusLine(BusLineBO bus);
-        void DeleteBusLine(int busLineKey);
-        IEnumerable<IGrouping<Areas, BusLineBO>> GetBusLineGrouptByArea();
+        BusLineBO GetBusLine(int busLineKey);//Get Bus Line by key
+        IEnumerable<BusLineBO> GetAllBusLines();//Get All Bus Lines
+        IEnumerable<BusLineBO> GetAllBusLinesBy(Predicate<BusLineBO> predicate);//Get All Bus Lines by predicate
+        bool HasBusStation(BusLineBO busLine, int stationKey);//chack if the station exsist
+        void UpdateBusLine(BusLineBO busLine);//Update Bus Line
+        void AddBusLine(BusLineBO bus);//Add Bus Line
+        void DeleteBusLine(int busLineKey);//Delete Bus Line
+        IEnumerable<IGrouping<Areas, BusLineBO>> GetBusLineGrouptByArea();//Get Bus Lines Groupt By Area
 
         #endregion
 
         #region BusLineStationBO
-        IEnumerable<BO.BusLineStationBO> GetAllBusLineStationOfBusLine(BusLineBO busLine);//done
-        double DistanceBetweanStations(BusLineBO busLine, int firstStationKey, int lastStationKey);
-        TimeSpan TimeBetweanStations(BusLineBO busLine, int firstStationKey, int lastStationKey);
+        IEnumerable<BO.BusLineStationBO> GetAllBusLineStationOfBusLine(BusLineBO busLine);//Get All Bus Line Stations Of Bus Line
+        double DistanceBetweanStations(BusLineBO busLine, int firstStationKey, int lastStationKey);//get Distance Betwean Stations
+        TimeSpan TimeBetweanStations(BusLineBO busLine, int firstStationKey, int lastStationKey);//get Time Betwean Stations
         void AddStation(BusLineBO busLine, int stationKey);
         void deleteBusStationInBusLine(BusLineBO busLine, int stationKey);
         #endregion

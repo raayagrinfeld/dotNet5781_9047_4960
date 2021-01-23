@@ -91,4 +91,46 @@
     <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38910</BusStationKey>
+    <BusLineKey>200012</BusLineKey>
+    <StationName>צומת חולדה/כביש 411</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38901</BusStationKey>
+    <BusLineKey>200012</BusLineKey>
+    <StationName>הרב דוד ישראל/אריה דולצין</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38920</BusStationKey>
+    <BusLineKey>200013</BusLineKey>
+    <StationName>שדרות משה דיין/יוסף לישנסקי</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38911</BusStationKey>
+    <BusLineKey>200013</BusLineKey>
+    <StationName>גרינשפן/יגאל אלון</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38921</BusStationKey>
+    <BusLineKey>200014</BusLineKey>
+    <StationName>השר חיים שפירא/יוסף ספיר</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39001</BusStationKey>
+    <BusLineKey>200014</BusLineKey>
+    <StationName>שדרות יעקב/יוסף הנשיא</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>
