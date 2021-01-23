@@ -30,45 +30,45 @@ namespace BlApi
         IEnumerable<BO.BusLineStationBO> GetAllBusLineStationOfBusLine(BusLineBO busLine);//Get All Bus Line Stations Of Bus Line
         double DistanceBetweanStations(BusLineBO busLine, int firstStationKey, int lastStationKey);//get Distance Betwean Stations
         TimeSpan TimeBetweanStations(BusLineBO busLine, int firstStationKey, int lastStationKey);//get Time Betwean Stations
-        void AddStation(BusLineBO busLine, int stationKey);
-        void deleteBusStationInBusLine(BusLineBO busLine, int stationKey);
+        void AddStation(BusLineBO busLine, int stationKey);//Add Station to bus line
+        void deleteBusStationInBusLine(BusLineBO busLine, int stationKey);//delete Bus Station In Bus Line
         #endregion
 
         #region StationBO
-        StationBO GetBusStation(int busStationKey);
-        IEnumerable<StationBO> GetAllBusStations();
-        IEnumerable<StationBO> GetAllBusStationsBy(Predicate<StationBO> predicate);
-        void AddBusStation(StationBO station);
-        void UpdateBusStation(StationBO station);
-        void DeleteBusStation(int busStationKey);
-        bool HasLine(StationBO station, int lineNumber);
+        StationBO GetBusStation(int busStationKey);//Get Bus Station by key
+        IEnumerable<StationBO> GetAllBusStations();//Get All Bus Stations
+        IEnumerable<StationBO> GetAllBusStationsBy(Predicate<StationBO> predicate);// Get All Bus Stations By predicate
+        void AddBusStation(StationBO station);//Add Bus Station
+        void UpdateBusStation(StationBO station);//Update Bus Station
+        void DeleteBusStation(int busStationKey);//Delete Bus Station
+        bool HasLine(StationBO station, int lineNumber);//check if the line exsist
         #endregion
 
         #region Driving
-        void AddDeatinationStation(int stationKey, Driving driving);
-        void AddSourceStation(int stationKey, Driving driving);
-        IEnumerable<BO.BusLineBO> fingAllLinesBeatweenStation(Driving driving);
+        void AddDeatinationStation(int stationKey, Driving driving);//Add Deatination Station
+        void AddSourceStation(int stationKey, Driving driving);//Add Source Station
+        IEnumerable<BO.BusLineBO> fingAllLinesBeatweenStation(Driving driving);// find All Lines Beatween Station
         #endregion
 
         #region User
-        BO.User GetUser(string userName);
-        IEnumerable<IGrouping<bool, User>> GetUserGrouptByManagment();
-        IEnumerable<BO.User> GetAllUsers();
-        IEnumerable<BO.User> GetAlUersBy(Predicate<BO.User> predicate);
-        void AddUser(BO.User user);
-        void UpdateUser(BO.User user);
-        void DeletUser(string userName);
-        string Decode(string HashPassword, int Salt);
+        BO.User GetUser(string userName);//Get User by user name
+        IEnumerable<IGrouping<bool, User>> GetUserGrouptByManagment();// Get User Groupt By Managment
+        IEnumerable<BO.User> GetAllUsers();//Get All Users
+        IEnumerable<BO.User> GetAlUersBy(Predicate<BO.User> predicate);//Get All Users by predicate
+        void AddUser(BO.User user);//Add User
+        void UpdateUser(BO.User user);//Update User
+        void DeletUser(string userName);//DeletUser
+        string Decode(string HashPassword, int Salt);//Decode password
         #endregion
 
         #region DrivingLine
-        DrivingLine GetDrivingLine(int busLineKey, TimeSpan time, StationBO DestinationStation = null);
-        IEnumerable<DrivingLine> GetAllDrivings(StationBO DestinationStation=null);
-        IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate, StationBO DestinationStation = null); 
-        void AddDrivingLine(DrivingLine drivingLine);
-        void UpdateDrivingLine(DrivingLine drivingLineold, DrivingLine drivingLinenew);
-        void DeleteDrivingLine(int busLineKey, TimeSpan time);
-        IEnumerable<DrivingLine> BusLineInDrivingToStation(StationBO DestinationStation, TimeSpan time);
+        DrivingLine GetDrivingLine(int busLineKey, TimeSpan time, StationBO DestinationStation = null);//Get Driving Line by bus and time
+        IEnumerable<DrivingLine> GetAllDrivings(StationBO DestinationStation=null);//Get All Drivings
+        IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate, StationBO DestinationStation = null); // Get All Drivings By predicate
+        void AddDrivingLine(DrivingLine drivingLine);//Add Driving Line
+        void UpdateDrivingLine(DrivingLine drivingLineold, DrivingLine drivingLinenew);// Update Driving Line
+        void DeleteDrivingLine(int busLineKey, TimeSpan time);//Delete Driving Line
+        IEnumerable<DrivingLine> BusLineInDrivingToStation(StationBO DestinationStation, TimeSpan time);//Bus Line In Driving To Station
         #endregion
 
     }
