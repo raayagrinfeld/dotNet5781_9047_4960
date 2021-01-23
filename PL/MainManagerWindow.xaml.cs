@@ -563,6 +563,10 @@ namespace PL
                                     Random r = new Random();
                                     bl.AddBusStation(new StationBO { busLines = null, BusStationKey = bl.getNextBusStationRunNumber(), Coordinates = new GeoCoordinate(Double.Parse(addLatitudeTextBox.Text), Double.Parse(addLongitudeTextBox.Text)), StationAddress = addStationAddressTextBox.Text, IsActive = true, HasARoof = (bool)addRoof.IsChecked, StationName = addStationNameTextBox.Text });
                                     refreshcontent();
+                                    addStationNameTextBox.Clear();
+                                    addStationAddressTextBox.Clear();
+                                    addLongitudeTextBox.Clear();
+                                    addLatitudeTextBox.Clear();
                                     stationListBorder.Visibility = Visibility.Visible;
                                     addStationBorder.Visibility = Visibility.Collapsed;
 
