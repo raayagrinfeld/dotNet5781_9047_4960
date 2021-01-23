@@ -285,7 +285,7 @@ namespace DL
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
             XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
-                                   where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString() && (p.Element("IsActive").Value) == "true"
+                                   where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString() && Boolean.Parse((p.Element("IsActive").Value))
                                                  select p).FirstOrDefault();
 
             if (ConsecutiveStationSearch != null)
@@ -357,7 +357,7 @@ namespace DL
         {
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
             ConsecutiveStations ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
-                                                            where (p.Element("Station1Key").Value) == key1.ToString() && (p.Element("Station2Key").Value) == key2.ToString() && (p.Element("IsActive").Value) == "true"
+                                                            where (p.Element("Station1Key").Value) == key1.ToString() && (p.Element("Station2Key").Value) == key2.ToString() && Boolean.Parse((p.Element("IsActive").Value))
                                                             select new ConsecutiveStations()
                                                             {
                                                                 Station1Key = Int32.Parse(p.Element("Station1Key").Value),
@@ -376,7 +376,7 @@ namespace DL
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
             XElement ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
-                                                 where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString() && (p.Element("IsActive").Value) == "true"
+                                                 where (p.Element("Station1Key").Value) == consecutiveStations.Station1Key.ToString() & (p.Element("Station2Key").Value) == consecutiveStations.Station2Key.ToString() && Boolean.Parse((p.Element("IsActive").Value))
                                                  select p).FirstOrDefault();
 
             if (ConsecutiveStationSearch == null)
