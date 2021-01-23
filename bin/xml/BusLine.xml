@@ -534,7 +534,7 @@
     <LastStation>39001</LastStation>
     <FirstStationName>קרוננברג/ארגמן</FirstStationName>
     <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>200002</BusLineKey>
@@ -624,7 +624,7 @@
     <LastStation>38906</LastStation>
     <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
     <LastStationName>נחמיה/בית העלמין</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>200005</BusLineKey>
@@ -824,6 +824,26 @@
     <LastStation>38906</LastStation>
     <FirstStationName>הדייגים/הנחשול</FirstStationName>
     <LastStationName>נחמיה/בית העלמין</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200004</BusLineKey>
+    <LineNumber>34</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38905</FirstStation>
+    <LastStation>38906</LastStation>
+    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
+    <LastStationName>נחמיה/בית העלמין</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200001</BusLineKey>
+    <LineNumber>18</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>38903</FirstStation>
+    <LastStation>39001</LastStation>
+    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
+    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>
