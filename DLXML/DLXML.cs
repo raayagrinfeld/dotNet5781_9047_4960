@@ -22,19 +22,19 @@ namespace DL
         #region DS XML Files
 
         string UserPath = @"User.xml"; //XElement
+        string ConsecutiveStationsPath = @"ConsecutiveStations.xml"; //XElement
+        string BusSchedulePath = @"BusSchedule.xml"; //XElement
 
         string BusLinePath = @"BusLine.xml"; //XMLSerializer
         string BusLineStationPath = @"BusLineStation.xml"; //XMLSerializer
         string BusStationPath = @"BusStation.xml"; //XMLSerializer
-        string ConsecutiveStationsPath = @"ConsecutiveStations.xml"; //XMLSerializer
-        string BusSchedulePath = @"BusSchedule.xml"; //XMLSerializer
-        string RunNumbersPath = @"RumNumbers.xml";
+        string RunNumbersPath = @"RumNumbers.xml";//XMLSerializer
 
 
         #endregion
 
         #region BusLine
-        public void AddBusLine(BusLine bus)
+        public void AddBusLine(BusLine bus) //add bus line
         {
             List<BusLine> ListBuses = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
 
@@ -44,7 +44,7 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ListBuses, BusLinePath);
         }
-        public void DeleteBusLine(int busLineKey)
+        public void DeleteBusLine(int busLineKey)   //delete bus line
         {
             List<BusLine> ListBusLines = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
 
@@ -52,7 +52,7 @@ namespace DL
             {
                 if (b.BusLineKey == busLineKey & b.IsActive)
                 {
-                    b.IsActive = false;
+                    b.IsActive = false; //torning busline to not active
                     return true;
                 }
                 else return false;
@@ -62,7 +62,7 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ListBusLines, BusLinePath);
         }
-        public BusLine GetBusLine(int busLineKey)
+        public BusLine GetBusLine(int busLineKey)   //get bus line
         {
             List<BusLine> ListBusLines = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
 
@@ -72,7 +72,7 @@ namespace DL
             else
                 throw new BadBusLineKeyException(busLineKey, $"bad bus line key: {busLineKey}");
         }
-        public IEnumerable<BusLine> GetAllBusLines()
+        public IEnumerable<BusLine> GetAllBusLines()    //gets all bus line
         {
             List<BusLine> ListBusLines = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
 
@@ -80,7 +80,7 @@ namespace DL
                    where bus.IsActive
                    select bus;
         }
-        public IEnumerable<BusLine> GetAllBusLinesBy(Predicate<BusLine> predicate)
+        public IEnumerable<BusLine> GetAllBusLinesBy(Predicate<BusLine> predicate)  //get all bus line by a predicate
         {
             List<BusLine> ListBusLines = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
 
@@ -88,7 +88,7 @@ namespace DL
                    where bus.IsActive & predicate(bus)
                    select bus;
         }
-        public void UpdateBusLine(BusLine bus)
+        public void UpdateBusLine(BusLine bus)  //updates bus line
         {
             List<BusLine> ListBuses = XMLTools.LoadListFromXMLSerializer<BusLine>(BusLinePath);
             BusLine busLine = ListBuses.Find(b => b.BusLineKey == bus.BusLineKey&b.IsActive);
@@ -101,12 +101,11 @@ namespace DL
             {
                 throw new BadBusLineKeyException(bus.BusLineKey, $"bad bus line key: {bus.BusLineKey}");
             }
-            //XMLTools.SaveListToXMLSerializer(ListBuses, BusLinePath);
         }
         #endregion
 
         #region BusLineStation
-        public BusLineStation GetBusLineStation(int busLineKey, int key)
+        public BusLineStation GetBusLineStation(int busLineKey, int key)    //get station of bus
         {
             List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
 
@@ -115,7 +114,7 @@ namespace DL
                 throw new DO.BadBusLineStationsException(busLineKey, key, "this line does not have this station");
             return busLineStation;
         }
-        public void AddBusLineStation(BusLineStation station)
+        public void AddBusLineStation(BusLineStation station)   //adds station to bus
         {
             List<BusLineStation> BusLineStationList = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
 
@@ -127,31 +126,33 @@ namespace DL
             XMLTools.SaveListToXMLSerializer(BusLineStationList, BusLineStationPath);
         }
         
-        public void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey)
+        public void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey) //deletes a station from a busline
         {
             List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
             BusLineStation sic = ListBusLineStations.Find(b =>
             {
                 if (b.BusStationKey == BusStationKey & b.BusLineKey == BusLineKey & b.IsActive)
                 {
-                    b.IsActive = false;
+                    b.IsActive = false;//deactivating
                     return true;
                 }
                 else return false;
             });
             if (sic == null)
                 throw new DO.BadBusLineStationsException(BusStationKey, BusLineKey, "this bus line ststion does not exsist");
+            
+            //so it goes trough all the stations that were after the station to delete and decrise their StationNumberInLine
             ListBusLineStations.FindAll(b =>
             {
                 if (b.StationNumberInLine > sic.StationNumberInLine & b.BusLineKey == BusLineKey & b.IsActive)
                 {
                     b.StationNumberInLine--;
                 }
-                return false;           //so it goes trough all the stations
+                return false;          
             });
             XMLTools.SaveListToXMLSerializer(ListBusLineStations, BusLineStationPath);
         }
-        public IEnumerable<BusLineStation> GetAllBusLineStationBy(Predicate<BusLineStation> predicate)
+        public IEnumerable<BusLineStation> GetAllBusLineStationBy(Predicate<BusLineStation> predicate)  //get all station of buss by a predicat
         {
             List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
 
@@ -160,7 +161,9 @@ namespace DL
                    select station;
 
         }
-        public int GetBusLineStationKey(int BusLineKey, int StationNumberInLine)
+
+       
+        public int GetBusLineStationKey(int BusLineKey, int StationNumberInLine)  //its an helping func that return the station key by the statin number
         {
             List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
 
@@ -168,11 +171,11 @@ namespace DL
             if (StationNumberInLine == 0)
                 return -1;
             if (station != null)
-                return station.BusStationKey; //no need to Clone()
+                return station.BusStationKey; 
             else
                 throw new DO.BadBusLineStationsException(BusLineKey, StationNumberInLine, $"bad bus line key and Station number in line: {BusLineKey} {StationNumberInLine}");
         }
-        public void UpdateBusLineStation(BusLineStation station)
+        public void UpdateBusLineStation(BusLineStation station)    //update a station of bus
         {
             List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
             BusLineStation sta = ListBusLineStations.Find(b => (b.BusStationKey == station.BusStationKey & b.BusLineKey == station.BusLineKey & b.IsActive));
@@ -189,21 +192,18 @@ namespace DL
         #endregion
 
         #region BusStation
-        public void AddBusStation(BusStation station)
+        public void AddBusStation(BusStation station)   //adds a station
         {
             List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
 
             if (ListBusStations.FirstOrDefault(s => s.BusStationKey == station.BusStationKey & s.IsActive) != null)
                 throw new DO.BadBusLineKeyException(station.BusStationKey, "This bus station already exist");
 
-           // if (GetBusStation(station.BusStationKey) == null)
-              //  throw new DO.BadBusLineKeyException(station.BusStationKey, "Missing bus station");
-
-            ListBusStations.Add(station); //no need to Clone()
+            ListBusStations.Add(station); 
 
             XMLTools.SaveListToXMLSerializer(ListBusStations, BusStationPath);
         }
-        public void DeleteBusStation(int busStationKey)
+        public void DeleteBusStation(int busStationKey) //deletes a station
         {
             List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
 
@@ -221,7 +221,7 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(ListBusStations, BusStationPath);
         }
-        public IEnumerable<BusStation> GetAllBusStations()
+        public IEnumerable<BusStation> GetAllBusStations()  //get all stations
         {
             List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
 
@@ -229,7 +229,7 @@ namespace DL
                    where station.IsActive
                    select station;
         }
-        public IEnumerable<BusStation> GetAllBusStationsBy(Predicate<BusStation> predicate)
+        public IEnumerable<BusStation> GetAllBusStationsBy(Predicate<BusStation> predicate) //gets all station by a predicate
         {
             List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
 
@@ -237,7 +237,7 @@ namespace DL
                    where station.IsActive & predicate(station)
                    select station;
         }
-        public BusStation GetBusStation(int busStationKey)
+        public BusStation GetBusStation(int busStationKey)  //get a station
         {
             List<BusStation> ListBusStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
 
@@ -247,7 +247,7 @@ namespace DL
             else
                throw new DO.BadBusStationKeyException(busStationKey, $"bad bus stationkey: {busStationKey}");
         }
-        public void UpdateBusStation(BusStation station)
+        public void UpdateBusStation(BusStation station)    //updates information of station
         {
             List<BusStation> ListStations = XMLTools.LoadListFromXMLSerializer<BusStation>(BusStationPath);
             BusStation busStation = ListStations.Find(b => (b.BusStationKey == station.BusStationKey & b.IsActive));
@@ -264,7 +264,7 @@ namespace DL
         #endregion
 
         #region ConsecutiveStation
-        public void AddConsecutiveStations(ConsecutiveStations consecutiveStations)
+        public void AddConsecutiveStations(ConsecutiveStations consecutiveStations) //adds a consecotive station
         {
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
@@ -286,7 +286,7 @@ namespace DL
 
             XMLTools.SaveListToXMLElement(ConsecutiveStationRootElem, ConsecutiveStationsPath);
         }
-        public void DeletConsecutiveStations(int key1, int key2)
+        public void DeletConsecutiveStations(int key1, int key2)    //deletes a conecutive station
         {
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
@@ -302,7 +302,7 @@ namespace DL
 
             XMLTools.SaveListToXMLElement(ConsecutiveStationRootElem, ConsecutiveStationsPath);
         }
-        public IEnumerable<ConsecutiveStations> GetAlConsecutiveStationsBy(Predicate<ConsecutiveStations> predicate)
+        public IEnumerable<ConsecutiveStations> GetAlConsecutiveStationsBy(Predicate<ConsecutiveStations> predicate)    //gets all consecutive station by a predicate
         {
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
@@ -320,7 +320,7 @@ namespace DL
                     select c
                    );
         }
-        public IEnumerable<ConsecutiveStations> GetAllConsecutiveStations()
+        public IEnumerable<ConsecutiveStations> GetAllConsecutiveStations() //get all consecutive stations
         {
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
@@ -331,13 +331,11 @@ namespace DL
                         Station2Key = Int32.Parse(p.Element("Station2Key").Value),
                         DriveDistanceTime = TimeSpan.Parse(p.Element("DriveDistanceTime").Value),
                         IsActive = Boolean.Parse(p.Element("IsActive").Value),
-                        Distance =Int32.Parse( p.Element("Distance").Value),
-                        
-
+                        Distance =Int32.Parse( p.Element("Distance").Value)                       
                     }
                    );
         }
-        public ConsecutiveStations GetConsecutiveStations(int key1, int key2)
+        public ConsecutiveStations GetConsecutiveStations(int key1, int key2)   //get consecutive station
         {
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
             ConsecutiveStations ConsecutiveStationSearch = (from p in ConsecutiveStationRootElem.Elements()
@@ -355,7 +353,7 @@ namespace DL
             return ConsecutiveStationSearch;
         }
 
-        public void UpdateConsecutiveStations(ConsecutiveStations consecutiveStations)
+        public void UpdateConsecutiveStations(ConsecutiveStations consecutiveStations)  //updates consecutive station
         {
             XElement ConsecutiveStationRootElem = XMLTools.LoadListFromXMLElement(ConsecutiveStationsPath);
 
@@ -364,7 +362,7 @@ namespace DL
                                                  select p).FirstOrDefault();
 
             if (ConsecutiveStationSearch == null)
-                throw new DO.BadConsecutiveStationsException(consecutiveStations.Station1Key, consecutiveStations.Station2Key, "Duplicate Consecutive Stations");
+                throw new DO.BadConsecutiveStationsException(consecutiveStations.Station1Key, consecutiveStations.Station2Key, "Consecutive Stations not found");
             else
             {
                 ConsecutiveStationSearch.Element("Station1Key").Value = consecutiveStations.Station1Key.ToString();
@@ -379,7 +377,7 @@ namespace DL
         #endregion
 
         #region UserXML
-        public void AddUser(User user)
+        public void AddUser(User user)  //adds user
         {
 
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
@@ -406,7 +404,7 @@ namespace DL
 
             XMLTools.SaveListToXMLElement(UserRootElem, UserPath);
         }
-        public void DeletUser(string userName)
+        public void DeletUser(string userName)  //delete user
         {
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
@@ -415,12 +413,12 @@ namespace DL
                                    select p).FirstOrDefault();
 
             if (userSearch == null)
-                throw new DO.BadUserNameException(userName, "Duplicate user name");
+                throw new DO.BadUserNameException(userName, "user not found");
             (userSearch.Element("IsActive").Value) = false.ToString();
 
             XMLTools.SaveListToXMLElement(UserRootElem, UserPath);
         }
-        public IEnumerable<User> GetAllUsers()
+        public IEnumerable<User> GetAllUsers()  //get all users
         {
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
@@ -439,7 +437,7 @@ namespace DL
                     }
                    );
         }
-        public IEnumerable<User> GetAlUersBy(Predicate<User> predicate)
+        public IEnumerable<User> GetAlUersBy(Predicate<User> predicate)    //get all users by predicat
         {
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
@@ -459,7 +457,7 @@ namespace DL
                     select u
                    );
         }
-        public User GetUser(string userName)
+        public User GetUser(string userName)    //get user
         {
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
@@ -478,11 +476,11 @@ namespace DL
                         ).FirstOrDefault();
 
             if (u == null)
-                throw new DO.BadUserNameException(userName, "Duplicate user name");
+                throw new DO.BadUserNameException(userName, "user not found");
 
             return u;
         }
-        public void UpdateUser(User user)
+        public void UpdateUser(User user)   //updates user
         {
             XElement UserRootElem = XMLTools.LoadListFromXMLElement(UserPath);
 
@@ -491,7 +489,7 @@ namespace DL
                                    select p).FirstOrDefault();
 
             if (userSearch == null)
-                throw new DO.BadUserNameException(user.UserName, "Duplicate user name");
+                throw new DO.BadUserNameException(user.UserName, "user not found");
             else
             {
                 userSearch.Element("UserName").Value = user.UserName;
@@ -513,7 +511,7 @@ namespace DL
         #endregion
 
         #region BusSchedules
-        public BusesSchedule GetBusesSchedule(int busLineKey, TimeSpan time)
+        public BusesSchedule GetBusesSchedule(int busLineKey, TimeSpan time)    //get bus Schedule
         {
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
@@ -528,12 +526,12 @@ namespace DL
                          ).FirstOrDefault();
 
             if (BSchedule == null)
-                throw new DO.BadBusesScheduleKeyException(busLineKey, time.ToString(), "Duplicate schedule");
+                throw new DO.BadBusesScheduleKeyException(busLineKey, time.ToString(), "schedule not found");
 
             return BSchedule;
         }
 
-        public IEnumerable<BusesSchedule> GetAllBusSchedules()
+        public IEnumerable<BusesSchedule> GetAllBusSchedules()  //get all Schedule of buss
         {
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
@@ -548,7 +546,7 @@ namespace DL
                          );
         }
 
-        public IEnumerable<BusesSchedule> GetAllBusSchedulesBy(Predicate<BusesSchedule> predicate)
+        public IEnumerable<BusesSchedule> GetAllBusSchedulesBy(Predicate<BusesSchedule> predicate)  //get all bus Schedules by predicat
         {
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
@@ -563,7 +561,7 @@ namespace DL
                     select sch);
         }
 
-        public void AddBusSchedule(BusesSchedule schedule)
+        public void AddBusSchedule(BusesSchedule schedule)  //adds bus Schedule
         {
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
@@ -584,7 +582,7 @@ namespace DL
             XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
         }
 
-        public void UpdateBusSchedule(BusesSchedule scheduleold, BusesSchedule schedulenew)
+        public void UpdateBusSchedule(BusesSchedule scheduleold, BusesSchedule schedulenew) //updates bus Schedule
         {
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
@@ -593,14 +591,14 @@ namespace DL
                                        select p).FirstOrDefault();
 
             if (ScheduleSearch == null)
-                throw new DO.BadBusesScheduleKeyException(scheduleold.BusLineKey, scheduleold.StartHour.ToString(), "Duplicate schedule");
+                throw new DO.BadBusesScheduleKeyException(scheduleold.BusLineKey, scheduleold.StartHour.ToString(), "schedule not found");
             DeleteBusSchedule(scheduleold.BusLineKey, scheduleold.StartHour);
             AddBusSchedule(schedulenew);
 
             XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
         }
 
-        public void DeleteBusSchedule(int busLineKey, TimeSpan time)
+        public void DeleteBusSchedule(int busLineKey, TimeSpan time)    //deletes bus Schedule
         {
             XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
 
@@ -609,7 +607,7 @@ namespace DL
                                        select p).FirstOrDefault();
 
             if (ScheduleSearch == null)
-                throw new DO.BadBusesScheduleKeyException(busLineKey, time.ToString(), "Duplicate schedule");
+                throw new DO.BadBusesScheduleKeyException(busLineKey, time.ToString(), "schedule not found");
             (ScheduleSearch.Element("IsActive").Value) = false.ToString();
 
             XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
@@ -619,7 +617,7 @@ namespace DL
         #endregion
 
         #region RunNumbers
-        public int GetRunNumber_BusLIne()
+        public int GetRunNumber_BusLIne()   //get run number of bus line
         {
 
             List<string> ListRunNumbers = XMLTools.LoadListFromXMLSerializer<string>(RunNumbersPath);
@@ -640,7 +638,7 @@ namespace DL
             }
         }
 
-        public int GetRunNumber_BusStation()
+        public int GetRunNumber_BusStation()    //get run number of station
         {
             List<string> ListRunNumbers = XMLTools.LoadListFromXMLSerializer<string>(RunNumbersPath);
             string RunNumberBusStation = ListRunNumbers.FirstOrDefault(b => b.StartsWith("BusStationRumNumber"));
@@ -660,7 +658,7 @@ namespace DL
             }
         }
 
-        public int GetRunNumber_BusesSChedule()
+        public int GetRunNumber_BusesSChedule() //get bus Schedule run number
         {
             List<string> ListRunNumbers = XMLTools.LoadListFromXMLSerializer<string>(RunNumbersPath);
             string RunNumberBusesSChedule = ListRunNumbers.FirstOrDefault(b => b.StartsWith("BusesSCheduleRumNumber"));
