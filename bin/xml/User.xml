@@ -46,11 +46,11 @@
     <imagePath>UserIcons\dollars.png</imagePath>
   </User>
   <User>
-    <UserName>ttt</UserName>
-    <Password>btxWusXq3jE8AQI4BI6+B0QttJoLtt7+aOXFs/ajP24ZlNIJXwXnew5bdC5Bh5/LrwoNIjFrQxLupzFUcHfwGw==</Password>
+    <UserName>gad</UserName>
+    <Password>or+jRlxiwEnUDsp8uFoxKcN9bQRzB/ZOZAX8VKURbsA8melLcsqLTjwTCyDUbNO34jxvahI43EStu3Gx29Wx+A==</Password>
     <Salt>0</Salt>
     <ManagementPermission>false</ManagementPermission>
-    <IsActive>False</IsActive>
+    <IsActive>true</IsActive>
     <Gender>male</Gender>
     <imagePath />
   </User>

@@ -35,7 +35,7 @@ namespace APIDL
         void AddBusLineStation(BusLineStation station);
         void UpdateBusLineStation(BusLineStation station);
         void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey);
-        void DeleteBusLineStationAllBusLine(int BusStationKey);
+
 
         #endregion
 
