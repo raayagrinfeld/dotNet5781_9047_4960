@@ -154,4 +154,39 @@
     <StationNumberInLine>3</StationNumberInLine>
     <IsActive>false</IsActive>
   </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38899</BusStationKey>
+    <BusLineKey>200031</BusLineKey>
+    <StationName>שושן/אופנהיימר</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38904</BusStationKey>
+    <BusLineKey>200031</BusLineKey>
+    <StationName>יעקב פריימן/בנימין שמוטקין</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39004</BusStationKey>
+    <BusLineKey>200032</BusLineKey>
+    <StationName>לייב יוספזון/יעקב ברמן</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38888</BusStationKey>
+    <BusLineKey>200032</BusLineKey>
+    <StationName>דרך האילנות/מנחם בגין</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>false</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38913</BusStationKey>
+    <BusLineKey>200032</BusLineKey>
+    <StationName>משה שרת/יעקב קנר</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>

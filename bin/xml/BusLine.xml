@@ -482,4 +482,159 @@
     <LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
+  <BusLine>
+    <BusLineKey>200030</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200031</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38899</FirstStation>
+    <LastStation>0</LastStation>
+    <FirstStationName>שושן/אופנהיימר</FirstStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200031</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38899</FirstStation>
+    <LastStation>38899</LastStation>
+    <FirstStationName>שושן/אופנהיימר</FirstStationName>
+    <LastStationName>שושן/אופנהיימר</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200031</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38899</FirstStation>
+    <LastStation>38904</LastStation>
+    <FirstStationName>שושן/אופנהיימר</FirstStationName>
+    <LastStationName>יעקב פריימן/בנימין שמוטקין</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200031</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>38899</FirstStation>
+    <LastStation>38904</LastStation>
+    <FirstStationName>שושן/אופנהיימר</FirstStationName>
+    <LastStationName>יעקב פריימן/בנימין שמוטקין</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200032</BusLineKey>
+    <LineNumber>14</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200032</BusLineKey>
+    <LineNumber>14</LineNumber>
+    <Area>General</Area>
+    <FirstStation>39004</FirstStation>
+    <LastStation>39004</LastStation>
+    <FirstStationName>לייב יוספזון/יעקב ברמן</FirstStationName>
+    <LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200032</BusLineKey>
+    <LineNumber>14</LineNumber>
+    <Area>General</Area>
+    <FirstStation>39004</FirstStation>
+    <LastStation>38888</LastStation>
+    <FirstStationName>לייב יוספזון/יעקב ברמן</FirstStationName>
+    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200032</BusLineKey>
+    <LineNumber>14</LineNumber>
+    <Area>South</Area>
+    <FirstStation>39004</FirstStation>
+    <LastStation>38888</LastStation>
+    <FirstStationName>לייב יוספזון/יעקב ברמן</FirstStationName>
+    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200032</BusLineKey>
+    <LineNumber>15</LineNumber>
+    <Area>South</Area>
+    <FirstStation>39004</FirstStation>
+    <LastStation>38888</LastStation>
+    <FirstStationName>לייב יוספזון/יעקב ברמן</FirstStationName>
+    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200032</BusLineKey>
+    <LineNumber>15</LineNumber>
+    <Area>South</Area>
+    <FirstStation>39004</FirstStation>
+    <LastStation>38913</LastStation>
+    <FirstStationName>לייב יוספזון/יעקב ברמן</FirstStationName>
+    <LastStationName>משה שרת/יעקב קנר</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200032</BusLineKey>
+    <LineNumber>15</LineNumber>
+    <Area>South</Area>
+    <FirstStation>39004</FirstStation>
+    <LastStation>38913</LastStation>
+    <FirstStationName>לייב יוספזון/יעקב ברמן</FirstStationName>
+    <LastStationName>משה שרת/יעקב קנר</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200032</BusLineKey>
+    <LineNumber>15</LineNumber>
+    <Area>South</Area>
+    <FirstStation>39004</FirstStation>
+    <LastStation>38913</LastStation>
+    <FirstStationName>לייב יוספזון/יעקב ברמן</FirstStationName>
+    <LastStationName>משה שרת/יעקב קנר</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200032</BusLineKey>
+    <LineNumber>15</LineNumber>
+    <Area>South</Area>
+    <FirstStation>39004</FirstStation>
+    <LastStation>38913</LastStation>
+    <FirstStationName>לייב יוספזון/יעקב ברמן</FirstStationName>
+    <LastStationName>משה שרת/יעקב קנר</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200032</BusLineKey>
+    <LineNumber>15</LineNumber>
+    <Area>South</Area>
+    <FirstStation>39004</FirstStation>
+    <LastStation>38913</LastStation>
+    <FirstStationName>לייב יוספזון/יעקב ברמן</FirstStationName>
+    <LastStationName>משה שרת/יעקב קנר</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200032</BusLineKey>
+    <LineNumber>15</LineNumber>
+    <Area>South</Area>
+    <FirstStation>39004</FirstStation>
+    <LastStation>38913</LastStation>
+    <FirstStationName>לייב יוספזון/יעקב ברמן</FirstStationName>
+    <LastStationName>משה שרת/יעקב קנר</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
 </ArrayOfBusLine>

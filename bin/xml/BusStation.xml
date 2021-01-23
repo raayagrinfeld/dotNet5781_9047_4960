@@ -878,7 +878,7 @@
     <StationName>דרך האילנות/מנחם בגין</StationName>
     <StationAddress> רחוב:דרך האילנות 3 עיר: גדרה</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38905</BusStationKey>
@@ -942,7 +942,7 @@
     <StationName>יעקב פריימן/בנימין שמוטקין</StationName>
     <StationAddress> רחוב:יעקב פריימן 9 עיר: ראשון לציון</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38907</BusStationKey>
@@ -974,7 +974,7 @@
     <StationName>יוסף בורג/משואות יצחק</StationName>
     <StationAddress> רחוב:דר יוסף בורג 9 עיר: ראשון לציון</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38913</BusStationKey>
@@ -1294,6 +1294,54 @@
     <StationName>נחמיה/בית העלמין</StationName>
     <StationAddress> רחוב:נחמיה 71 עיר: ראשון לציון</StationAddress>
     <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38916</BusStationKey>
+    <Coordinates>
+      <Latitude>31.968049</Latitude>
+      <Longitude>34.818099</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יוסף בורג/משואות יצחק</StationName>
+    <StationAddress> רחוב:דר יוסף בורג 9 עיר: ראשון לציון</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38904</BusStationKey>
+    <Coordinates>
+      <Latitude>31.975479</Latitude>
+      <Longitude>34.813355</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יעקב פריימן/בנימין שמוטקין</StationName>
+    <StationAddress> רחוב:יעקב פריימן 9 עיר: ראשון לציון</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38888</BusStationKey>
+    <Coordinates>
+      <Latitude>31.805041</Latitude>
+      <Longitude>34.785098</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>דרך האילנות/מנחם בגין</StationName>
+    <StationAddress> רחוב:דרך האילנות 3 עיר: גדרה</StationAddress>
+    <HasARoof>false</HasARoof>
     <IsActive>true</IsActive>
   </BusStation>
 </ArrayOfBusStation>

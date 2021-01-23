@@ -16,7 +16,7 @@
     <ManagementPermission>True</ManagementPermission>
     <IsActive>True</IsActive>
     <Gender>female</Gender>
-    <imagePath>UserIcons\dollars.png</imagePath>
+    <imagePath>UserIcons\plant-pot.png</imagePath>
   </User>
   <User>
     <UserName>odelia</UserName>
@@ -50,7 +50,7 @@
     <Password>or+jRlxiwEnUDsp8uFoxKcN9bQRzB/ZOZAX8VKURbsA8melLcsqLTjwTCyDUbNO34jxvahI43EStu3Gx29Wx+A==</Password>
     <Salt>0</Salt>
     <ManagementPermission>false</ManagementPermission>
-    <IsActive>true</IsActive>
+    <IsActive>False</IsActive>
     <Gender>male</Gender>
     <imagePath />
   </User>
