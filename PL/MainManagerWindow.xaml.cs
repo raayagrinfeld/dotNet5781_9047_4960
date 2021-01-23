@@ -54,6 +54,7 @@ namespace PL
             GenderTextBox.ItemsSource= Enum.GetValues(typeof(gender));
             GropByArea.ItemsSource= Enum.GetValues(typeof(Areas));
             Premissiom.ItemsSource = Enum.GetValues(typeof(Managment));
+            areaTextBox.ItemsSource= Enum.GetValues(typeof(Areas));
             //latitudTextBox.
             refreshcontent();
         }
