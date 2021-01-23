@@ -462,7 +462,10 @@ namespace PL
             BusLineDetialedBorder.Visibility = Visibility.Collapsed;
             busLineListBorder.Visibility = Visibility.Visible;
             StationOptionsToAdd.Visibility = Visibility.Collapsed;
-            bl.UpdateBusLine(selectedBusLine);
+            if (selectedBusLine != null)
+            {
+                bl.UpdateBusLine(selectedBusLine);
+            }
             selectedBusLine = null;
             refreshcontent();
         }

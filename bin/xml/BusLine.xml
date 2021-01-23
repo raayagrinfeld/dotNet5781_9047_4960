@@ -576,7 +576,7 @@
     <LastStation>38903</LastStation>
     <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
     <LastStationName>קרוננברג/ארגמן</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20011</BusLineKey>
@@ -785,6 +785,16 @@
     <FirstStation>38904</FirstStation>
     <LastStation>38903</LastStation>
     <FirstStationName>יעקב פריימן/בנימין שמוטקין</FirstStationName>
+    <LastStationName>קרוננברג/ארגמן</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20008</BusLineKey>
+    <LineNumber>9398226</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38905</FirstStation>
+    <LastStation>38903</LastStation>
+    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
     <LastStationName>קרוננברג/ארגמן</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
