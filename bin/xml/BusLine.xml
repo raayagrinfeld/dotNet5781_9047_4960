@@ -564,7 +564,7 @@
     <LastStation>38920</LastStation>
     <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
     <LastStationName>שדרות משה דיין/יוסף לישנסקי</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>200003</BusLineKey>
@@ -844,6 +844,16 @@
     <LastStation>39001</LastStation>
     <FirstStationName>קרוננברג/ארגמן</FirstStationName>
     <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200002</BusLineKey>
+    <LineNumber>78</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38905</FirstStation>
+    <LastStation>38920</LastStation>
+    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
+    <LastStationName>שדרות משה דיין/יוסף לישנסקי</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>

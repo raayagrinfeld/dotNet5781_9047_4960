@@ -52,7 +52,7 @@
                             <ColumnDefinition Width="3*"/>
                             <ColumnDefinition Width="424*"/>
                         </Grid.ColumnDefinitions>
-                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Margin="3,0,-0.333,1.667" Grid.ColumnSpan="3" Grid.RowSpan="2">
+                        <Border x:Name="busLineListBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,0,-0.333,1.667" Grid.ColumnSpan="3" Grid.RowSpan="2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="243*"/>
@@ -122,7 +122,7 @@
                                 <Button Content="add new bus"  Width="118" RenderTransformOrigin="2.352,8.96" HorizontalAlignment="Right" Grid.Row="4" Click="Button_Click_AddBusLine" Margin="0,0.2,30.8,9.8" Grid.Column="1"/>
                             </Grid>
                         </Border>
-                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Margin="3,4,-1.333,-2.333" Grid.ColumnSpan="3" Grid.RowSpan="2" RenderTransformOrigin="0.444,0.525" >
+                        <Border x:Name="BusLineDetialedBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible" Grid.Row="1" Margin="3,4,-1.333,-2.333" Grid.ColumnSpan="3" Grid.RowSpan="2" RenderTransformOrigin="0.444,0.525" >
                             <Grid Grid.Row="0">
 
                                 <Grid x:Name="busLineDetialedGrid" VerticalAlignment="Top" Margin="1,96,0,0" HorizontalAlignment="Left" >
@@ -232,7 +232,7 @@
                                     <Image Source="Icons/left-arrow.png"/>
                                 </Button>
 
-                                <ComboBox Name="StationOptionsToAdd" ItemsSource="{Binding}" SelectionChanged="StationOptionsToAdd_SelectionChanged" Visibility="Collapsed" HorizontalAlignment="Left" Margin="320,551,0,0" VerticalAlignment="Top" Width="584" Height="28">
+                                <ComboBox Name="StationOptionsToAdd" ItemsSource="{Binding}" SelectionChanged="StationOptionsToAdd_SelectionChanged" Visibility="Visible" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="400" Height="28" Margin="162,558,0,0">
                                     <ComboBox.ItemTemplate>
                                         <DataTemplate>
                                             <Grid>
