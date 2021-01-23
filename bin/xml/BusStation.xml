@@ -14,7 +14,7 @@
     <StationName>התאנה/האלון</StationName>
     <StationAddress>רחוב:התאנה  עיר: יציץ</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38881</BusStationKey>
@@ -845,6 +845,22 @@
     </Coordinates>
     <StationName>יוסף בורג/כתריאל רפפורט</StationName>
     <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38880</BusStationKey>
+    <Coordinates>
+      <Latitude>31.866772</Latitude>
+      <Longitude>34.864555</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>התאנה/האלון</StationName>
+    <StationAddress>רחוב:התאנה  עיר: יציץ</StationAddress>
     <HasARoof>true</HasARoof>
     <IsActive>true</IsActive>
   </BusStation>
