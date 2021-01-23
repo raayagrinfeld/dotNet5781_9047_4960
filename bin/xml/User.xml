@@ -4,8 +4,8 @@
     <UserName>tal</UserName>
     <Password>YVSypMeJULv6CzAxrB5mWKMrEWNPL5RvPu46ViLN0ThGFf/08BNe0PmJ/cKR9SUDL5ju8+5sXDBkWJ5QP6j7zg==</Password>
     <Salt>706175321</Salt>
-    <ManagementPermission>False</ManagementPermission>
-    <IsActive>False</IsActive>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>false</IsActive>
     <Gender>male</Gender>
     <imagePath></imagePath>
   </User>
@@ -13,8 +13,8 @@
     <UserName>raaya</UserName>
     <Password>MgbRrfIhTU5LTUCUdO8I4wcySe/4AQ4dOtLqA/bm/PG9vfN5z0khVvgO38LobAlsGcMQiN2cbt8zFwhd5S2EyA==</Password>
     <Salt>858561543</Salt>
-    <ManagementPermission>True</ManagementPermission>
-    <IsActive>True</IsActive>
+    <ManagementPermission>true</ManagementPermission>
+    <IsActive>true</IsActive>
     <Gender>female</Gender>
     <imagePath>UserIcons\dinosaur.png</imagePath>
   </User>
@@ -22,8 +22,8 @@
     <UserName>odelia</UserName>
     <Password>/eGVo14+X23TP4FRq6sDQ/6W1eYFeXpOhNOYv3bnES538EHxJJb08lHtj+o/KFL3ftc9xkz76K8BElG0P1MSUw==</Password>
     <Salt>2146310729</Salt>
-    <ManagementPermission>True</ManagementPermission>
-    <IsActive>True</IsActive>
+    <ManagementPermission>true</ManagementPermission>
+    <IsActive>true</IsActive>
     <Gender>male</Gender>
     <imagePath>UserIcons\woman.png</imagePath>
   </User>
@@ -31,8 +31,8 @@
     <UserName>aviva</UserName>
     <Password>riI1o+sTyV0sjd77/Nd4Dpcy32cGy7zZ5Bg5d70k3fuFj4ahVLSv0hYhPzzf0SioTre7AMWt+IhQIEKh4TFAHw==</Password>
     <Salt>1784629565</Salt>
-    <ManagementPermission>False</ManagementPermission>
-    <IsActive>True</IsActive>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>true</IsActive>
     <Gender>male</Gender>
     <imagePath></imagePath>
   </User>
@@ -40,8 +40,8 @@
     <UserName>myiah</UserName>
     <Password>lPf+bbjUXjMv0E2Fo1tdhjbnVPrxTf96jgJAVFwSyiwAp5O0JkhSglJ0eY5aobfgI/96orS88z38DenuSi1VpQ==</Password>
     <Salt>1305693662</Salt>
-    <ManagementPermission>False</ManagementPermission>
-    <IsActive>True</IsActive>
+    <ManagementPermission>false</ManagementPermission>
+    <IsActive>true</IsActive>
     <Gender>male</Gender>
     <imagePath>UserIcons\dollars.png</imagePath>
   </User>

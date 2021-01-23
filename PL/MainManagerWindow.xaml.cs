@@ -262,6 +262,14 @@ namespace PL
                 {
                     MessageBox.Show(ex.Message, "ERROR in adding station in bus", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+                catch (BadBusLineStationsException ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR in adding station in bus", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (BadBusLineKeyException ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR in adding station in bus", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
         private void Button_Click_AddStationToBus(object sender, RoutedEventArgs e)
