@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <string>BusStationRumNumber39006</string>
-  <string>BusLineRumNumber200012</string>
   <string>BusesSCheduleRumNumber40050</string>
+  <string>BusStationRumNumber39011</string>
+  <string>BusLineRumNumber200030</string>
 </ArrayOfString>

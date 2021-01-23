@@ -334,7 +334,7 @@
     <StationName>צומת חולדה/כביש 411</StationName>
     <StationAddress> רחוב:411  עיר: גזר</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38911</BusStationKey>
@@ -350,7 +350,7 @@
     <StationName>גרינשפן/יגאל אלון</StationName>
     <StationAddress> רחוב:גרינשפן  עיר: ראשון לציון</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38913</BusStationKey>
@@ -382,7 +382,7 @@
     <StationName>הדייגים/הנחשול</StationName>
     <StationAddress> רחוב:הדייגים 45 עיר: ראשון לציון</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38916</BusStationKey>
@@ -430,7 +430,7 @@
     <StationName>וייצמן/דרך יצחק רבין</StationName>
     <StationAddress> רחוב:וייצמן  עיר: נס ציונה</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38920</BusStationKey>
@@ -494,7 +494,7 @@
     <StationName>שדרות יעקב/יוסף הנשיא</StationName>
     <StationAddress> רחוב:שדרות יעקב 65 עיר: ראשון לציון</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>39002</BusStationKey>
@@ -1022,6 +1022,198 @@
     <StationName>קרית עקרון/כביש 411</StationName>
     <StationAddress> רחוב:411  עיר: גזר</StationAddress>
     <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39006</BusStationKey>
+    <Coordinates>
+      <Latitude>31.3</Latitude>
+      <Longitude>31.4</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>רעיה שמחה</StationName>
+    <StationAddress>אודליה נהנת</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39007</BusStationKey>
+    <Coordinates>
+      <Latitude>31.6</Latitude>
+      <Longitude>31.6</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>רעיה</StationName>
+    <StationAddress>אודליה</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39008</BusStationKey>
+    <Coordinates>
+      <Latitude>31.1</Latitude>
+      <Longitude>31.1</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>raaya</StationName>
+    <StationAddress>ode</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39008</BusStationKey>
+    <Coordinates>
+      <Latitude>31.1</Latitude>
+      <Longitude>31.1</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>raaya</StationName>
+    <StationAddress>ode</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39009</BusStationKey>
+    <Coordinates>
+      <Latitude>31.1</Latitude>
+      <Longitude>31.1</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>odelia</StationName>
+    <StationAddress>t</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39010</BusStationKey>
+    <Coordinates>
+      <Latitude>31.1</Latitude>
+      <Longitude>31.2</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>aviva</StationName>
+    <StationAddress>av</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39010</BusStationKey>
+    <Coordinates>
+      <Latitude>31.1</Latitude>
+      <Longitude>31.2</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>aviva</StationName>
+    <StationAddress>av</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39010</BusStationKey>
+    <Coordinates>
+      <Latitude>31.1</Latitude>
+      <Longitude>31.2</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>aviva</StationName>
+    <StationAddress>av</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38910</BusStationKey>
+    <Coordinates>
+      <Latitude>31.811907</Latitude>
+      <Longitude>34.900793</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>צומת חולדה/כביש 411</StationName>
+    <StationAddress> רחוב:411  עיר: גזר</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38914</BusStationKey>
+    <Coordinates>
+      <Latitude>31.98497</Latitude>
+      <Longitude>34.78262</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>הדייגים/הנחשול</StationName>
+    <StationAddress> רחוב:הדייגים 45 עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38919</BusStationKey>
+    <Coordinates>
+      <Latitude>31.923041</Latitude>
+      <Longitude>34.798033</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>וייצמן/דרך יצחק רבין</StationName>
+    <StationAddress> רחוב:וייצמן  עיר: נס ציונה</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39001</BusStationKey>
+    <Coordinates>
+      <Latitude>31.950254</Latitude>
+      <Longitude>34.819244</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>שדרות יעקב/יוסף הנשיא</StationName>
+    <StationAddress> רחוב:שדרות יעקב 65 עיר: ראשון לציון</StationAddress>
+    <HasARoof>false</HasARoof>
     <IsActive>true</IsActive>
   </BusStation>
 </ArrayOfBusStation>

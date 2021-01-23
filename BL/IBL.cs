@@ -41,6 +41,7 @@ namespace BlApi
         void AddBusStation(StationBO station);
         void UpdateBusStation(StationBO station);
         void DeleteBusStation(int busStationKey);
+        void DeleteBusStationInAllLines(int busStationKey);
         bool HasLine(StationBO station, int lineNumber);
         #endregion
 

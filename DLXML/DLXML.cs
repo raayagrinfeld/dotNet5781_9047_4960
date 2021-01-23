@@ -126,23 +126,7 @@ namespace DL
 
             XMLTools.SaveListToXMLSerializer(BusLineStationList, BusLineStationPath);
         }
-        public void DeleteBusLineStationAllBusLine(int BusStationKey)
-        {
-            List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);
-            IEnumerable<BusLineStation> sic = ListBusLineStations.Where(b =>
-            {
-                if (b.BusStationKey == BusStationKey & b.IsActive)
-                {
-                    b.IsActive = false;
-                    return true;
-                }
-                else return false;
-            });
-            if (sic == null)
-                throw new DO.BadBusLineStationsException(BusStationKey, 0, "this bus line ststion does not exsist");
-
-            XMLTools.SaveListToXMLSerializer(ListBusLineStations, BusLineStationPath);
-        }
+        
         public void DeleteBusLineStationInOneBusLine(int BusStationKey, int BusLineKey)
         {
             List<BusLineStation> ListBusLineStations = XMLTools.LoadListFromXMLSerializer<BusLineStation>(BusLineStationPath);

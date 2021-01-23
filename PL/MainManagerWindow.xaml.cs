@@ -314,6 +314,7 @@ namespace PL
                     {
                         bl.AddBusLine(AddbusLine);
                         bl.AddStation(AddbusLine, (firstStationNameComboBox.SelectedItem as StationBO).BusStationKey);
+                        AddbusLine = bl.GetBusLine(AddbusLine.BusLineKey);
                         bl.AddStation(AddbusLine, (lastStationNameComboBox.SelectedItem as StationBO).BusStationKey);
                         AddbusLine.Area = (Areas)areaComboBox.SelectedItem;
                         AddbusLine.LineNumber = Int32.Parse(lineNumberTextBox1.Text);

@@ -151,35 +151,7 @@ namespace DL
                 return false;           //so it goes trough all the stations
             });
         }
-
-        public void DeleteBusLineStationAllBusLine(int BusStationKey)
-        {
-            BusLineStation bLstation;
-            do
-            {
-                bLstation = DataSource.BusLineStationList.Find(b =>
-                {
-                    if (b.BusStationKey == BusStationKey & b.IsActive)
-                    {
-                        b.IsActive = false;
-                        return true;
-                    }
-                    else return false;
-                });
-            }
-            while (bLstation != null);
-        }
         #endregion
-        //#region DrivingLine
-        //public void addLineInTravel(DrivingLine bus)
-        //{
-        //    throw new NotImplementedException();
-        //}
-        //public IEnumerable<DrivingLine> GetBusLinetInDriveList(Predicate<DrivingLine> predicate)
-        //{
-        //    throw new NotImplementedException();
-        //}
-        //#endregion
 
         #region BusStation
         public BusStation GetBusStation(int busStationKey)

@@ -124,7 +124,13 @@ namespace BL
         {
             try
             {
+                //var busLine = GetBusLine(busLineKey);
+                //foreach (var item in busLine.busLineStations.ToList())
+                //{
+                //    dl.de(busLine, item.BusStationKey);
+                //}
                 dl.DeleteBusLine(busLineKey);
+
             }
             catch (DO.BadBusLineKeyException busExaption)
             {
@@ -359,22 +365,29 @@ namespace BL
         {
             try
             {
-                dl.DeleteBusLineStationAllBusLine(busStationKey);
+                DeleteBusStationInAllLines(busStationKey);
                 dl.DeleteBusStation(busStationKey);
-               //IEnumerable< ConsecutiveStations >ConsecutiveStationToUpdate = dl.GetAlConsecutiveStationsBy(b => b.IsActive &&  (b.Station1Key == busStationKey || b.Station2Key == busStationKey));
-               // if (ConsecutiveStationToUpdate.Count()!=0)
-                //{
-                 //   foreach (ConsecutiveStations item in ConsecutiveStationToUpdate)
-                 //   {
-                       // dl.DeletConsecutiveStations(item.Station1Key, item.Station2Key);
-                 //   }
-                //}
             }
             catch (DO.BadBusStationKeyException busExaption)
             {
                 throw new BO.BadBusStationKeyException("this bus does not exsist", busExaption);
             }
         }
+        public void DeleteBusStationInAllLines(int busStationKey)
+        {
+            StationBO busStation = GetBusStation(busStationKey);
+            foreach (var item in busStation.busLines.ToList())
+            {
+                deleteBusStationInBusLine(item, busStationKey);
+            }
+        }
+
+
+        private StationBO NewMethod(int busStationKey)
+        {
+            return GetBusStation(busStationKey);
+        }
+
         public void UpdateBusStation(StationBO station)
         {
             try
