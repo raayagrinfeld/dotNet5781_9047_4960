@@ -516,6 +516,7 @@ namespace DL
                 userSearch.Element("ManagementPermission").Value = user.ManagementPermission.ToString();
                 userSearch.Element("imagePath").Value = user.imagePath;
                 userSearch.Element("Salt").Value = user.Salt.ToString();
+                userSearch.Element("Gender").Value = user.Gender.ToString();
             }
             XMLTools.SaveListToXMLElement(UserRootElem, UserPath);
         }
