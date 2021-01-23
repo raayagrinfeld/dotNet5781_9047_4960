@@ -446,7 +446,7 @@
     <StationName>שדרות משה דיין/יוסף לישנסקי</StationName>
     <StationAddress> רחוב:שדרות משה דיין  עיר: ראשון לציון</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38921</BusStationKey>
@@ -542,7 +542,7 @@
     <StationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</StationName>
     <StationAddress> רחוב:הרב יעקב ברמן 4 עיר: רחובות</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38901</BusStationKey>
@@ -846,7 +846,7 @@
     <StationName>יוסף בורג/כתריאל רפפורט</StationName>
     <StationAddress> רחוב:דר יוסף בורג עיר: ראשון לציון</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38880</BusStationKey>
@@ -1150,7 +1150,7 @@
     <StationName>aviva</StationName>
     <StationAddress>av</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38910</BusStationKey>
@@ -1213,6 +1213,54 @@
     </Coordinates>
     <StationName>שדרות יעקב/יוסף הנשיא</StationName>
     <StationAddress> רחוב:שדרות יעקב 65 עיר: ראשון לציון</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38920</BusStationKey>
+    <Coordinates>
+      <Latitude>31.98568</Latitude>
+      <Longitude>34.764014</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>שדרות משה דיין/יוסף לישנסקי</StationName>
+    <StationAddress> רחוב:שדרות משה דיין  עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39011</BusStationKey>
+    <Coordinates>
+      <Latitude>31.1</Latitude>
+      <Longitude>31.1</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>בדיקה</StationName>
+    <StationAddress>בדיקה</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39005</BusStationKey>
+    <Coordinates>
+      <Latitude>31.901879</Latitude>
+      <Longitude>34.819443</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</StationName>
+    <StationAddress> רחוב:הרב יעקב ברמן 4 עיר: רחובות</StationAddress>
     <HasARoof>false</HasARoof>
     <IsActive>true</IsActive>
   </BusStation>

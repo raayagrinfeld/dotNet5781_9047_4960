@@ -47,13 +47,13 @@
     <BusLineKey>200027</BusLineKey>
     <StationName>יוסף בורג/כתריאל רפפורט</StationName>
     <StationNumberInLine>2</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>39005</BusStationKey>
     <BusLineKey>200027</BusLineKey>
     <StationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</StationName>
-    <StationNumberInLine>3</StationNumberInLine>
+    <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
@@ -61,20 +61,20 @@
     <BusLineKey>200028</BusLineKey>
     <StationName>יוסף בורג/כתריאל רפפורט</StationName>
     <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38906</BusStationKey>
     <BusLineKey>200028</BusLineKey>
     <StationName>נחמיה/בית העלמין</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
+    <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>39004</BusStationKey>
     <BusLineKey>200028</BusLineKey>
     <StationName>לייב יוספזון/יעקב ברמן</StationName>
-    <StationNumberInLine>3</StationNumberInLine>
+    <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
@@ -132,5 +132,26 @@
     <StationName>שדרות יעקב/יוסף הנשיא</StationName>
     <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38920</BusStationKey>
+    <BusLineKey>200030</BusLineKey>
+    <StationName>שדרות משה דיין/יוסף לישנסקי</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38899</BusStationKey>
+    <BusLineKey>200030</BusLineKey>
+    <StationName>שושן/אופנהיימר</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39011</BusStationKey>
+    <BusLineKey>200027</BusLineKey>
+    <StationName>בדיקה</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>false</IsActive>
   </BusLineStation>
 </ArrayOfBusLineStation>
