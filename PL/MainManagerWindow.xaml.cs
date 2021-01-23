@@ -248,7 +248,7 @@ namespace PL
 
         #region bus line butten clicks
         #region add
-        //
+        //הוספת תחנה לאוטובוס
         private void StationOptionsToAdd_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             StationBO selectedStationToAdd = (StationOptionsToAdd.SelectedItem as StationBO);
@@ -275,12 +275,13 @@ namespace PL
                 }
             }
         }
+        //מראה את האפשרויות לתחנות שאפשר להוסיף לאוטובוס
         private void Button_Click_AddStationToBus(object sender, RoutedEventArgs e)
         {
             StationOptionsToAdd.Visibility = Visibility.Visible;
             StationOptionsToAdd.DataContext = bl.GetAllBusStations();
         }
-
+        //הוספת לוח זמנים לקו
         private void AddDriving_Click(object sender, RoutedEventArgs e)
         {
             AddDrivingLine addDriving = new AddDrivingLine(new DrivingLine { BusLineKey = selectedBusLine.BusLineKey, LastStationName = selectedBusLine.LastStationName });
@@ -290,6 +291,7 @@ namespace PL
             }
             refreshcontent();
         }
+        //מראה את הלוח של הוספת אוטובוס
         private void Button_Click_AddBusLine(object sender, RoutedEventArgs e)
         {
             busLineListBorder.Visibility = Visibility.Collapsed;
@@ -300,6 +302,7 @@ namespace PL
             areaComboBox.ItemsSource = Enum.GetValues(typeof(Areas));
             AddBusLineBorder.Visibility = Visibility.Visible;
         }
+        //מוסיף אובוס 
         private void Button_Click_AddBusFinalClick(object sender, RoutedEventArgs e)
         {
             if(lineNumberTextBox1.Text==""|| firstStationNameComboBox.SelectedItem==null|| lastStationNameComboBox.SelectedItem == null|| areaComboBox.SelectedItem==null)
@@ -346,6 +349,7 @@ namespace PL
         #endregion
 
         #region delete
+        //delate station from bus line
         private void Button_Click_DeleteStationFromBusLine(object sender, RoutedEventArgs e)
         {
             try
@@ -360,6 +364,7 @@ namespace PL
                 MessageBox.Show(ex.Message, "ERROR in deleting station in bus", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        //delete bus line
         private void Button_Click_DeleteBusLine(object sender, RoutedEventArgs e)
         {
             try
@@ -373,6 +378,7 @@ namespace PL
             }
 
         }
+        //delete bus line from the station
         private void Button_Click_DeleteBusLineFromStation(object sender, RoutedEventArgs e)//deletes line from station = deleting busstation in busline
         {
             try
@@ -388,6 +394,7 @@ namespace PL
         #endregion
 
         #region selction chenged
+        //show the bus line delaitls
         private void busLineBOListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedBusLine = (busLineBOListView.SelectedItem as BusLineBO);
@@ -400,6 +407,7 @@ namespace PL
                 DrivingLineListView.ItemsSource = bl.GetAllDrivingsBy(b => b.BusLineKey == selectedBusLine.BusLineKey);
             }
         }
+        //show the schedule delaitls
         private void DrivingLineView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateDrivingLine updateDriving = new UpdateDrivingLine (DrivingLineListView.SelectedItem as DrivingLine);
@@ -409,6 +417,7 @@ namespace PL
             }
             refreshcontent();
         }
+        //deliet schaule
         private void Button_Click_DeleteDrivingLine(object sender, RoutedEventArgs e)
         {
             try
@@ -421,10 +430,12 @@ namespace PL
                 MessageBox.Show(ex.Message, "ERROR in deleting driving line of bus-line", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        //show bus line deltails
         private void busLineBOListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             busLineBOListView_SelectionChanged(sender, null);
         }
+        //show satation delaitls
         private void stationBOListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedStation = (stationBOListView.SelectedItem as StationBO);
@@ -438,6 +449,7 @@ namespace PL
                 listofBusAcurdingtoStationList.ItemsSource = selectedStation.busLines;
             }
         }
+        //show user delails
         private void UserListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedUser = (userBOListView.SelectedItem as User);
@@ -459,6 +471,7 @@ namespace PL
         #endregion
 
         #region go back
+        //go back to list of buses
         private void Button_Click_BackArrowBusLine(object sender, RoutedEventArgs e)
         { 
             AddBusLineBorder.Visibility = Visibility.Collapsed;
