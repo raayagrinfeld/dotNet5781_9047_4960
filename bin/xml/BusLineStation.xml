@@ -1,192 +1,325 @@
 <?xml version="1.0"?>
 <ArrayOfBusLineStation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <BusLineStation>
-    <BusStationKey>38911</BusStationKey>
-    <BusLineKey>200027</BusLineKey>
-    <StationName>βψιπωτο/ιβΰμ ΰμεο</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>false</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38914</BusStationKey>
-    <BusLineKey>200027</BusLineKey>
-    <StationName>δγιιβιν/δπηωεμ</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
-    <IsActive>false</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38919</BusStationKey>
-    <BusLineKey>200028</BusLineKey>
-    <StationName>ειιφξο/γψκ ιφηχ ψαιο</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>false</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>39001</BusStationKey>
-    <BusLineKey>200028</BusLineKey>
-    <StationName>ωγψεϊ ιςχα/ιερσ δπωιΰ</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>false</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>39001</BusStationKey>
-    <BusLineKey>200027</BusLineKey>
-    <StationName>ωγψεϊ ιςχα/ιερσ δπωιΰ</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
-    <IsActive>false</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38880</BusStationKey>
-    <BusLineKey>200027</BusLineKey>
-    <StationName>δϊΰπδ/δΰμεο</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38917</BusStationKey>
-    <BusLineKey>200027</BusLineKey>
-    <StationName>ιερσ αεψβ/λϊψιΰμ ψττεψθ</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
-    <IsActive>false</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>39005</BusStationKey>
-    <BusLineKey>200027</BusLineKey>
-    <StationName>δψα ιςχα αψξο/δψα ιδεγδ φαι ξμφψ</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38917</BusStationKey>
-    <BusLineKey>200028</BusLineKey>
-    <StationName>ιερσ αεψβ/λϊψιΰμ ψττεψθ</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>false</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38906</BusStationKey>
-    <BusLineKey>200028</BusLineKey>
-    <StationName>πηξιδ/αιϊ δςμξιο</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
     <BusStationKey>39004</BusStationKey>
-    <BusLineKey>200028</BusLineKey>
-    <StationName>μιια ιερτζεο/ιςχα αψξο</StationName>
+    <BusLineKey>200000</BusLineKey>
+    <StationName>ΧΧ™Χ™Χ‘ Χ™Χ•Χ΅Χ¤Χ–Χ•Χ/Χ™ΧΆΧ§Χ‘ Χ‘Χ¨ΧΧ</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38903</BusStationKey>
+    <BusLineKey>200000</BusLineKey>
+    <StationName>Χ§Χ¨Χ•Χ Χ Χ‘Χ¨Χ’/ΧΧ¨Χ’ΧΧ</StationName>
     <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
-    <BusStationKey>38914</BusStationKey>
-    <BusLineKey>200029</BusLineKey>
-    <StationName>δγιιβιν/δπηωεμ</StationName>
+    <BusStationKey>38903</BusStationKey>
+    <BusLineKey>200001</BusLineKey>
+    <StationName>Χ§Χ¨Χ•Χ Χ Χ‘Χ¨Χ’/ΧΧ¨Χ’ΧΧ</StationName>
     <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
-    <BusStationKey>39001</BusStationKey>
-    <BusLineKey>200029</BusLineKey>
-    <StationName>ωγψεϊ ιςχα/ιερσ δπωιΰ</StationName>
+    <BusStationKey>38909</BusStationKey>
+    <BusLineKey>200001</BusLineKey>
+    <StationName>Χ§Χ¨Χ™Χª ΧΆΧ§Χ¨Χ•Χ/Χ›Χ‘Χ™Χ© 411</StationName>
     <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
-    <BusStationKey>38910</BusStationKey>
-    <BusLineKey>200012</BusLineKey>
-    <StationName>φεξϊ ηεμγδ/λαιω 411</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38901</BusStationKey>
-    <BusLineKey>200012</BusLineKey>
-    <StationName>δψα γεγ ιωψΰμ/ΰψιδ γεμφιο</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38920</BusStationKey>
-    <BusLineKey>200013</BusLineKey>
-    <StationName>ωγψεϊ ξωδ γιιο/ιερσ μιωπρχι</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38911</BusStationKey>
-    <BusLineKey>200013</BusLineKey>
-    <StationName>βψιπωτο/ιβΰμ ΰμεο</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38921</BusStationKey>
-    <BusLineKey>200014</BusLineKey>
-    <StationName>δωψ ηιιν ωτιψΰ/ιερσ ρτιψ</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>39001</BusStationKey>
-    <BusLineKey>200014</BusLineKey>
-    <StationName>ωγψεϊ ιςχα/ιερσ δπωιΰ</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38920</BusStationKey>
-    <BusLineKey>200030</BusLineKey>
-    <StationName>ωγψεϊ ξωδ γιιο/ιερσ μιωπρχι</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38899</BusStationKey>
-    <BusLineKey>200030</BusLineKey>
-    <StationName>ωεωο/ΰετπδιιξψ</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>39011</BusStationKey>
-    <BusLineKey>200027</BusLineKey>
-    <StationName>αγιχδ</StationName>
-    <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>false</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38899</BusStationKey>
-    <BusLineKey>200031</BusLineKey>
-    <StationName>ωεωο/ΰετπδιιξψ</StationName>
-    <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>38904</BusStationKey>
-    <BusLineKey>200031</BusLineKey>
-    <StationName>ιςχα τψιιξο/απιξιο ωξεθχιο</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
-    <IsActive>true</IsActive>
-  </BusLineStation>
-  <BusLineStation>
-    <BusStationKey>39004</BusStationKey>
-    <BusLineKey>200032</BusLineKey>
-    <StationName>μιια ιερτζεο/ιςχα αψξο</StationName>
+    <BusStationKey>38905</BusStationKey>
+    <BusLineKey>200002</BusLineKey>
+    <StationName>ΧΧ Χ™ΧΧ‘Χ™Χ¥'/Χ©ΧΧ•Χ ΧΧ©</StationName>
     <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38888</BusStationKey>
-    <BusLineKey>200032</BusLineKey>
-    <StationName>γψκ δΰιμπεϊ/ξπην αβιο</StationName>
+    <BusLineKey>200002</BusLineKey>
+    <StationName>Χ“Χ¨Χ Χ”ΧΧ™ΧΧ Χ•Χª/ΧΧ Χ—Χ Χ‘Χ’Χ™Χ</StationName>
     <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38921</BusStationKey>
+    <BusLineKey>200003</BusLineKey>
+    <StationName>Χ”Χ©Χ¨ Χ—Χ™Χ™Χ Χ©Χ¤Χ™Χ¨Χ/Χ™Χ•Χ΅Χ£ Χ΅Χ¤Χ™Χ¨</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
     <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
-    <BusStationKey>38913</BusStationKey>
-    <BusLineKey>200032</BusLineKey>
-    <StationName>ξωδ ωψϊ/ιςχα χπψ</StationName>
+    <BusStationKey>38914</BusStationKey>
+    <BusLineKey>200003</BusLineKey>
+    <StationName>Χ”Χ“Χ™Χ™Χ’Χ™Χ/Χ”Χ Χ—Χ©Χ•Χ</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38905</BusStationKey>
+    <BusLineKey>200004</BusLineKey>
+    <StationName>ΧΧ Χ™ΧΧ‘Χ™Χ¥'/Χ©ΧΧ•Χ ΧΧ©</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38916</BusStationKey>
+    <BusLineKey>200004</BusLineKey>
+    <StationName>Χ™Χ•Χ΅Χ£ Χ‘Χ•Χ¨Χ’/ΧΧ©Χ•ΧΧ•Χª Χ™Χ¦Χ—Χ§</StationName>
     <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38880</BusStationKey>
+    <BusLineKey>200005</BusLineKey>
+    <StationName>Χ”ΧªΧΧ Χ”/Χ”ΧΧΧ•Χ</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38903</BusStationKey>
+    <BusLineKey>200005</BusLineKey>
+    <StationName>Χ§Χ¨Χ•Χ Χ Χ‘Χ¨Χ’/ΧΧ¨Χ’ΧΧ</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38922</BusStationKey>
+    <BusLineKey>200006</BusLineKey>
+    <StationName>Χ”Χ©Χ¨ Χ—Χ™Χ™Χ Χ©Χ¤Χ™Χ¨Χ/Χ”Χ¨Χ‘ Χ©ΧΧ•Χ Χ’'Χ¨Χ•Χ¤Χ™</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38913</BusStationKey>
+    <BusLineKey>200006</BusLineKey>
+    <StationName>ΧΧ©Χ” Χ©Χ¨Χª/Χ™ΧΆΧ§Χ‘ Χ§Χ Χ¨</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38914</BusStationKey>
+    <BusLineKey>200007</BusLineKey>
+    <StationName>Χ”Χ“Χ™Χ™Χ’Χ™Χ/Χ”Χ Χ—Χ©Χ•Χ</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38888</BusStationKey>
+    <BusLineKey>200007</BusLineKey>
+    <StationName>Χ“Χ¨Χ Χ”ΧΧ™ΧΧ Χ•Χª/ΧΧ Χ—Χ Χ‘Χ’Χ™Χ</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38903</BusStationKey>
+    <BusLineKey>200008</BusLineKey>
+    <StationName>Χ§Χ¨Χ•Χ Χ Χ‘Χ¨Χ’/ΧΧ¨Χ’ΧΧ</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39001</BusStationKey>
+    <BusLineKey>200008</BusLineKey>
+    <StationName>Χ©Χ“Χ¨Χ•Χª Χ™ΧΆΧ§Χ‘/Χ™Χ•Χ΅Χ£ Χ”Χ Χ©Χ™Χ</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39001</BusStationKey>
+    <BusLineKey>200009</BusLineKey>
+    <StationName>Χ©Χ“Χ¨Χ•Χª Χ™ΧΆΧ§Χ‘/Χ™Χ•Χ΅Χ£ Χ”Χ Χ©Χ™Χ</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38920</BusStationKey>
+    <BusLineKey>200009</BusLineKey>
+    <StationName>Χ©Χ“Χ¨Χ•Χª ΧΧ©Χ” Χ“Χ™Χ™Χ/Χ™Χ•Χ΅Χ£ ΧΧ™Χ©Χ Χ΅Χ§Χ™</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38907</BusStationKey>
+    <BusLineKey>200010</BusLineKey>
+    <StationName>Χ™Χ”Χ•Χ“Χ” Χ”ΧΧ•Χ™/Χ™Χ•Χ—Χ Χ Χ”Χ΅Χ Χ“ΧΧ¨</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38904</BusStationKey>
+    <BusLineKey>200010</BusLineKey>
+    <StationName>Χ™ΧΆΧ§Χ‘ Χ¤Χ¨Χ™Χ™ΧΧ/Χ‘Χ Χ™ΧΧ™Χ Χ©ΧΧ•ΧΧ§Χ™Χ</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38922</BusStationKey>
+    <BusLineKey>200011</BusLineKey>
+    <StationName>Χ”Χ©Χ¨ Χ—Χ™Χ™Χ Χ©Χ¤Χ™Χ¨Χ/Χ”Χ¨Χ‘ Χ©ΧΧ•Χ Χ’'Χ¨Χ•Χ¤Χ™</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38920</BusStationKey>
+    <BusLineKey>200011</BusLineKey>
+    <StationName>Χ©Χ“Χ¨Χ•Χª ΧΧ©Χ” Χ“Χ™Χ™Χ/Χ™Χ•Χ΅Χ£ ΧΧ™Χ©Χ Χ΅Χ§Χ™</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38905</BusStationKey>
+    <BusLineKey>200000</BusLineKey>
+    <StationName>ΧΧ Χ™ΧΧ‘Χ™Χ¥'/Χ©ΧΧ•Χ ΧΧ©</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38913</BusStationKey>
+    <BusLineKey>200000</BusLineKey>
+    <StationName>ΧΧ©Χ” Χ©Χ¨Χª/Χ™ΧΆΧ§Χ‘ Χ§Χ Χ¨</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38910</BusStationKey>
+    <BusLineKey>200000</BusLineKey>
+    <StationName>Χ¦Χ•ΧΧª Χ—Χ•ΧΧ“Χ”/Χ›Χ‘Χ™Χ© 411</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38913</BusStationKey>
+    <BusLineKey>200001</BusLineKey>
+    <StationName>ΧΧ©Χ” Χ©Χ¨Χª/Χ™ΧΆΧ§Χ‘ Χ§Χ Χ¨</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39001</BusStationKey>
+    <BusLineKey>200001</BusLineKey>
+    <StationName>Χ©Χ“Χ¨Χ•Χª Χ™ΧΆΧ§Χ‘/Χ™Χ•Χ΅Χ£ Χ”Χ Χ©Χ™Χ</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38910</BusStationKey>
+    <BusLineKey>200002</BusLineKey>
+    <StationName>Χ¦Χ•ΧΧª Χ—Χ•ΧΧ“Χ”/Χ›Χ‘Χ™Χ© 411</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38920</BusStationKey>
+    <BusLineKey>200002</BusLineKey>
+    <StationName>Χ©Χ“Χ¨Χ•Χª ΧΧ©Χ” Χ“Χ™Χ™Χ/Χ™Χ•Χ΅Χ£ ΧΧ™Χ©Χ Χ΅Χ§Χ™</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39001</BusStationKey>
+    <BusLineKey>200003</BusLineKey>
+    <StationName>Χ©Χ“Χ¨Χ•Χª Χ™ΧΆΧ§Χ‘/Χ™Χ•Χ΅Χ£ Χ”Χ Χ©Χ™Χ</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38906</BusStationKey>
+    <BusLineKey>200003</BusLineKey>
+    <StationName>Χ Χ—ΧΧ™Χ”/Χ‘Χ™Χª Χ”ΧΆΧΧΧ™Χ</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38920</BusStationKey>
+    <BusLineKey>200004</BusLineKey>
+    <StationName>Χ©Χ“Χ¨Χ•Χª ΧΧ©Χ” Χ“Χ™Χ™Χ/Χ™Χ•Χ΅Χ£ ΧΧ™Χ©Χ Χ΅Χ§Χ™</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38906</BusStationKey>
+    <BusLineKey>200004</BusLineKey>
+    <StationName>Χ Χ—ΧΧ™Χ”/Χ‘Χ™Χª Χ”ΧΆΧΧΧ™Χ</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38919</BusStationKey>
+    <BusLineKey>200005</BusLineKey>
+    <StationName>Χ•Χ™Χ™Χ¦ΧΧ/Χ“Χ¨Χ Χ™Χ¦Χ—Χ§ Χ¨Χ‘Χ™Χ</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38904</BusStationKey>
+    <BusLineKey>200005</BusLineKey>
+    <StationName>Χ™ΧΆΧ§Χ‘ Χ¤Χ¨Χ™Χ™ΧΧ/Χ‘Χ Χ™ΧΧ™Χ Χ©ΧΧ•ΧΧ§Χ™Χ</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38916</BusStationKey>
+    <BusLineKey>200006</BusLineKey>
+    <StationName>Χ™Χ•Χ΅Χ£ Χ‘Χ•Χ¨Χ’/ΧΧ©Χ•ΧΧ•Χª Χ™Χ¦Χ—Χ§</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38888</BusStationKey>
+    <BusLineKey>200006</BusLineKey>
+    <StationName>Χ“Χ¨Χ Χ”ΧΧ™ΧΧ Χ•Χª/ΧΧ Χ—Χ Χ‘Χ’Χ™Χ</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38909</BusStationKey>
+    <BusLineKey>200007</BusLineKey>
+    <StationName>Χ§Χ¨Χ™Χª ΧΆΧ§Χ¨Χ•Χ/Χ›Χ‘Χ™Χ© 411</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38919</BusStationKey>
+    <BusLineKey>200007</BusLineKey>
+    <StationName>Χ•Χ™Χ™Χ¦ΧΧ/Χ“Χ¨Χ Χ™Χ¦Χ—Χ§ Χ¨Χ‘Χ™Χ</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38909</BusStationKey>
+    <BusLineKey>200008</BusLineKey>
+    <StationName>Χ§Χ¨Χ™Χª ΧΆΧ§Χ¨Χ•Χ/Χ›Χ‘Χ™Χ© 411</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38880</BusStationKey>
+    <BusLineKey>200009</BusLineKey>
+    <StationName>Χ”ΧªΧΧ Χ”/Χ”ΧΧΧ•Χ</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38903</BusStationKey>
+    <BusLineKey>200010</BusLineKey>
+    <StationName>Χ§Χ¨Χ•Χ Χ Χ‘Χ¨Χ’/ΧΧ¨Χ’ΧΧ</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39002</BusStationKey>
+    <BusLineKey>200010</BusLineKey>
+    <StationName>Χ©Χ“Χ¨Χ•Χª Χ™ΧΆΧ§Χ‘/ΧΆΧ–Χ¨Χ</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38880</BusStationKey>
+    <BusLineKey>200011</BusLineKey>
+    <StationName>Χ”ΧªΧΧ Χ”/Χ”ΧΧΧ•Χ</StationName>
+    <StationNumberInLine>3</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
 </ArrayOfBusLineStation>
