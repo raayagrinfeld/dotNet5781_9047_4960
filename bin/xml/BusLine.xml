@@ -186,7 +186,7 @@
     <LastStation>38903</LastStation>
     <FirstStationName>נחמיה/בית העלמין</FirstStationName>
     <LastStationName>קרוננברג/ארגמן</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20004</BusLineKey>
@@ -216,7 +216,7 @@
     <LastStation>38914</LastStation>
     <FirstStationName>יעקב פריימן/בנימין שמוטקין</FirstStationName>
     <LastStationName>הדייגים/הנחשול</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20006</BusLineKey>
@@ -306,7 +306,7 @@
     <LastStation>38921</LastStation>
     <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
     <LastStationName>השר חיים שפירא/יוסף ספיר</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20009</BusLineKey>
@@ -486,7 +486,7 @@
     <LastStation>38910</LastStation>
     <FirstStationName>משה שרת/יעקב קנר</FirstStationName>
     <LastStationName>צומת חולדה/כביש 411</LastStationName>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>20005</BusLineKey>
@@ -525,6 +525,66 @@
     <FirstStation>38888</FirstStation>
     <LastStation>38903</LastStation>
     <FirstStationName>דרך האילנות/מנחם בגין</FirstStationName>
+    <LastStationName>קרוננברג/ארגמן</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20003</BusLineKey>
+    <LineNumber>3898890</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38906</FirstStation>
+    <LastStation>39002</LastStation>
+    <FirstStationName>נחמיה/בית העלמין</FirstStationName>
+    <LastStationName>שדרות יעקב/עזרא</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20004</BusLineKey>
+    <LineNumber>4897570</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38904</FirstStation>
+    <LastStation>38888</LastStation>
+    <FirstStationName>יעקב פריימן/בנימין שמוטקין</FirstStationName>
+    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20004</BusLineKey>
+    <LineNumber>4897570</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38904</FirstStation>
+    <LastStation>38903</LastStation>
+    <FirstStationName>יעקב פריימן/בנימין שמוטקין</FirstStationName>
+    <LastStationName>קרוננברג/ארגמן</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20008</BusLineKey>
+    <LineNumber>9398226</LineNumber>
+    <Area>Jerusalem</Area>
+    <FirstStation>38905</FirstStation>
+    <LastStation>38888</LastStation>
+    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
+    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20008</BusLineKey>
+    <LineNumber>9398226</LineNumber>
+    <Area>Jerusalem</Area>
+    <FirstStation>38905</FirstStation>
+    <LastStation>38903</LastStation>
+    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
+    <LastStationName>קרוננברג/ארגמן</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>20011</BusLineKey>
+    <LineNumber>4945109</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38913</FirstStation>
+    <LastStation>38903</LastStation>
+    <FirstStationName>משה שרת/יעקב קנר</FirstStationName>
     <LastStationName>קרוננברג/ארגמן</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>

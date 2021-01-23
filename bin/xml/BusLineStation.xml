@@ -273,4 +273,46 @@
     <StationNumberInLine>3</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>39002</BusStationKey>
+    <BusLineKey>20003</BusLineKey>
+    <StationName>שדרות יעקב/עזרא</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38888</BusStationKey>
+    <BusLineKey>20004</BusLineKey>
+    <StationName>דרך האילנות/מנחם בגין</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38903</BusStationKey>
+    <BusLineKey>20004</BusLineKey>
+    <StationName>קרוננברג/ארגמן</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38888</BusStationKey>
+    <BusLineKey>20008</BusLineKey>
+    <StationName>דרך האילנות/מנחם בגין</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38903</BusStationKey>
+    <BusLineKey>20008</BusLineKey>
+    <StationName>קרוננברג/ארגמן</StationName>
+    <StationNumberInLine>5</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38903</BusStationKey>
+    <BusLineKey>20011</BusLineKey>
+    <StationName>קרוננברג/ארגמן</StationName>
+    <StationNumberInLine>4</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
 </ArrayOfBusLineStation>

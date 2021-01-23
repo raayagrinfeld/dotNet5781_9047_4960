@@ -16,16 +16,16 @@
     <ManagementPermission>True</ManagementPermission>
     <IsActive>True</IsActive>
     <Gender>female</Gender>
-    <imagePath>UserIcons\plant-pot.png</imagePath>
+    <imagePath>UserIcons\dinosaur.png</imagePath>
   </User>
   <User>
     <UserName>odelia</UserName>
     <Password>/eGVo14+X23TP4FRq6sDQ/6W1eYFeXpOhNOYv3bnES538EHxJJb08lHtj+o/KFL3ftc9xkz76K8BElG0P1MSUw==</Password>
     <Salt>2146310729</Salt>
-    <ManagementPermission>true</ManagementPermission>
-    <IsActive>true</IsActive>
+    <ManagementPermission>True</ManagementPermission>
+    <IsActive>True</IsActive>
     <Gender>male</Gender>
-    <imagePath>Icons/cancel.png</imagePath>
+    <imagePath>UserIcons\woman.png</imagePath>
   </User>
   <User>
     <UserName>aviva</UserName>
@@ -40,9 +40,9 @@
     <UserName>myiah</UserName>
     <Password>lPf+bbjUXjMv0E2Fo1tdhjbnVPrxTf96jgJAVFwSyiwAp5O0JkhSglJ0eY5aobfgI/96orS88z38DenuSi1VpQ==</Password>
     <Salt>1305693662</Salt>
-    <ManagementPermission>false</ManagementPermission>
-    <IsActive>true</IsActive>
+    <ManagementPermission>False</ManagementPermission>
+    <IsActive>True</IsActive>
     <Gender>male</Gender>
-    <imagePath>Icons/wonan.png</imagePath>
+    <imagePath>UserIcons\dollars.png</imagePath>
   </User>
 </ArrayOfUser>

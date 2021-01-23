@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PL"
         xmlns:BO="clr-namespace:BO;assembly=BL" x:Class="PL.MainUserWindow"
         mc:Ignorable="d"
-        Title="MainUserWindow" MinHeight="720" MinWidth="1020" Height="700" Width="1000"  WindowStyle="None" Closed="When_Window_CLosed" 
+        Title="MainUserWindow" MinHeight="720" MinWidth="1020" Height="700" Width="1000"  WindowStyle="None"  
         AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown" WindowState="Maximized" Icon="Icons\BusUslcon.jpeg"  >
 
     <Border BorderThickness="1" BorderBrush="#FF17B419" Background="AliceBlue" >
@@ -45,12 +45,10 @@
 
                             <Grid x:Name="searchB"  >
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="57*"/>
-                                    <RowDefinition Height="149*"/>
-                                    <RowDefinition Height="103*"/>
-                                    <RowDefinition Height="103*"/>
-                                    <RowDefinition Height="103*"/>
-                                    <RowDefinition Height="103*"/>
+                                    <RowDefinition Height="20*"/>
+                                    <RowDefinition Height="10*"/>
+                                    <RowDefinition Height="200*"/>
+                                    
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="168*"/>
@@ -102,7 +100,29 @@
                                 <Button x:Name="search" HorizontalAlignment="Center" Height="42" VerticalAlignment="Top"  Click="SearchBus_Click" Grid.Column="4" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Width="42">
                                     <Image Source="Icons\loupe (1).png"/>
                                 </Button>
-                                <ListBox x:Name="listBuses" HorizontalAlignment="Left" Height="409" VerticalAlignment="Top" Width="991" Visibility="Collapsed" Margin="0,98.939,-0.333,0" Grid.Row="1" Background="Aqua" Grid.ColumnSpan="5" Grid.RowSpan="5"/>
+                                <ListView Grid.Row=" 2" Grid.Column=" 0" Grid.ColumnSpan=" 4" x:Name="listBuses" Visibility="Collapsed" BorderBrush="#FF17B419" >
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Line Number" DisplayMemberBinding="{Binding LineNumber}" Width="100"/>
+                                            <GridViewColumn Header="Bus Line Key" DisplayMemberBinding="{Binding BusLineKey}" Width="100"/>
+                                            <GridViewColumn Header="Area" DisplayMemberBinding="{Binding Area}" Width="100"/>
+                                            <GridViewColumn Header="from"  Width="220">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock  Text="{Binding FirstStationName}" FlowDirection="RightToLeft"/>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <GridViewColumn Header="to" Width="220">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock  Text="{Binding LastStationName}" FlowDirection="RightToLeft"/>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
                                 <Label x:Name="NoBusLable" Grid.ColumnSpan="5" Content="There is no bus between this satations" HorizontalAlignment="Center" Height="51" Margin="133,26.939,50.667,0" Grid.Row="1" VerticalAlignment="Top" Width="807" Visibility="Collapsed"/>
                             </Grid>
                         </Border>

@@ -166,12 +166,12 @@ namespace PL
             userWindow.Show();
         }
 
-        private void MenuItem_Click_LogOut(object sender, RoutedEventArgs e)
-        {
-            LogInWindow logInWindow = new LogInWindow();
-            logInWindow.Show();
-            //this.Close();
-        }
+        //private void MenuItem_Click_LogOut(object sender, RoutedEventArgs e)
+        //{
+        //    LogInWindow logInWindow = new LogInWindow();
+        //    logInWindow.Show();
+        //    //this.Close();
+        //}
         #endregion
 
         #region filter BusLine, station and user
@@ -438,7 +438,7 @@ namespace PL
                 { 
                     BitmapImage bitmap = new BitmapImage();
                     bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(System.IO.Path.GetFullPath(user.imagePath));
+                    bitmap.UriSource = new Uri(System.IO.Path.GetFullPath(selectedUser.imagePath));
                     bitmap.EndInit();
                     UserImage.Source = bitmap;
                 }
@@ -790,7 +790,7 @@ namespace PL
             }
             catch(BadUserNameException ex)
             {
-                MessageBox.Show(ex.Message, "ERROR in user", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "ERROR in deleting user", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         #endregion

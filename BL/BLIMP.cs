@@ -155,7 +155,9 @@ namespace BL
         }
         public double DistanceBetweanStations(BusLineBO busLine, int firstStationKey, int lastStationKey)
         {
-            List<BusLineStationBO> PartOfBusLineStation = busLine.busLineStations.OrderBy(b => b.StationNumberInLine).ToList().FindAll(b => b.StationNumberInLine >= firstStationKey & b.StationNumberInLine <= lastStationKey & b.IsActive);
+            BusLineStationBO firstStation = BusLineStationDOBOAdapter(dl.GetBusLineStation(busLine.BusLineKey, firstStationKey));
+            BusLineStationBO LastStation = BusLineStationDOBOAdapter(dl.GetBusLineStation(busLine.BusLineKey, lastStationKey));
+            List<BusLineStationBO> PartOfBusLineStation = busLine.busLineStations.OrderBy(b => b.StationNumberInLine).ToList().FindAll(b => b.StationNumberInLine >= firstStation.StationNumberInLine & b.StationNumberInLine <= LastStation.StationNumberInLine & b.IsActive);
             double ColectiveDistance = 0;
             foreach (BusLineStationBO BLStationBO in PartOfBusLineStation)
             {
@@ -417,7 +419,7 @@ namespace BL
         {
             driving.Source = GetBusStation(stationKey);
         }
-        public IEnumerable<BO.BusLineBO> fingALinesBeatweenStation(Driving driving)
+        public IEnumerable<BO.BusLineBO> fingAllLinesBeatweenStation(Driving driving)
         {
             driving.BusLines = GetAllBusLinesBy(b =>
             {
@@ -531,9 +533,9 @@ namespace BL
             DrivingLine drivingLine = new DrivingLine();
             busesSchedule.CopyPropertiesTo(drivingLine);
             if (DestinationStation == null)
-                drivingLine.ArrivalTime = TimeBetweanStations( GetBusLine(busesSchedule.BusLineKey) , dl.GetBusLine(busesSchedule.BusLineKey).FirstStation, dl.GetBusLine(busesSchedule.BusLineKey).LastStation);
+                drivingLine.ArrivalTime = busesSchedule.StartHour + TimeBetweanStations( GetBusLine(busesSchedule.BusLineKey) , dl.GetBusLine(busesSchedule.BusLineKey).FirstStation, dl.GetBusLine(busesSchedule.BusLineKey).LastStation);
             else
-                drivingLine.ArrivalTime = TimeBetweanStations(GetBusLine(busesSchedule.BusLineKey), dl.GetBusLine(busesSchedule.BusLineKey).FirstStation, DestinationStation.BusStationKey);
+                drivingLine.ArrivalTime = busesSchedule.StartHour + TimeBetweanStations(GetBusLine(busesSchedule.BusLineKey), dl.GetBusLine(busesSchedule.BusLineKey).FirstStation, DestinationStation.BusStationKey);
             return drivingLine;
         }
         DO.BusesSchedule DrivingLineDOBOAdapter(DrivingLine drivingLine)
@@ -599,8 +601,15 @@ namespace BL
 
         public IEnumerable<DrivingLine> GetAllDrivings(StationBO DestinationStation)
         {
-            return from b in dl.GetAllBusSchedules()
-                   select DrivingLineBODOAdapter(b, DestinationStation);
+            if (DestinationStation == null)
+            {
+                return from b in dl.GetAllBusSchedules()
+                       select DrivingLineBODOAdapter(b, null);
+            }
+            return from b in DestinationStation.busLines
+                   let busSchegualWeWant = dl.GetAllBusSchedulesBy(w => w.BusLineKey == b.BusLineKey)
+                   from w in busSchegualWeWant
+                   select DrivingLineBODOAdapter(w, DestinationStation);
         }
 
         public IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate, StationBO DestinationStation)

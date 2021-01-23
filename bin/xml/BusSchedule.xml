@@ -195,4 +195,19 @@
     <StartHour>15:00:00</StartHour>
     <IsActive>true</IsActive>
   </BusesSchedule>
+  <BusesSchedule>
+    <BusLineKey>20003</BusLineKey>
+    <StartHour>08:05:00</StartHour>
+    <IsActive>true</IsActive>
+  </BusesSchedule>
+  <BusesSchedule>
+    <BusLineKey>20003</BusLineKey>
+    <StartHour>08:10:00</StartHour>
+    <IsActive>true</IsActive>
+  </BusesSchedule>
+  <BusesSchedule>
+    <BusLineKey>20003</BusLineKey>
+    <StartHour>08:15:00</StartHour>
+    <IsActive>true</IsActive>
+  </BusesSchedule>
 </ArrayOfBusesSchedule>

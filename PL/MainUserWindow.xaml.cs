@@ -104,10 +104,6 @@ namespace PL
             ((Button)sender).Height /= 1.1;
         }
 
-        private void When_Window_CLosed(object sender, EventArgs e)
-        {
-            Environment.Exit(Environment.ExitCode);
-        }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -134,13 +130,15 @@ namespace PL
             {
                 drive.Source = (StationBO)StationsBox.SelectedValue;
                 drive.Destination = (StationBO)StationsBox2.SelectedItem;
-                listBuses.ItemsSource = bl.fingALinesBeatweenStation(drive).ToList();
-                if (bl.fingALinesBeatweenStation(drive).ToList().Count() == 0)
+                listBuses.ItemsSource = bl.fingAllLinesBeatweenStation(drive);
+                if (bl.fingAllLinesBeatweenStation(drive).ToList().Count() == 0)
                 {
                     NoBusLable.Visibility = Visibility.Visible;
+                    listBuses.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
+                    NoBusLable.Visibility = Visibility.Collapsed;
                     listBuses.Visibility = Visibility.Visible;
                 }
             }
