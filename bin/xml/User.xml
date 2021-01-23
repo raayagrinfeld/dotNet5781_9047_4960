@@ -13,35 +13,35 @@
     <UserName>raaya</UserName>
     <Password>MgbRrfIhTU5LTUCUdO8I4wcySe/4AQ4dOtLqA/bm/PG9vfN5z0khVvgO38LobAlsGcMQiN2cbt8zFwhd5S2EyA==</Password>
     <Salt>858561543</Salt>
-    <ManagementPermission>true</ManagementPermission>
-    <IsActive>true</IsActive>
+    <ManagementPermission>True</ManagementPermission>
+    <IsActive>True</IsActive>
     <Gender>female</Gender>
-    <imagePath>UserIcons\dinosaur.png</imagePath>
+    <imagePath>UserIcons\dollars.png</imagePath>
   </User>
   <User>
     <UserName>odelia</UserName>
-    <Password>/eGVo14+X23TP4FRq6sDQ/6W1eYFeXpOhNOYv3bnES538EHxJJb08lHtj+o/KFL3ftc9xkz76K8BElG0P1MSUw==</Password>
+    <Password>WikPCR2hTO+pDapgwh5a+NiphRwAkNd+f0h1KLRguNGp6F8dx9Sf/s7vX5/7YIm+dShQSsL0749bmwIHe6sLlg==</Password>
     <Salt>2146310729</Salt>
-    <ManagementPermission>true</ManagementPermission>
-    <IsActive>true</IsActive>
+    <ManagementPermission>True</ManagementPermission>
+    <IsActive>True</IsActive>
     <Gender>male</Gender>
-    <imagePath>UserIcons\woman.png</imagePath>
+    <imagePath>UserIcons\cow.png</imagePath>
   </User>
   <User>
     <UserName>aviva</UserName>
     <Password>riI1o+sTyV0sjd77/Nd4Dpcy32cGy7zZ5Bg5d70k3fuFj4ahVLSv0hYhPzzf0SioTre7AMWt+IhQIEKh4TFAHw==</Password>
     <Salt>1784629565</Salt>
-    <ManagementPermission>false</ManagementPermission>
-    <IsActive>true</IsActive>
-    <Gender>male</Gender>
+    <ManagementPermission>False</ManagementPermission>
+    <IsActive>True</IsActive>
+    <Gender>female</Gender>
     <imagePath></imagePath>
   </User>
   <User>
     <UserName>myiah</UserName>
     <Password>lPf+bbjUXjMv0E2Fo1tdhjbnVPrxTf96jgJAVFwSyiwAp5O0JkhSglJ0eY5aobfgI/96orS88z38DenuSi1VpQ==</Password>
     <Salt>1305693662</Salt>
-    <ManagementPermission>false</ManagementPermission>
-    <IsActive>true</IsActive>
+    <ManagementPermission>False</ManagementPermission>
+    <IsActive>True</IsActive>
     <Gender>male</Gender>
     <imagePath>UserIcons\dollars.png</imagePath>
   </User>

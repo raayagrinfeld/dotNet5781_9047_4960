@@ -462,6 +462,7 @@ namespace PL
             BusLineDetialedBorder.Visibility = Visibility.Collapsed;
             busLineListBorder.Visibility = Visibility.Visible;
             StationOptionsToAdd.Visibility = Visibility.Collapsed;
+            bl.UpdateBusLine(selectedBusLine);
             selectedBusLine = null;
             refreshcontent();
         }
@@ -773,6 +774,10 @@ namespace PL
                 try
                 {
                     bl.UpdateUser(selectedUser);
+                    if(selectedUser.UserName==user.UserName)
+                    {
+                        user = bl.GetUser(user.UserName);
+                    }
                     BitmapImage bitmap = new BitmapImage();
                     bitmap.BeginInit();
                     bitmap.UriSource = new Uri(System.IO.Path.GetFullPath("UserIcons/user.png"));
