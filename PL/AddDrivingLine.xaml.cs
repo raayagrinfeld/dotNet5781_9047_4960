@@ -40,7 +40,7 @@ namespace PL
             }
             catch(BO.BadDrivingLineException ex)
             {
-
+                MessageBox.Show(ex.Message, "problen in add driving line", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)

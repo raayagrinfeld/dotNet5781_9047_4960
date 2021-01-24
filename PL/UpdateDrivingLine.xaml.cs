@@ -43,7 +43,7 @@ namespace PL
             }
             catch (BO.BadDrivingLineException ex)
             {
-
+                MessageBox.Show(ex.Message, "problen in update driving line", MessageBoxButton.OK, MessageBoxImage.Error)
             }
         }
     }
