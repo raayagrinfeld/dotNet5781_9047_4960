@@ -5,13 +5,13 @@
     <BusLineKey>200000</BusLineKey>
     <StationName>לייב יוספזון/יעקב ברמן</StationName>
     <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38903</BusStationKey>
     <BusLineKey>200000</BusLineKey>
     <StationName>קרוננברג/ארגמן</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
+    <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
@@ -26,7 +26,7 @@
     <BusLineKey>200001</BusLineKey>
     <StationName>קרית עקרון/כביש 411</StationName>
     <StationNumberInLine>2</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38905</BusStationKey>
@@ -152,7 +152,7 @@
     <BusLineKey>200010</BusLineKey>
     <StationName>יעקב פריימן/בנימין שמוטקין</StationName>
     <StationNumberInLine>2</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38922</BusStationKey>
@@ -172,35 +172,35 @@
     <BusStationKey>38905</BusStationKey>
     <BusLineKey>200000</BusLineKey>
     <StationName>אנילביץ'/שלום אש</StationName>
-    <StationNumberInLine>3</StationNumberInLine>
+    <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38913</BusStationKey>
     <BusLineKey>200000</BusLineKey>
     <StationName>משה שרת/יעקב קנר</StationName>
-    <StationNumberInLine>4</StationNumberInLine>
+    <StationNumberInLine>3</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38910</BusStationKey>
     <BusLineKey>200000</BusLineKey>
     <StationName>צומת חולדה/כביש 411</StationName>
-    <StationNumberInLine>5</StationNumberInLine>
+    <StationNumberInLine>4</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38913</BusStationKey>
     <BusLineKey>200001</BusLineKey>
     <StationName>משה שרת/יעקב קנר</StationName>
-    <StationNumberInLine>3</StationNumberInLine>
+    <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>39001</BusStationKey>
     <BusLineKey>200001</BusLineKey>
     <StationName>שדרות יעקב/יוסף הנשיא</StationName>
-    <StationNumberInLine>4</StationNumberInLine>
+    <StationNumberInLine>3</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
@@ -257,7 +257,7 @@
     <BusLineKey>200005</BusLineKey>
     <StationName>יעקב פריימן/בנימין שמוטקין</StationName>
     <StationNumberInLine>4</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38916</BusStationKey>
@@ -278,13 +278,13 @@
     <BusLineKey>200007</BusLineKey>
     <StationName>קרית עקרון/כביש 411</StationName>
     <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38919</BusStationKey>
     <BusLineKey>200007</BusLineKey>
     <StationName>וייצמן/דרך יצחק רבין</StationName>
-    <StationNumberInLine>4</StationNumberInLine>
+    <StationNumberInLine>3</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
@@ -292,7 +292,7 @@
     <BusLineKey>200008</BusLineKey>
     <StationName>קרית עקרון/כביש 411</StationName>
     <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38880</BusStationKey>
@@ -305,7 +305,7 @@
     <BusStationKey>38903</BusStationKey>
     <BusLineKey>200010</BusLineKey>
     <StationName>קרוננברג/ארגמן</StationName>
-    <StationNumberInLine>3</StationNumberInLine>
+    <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
@@ -313,7 +313,7 @@
     <BusLineKey>200010</BusLineKey>
     <StationName>שדרות יעקב/עזרא</StationName>
     <StationNumberInLine>4</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38880</BusStationKey>
