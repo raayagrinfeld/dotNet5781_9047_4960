@@ -11,7 +11,7 @@
   </User>
   <User>
     <UserName>raaya</UserName>
-    <Password>MgbRrfIhTU5LTUCUdO8I4wcySe/4AQ4dOtLqA/bm/PG9vfN5z0khVvgO38LobAlsGcMQiN2cbt8zFwhd5S2EyA==</Password>
+    <Password>Il9ltPHYNrHbHxAR11vE/2OVzgw3oor6WB+C9YWGRO+k3r7wjgKU/LgxkMCYgTF/P3QbnX3wToZ13vgPK3cP0g==</Password>
     <Salt>858561543</Salt>
     <ManagementPermission>True</ManagementPermission>
     <IsActive>True</IsActive>
@@ -43,7 +43,7 @@
     <ManagementPermission>False</ManagementPermission>
     <IsActive>True</IsActive>
     <Gender>male</Gender>
-    <imagePath>UserIcons\dollars.png</imagePath>
+    <imagePath>UserIcons\plant-pot.png</imagePath>
   </User>
   <User>
     <UserName>gad</UserName>
@@ -53,5 +53,14 @@
     <IsActive>False</IsActive>
     <Gender>male</Gender>
     <imagePath />
+  </User>
+  <User>
+    <UserName>tal</UserName>
+    <Password>BwPgVt2tnCk8FhuNd2qVH+Jn/7j83Lg1CJEs591jkE6KCvPcE/+kosck/vWXF7Yi1o8aBQBa347H5Rx4pOfl+w==</Password>
+    <Salt>0</Salt>
+    <ManagementPermission>False</ManagementPermission>
+    <IsActive>True</IsActive>
+    <Gender>male</Gender>
+    <imagePath></imagePath>
   </User>
 </ArrayOfUser>
