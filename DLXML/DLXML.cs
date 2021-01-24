@@ -613,6 +613,21 @@ namespace DL
             XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
         }
 
+        public void DeleteAllBusSchedule(int busLineKey)
+        {
+            XElement ScheduleRootElem = XMLTools.LoadListFromXMLElement(BusSchedulePath);
+
+            XElement ScheduleSearch = (from p in ScheduleRootElem.Elements()
+                                       where (p.Element("BusLineKey").Value) == busLineKey.ToString() && Boolean.Parse(p.Element("IsActive").Value) 
+                                       select p).FirstOrDefault();
+
+            if (ScheduleSearch == null)
+                throw new DO.BadBusesScheduleKeyException(busLineKey, "-1", "schedule not found");
+            (ScheduleSearch.Element("IsActive").Value) = false.ToString();
+
+            XMLTools.SaveListToXMLElement(ScheduleRootElem, BusSchedulePath);
+        }
+
 
         #endregion
 

@@ -125,6 +125,7 @@ namespace BL
         {
             try
             {
+                dl.DeleteAllBusSchedule(busLineKey);
                 dl.DeleteBusLine(busLineKey);
 
             }
@@ -622,9 +623,20 @@ namespace BL
         //get all driving lines bt predicat
         public IEnumerable<DrivingLine> GetAllDrivingsBy(Predicate<DrivingLine> predicate, StationBO DestinationStation)
         {
-            return from b in GetAllDrivings(DestinationStation)
-                   where predicate(b)
-                   select b;
+            if (DestinationStation == null)
+            {
+                return from b in dl.GetAllBusSchedules()
+                       let y = DrivingLineBODOAdapter(b, null)
+                       where predicate(y)
+                       select y;
+            }
+            return from b in DestinationStation.busLines
+                   let busSchegualWeWant = dl.GetAllBusSchedulesBy(w => w.BusLineKey == b.BusLineKey)
+                   from w in busSchegualWeWant
+                   let y =DrivingLineBODOAdapter(w, DestinationStation)
+                   where predicate(y)
+                   select y;
+           
         }
         #endregion
     }

@@ -1360,4 +1360,36 @@
     <HasARoof>false</HasARoof>
     <IsActive>true</IsActive>
   </BusStation>
+  <BusStation>
+    <BusStationKey>39012</BusStationKey>
+    <Coordinates>
+      <Latitude>31.2</Latitude>
+      <Longitude>31.4</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>רעיה</StationName>
+    <StationAddress>נורית</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39012</BusStationKey>
+    <Coordinates>
+      <Latitude>32.2</Latitude>
+      <Longitude>31.4</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>רעיה</StationName>
+    <StationAddress>נורית</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
 </ArrayOfBusStation>

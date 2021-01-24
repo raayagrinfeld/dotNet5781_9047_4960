@@ -65,6 +65,7 @@ namespace APIDL
         void AddBusSchedule(BusesSchedule schedule);
         void UpdateBusSchedule(BusesSchedule scheduleold, BusesSchedule schedulenew);
         void DeleteBusSchedule(int busLineKey, TimeSpan time);
+        void DeleteAllBusSchedule(int busLineKey);
 
         #endregion
 
