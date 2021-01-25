@@ -250,7 +250,7 @@
     <BusLineKey>200005</BusLineKey>
     <StationName>וייצמן/דרך יצחק רבין</StationName>
     <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>false</IsActive>
+    <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38904</BusStationKey>
@@ -285,7 +285,7 @@
     <BusLineKey>200007</BusLineKey>
     <StationName>וייצמן/דרך יצחק רבין</StationName>
     <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>false</IsActive>
+    <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38909</BusStationKey>
