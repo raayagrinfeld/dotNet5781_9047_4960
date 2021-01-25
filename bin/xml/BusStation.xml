@@ -958,7 +958,7 @@
     <StationName>יהודה הלוי/יוחנן הסנדלר</StationName>
     <StationAddress> רחוב:יהודה הלוי 89 עיר: ראשון לציון</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38916</BusStationKey>
@@ -1166,7 +1166,7 @@
     <StationName>צומת חולדה/כביש 411</StationName>
     <StationAddress> רחוב:411  עיר: גזר</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38914</BusStationKey>
@@ -1182,7 +1182,7 @@
     <StationName>הדייגים/הנחשול</StationName>
     <StationAddress> רחוב:הדייגים 45 עיר: ראשון לציון</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38919</BusStationKey>
@@ -1198,7 +1198,7 @@
     <StationName>וייצמן/דרך יצחק רבין</StationName>
     <StationAddress> רחוב:וייצמן  עיר: נס ציונה</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>39001</BusStationKey>
@@ -1342,7 +1342,7 @@
     <StationName>דרך האילנות/מנחם בגין</StationName>
     <StationAddress> רחוב:דרך האילנות 3 עיר: גדרה</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38921</BusStationKey>
@@ -1422,7 +1422,7 @@
     <StationName>לייב יוספזון/יעקב ברמן</StationName>
     <StationAddress> רחוב:יהודה לייב יוספזון  עיר: רחובות</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38904</BusStationKey>
@@ -1534,6 +1534,166 @@
     <StationName>ההגנה/חי''ש</StationName>
     <StationAddress> רחוב:ההגנה 37 עיר: רחובות</StationAddress>
     <HasARoof>false</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38919</BusStationKey>
+    <Coordinates>
+      <Latitude>31.923041</Latitude>
+      <Longitude>34.798033</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>וייצמן/דרך יצחק רבין</StationName>
+    <StationAddress> רחוב:וייצמן  עיר: נס ציונה</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38910</BusStationKey>
+    <Coordinates>
+      <Latitude>31.811907</Latitude>
+      <Longitude>34.900793</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>צומת חולדה/כביש 411</StationName>
+    <StationAddress> רחוב:411  עיר: גזר</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38888</BusStationKey>
+    <Coordinates>
+      <Latitude>31.805041</Latitude>
+      <Longitude>34.785098</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>דרך האילנות/מנחם בגין</StationName>
+    <StationAddress> רחוב:דרך האילנות 3 עיר: גדרה</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38914</BusStationKey>
+    <Coordinates>
+      <Latitude>31.98497</Latitude>
+      <Longitude>34.78262</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>הדייגים/הנחשול</StationName>
+    <StationAddress> רחוב:הדייגים 45 עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39004</BusStationKey>
+    <Coordinates>
+      <Latitude>31.905052</Latitude>
+      <Longitude>34.818909</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>לייב יוספזון/יעקב ברמן</StationName>
+    <StationAddress> רחוב:יהודה לייב יוספזון  עיר: רחובות</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38914</BusStationKey>
+    <Coordinates>
+      <Latitude>31.98497</Latitude>
+      <Longitude>34.78262</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>הדייגים/הנחשול</StationName>
+    <StationAddress> רחוב:הדייגים 45 עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38919</BusStationKey>
+    <Coordinates>
+      <Latitude>32.923041</Latitude>
+      <Longitude>34.798033</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>וייצמן/דרך יצחק רבין</StationName>
+    <StationAddress> רחוב:וייצמן  עיר: נס ציונה</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38919</BusStationKey>
+    <Coordinates>
+      <Latitude>32.923041</Latitude>
+      <Longitude>34.798033</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>וייצמן/דרך יצחק רבין</StationName>
+    <StationAddress> רחוב:וייצמן  עיר: נס ציונה</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38907</BusStationKey>
+    <Coordinates>
+      <Latitude>32.967732</Latitude>
+      <Longitude>34.816339</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יהודה הלוי/יוחנן הסנדלר</StationName>
+    <StationAddress> רחוב:יהודה הלוי 89 עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38907</BusStationKey>
+    <Coordinates>
+      <Latitude>32.967732</Latitude>
+      <Longitude>34.816339</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>יהודה הלוי/יוחנן הסנדלר</StationName>
+    <StationAddress> רחוב:יהודה הלוי 89 עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
     <IsActive>true</IsActive>
   </BusStation>
 </ArrayOfBusStation>

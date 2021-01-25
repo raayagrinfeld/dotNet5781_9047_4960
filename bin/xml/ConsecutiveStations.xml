@@ -101,8 +101,8 @@
   <ConsecutiveStations>
     <Station1Key>38914</Station1Key>
     <Station2Key>38888</Station2Key>
-    <Distance>20025.832728996964</Distance>
-    <IsActive>true</IsActive>
+    <Distance>20025.832728997</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>03:20:15.5000000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
@@ -136,9 +136,9 @@
   <ConsecutiveStations>
     <Station1Key>38907</Station1Key>
     <Station2Key>38904</Station2Key>
-    <Distance>907.029780615662</Distance>
+    <Distance>110429.104394202</Distance>
     <IsActive>True</IsActive>
-    <DriveDistanceTime>00:09:04.2180000</DriveDistanceTime>
+    <DriveDistanceTime>18:24:17.4630000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
     <Station1Key>38922</Station1Key>
@@ -164,8 +164,8 @@
   <ConsecutiveStations>
     <Station1Key>38913</Station1Key>
     <Station2Key>38910</Station2Key>
-    <Distance>24246.188133106716</Distance>
-    <IsActive>true</IsActive>
+    <Distance>24246.1881331067</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>04:02:27.7130000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
@@ -185,22 +185,22 @@
   <ConsecutiveStations>
     <Station1Key>38888</Station1Key>
     <Station2Key>38910</Station2Key>
-    <Distance>10968.695038570499</Distance>
-    <IsActive>true</IsActive>
+    <Distance>10968.6950385705</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>01:49:41.2170000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
     <Station1Key>38910</Station1Key>
     <Station2Key>38920</Station2Key>
     <Distance>23259.9585862211</Distance>
-    <IsActive>true</IsActive>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>03:52:35.9750000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
     <Station1Key>38914</Station1Key>
     <Station2Key>39001</Station2Key>
-    <Distance>5184.9363153042223</Distance>
-    <IsActive>true</IsActive>
+    <Distance>5184.93631530422</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>00:51:50.9620000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
@@ -227,16 +227,16 @@
   <ConsecutiveStations>
     <Station1Key>38903</Station1Key>
     <Station2Key>38919</Station2Key>
-    <Distance>5096.8885884538286</Distance>
-    <IsActive>true</IsActive>
-    <DriveDistanceTime>00:50:58.1330000</DriveDistanceTime>
+    <Distance>116236.108775843</Distance>
+    <IsActive>True</IsActive>
+    <DriveDistanceTime>19:22:21.6650000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
     <Station1Key>38919</Station1Key>
     <Station2Key>38904</Station2Key>
-    <Distance>6012.56262588836</Distance>
+    <Distance>105464.863052417</Distance>
     <IsActive>True</IsActive>
-    <DriveDistanceTime>01:00:07.5380000</DriveDistanceTime>
+    <DriveDistanceTime>17:34:38.9180000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
     <Station1Key>38913</Station1Key>
@@ -248,8 +248,8 @@
   <ConsecutiveStations>
     <Station1Key>38916</Station1Key>
     <Station2Key>38888</Station2Key>
-    <Distance>18407.391584753721</Distance>
-    <IsActive>true</IsActive>
+    <Distance>18407.3915847537</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>03:04:04.4350000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
@@ -262,9 +262,9 @@
   <ConsecutiveStations>
     <Station1Key>38909</Station1Key>
     <Station2Key>38919</Station2Key>
-    <Distance>3595.6540228197</Distance>
+    <Distance>113882.765267077</Distance>
     <IsActive>True</IsActive>
-    <DriveDistanceTime>00:35:57.3920000</DriveDistanceTime>
+    <DriveDistanceTime>18:58:49.6590000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
     <Station1Key>39001</Station1Key>
@@ -297,9 +297,9 @@
   <ConsecutiveStations>
     <Station1Key>38888</Station1Key>
     <Station2Key>38919</Station2Key>
-    <Distance>13189.117990334818</Distance>
-    <IsActive>true</IsActive>
-    <DriveDistanceTime>02:11:53.4710000</DriveDistanceTime>
+    <Distance>124429.18912714</Distance>
+    <IsActive>True</IsActive>
+    <DriveDistanceTime>20:44:17.5130000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
     <Station1Key>38903</Station1Key>
@@ -311,9 +311,9 @@
   <ConsecutiveStations>
     <Station1Key>38907</Station1Key>
     <Station2Key>38903</Station2Key>
-    <Distance>9923.1878230612056</Distance>
-    <IsActive>true</IsActive>
-    <DriveDistanceTime>01:39:13.9130000</DriveDistanceTime>
+    <Distance>121203.940747193</Distance>
+    <IsActive>True</IsActive>
+    <DriveDistanceTime>20:12:02.3640000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
     <Station1Key>-1</Station1Key>
@@ -325,6 +325,13 @@
   <ConsecutiveStations>
     <Station1Key>-1</Station1Key>
     <Station2Key>38888</Station2Key>
+    <Distance>0</Distance>
+    <IsActive>true</IsActive>
+    <DriveDistanceTime>00:00:00</DriveDistanceTime>
+  </ConsecutiveStations>
+  <ConsecutiveStations>
+    <Station1Key>-1</Station1Key>
+    <Station2Key>38910</Station2Key>
     <Distance>0</Distance>
     <IsActive>true</IsActive>
     <DriveDistanceTime>00:00:00</DriveDistanceTime>

@@ -63,4 +63,13 @@
     <Gender>male</Gender>
     <imagePath></imagePath>
   </User>
+  <User>
+    <UserName>nuritAdmin</UserName>
+    <Password>2YdZrbkDRgCYowrXFMm0Q8OQxa6fPkheQ77ca4pnkSzX6ZyagoBp6i6peDKxVKsU4Qg037FthTkqUzKcaii9rw==</Password>
+    <Salt>0</Salt>
+    <ManagementPermission>True</ManagementPermission>
+    <IsActive>True</IsActive>
+    <Gender>female</Gender>
+    <imagePath>UserIcons\plant-pot.png</imagePath>
+  </User>
 </ArrayOfUser>

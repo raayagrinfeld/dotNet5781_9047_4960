@@ -382,8 +382,7 @@ namespace BL
                 StationBO busStationBO = GetBusStation(station.BusStationKey);
                 if (busStationBO != null)
                 {
-                    DeleteBusStation(station.BusStationKey);
-                    AddBusStation(station);
+                    dl.UpdateBusStation(BusStationBODOAdapter( station));
                 }
                 var ConsecutiveStationToUpdate = dl.GetAlConsecutiveStationsBy(b => b.IsActive && b.Station1Key != -1 && (b.Station1Key == station.BusStationKey || b.Station2Key == station.BusStationKey));
                 foreach (var item in ConsecutiveStationToUpdate) //updates consecutive stations that contine stationkey

@@ -40,7 +40,7 @@
     <BusLineKey>200002</BusLineKey>
     <StationName>דרך האילנות/מנחם בגין</StationName>
     <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38921</BusStationKey>
@@ -207,14 +207,14 @@
     <BusStationKey>38910</BusStationKey>
     <BusLineKey>200002</BusLineKey>
     <StationName>צומת חולדה/כביש 411</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
+    <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38920</BusStationKey>
     <BusLineKey>200002</BusLineKey>
     <StationName>שדרות משה דיין/יוסף לישנסקי</StationName>
-    <StationNumberInLine>3</StationNumberInLine>
+    <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
@@ -250,7 +250,7 @@
     <BusLineKey>200005</BusLineKey>
     <StationName>וייצמן/דרך יצחק רבין</StationName>
     <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38904</BusStationKey>
@@ -285,7 +285,7 @@
     <BusLineKey>200007</BusLineKey>
     <StationName>וייצמן/דרך יצחק רבין</StationName>
     <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38909</BusStationKey>
@@ -320,6 +320,20 @@
     <BusLineKey>200011</BusLineKey>
     <StationName>התאנה/האלון</StationName>
     <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38880</BusStationKey>
+    <BusLineKey>200013</BusLineKey>
+    <StationName>התאנה/האלון</StationName>
+    <StationNumberInLine>1</StationNumberInLine>
+    <IsActive>true</IsActive>
+  </BusLineStation>
+  <BusLineStation>
+    <BusStationKey>38903</BusStationKey>
+    <BusLineKey>200013</BusLineKey>
+    <StationName>קרוננברג/ארגמן</StationName>
+    <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
 </ArrayOfBusLineStation>
