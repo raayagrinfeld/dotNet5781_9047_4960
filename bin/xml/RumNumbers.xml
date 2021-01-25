@@ -2,5 +2,5 @@
 <ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <string>BusesSCheduleRumNumber40050</string>
   <string>BusStationRumNumber39013</string>
-  <string>BusLineRumNumber200014</string>
+  <string>BusLineRumNumber200008</string>
 </ArrayOfString>

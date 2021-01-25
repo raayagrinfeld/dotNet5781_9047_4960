@@ -1,4 +1,547 @@
 <?xml version="1.0"?>
 <ArrayOfBusLine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
- 
+  <BusLine>
+    <BusLineKey>200000</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200000</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>General</Area>
+    <FirstStation>39001</FirstStation>
+    <LastStation>39001</LastStation>
+    <FirstStationName>????? ????/???? ?????</FirstStationName>
+    <LastStationName>????? ????/???? ?????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200000</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>General</Area>
+    <FirstStation>39001</FirstStation>
+    <LastStation>38920</LastStation>
+    <FirstStationName>????? ????/???? ?????</FirstStationName>
+    <LastStationName>????? ??? ????/???? ???????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200000</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>39001</FirstStation>
+    <LastStation>38920</LastStation>
+    <FirstStationName>????? ????/???? ?????</FirstStationName>
+    <LastStationName>????? ??? ????/???? ???????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200001</BusLineKey>
+    <LineNumber>73</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200001</BusLineKey>
+    <LineNumber>73</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38921</FirstStation>
+    <LastStation>38921</LastStation>
+    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
+    <LastStationName>??? ???? ?????/???? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200001</BusLineKey>
+    <LineNumber>73</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38921</FirstStation>
+    <LastStation>38906</LastStation>
+    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
+    <LastStationName>?????/??? ??????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200001</BusLineKey>
+    <LineNumber>73</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38921</FirstStation>
+    <LastStation>38906</LastStation>
+    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
+    <LastStationName>?????/??? ??????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200002</BusLineKey>
+    <LineNumber>67</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200002</BusLineKey>
+    <LineNumber>67</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38910</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>???? ?????/???? 411</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200002</BusLineKey>
+    <LineNumber>67</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38908</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>?????/??''?</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200002</BusLineKey>
+    <LineNumber>67</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38908</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>?????/??''?</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200003</BusLineKey>
+    <LineNumber>89</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200003</BusLineKey>
+    <LineNumber>89</LineNumber>
+    <Area>General</Area>
+    <FirstStation>39002</FirstStation>
+    <LastStation>39002</LastStation>
+    <FirstStationName>????? ????/????</FirstStationName>
+    <LastStationName>????? ????/????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200003</BusLineKey>
+    <LineNumber>89</LineNumber>
+    <Area>General</Area>
+    <FirstStation>39002</FirstStation>
+    <LastStation>38910</LastStation>
+    <FirstStationName>????? ????/????</FirstStationName>
+    <LastStationName>???? ?????/???? 411</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200003</BusLineKey>
+    <LineNumber>89</LineNumber>
+    <Area>Jerusalem</Area>
+    <FirstStation>39002</FirstStation>
+    <LastStation>38910</LastStation>
+    <FirstStationName>????? ????/????</FirstStationName>
+    <LastStationName>???? ?????/???? 411</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200004</BusLineKey>
+    <LineNumber>54</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200004</BusLineKey>
+    <LineNumber>54</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38910</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>???? ?????/???? 411</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200004</BusLineKey>
+    <LineNumber>54</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38888</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>??? ???????/???? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200004</BusLineKey>
+    <LineNumber>54</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38888</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>??? ???????/???? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200005</BusLineKey>
+    <LineNumber>90</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200005</BusLineKey>
+    <LineNumber>90</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38916</FirstStation>
+    <LastStation>38916</LastStation>
+    <FirstStationName>???? ????/?????? ????</FirstStationName>
+    <LastStationName>???? ????/?????? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200005</BusLineKey>
+    <LineNumber>90</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38916</FirstStation>
+    <LastStation>38919</LastStation>
+    <FirstStationName>???? ????/?????? ????</FirstStationName>
+    <LastStationName>??????/??? ???? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200005</BusLineKey>
+    <LineNumber>90</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>38916</FirstStation>
+    <LastStation>38919</LastStation>
+    <FirstStationName>???? ????/?????? ????</FirstStationName>
+    <LastStationName>??????/??? ???? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200006</BusLineKey>
+    <LineNumber>613</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200006</BusLineKey>
+    <LineNumber>613</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38909</FirstStation>
+    <LastStation>38909</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>???? ?????/???? 411</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200006</BusLineKey>
+    <LineNumber>613</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38909</FirstStation>
+    <LastStation>38907</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>????? ????/????? ??????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200006</BusLineKey>
+    <LineNumber>613</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38909</FirstStation>
+    <LastStation>38907</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>????? ????/????? ??????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200007</BusLineKey>
+    <LineNumber>58</LineNumber>
+    <Area>General</Area>
+    <FirstStation>0</FirstStation>
+    <LastStation>0</LastStation>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200007</BusLineKey>
+    <LineNumber>58</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38920</FirstStation>
+    <LastStation>38920</LastStation>
+    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
+    <LastStationName>????? ??? ????/???? ???????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200007</BusLineKey>
+    <LineNumber>58</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38920</FirstStation>
+    <LastStation>38906</LastStation>
+    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
+    <LastStationName>?????/??? ??????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200007</BusLineKey>
+    <LineNumber>58</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38920</FirstStation>
+    <LastStation>38906</LastStation>
+    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
+    <LastStationName>?????/??? ??????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200000</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>39001</FirstStation>
+    <LastStation>38916</LastStation>
+    <FirstStationName>????? ????/???? ?????</FirstStationName>
+    <LastStationName>???? ????/?????? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200000</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>39001</FirstStation>
+    <LastStation>38906</LastStation>
+    <FirstStationName>????? ????/???? ?????</FirstStationName>
+    <LastStationName>?????/??? ??????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200000</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>39001</FirstStation>
+    <LastStation>38906</LastStation>
+    <FirstStationName>????? ????/???? ?????</FirstStationName>
+    <LastStationName>?????/??? ??????</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200001</BusLineKey>
+    <LineNumber>73</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38921</FirstStation>
+    <LastStation>39005</LastStation>
+    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
+    <LastStationName>??? ???? ????/??? ????? ??? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200001</BusLineKey>
+    <LineNumber>73</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38921</FirstStation>
+    <LastStation>38908</LastStation>
+    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
+    <LastStationName>?????/??''?</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200001</BusLineKey>
+    <LineNumber>73</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38921</FirstStation>
+    <LastStation>38908</LastStation>
+    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
+    <LastStationName>?????/??''?</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200002</BusLineKey>
+    <LineNumber>67</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38906</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>?????/??? ??????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200002</BusLineKey>
+    <LineNumber>67</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38920</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>????? ??? ????/???? ???????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200002</BusLineKey>
+    <LineNumber>67</LineNumber>
+    <Area>South</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38920</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>????? ??? ????/???? ???????</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200003</BusLineKey>
+    <LineNumber>89</LineNumber>
+    <Area>Jerusalem</Area>
+    <FirstStation>39002</FirstStation>
+    <LastStation>38919</LastStation>
+    <FirstStationName>????? ????/????</FirstStationName>
+    <LastStationName>??????/??? ???? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200003</BusLineKey>
+    <LineNumber>89</LineNumber>
+    <Area>Jerusalem</Area>
+    <FirstStation>39002</FirstStation>
+    <LastStation>38914</LastStation>
+    <FirstStationName>????? ????/????</FirstStationName>
+    <LastStationName>???????/??????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200003</BusLineKey>
+    <LineNumber>89</LineNumber>
+    <Area>Jerusalem</Area>
+    <FirstStation>39002</FirstStation>
+    <LastStation>38914</LastStation>
+    <FirstStationName>????? ????/????</FirstStationName>
+    <LastStationName>???????/??????</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200004</BusLineKey>
+    <LineNumber>54</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>39004</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>???? ???????/???? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200004</BusLineKey>
+    <LineNumber>54</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38919</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>??????/??? ???? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200004</BusLineKey>
+    <LineNumber>54</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38910</FirstStation>
+    <LastStation>38919</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>??????/??? ???? ????</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200005</BusLineKey>
+    <LineNumber>90</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>38916</FirstStation>
+    <LastStation>38906</LastStation>
+    <FirstStationName>???? ????/?????? ????</FirstStationName>
+    <LastStationName>?????/??? ??????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200005</BusLineKey>
+    <LineNumber>90</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>38916</FirstStation>
+    <LastStation>38913</LastStation>
+    <FirstStationName>???? ????/?????? ????</FirstStationName>
+    <LastStationName>??? ???/???? ???</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200005</BusLineKey>
+    <LineNumber>90</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>38916</FirstStation>
+    <LastStation>38913</LastStation>
+    <FirstStationName>???? ????/?????? ????</FirstStationName>
+    <LastStationName>??? ???/???? ???</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200006</BusLineKey>
+    <LineNumber>613</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38909</FirstStation>
+    <LastStation>39001</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>????? ????/???? ?????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200006</BusLineKey>
+    <LineNumber>613</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38909</FirstStation>
+    <LastStation>38903</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>????????/?????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200006</BusLineKey>
+    <LineNumber>613</LineNumber>
+    <Area>General</Area>
+    <FirstStation>38909</FirstStation>
+    <LastStation>38903</LastStation>
+    <FirstStationName>???? ?????/???? 411</FirstStationName>
+    <LastStationName>????????/?????</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200007</BusLineKey>
+    <LineNumber>58</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38920</FirstStation>
+    <LastStation>39005</LastStation>
+    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
+    <LastStationName>??? ???? ????/??? ????? ??? ????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200007</BusLineKey>
+    <LineNumber>58</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38920</FirstStation>
+    <LastStation>39001</LastStation>
+    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
+    <LastStationName>????? ????/???? ?????</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200007</BusLineKey>
+    <LineNumber>58</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38920</FirstStation>
+    <LastStation>39001</LastStation>
+    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
+    <LastStationName>????? ????/???? ?????</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
 </ArrayOfBusLine>
