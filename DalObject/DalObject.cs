@@ -393,6 +393,10 @@ namespace DL
         {
            
         }
+        public void DeleteAllBusSchedule(int busLineKey)
+        {
+
+        }
         #endregion
         #region RunNumber
         public int GetRunNumber_BusLIne()
@@ -408,10 +412,6 @@ namespace DL
             return ++RunNumbers.BusesSCheduleRunNumber;
         }
 
-        public void DeleteAllBusSchedule(int busLineKey)
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion
     }
