@@ -1166,7 +1166,7 @@
     <StationName>צומת חולדה/כביש 411</StationName>
     <StationAddress> רחוב:411  עיר: גזר</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38914</BusStationKey>
@@ -1198,7 +1198,7 @@
     <StationName>וייצמן/דרך יצחק רבין</StationName>
     <StationAddress> רחוב:וייצמן  עיר: נס ציונה</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>39001</BusStationKey>
@@ -1230,7 +1230,7 @@
     <StationName>שדרות משה דיין/יוסף לישנסקי</StationName>
     <StationAddress> רחוב:שדרות משה דיין  עיר: ראשון לציון</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>39011</BusStationKey>
@@ -1294,7 +1294,7 @@
     <StationName>נחמיה/בית העלמין</StationName>
     <StationAddress> רחוב:נחמיה 71 עיר: ראשון לציון</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38916</BusStationKey>
@@ -1438,6 +1438,86 @@
     <StationName>יעקב פריימן/בנימין שמוטקין</StationName>
     <StationAddress> רחוב:יעקב פריימן 9 עיר: ראשון לציון</StationAddress>
     <HasARoof>false</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>39013</BusStationKey>
+    <Coordinates>
+      <Latitude>32</Latitude>
+      <Longitude>32</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>6666</StationName>
+    <StationAddress>ggg</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38910</BusStationKey>
+    <Coordinates>
+      <Latitude>31.811907</Latitude>
+      <Longitude>34.900793</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>צומת חולדה/כביש 411</StationName>
+    <StationAddress> רחוב:411  עיר: גזר</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38920</BusStationKey>
+    <Coordinates>
+      <Latitude>31.98568</Latitude>
+      <Longitude>34.764014</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>שדרות משה דיין/יוסף לישנסקי</StationName>
+    <StationAddress> רחוב:שדרות משה דיין  עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38906</BusStationKey>
+    <Coordinates>
+      <Latitude>31.948552</Latitude>
+      <Longitude>34.822422</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>נחמיה/בית העלמין</StationName>
+    <StationAddress> רחוב:נחמיה 71 עיר: ראשון לציון</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38919</BusStationKey>
+    <Coordinates>
+      <Latitude>31.923041</Latitude>
+      <Longitude>34.798033</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>וייצמן/דרך יצחק רבין</StationName>
+    <StationAddress> רחוב:וייצמן  עיר: נס ציונה</StationAddress>
+    <HasARoof>true</HasARoof>
     <IsActive>true</IsActive>
   </BusStation>
 </ArrayOfBusStation>
