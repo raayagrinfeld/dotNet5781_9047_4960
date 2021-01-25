@@ -977,6 +977,56 @@
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
+    <BusLineKey>200008</BusLineKey>
+    <LineNumber>67</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>38903</FirstStation>
+    <LastStation>39001</LastStation>
+    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
+    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200001</BusLineKey>
+    <LineNumber>18</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>38903</FirstStation>
+    <LastStation>38913</LastStation>
+    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
+    <LastStationName>משה שרת/יעקב קנר</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200001</BusLineKey>
+    <LineNumber>18</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>38903</FirstStation>
+    <LastStation>38913</LastStation>
+    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
+    <LastStationName>משה שרת/יעקב קנר</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200004</BusLineKey>
+    <LineNumber>34</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38905</FirstStation>
+    <LastStation>38916</LastStation>
+    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
+    <LastStationName>יוסף בורג/משואות יצחק</LastStationName>
+    <IsActive>false</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200004</BusLineKey>
+    <LineNumber>34</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38905</FirstStation>
+    <LastStation>38916</LastStation>
+    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
+    <LastStationName>יוסף בורג/משואות יצחק</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
     <BusLineKey>200010</BusLineKey>
     <LineNumber>49</LineNumber>
     <Area>South</Area>
@@ -984,47 +1034,17 @@
     <LastStation>38903</LastStation>
     <FirstStationName>יהודה הלוי/יוחנן הסנדלר</FirstStationName>
     <LastStationName>קרוננברג/ארגמן</LastStationName>
-    <IsActive>false</IsActive>
+    <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
-    <BusLineKey>200000</BusLineKey>
-    <LineNumber>16</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38903</FirstStation>
-    <LastStation>38904</LastStation>
-    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
-    <LastStationName>יעקב פריימן/בנימין שמוטקין</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200000</BusLineKey>
-    <LineNumber>16</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38903</FirstStation>
-    <LastStation>39013</LastStation>
-    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
-    <LastStationName>6666</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200000</BusLineKey>
-    <LineNumber>16</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38903</FirstStation>
-    <LastStation>39013</LastStation>
-    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
-    <LastStationName>6666</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200000</BusLineKey>
-    <LineNumber>16</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38903</FirstStation>
-    <LastStation>38904</LastStation>
-    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
-    <LastStationName>יעקב פריימן/בנימין שמוטקין</LastStationName>
-    <IsActive>false</IsActive>
+    <BusLineKey>200004</BusLineKey>
+    <LineNumber>34</LineNumber>
+    <Area>North</Area>
+    <FirstStation>38916</FirstStation>
+    <LastStation>38906</LastStation>
+    <FirstStationName>יוסף בורג/משואות יצחק</FirstStationName>
+    <LastStationName>נחמיה/בית העלמין</LastStationName>
+    <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>200000</BusLineKey>
@@ -1034,236 +1054,16 @@
     <LastStation>38910</LastStation>
     <FirstStationName>קרוננברג/ארגמן</FirstStationName>
     <LastStationName>צומת חולדה/כביש 411</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200000</BusLineKey>
-    <LineNumber>16</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38903</FirstStation>
-    <LastStation>38913</LastStation>
-    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
-    <LastStationName>משה שרת/יעקב קנר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200000</BusLineKey>
-    <LineNumber>16</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38903</FirstStation>
-    <LastStation>38913</LastStation>
-    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
-    <LastStationName>משה שרת/יעקב קנר</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>200002</BusLineKey>
     <LineNumber>78</LineNumber>
     <Area>General</Area>
-    <FirstStation>38905</FirstStation>
+    <FirstStation>38888</FirstStation>
     <LastStation>38920</LastStation>
-    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
+    <FirstStationName>דרך האילנות/מנחם בגין</FirstStationName>
     <LastStationName>שדרות משה דיין/יוסף לישנסקי</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200003</BusLineKey>
-    <LineNumber>7</LineNumber>
-    <Area>South</Area>
-    <FirstStation>38914</FirstStation>
-    <LastStation>39001</LastStation>
-    <FirstStationName>הדייגים/הנחשול</FirstStationName>
-    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
-    <IsActive>true</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200002</BusLineKey>
-    <LineNumber>78</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38905</FirstStation>
-    <LastStation>38888</LastStation>
-    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
-    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200002</BusLineKey>
-    <LineNumber>78</LineNumber>
-    <Area>General</Area>
-    <FirstStation>38905</FirstStation>
-    <LastStation>38888</LastStation>
-    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
-    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
-    <IsActive>true</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200009</BusLineKey>
-    <LineNumber>13</LineNumber>
-    <Area>General</Area>
-    <FirstStation>39001</FirstStation>
-    <LastStation>38880</LastStation>
-    <FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
-    <LastStationName>התאנה/האלון</LastStationName>
-    <IsActive>true</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200011</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>South</Area>
-    <FirstStation>38922</FirstStation>
-    <LastStation>38880</LastStation>
-    <FirstStationName>השר חיים שפירא/הרב שלום ג'רופי</FirstStationName>
-    <LastStationName>התאנה/האלון</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200004</BusLineKey>
-    <LineNumber>34</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38905</FirstStation>
-    <LastStation>38906</LastStation>
-    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
-    <LastStationName>נחמיה/בית העלמין</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200010</BusLineKey>
-    <LineNumber>49</LineNumber>
-    <Area>South</Area>
-    <FirstStation>38907</FirstStation>
-    <LastStation>38903</LastStation>
-    <FirstStationName>יהודה הלוי/יוחנן הסנדלר</FirstStationName>
-    <LastStationName>קרוננברג/ארגמן</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200011</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>South</Area>
-    <FirstStation>38922</FirstStation>
-    <LastStation>38880</LastStation>
-    <FirstStationName>השר חיים שפירא/הרב שלום ג'רופי</FirstStationName>
-    <LastStationName>התאנה/האלון</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200011</BusLineKey>
-    <LineNumber>10</LineNumber>
-    <Area>South</Area>
-    <FirstStation>38922</FirstStation>
-    <LastStation>38880</LastStation>
-    <FirstStationName>השר חיים שפירא/הרב שלום ג'רופי</FirstStationName>
-    <LastStationName>התאנה/האלון</LastStationName>
-    <IsActive>true</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200008</BusLineKey>
-    <LineNumber>67</LineNumber>
-    <Area>Center</Area>
-    <FirstStation>38903</FirstStation>
-    <LastStation>39001</LastStation>
-    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
-    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200001</BusLineKey>
-    <LineNumber>18</LineNumber>
-    <Area>Center</Area>
-    <FirstStation>38903</FirstStation>
-    <LastStation>38913</LastStation>
-    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
-    <LastStationName>משה שרת/יעקב קנר</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200001</BusLineKey>
-    <LineNumber>18</LineNumber>
-    <Area>Center</Area>
-    <FirstStation>38903</FirstStation>
-    <LastStation>38913</LastStation>
-    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
-    <LastStationName>משה שרת/יעקב קנר</LastStationName>
-    <IsActive>true</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200004</BusLineKey>
-    <LineNumber>34</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38905</FirstStation>
-    <LastStation>38916</LastStation>
-    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
-    <LastStationName>יוסף בורג/משואות יצחק</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200004</BusLineKey>
-    <LineNumber>34</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38905</FirstStation>
-    <LastStation>38916</LastStation>
-    <FirstStationName>אנילביץ'/שלום אש</FirstStationName>
-    <LastStationName>יוסף בורג/משואות יצחק</LastStationName>
-    <IsActive>true</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200010</BusLineKey>
-    <LineNumber>49</LineNumber>
-    <Area>South</Area>
-    <FirstStation>38907</FirstStation>
-    <LastStation>38903</LastStation>
-    <FirstStationName>יהודה הלוי/יוחנן הסנדלר</FirstStationName>
-    <LastStationName>קרוננברג/ארגמן</LastStationName>
-    <IsActive>true</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200008</BusLineKey>
-    <LineNumber>67</LineNumber>
-    <Area>Center</Area>
-    <FirstStation>38903</FirstStation>
-    <LastStation>39001</LastStation>
-    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
-    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200008</BusLineKey>
-    <LineNumber>67</LineNumber>
-    <Area>Center</Area>
-    <FirstStation>38903</FirstStation>
-    <LastStation>39001</LastStation>
-    <FirstStationName>קרוננברג/ארגמן</FirstStationName>
-    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
-    <IsActive>true</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200007</BusLineKey>
-    <LineNumber>21</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38914</FirstStation>
-    <LastStation>38888</LastStation>
-    <FirstStationName>הדייגים/הנחשול</FirstStationName>
-    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
-    <IsActive>false</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200007</BusLineKey>
-    <LineNumber>21</LineNumber>
-    <Area>North</Area>
-    <FirstStation>38914</FirstStation>
-    <LastStation>38888</LastStation>
-    <FirstStationName>הדייגים/הנחשול</FirstStationName>
-    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
-    <IsActive>true</IsActive>
-  </BusLine>
-  <BusLine>
-    <BusLineKey>200005</BusLineKey>
-    <LineNumber>73</LineNumber>
-    <Area>Jerusalem</Area>
-    <FirstStation>38880</FirstStation>
-    <LastStation>38903</LastStation>
-    <FirstStationName>התאנה/האלון</FirstStationName>
-    <LastStationName>קרוננברג/ארגמן</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>

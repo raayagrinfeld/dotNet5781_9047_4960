@@ -558,7 +558,7 @@
     <StationName>הרב דוד ישראל/אריה דולצין</StationName>
     <StationAddress> רחוב:הרב דוד ישראל 63 עיר: רחובות</StationAddress>
     <HasARoof>true</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38899</BusStationKey>
@@ -814,7 +814,7 @@
     <StationName>ההגנה/חי''ש</StationName>
     <StationAddress> רחוב:ההגנה 37 עיר: רחובות</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38917</BusStationKey>
@@ -894,7 +894,7 @@
     <StationName>אנילביץ'/שלום אש</StationName>
     <StationAddress> רחוב:אנילביץ' 13 עיר: ראשון לציון</StationAddress>
     <HasARoof>false</HasARoof>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusStation>
   <BusStation>
     <BusStationKey>38906</BusStationKey>
@@ -1518,6 +1518,102 @@
     <StationName>וייצמן/דרך יצחק רבין</StationName>
     <StationAddress> רחוב:וייצמן  עיר: נס ציונה</StationAddress>
     <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38901</BusStationKey>
+    <Coordinates>
+      <Latitude>31.882474</Latitude>
+      <Longitude>34.80506</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>הרב דוד ישראל/אריה דולצין</StationName>
+    <StationAddress> רחוב:הרב דוד ישראל 63 עיר: רחובות</StationAddress>
+    <HasARoof>true</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38908</BusStationKey>
+    <Coordinates>
+      <Latitude>31.893823</Latitude>
+      <Longitude>34.824617</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>ההגנה/חי''ש</StationName>
+    <StationAddress> רחוב:ההגנה 37 עיר: רחובות</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38905</BusStationKey>
+    <Coordinates>
+      <Latitude>31.982177</Latitude>
+      <Longitude>34.789445</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>אנילביץ'/שלום אש</StationName>
+    <StationAddress> רחוב:אנילביץ' 13 עיר: ראשון לציון</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38905</BusStationKey>
+    <Coordinates>
+      <Latitude>31.982177</Latitude>
+      <Longitude>34.789445</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>אנילביץ'/שלום אש</StationName>
+    <StationAddress> רחוב:אנילביץ' 13 עיר: ראשון לציון</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>false</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38905</BusStationKey>
+    <Coordinates>
+      <Latitude>31.982177</Latitude>
+      <Longitude>34.789445</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>אנילביץ'/שלום אש</StationName>
+    <StationAddress> רחוב:אנילביץ' 13 עיר: ראשון לציון</StationAddress>
+    <HasARoof>false</HasARoof>
+    <IsActive>true</IsActive>
+  </BusStation>
+  <BusStation>
+    <BusStationKey>38908</BusStationKey>
+    <Coordinates>
+      <Latitude>31.893823</Latitude>
+      <Longitude>34.824617</Longitude>
+      <Altitude>NaN</Altitude>
+      <HorizontalAccuracy>NaN</HorizontalAccuracy>
+      <VerticalAccuracy>NaN</VerticalAccuracy>
+      <Speed>NaN</Speed>
+      <Course>NaN</Course>
+    </Coordinates>
+    <StationName>ההגנה/חי''ש</StationName>
+    <StationAddress> רחוב:ההגנה 37 עיר: רחובות</StationAddress>
+    <HasARoof>false</HasARoof>
     <IsActive>true</IsActive>
   </BusStation>
 </ArrayOfBusStation>

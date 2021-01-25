@@ -33,13 +33,13 @@
     <BusLineKey>200002</BusLineKey>
     <StationName>אנילביץ'/שלום אש</StationName>
     <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38888</BusStationKey>
     <BusLineKey>200002</BusLineKey>
     <StationName>דרך האילנות/מנחם בגין</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
+    <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
@@ -61,13 +61,13 @@
     <BusLineKey>200004</BusLineKey>
     <StationName>אנילביץ'/שלום אש</StationName>
     <StationNumberInLine>1</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38916</BusStationKey>
     <BusLineKey>200004</BusLineKey>
     <StationName>יוסף בורג/משואות יצחק</StationName>
-    <StationNumberInLine>2</StationNumberInLine>
+    <StationNumberInLine>1</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
@@ -173,21 +173,21 @@
     <BusLineKey>200000</BusLineKey>
     <StationName>אנילביץ'/שלום אש</StationName>
     <StationNumberInLine>2</StationNumberInLine>
-    <IsActive>true</IsActive>
+    <IsActive>false</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38913</BusStationKey>
     <BusLineKey>200000</BusLineKey>
     <StationName>משה שרת/יעקב קנר</StationName>
-    <StationNumberInLine>3</StationNumberInLine>
+    <StationNumberInLine>2</StationNumberInLine>
     <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38910</BusStationKey>
     <BusLineKey>200000</BusLineKey>
     <StationName>צומת חולדה/כביש 411</StationName>
-    <StationNumberInLine>4</StationNumberInLine>
-    <IsActive>false</IsActive>
+    <StationNumberInLine>3</StationNumberInLine>
+    <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38913</BusStationKey>
@@ -207,15 +207,15 @@
     <BusStationKey>38910</BusStationKey>
     <BusLineKey>200002</BusLineKey>
     <StationName>צומת חולדה/כביש 411</StationName>
-    <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>false</IsActive>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38920</BusStationKey>
     <BusLineKey>200002</BusLineKey>
     <StationName>שדרות משה דיין/יוסף לישנסקי</StationName>
     <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>false</IsActive>
+    <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>39001</BusStationKey>
@@ -235,15 +235,15 @@
     <BusStationKey>38920</BusStationKey>
     <BusLineKey>200004</BusLineKey>
     <StationName>שדרות משה דיין/יוסף לישנסקי</StationName>
-    <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>false</IsActive>
+    <StationNumberInLine>2</StationNumberInLine>
+    <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38906</BusStationKey>
     <BusLineKey>200004</BusLineKey>
     <StationName>נחמיה/בית העלמין</StationName>
     <StationNumberInLine>3</StationNumberInLine>
-    <IsActive>false</IsActive>
+    <IsActive>true</IsActive>
   </BusLineStation>
   <BusLineStation>
     <BusStationKey>38919</BusStationKey>
