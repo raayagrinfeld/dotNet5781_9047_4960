@@ -14,8 +14,8 @@
     <Area>General</Area>
     <FirstStation>39001</FirstStation>
     <LastStation>39001</LastStation>
-    <FirstStationName>????? ????/???? ?????</FirstStationName>
-    <LastStationName>????? ????/???? ?????</LastStationName>
+    <FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
+    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -24,8 +24,8 @@
     <Area>General</Area>
     <FirstStation>39001</FirstStation>
     <LastStation>38920</LastStation>
-    <FirstStationName>????? ????/???? ?????</FirstStationName>
-    <LastStationName>????? ??? ????/???? ???????</LastStationName>
+    <FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
+    <LastStationName>שדרות משה דיין/יוסף לישנסקי</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -34,8 +34,8 @@
     <Area>Center</Area>
     <FirstStation>39001</FirstStation>
     <LastStation>38920</LastStation>
-    <FirstStationName>????? ????/???? ?????</FirstStationName>
-    <LastStationName>????? ??? ????/???? ???????</LastStationName>
+    <FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
+    <LastStationName>שדרות משה דיין/יוסף לישנסקי</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -52,8 +52,8 @@
     <Area>General</Area>
     <FirstStation>38921</FirstStation>
     <LastStation>38921</LastStation>
-    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
-    <LastStationName>??? ???? ?????/???? ????</LastStationName>
+    <FirstStationName>השר חיים שפירא/יוסף ספיר</FirstStationName>
+    <LastStationName>השר חיים שפירא/יוסף ספיר</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -62,8 +62,8 @@
     <Area>General</Area>
     <FirstStation>38921</FirstStation>
     <LastStation>38906</LastStation>
-    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
-    <LastStationName>?????/??? ??????</LastStationName>
+    <FirstStationName>השר חיים שפירא/יוסף ספיר</FirstStationName>
+    <LastStationName>נחמיה/בית העלמין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -72,8 +72,8 @@
     <Area>General</Area>
     <FirstStation>38921</FirstStation>
     <LastStation>38906</LastStation>
-    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
-    <LastStationName>?????/??? ??????</LastStationName>
+    <FirstStationName>השר חיים שפירא/יוסף ספיר</FirstStationName>
+    <LastStationName>נחמיה/בית העלמין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -90,8 +90,8 @@
     <Area>General</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>38910</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>???? ?????/???? 411</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>צומת חולדה/כביש 411</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -100,8 +100,8 @@
     <Area>General</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>38908</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>?????/??''?</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>ההגנה/חי''ש</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -110,8 +110,8 @@
     <Area>South</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>38908</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>?????/??''?</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>ההגנה/חי''ש</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -128,8 +128,8 @@
     <Area>General</Area>
     <FirstStation>39002</FirstStation>
     <LastStation>39002</LastStation>
-    <FirstStationName>????? ????/????</FirstStationName>
-    <LastStationName>????? ????/????</LastStationName>
+    <FirstStationName>שדרות יעקב/עזרא</FirstStationName>
+    <LastStationName>שדרות יעקב/עזרא</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -138,8 +138,8 @@
     <Area>General</Area>
     <FirstStation>39002</FirstStation>
     <LastStation>38910</LastStation>
-    <FirstStationName>????? ????/????</FirstStationName>
-    <LastStationName>???? ?????/???? 411</LastStationName>
+    <FirstStationName>שדרות יעקב/עזרא</FirstStationName>
+    <LastStationName>צומת חולדה/כביש 411</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -148,8 +148,8 @@
     <Area>Jerusalem</Area>
     <FirstStation>39002</FirstStation>
     <LastStation>38910</LastStation>
-    <FirstStationName>????? ????/????</FirstStationName>
-    <LastStationName>???? ?????/???? 411</LastStationName>
+    <FirstStationName>שדרות יעקב/עזרא</FirstStationName>
+    <LastStationName>צומת חולדה/כביש 411</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -166,8 +166,8 @@
     <Area>General</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>38910</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>???? ?????/???? 411</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>צומת חולדה/כביש 411</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -176,8 +176,8 @@
     <Area>General</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>38888</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>??? ???????/???? ????</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -186,8 +186,8 @@
     <Area>North</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>38888</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>??? ???????/???? ????</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>דרך האילנות/מנחם בגין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -204,8 +204,8 @@
     <Area>General</Area>
     <FirstStation>38916</FirstStation>
     <LastStation>38916</LastStation>
-    <FirstStationName>???? ????/?????? ????</FirstStationName>
-    <LastStationName>???? ????/?????? ????</LastStationName>
+    <FirstStationName>יוסף בורג/משואות יצחק</FirstStationName>
+    <LastStationName>יוסף בורג/משואות יצחק</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -214,8 +214,8 @@
     <Area>General</Area>
     <FirstStation>38916</FirstStation>
     <LastStation>38919</LastStation>
-    <FirstStationName>???? ????/?????? ????</FirstStationName>
-    <LastStationName>??????/??? ???? ????</LastStationName>
+    <FirstStationName>יוסף בורג/משואות יצחק</FirstStationName>
+    <LastStationName>וייצמן/דרך יצחק רבין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -224,8 +224,8 @@
     <Area>Center</Area>
     <FirstStation>38916</FirstStation>
     <LastStation>38919</LastStation>
-    <FirstStationName>???? ????/?????? ????</FirstStationName>
-    <LastStationName>??????/??? ???? ????</LastStationName>
+    <FirstStationName>יוסף בורג/משואות יצחק</FirstStationName>
+    <LastStationName>וייצמן/דרך יצחק רבין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -242,8 +242,8 @@
     <Area>General</Area>
     <FirstStation>38909</FirstStation>
     <LastStation>38909</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>???? ?????/???? 411</LastStationName>
+    <FirstStationName>קרית עקרון/כביש 411</FirstStationName>
+    <LastStationName>קרית עקרון/כביש 411</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -252,8 +252,8 @@
     <Area>General</Area>
     <FirstStation>38909</FirstStation>
     <LastStation>38907</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>????? ????/????? ??????</LastStationName>
+    <FirstStationName>קרית עקרון/כביש 411</FirstStationName>
+    <LastStationName>יהודה הלוי/יוחנן הסנדלר</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -262,8 +262,8 @@
     <Area>General</Area>
     <FirstStation>38909</FirstStation>
     <LastStation>38907</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>????? ????/????? ??????</LastStationName>
+    <FirstStationName>קרית עקרון/כביש 411</FirstStationName>
+    <LastStationName>יהודה הלוי/יוחנן הסנדלר</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -280,8 +280,8 @@
     <Area>General</Area>
     <FirstStation>38920</FirstStation>
     <LastStation>38920</LastStation>
-    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
-    <LastStationName>????? ??? ????/???? ???????</LastStationName>
+    <FirstStationName>שדרות משה דיין/יוסף לישנסקי</FirstStationName>
+    <LastStationName>שדרות משה דיין/יוסף לישנסקי</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -290,8 +290,8 @@
     <Area>General</Area>
     <FirstStation>38920</FirstStation>
     <LastStation>38906</LastStation>
-    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
-    <LastStationName>?????/??? ??????</LastStationName>
+    <FirstStationName>שדרות משה דיין/יוסף לישנסקי</FirstStationName>
+    <LastStationName>נחמיה/בית העלמין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -300,8 +300,8 @@
     <Area>North</Area>
     <FirstStation>38920</FirstStation>
     <LastStation>38906</LastStation>
-    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
-    <LastStationName>?????/??? ??????</LastStationName>
+    <FirstStationName>שדרות משה דיין/יוסף לישנסקי</FirstStationName>
+    <LastStationName>נחמיה/בית העלמין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -310,8 +310,8 @@
     <Area>Center</Area>
     <FirstStation>39001</FirstStation>
     <LastStation>38916</LastStation>
-    <FirstStationName>????? ????/???? ?????</FirstStationName>
-    <LastStationName>???? ????/?????? ????</LastStationName>
+    <FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
+    <LastStationName>יוסף בורג/משואות יצחק</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -320,8 +320,8 @@
     <Area>Center</Area>
     <FirstStation>39001</FirstStation>
     <LastStation>38906</LastStation>
-    <FirstStationName>????? ????/???? ?????</FirstStationName>
-    <LastStationName>?????/??? ??????</LastStationName>
+    <FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
+    <LastStationName>נחמיה/בית העלמין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -330,9 +330,9 @@
     <Area>Center</Area>
     <FirstStation>39001</FirstStation>
     <LastStation>38906</LastStation>
-    <FirstStationName>????? ????/???? ?????</FirstStationName>
-    <LastStationName>?????/??? ??????</LastStationName>
-    <IsActive>true</IsActive>
+    <FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
+    <LastStationName>נחמיה/בית העלמין</LastStationName>
+    <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
     <BusLineKey>200001</BusLineKey>
@@ -340,8 +340,8 @@
     <Area>General</Area>
     <FirstStation>38921</FirstStation>
     <LastStation>39005</LastStation>
-    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
-    <LastStationName>??? ???? ????/??? ????? ??? ????</LastStationName>
+    <FirstStationName>השר חיים שפירא/יוסף ספיר</FirstStationName>
+    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -350,8 +350,8 @@
     <Area>General</Area>
     <FirstStation>38921</FirstStation>
     <LastStation>38908</LastStation>
-    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
-    <LastStationName>?????/??''?</LastStationName>
+    <FirstStationName>השר חיים שפירא/יוסף ספיר</FirstStationName>
+    <LastStationName>ההגנה/חי''ש</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -360,8 +360,8 @@
     <Area>General</Area>
     <FirstStation>38921</FirstStation>
     <LastStation>38908</LastStation>
-    <FirstStationName>??? ???? ?????/???? ????</FirstStationName>
-    <LastStationName>?????/??''?</LastStationName>
+    <FirstStationName>השר חיים שפירא/יוסף ספיר</FirstStationName>
+    <LastStationName>ההגנה/חי''ש</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
@@ -370,8 +370,8 @@
     <Area>South</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>38906</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>?????/??? ??????</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>נחמיה/בית העלמין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -380,8 +380,8 @@
     <Area>South</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>38920</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>????? ??? ????/???? ???????</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>שדרות משה דיין/יוסף לישנסקי</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -390,8 +390,8 @@
     <Area>South</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>38920</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>????? ??? ????/???? ???????</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>שדרות משה דיין/יוסף לישנסקי</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
@@ -400,8 +400,8 @@
     <Area>Jerusalem</Area>
     <FirstStation>39002</FirstStation>
     <LastStation>38919</LastStation>
-    <FirstStationName>????? ????/????</FirstStationName>
-    <LastStationName>??????/??? ???? ????</LastStationName>
+    <FirstStationName>שדרות יעקב/עזרא</FirstStationName>
+    <LastStationName>וייצמן/דרך יצחק רבין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -410,8 +410,8 @@
     <Area>Jerusalem</Area>
     <FirstStation>39002</FirstStation>
     <LastStation>38914</LastStation>
-    <FirstStationName>????? ????/????</FirstStationName>
-    <LastStationName>???????/??????</LastStationName>
+    <FirstStationName>שדרות יעקב/עזרא</FirstStationName>
+    <LastStationName>הדייגים/הנחשול</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -420,8 +420,8 @@
     <Area>Jerusalem</Area>
     <FirstStation>39002</FirstStation>
     <LastStation>38914</LastStation>
-    <FirstStationName>????? ????/????</FirstStationName>
-    <LastStationName>???????/??????</LastStationName>
+    <FirstStationName>שדרות יעקב/עזרא</FirstStationName>
+    <LastStationName>הדייגים/הנחשול</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
@@ -430,8 +430,8 @@
     <Area>North</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>39004</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>???? ???????/???? ????</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>לייב יוספזון/יעקב ברמן</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -440,8 +440,8 @@
     <Area>North</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>38919</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>??????/??? ???? ????</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>וייצמן/דרך יצחק רבין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -450,8 +450,8 @@
     <Area>North</Area>
     <FirstStation>38910</FirstStation>
     <LastStation>38919</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>??????/??? ???? ????</LastStationName>
+    <FirstStationName>צומת חולדה/כביש 411</FirstStationName>
+    <LastStationName>וייצמן/דרך יצחק רבין</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
@@ -460,8 +460,8 @@
     <Area>Center</Area>
     <FirstStation>38916</FirstStation>
     <LastStation>38906</LastStation>
-    <FirstStationName>???? ????/?????? ????</FirstStationName>
-    <LastStationName>?????/??? ??????</LastStationName>
+    <FirstStationName>יוסף בורג/משואות יצחק</FirstStationName>
+    <LastStationName>נחמיה/בית העלמין</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -470,8 +470,8 @@
     <Area>Center</Area>
     <FirstStation>38916</FirstStation>
     <LastStation>38913</LastStation>
-    <FirstStationName>???? ????/?????? ????</FirstStationName>
-    <LastStationName>??? ???/???? ???</LastStationName>
+    <FirstStationName>יוסף בורג/משואות יצחק</FirstStationName>
+    <LastStationName>משה שרת/יעקב קנר</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -480,8 +480,8 @@
     <Area>Center</Area>
     <FirstStation>38916</FirstStation>
     <LastStation>38913</LastStation>
-    <FirstStationName>???? ????/?????? ????</FirstStationName>
-    <LastStationName>??? ???/???? ???</LastStationName>
+    <FirstStationName>יוסף בורג/משואות יצחק</FirstStationName>
+    <LastStationName>משה שרת/יעקב קנר</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
@@ -490,8 +490,8 @@
     <Area>General</Area>
     <FirstStation>38909</FirstStation>
     <LastStation>39001</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>????? ????/???? ?????</LastStationName>
+    <FirstStationName>קרית עקרון/כביש 411</FirstStationName>
+    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -500,8 +500,8 @@
     <Area>General</Area>
     <FirstStation>38909</FirstStation>
     <LastStation>38903</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>????????/?????</LastStationName>
+    <FirstStationName>קרית עקרון/כביש 411</FirstStationName>
+    <LastStationName>קרוננברג/ארגמן</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -510,8 +510,8 @@
     <Area>General</Area>
     <FirstStation>38909</FirstStation>
     <LastStation>38903</LastStation>
-    <FirstStationName>???? ?????/???? 411</FirstStationName>
-    <LastStationName>????????/?????</LastStationName>
+    <FirstStationName>קרית עקרון/כביש 411</FirstStationName>
+    <LastStationName>קרוננברג/ארגמן</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
   <BusLine>
@@ -520,8 +520,8 @@
     <Area>North</Area>
     <FirstStation>38920</FirstStation>
     <LastStation>39005</LastStation>
-    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
-    <LastStationName>??? ???? ????/??? ????? ??? ????</LastStationName>
+    <FirstStationName>שדרות משה דיין/יוסף לישנסקי</FirstStationName>
+    <LastStationName>הרב יעקב ברמן/הרב יהודה צבי מלצר</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -530,8 +530,8 @@
     <Area>North</Area>
     <FirstStation>38920</FirstStation>
     <LastStation>39001</LastStation>
-    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
-    <LastStationName>????? ????/???? ?????</LastStationName>
+    <FirstStationName>שדרות משה דיין/יוסף לישנסקי</FirstStationName>
+    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
     <IsActive>false</IsActive>
   </BusLine>
   <BusLine>
@@ -540,8 +540,18 @@
     <Area>North</Area>
     <FirstStation>38920</FirstStation>
     <LastStation>39001</LastStation>
-    <FirstStationName>????? ??? ????/???? ???????</FirstStationName>
-    <LastStationName>????? ????/???? ?????</LastStationName>
+    <FirstStationName>שדרות משה דיין/יוסף לישנסקי</FirstStationName>
+    <LastStationName>שדרות יעקב/יוסף הנשיא</LastStationName>
+    <IsActive>true</IsActive>
+  </BusLine>
+  <BusLine>
+    <BusLineKey>200000</BusLineKey>
+    <LineNumber>6</LineNumber>
+    <Area>Center</Area>
+    <FirstStation>39001</FirstStation>
+    <LastStation>38906</LastStation>
+    <FirstStationName>שדרות יעקב/יוסף הנשיא</FirstStationName>
+    <LastStationName>נחמיה/בית העלמין</LastStationName>
     <IsActive>true</IsActive>
   </BusLine>
 </ArrayOfBusLine>

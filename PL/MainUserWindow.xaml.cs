@@ -34,7 +34,7 @@ namespace PL
         private BackgroundWorker timerworker;
         private bool isTimerRun;
         private TimeSpan tsStartTime;
-        double speetTime;
+        double speetTime=1.0;
         bool StartTimerIsInFormat = true;
 
         public MainUserWindow(User logedInUser)
