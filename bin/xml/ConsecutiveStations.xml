@@ -38,8 +38,8 @@
   <ConsecutiveStations>
     <Station1Key>38905</Station1Key>
     <Station2Key>38888</Station2Key>
-    <Distance>19717.906954888509</Distance>
-    <IsActive>true</IsActive>
+    <Distance>19717.9069548885</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>03:17:10.7440000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
@@ -59,8 +59,8 @@
   <ConsecutiveStations>
     <Station1Key>38905</Station1Key>
     <Station2Key>38916</Station2Key>
-    <Distance>3128.8574570975679</Distance>
-    <IsActive>true</IsActive>
+    <Distance>3128.85745709757</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>00:31:17.3140000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
@@ -150,15 +150,15 @@
   <ConsecutiveStations>
     <Station1Key>38903</Station1Key>
     <Station2Key>38905</Station2Key>
-    <Distance>11704.544241906295</Distance>
-    <IsActive>true</IsActive>
+    <Distance>11704.5442419063</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>01:57:02.7270000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
     <Station1Key>38905</Station1Key>
     <Station2Key>38913</Station2Key>
-    <Distance>3271.4329851319476</Distance>
-    <IsActive>true</IsActive>
+    <Distance>3271.43298513195</Distance>
+    <IsActive>True</IsActive>
     <DriveDistanceTime>00:32:42.8600000</DriveDistanceTime>
   </ConsecutiveStations>
   <ConsecutiveStations>
@@ -314,5 +314,19 @@
     <Distance>9923.1878230612056</Distance>
     <IsActive>true</IsActive>
     <DriveDistanceTime>01:39:13.9130000</DriveDistanceTime>
+  </ConsecutiveStations>
+  <ConsecutiveStations>
+    <Station1Key>-1</Station1Key>
+    <Station2Key>38916</Station2Key>
+    <Distance>0</Distance>
+    <IsActive>true</IsActive>
+    <DriveDistanceTime>00:00:00</DriveDistanceTime>
+  </ConsecutiveStations>
+  <ConsecutiveStations>
+    <Station1Key>-1</Station1Key>
+    <Station2Key>38888</Station2Key>
+    <Distance>0</Distance>
+    <IsActive>true</IsActive>
+    <DriveDistanceTime>00:00:00</DriveDistanceTime>
   </ConsecutiveStations>
 </ArrayOfConsecutiveStations>
