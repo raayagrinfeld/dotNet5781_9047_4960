@@ -17,6 +17,7 @@ using BL;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading;
+using System.Collections.ObjectModel;
 
 namespace PL
 {
@@ -34,7 +35,7 @@ namespace PL
         private bool isTimerRun;
         private TimeSpan tsStartTime;
         double speetTime;
-        bool StartTimerIsInFormat = false;
+        bool StartTimerIsInFormat = true;
 
         public MainUserWindow(User logedInUser)
         {
@@ -54,8 +55,6 @@ namespace PL
         }
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            //string timerText = stopWatch.Elapsed.ToString();
-            //timerText = timerText.Substring(0, 8); 
             TimeSpan tsCurentTime = tsStartTime + stopWatch.Elapsed; 
             string timerText = tsCurentTime.ToString().Substring(0, 8);
             this.timerTextelock.Text = timerText;
@@ -69,7 +68,6 @@ namespace PL
                 Thread.Sleep((int)Math.Round(1000/speetTime));
             }
         }
-
 
 
         private void Button_Click_MinimizeWindow(object sender, RoutedEventArgs e)
@@ -154,7 +152,26 @@ namespace PL
 
         private void SearchFilterChangedBusStation(object sender, TextChangedEventArgs e)
         {
-
+            stationBOListView.ItemsSource = new ObservableCollection<StationBO>((from item in bl.GetAllBusStations()
+                                                                                 where CheckIfStringsAreEqual(BusStationKey.Text, item.BusStationKey.ToString())
+                                                                                 select item
+                                                                            into g
+                                                                                 where CheckIfStringsAreEqual(StationName.Text, g.StationName)
+                                                                                 select g));
+        }
+        private bool CheckIfStringsAreEqual(string a, string b)
+        {
+            if (a.Length > b.Length)
+                return false;
+            int c = Math.Min(a.Length, b.Length);
+            a = a.ToLower();
+            b = b.ToLower();
+            for (int i = 0; i < c; i++)
+            {
+                if (a[i] != b[i])
+                    return false;
+            }
+            return true;
         }
 
         private void stationBOListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -242,11 +259,18 @@ namespace PL
 
         private void Button_Click_BackArrowBusStation(object sender, RoutedEventArgs e)
         {
-            stationListBorder.Visibility = Visibility.Visible;
-            StationDetailedBorder.Visibility = Visibility.Collapsed;
-            timerTextelock.Text = "00:00:00";
-            textBoxSpeed.Text = "1";
-            selectedStation = null;
+            if (simulation_Button.Content.ToString() == "stop simulation")
+            {
+                MessageBox.Show("pleas stop the simulition befor you go", "error in going back to start up interface", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                stationListBorder.Visibility = Visibility.Visible;
+                StationDetailedBorder.Visibility = Visibility.Collapsed;
+                timerTextelock.Text = "00:00:00";
+                textBoxSpeed.Text = "1";
+                selectedStation = null;
+            }
         }
 
         private void simulation_Button_Click(object sender, RoutedEventArgs e)
@@ -285,6 +309,7 @@ namespace PL
                 }
                 else
                 {
+                    StartTimerIsInFormat = false;
                     simulation_Button.IsEnabled = false;
                 }
             }

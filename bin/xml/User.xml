@@ -72,4 +72,13 @@
     <Gender>female</Gender>
     <imagePath>UserIcons\plant-pot.png</imagePath>
   </User>
+  <User>
+    <UserName>rebecca</UserName>
+    <Password>DnfadRhnbmAZIukLCNdPjBSwowxZOhQROQTvc0Vfss5nf0VXD4bhsk+6PopGtxa2m9DgP/d4N+6Ru0SSL+LFmQ==</Password>
+    <Salt>802194647</Salt>
+    <ManagementPermission>False</ManagementPermission>
+    <IsActive>True</IsActive>
+    <Gender>female</Gender>
+    <imagePath></imagePath>
+  </User>
 </ArrayOfUser>
